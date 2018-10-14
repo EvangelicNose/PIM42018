@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CamadaApresentacao", "PIM4\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CamadaModelo", "ClassLibrary1\CamadaModelo.csproj", "{5BAEDED6-D46A-4BB6-ACF4-450A79AA9298}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CamadaDados", "CamadaDados\CamadaDados.csproj", "{EBE247AA-AD05-4987-BC6A-A48FE22ED704}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{5BAEDED6-D46A-4BB6-ACF4-450A79AA9298}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5BAEDED6-D46A-4BB6-ACF4-450A79AA9298}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5BAEDED6-D46A-4BB6-ACF4-450A79AA9298}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EBE247AA-AD05-4987-BC6A-A48FE22ED704}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EBE247AA-AD05-4987-BC6A-A48FE22ED704}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EBE247AA-AD05-4987-BC6A-A48FE22ED704}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EBE247AA-AD05-4987-BC6A-A48FE22ED704}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
