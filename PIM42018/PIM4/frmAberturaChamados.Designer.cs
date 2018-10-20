@@ -38,12 +38,12 @@
             this.label7 = new System.Windows.Forms.Label();
             this.lblData = new System.Windows.Forms.Label();
             this.lblHora = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.txtOS = new System.Windows.Forms.TextBox();
+            this.txtUsuario = new System.Windows.Forms.TextBox();
+            this.txtNome = new System.Windows.Forms.TextBox();
+            this.txtEmpresa = new System.Windows.Forms.TextBox();
+            this.txtObs = new System.Windows.Forms.TextBox();
+            this.cbxMotivo = new System.Windows.Forms.ComboBox();
             this.btnAnexo = new System.Windows.Forms.Button();
             this.btnEnviar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
@@ -134,53 +134,54 @@
             this.lblHora.Text = "Hora";
             this.lblHora.Click += new System.EventHandler(this.lblHora_Click);
             // 
-            // textBox1
+            // txtOS
             // 
-            this.textBox1.Enabled = false;
-            this.textBox1.Location = new System.Drawing.Point(79, 58);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(152, 20);
-            this.textBox1.TabIndex = 9;
+            this.txtOS.Enabled = false;
+            this.txtOS.Location = new System.Drawing.Point(79, 58);
+            this.txtOS.Name = "txtOS";
+            this.txtOS.Size = new System.Drawing.Size(152, 20);
+            this.txtOS.TabIndex = 9;
             // 
-            // textBox2
+            // txtUsuario
             // 
-            this.textBox2.Enabled = false;
-            this.textBox2.Location = new System.Drawing.Point(79, 110);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(261, 20);
-            this.textBox2.TabIndex = 10;
+            this.txtUsuario.Enabled = false;
+            this.txtUsuario.Location = new System.Drawing.Point(79, 110);
+            this.txtUsuario.Name = "txtUsuario";
+            this.txtUsuario.Size = new System.Drawing.Size(261, 20);
+            this.txtUsuario.TabIndex = 10;
             // 
-            // textBox3
+            // txtNome
             // 
-            this.textBox3.Enabled = false;
-            this.textBox3.Location = new System.Drawing.Point(79, 139);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(261, 20);
-            this.textBox3.TabIndex = 11;
+            this.txtNome.Enabled = false;
+            this.txtNome.Location = new System.Drawing.Point(79, 139);
+            this.txtNome.Name = "txtNome";
+            this.txtNome.Size = new System.Drawing.Size(261, 20);
+            this.txtNome.TabIndex = 11;
+            this.txtNome.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
             // 
-            // textBox4
+            // txtEmpresa
             // 
-            this.textBox4.Enabled = false;
-            this.textBox4.Location = new System.Drawing.Point(79, 168);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(261, 20);
-            this.textBox4.TabIndex = 12;
+            this.txtEmpresa.Enabled = false;
+            this.txtEmpresa.Location = new System.Drawing.Point(79, 168);
+            this.txtEmpresa.Name = "txtEmpresa";
+            this.txtEmpresa.Size = new System.Drawing.Size(261, 20);
+            this.txtEmpresa.TabIndex = 12;
             // 
-            // textBox5
+            // txtObs
             // 
-            this.textBox5.Location = new System.Drawing.Point(79, 267);
-            this.textBox5.Multiline = true;
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(373, 79);
-            this.textBox5.TabIndex = 2;
+            this.txtObs.Location = new System.Drawing.Point(79, 267);
+            this.txtObs.Multiline = true;
+            this.txtObs.Name = "txtObs";
+            this.txtObs.Size = new System.Drawing.Size(373, 79);
+            this.txtObs.TabIndex = 2;
             // 
-            // comboBox1
+            // cbxMotivo
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(80, 240);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(372, 21);
-            this.comboBox1.TabIndex = 1;
+            this.cbxMotivo.FormattingEnabled = true;
+            this.cbxMotivo.Location = new System.Drawing.Point(80, 240);
+            this.cbxMotivo.Name = "cbxMotivo";
+            this.cbxMotivo.Size = new System.Drawing.Size(372, 21);
+            this.cbxMotivo.TabIndex = 1;
             // 
             // btnAnexo
             // 
@@ -223,12 +224,12 @@
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnEnviar);
             this.Controls.Add(this.btnAnexo);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.cbxMotivo);
+            this.Controls.Add(this.txtObs);
+            this.Controls.Add(this.txtEmpresa);
+            this.Controls.Add(this.txtNome);
+            this.Controls.Add(this.txtUsuario);
+            this.Controls.Add(this.txtOS);
             this.Controls.Add(this.lblHora);
             this.Controls.Add(this.lblData);
             this.Controls.Add(this.label7);
@@ -257,12 +258,12 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label lblData;
         private System.Windows.Forms.Label lblHora;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.TextBox txtOS;
+        private System.Windows.Forms.TextBox txtUsuario;
+        private System.Windows.Forms.TextBox txtNome;
+        private System.Windows.Forms.TextBox txtEmpresa;
+        private System.Windows.Forms.TextBox txtObs;
+        private System.Windows.Forms.ComboBox cbxMotivo;
         private System.Windows.Forms.Button btnAnexo;
         private System.Windows.Forms.Button btnEnviar;
         private System.Windows.Forms.Button btnCancelar;

@@ -17,12 +17,21 @@ namespace PIM4
             InitializeComponent();
             timer1.Interval = 1000;
             timer1.Start();
+
+            
+
         }
 
         private void AberturaChamados_Load(object sender, EventArgs e)
         {
             DateTime DataHoje = DateTime.Today;
             lblData.Text = DataHoje.ToString("dd/MM/yyy");
+            mdlUsuario _mdlusuario = new mdlUsuario();
+            txtNome.Text = _mdlusuario.NomeUsuario;
+            txtEmpresa.Text = _mdlusuario.EmpresaUsuario;
+            txtUsuario.Text = _mdlusuario.Usuario;
+
+            
         }
 
         private void lblHora_Click(object sender, EventArgs e)
@@ -51,6 +60,11 @@ namespace PIM4
         }
 
         private void btnEnviar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox3_TextChanged(object sender, EventArgs e)
         {
 
         }

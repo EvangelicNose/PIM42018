@@ -4,17 +4,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data.OleDb;
+using System.Windows.Forms;
 
 namespace PIM4
 {
+
     class Conexao
     {
-        public OleDbConnection cn = new OleDbConnection();
-
-
+    public OleDbConnection cn = new OleDbConnection();
+    
         public void conectar()
         {
-            cn.ConnectionString = @"Provider=Microsoft.Jet.OLEDB.4.0;Data Source=D:\PIM4\PIM42018\Banco\senhas.mdb";
+            cn.ConnectionString = @"Provider=Microsoft.JET.OLEDB.4.0;data source="+ Application.StartupPath + @"\senhas.mdb";
             cn.Open();
         }
     }

@@ -1,13 +1,15 @@
-D:\PIM4\PIM42018\PIM4\bin\Debug\PIM4.exe.config
-D:\PIM4\PIM42018\PIM4\bin\Debug\PIM4.exe
-D:\PIM4\PIM42018\PIM4\bin\Debug\PIM4.pdb
-D:\PIM4\PIM42018\PIM4\obj\Debug\PIM4.frmAberturaChamados.resources
-D:\PIM4\PIM42018\PIM4\obj\Debug\PIM4.frmListarChamado.resources
-D:\PIM4\PIM42018\PIM4\obj\Debug\PIM4.frmLogin.resources
-D:\PIM4\PIM42018\PIM4\obj\Debug\PIM4.frmMenu.resources
-D:\PIM4\PIM42018\PIM4\obj\Debug\PIM4.Properties.Resources.resources
-D:\PIM4\PIM42018\PIM4\obj\Debug\CamadaApresentacao.csproj.GenerateResource.Cache
-D:\PIM4\PIM42018\PIM4\obj\Debug\CamadaApresentacao.csproj.CoreCompileInputs.cache
-D:\PIM4\PIM42018\PIM4\obj\Debug\PIM4.exe
-D:\PIM4\PIM42018\PIM4\obj\Debug\PIM4.pdb
-D:\PIM4\PIM42018\PIM4\obj\Debug\CamadaApresentacao.csprojResolveAssemblyReference.cache
+C:\Users\Very Good\Desktop\PIM4\PIM42018\PIM42018\PIM4\bin\Debug\PIM4.exe.config
+C:\Users\Very Good\Desktop\PIM4\PIM42018\PIM42018\PIM4\bin\Debug\PIM4.exe
+C:\Users\Very Good\Desktop\PIM4\PIM42018\PIM42018\PIM4\bin\Debug\PIM4.pdb
+C:\Users\Very Good\Desktop\PIM4\PIM42018\PIM42018\PIM4\obj\Debug\CamadaApresentacao.csprojAssemblyReference.cache
+C:\Users\Very Good\Desktop\PIM4\PIM42018\PIM42018\PIM4\obj\Debug\PIM4.frmAberturaChamados.resources
+C:\Users\Very Good\Desktop\PIM4\PIM42018\PIM42018\PIM4\obj\Debug\PIM4.frmListarChamado.resources
+C:\Users\Very Good\Desktop\PIM4\PIM42018\PIM42018\PIM4\obj\Debug\PIM4.frmLogin.resources
+C:\Users\Very Good\Desktop\PIM4\PIM42018\PIM42018\PIM4\obj\Debug\PIM4.frmMenu.resources
+C:\Users\Very Good\Desktop\PIM4\PIM42018\PIM42018\PIM4\obj\Debug\PIM4.Properties.Resources.resources
+C:\Users\Very Good\Desktop\PIM4\PIM42018\PIM42018\PIM4\obj\Debug\CamadaApresentacao.csproj.GenerateResource.cache
+C:\Users\Very Good\Desktop\PIM4\PIM42018\PIM42018\PIM4\obj\Debug\CamadaApresentacao.csproj.CoreCompileInputs.cache
+C:\Users\Very Good\Desktop\PIM4\PIM42018\PIM42018\PIM4\obj\Debug\PIM4.exe
+C:\Users\Very Good\Desktop\PIM4\PIM42018\PIM42018\PIM4\obj\Debug\PIM4.pdb
+C:\Users\Very Good\Desktop\PIM4\PIM42018\PIM42018\PIM4\obj\Debug\Interop.ADOX.dll
+C:\Users\Very Good\Desktop\PIM4\PIM42018\PIM42018\PIM4\obj\Debug\CamadaApresentacao.csproj.ResolveComReference.cache

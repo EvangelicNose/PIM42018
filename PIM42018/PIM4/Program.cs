@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
+using System.Data.OleDb;
+using ADOX;
 
 namespace PIM4
 {
@@ -18,12 +21,13 @@ namespace PIM4
                 Application.EnableVisualStyles();
                 Application.SetCompatibleTextRenderingDefault(false);
 
-                frmLogin _frmLogin = new frmLogin();
-                Application.Run(_frmLogin);
-                if (_frmLogin.DialogResult == DialogResult.OK)
-                    Application.Run(new frmMenu());
 
+                    frmLogin _frmLogin = new frmLogin();
+                    Application.Run(_frmLogin);
+                    if (_frmLogin.DialogResult == DialogResult.OK)
+                        Application.Run(new frmMenu());
             }
         }
+                
     }
 }
