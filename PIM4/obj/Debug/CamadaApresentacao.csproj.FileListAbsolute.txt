@@ -24,3 +24,7 @@ D:\PIM4\PIM4\obj\Debug\CamadaApresentacao.csproj.GenerateResource.Cache
 D:\PIM4\PIM4\obj\Debug\CamadaApresentacao.csproj.CoreCompileInputs.cache
 D:\PIM4\PIM4\obj\Debug\PIM4.exe
 D:\PIM4\PIM4\obj\Debug\PIM4.pdb
+D:\PIM4\PIM4\bin\Debug\CamadaDados.dll
+D:\PIM4\PIM4\bin\Debug\ClassLibrary1.dll
+D:\PIM4\PIM4\bin\Debug\CamadaDados.pdb
+D:\PIM4\PIM4\bin\Debug\ClassLibrary1.pdb

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.lblUsuario = new System.Windows.Forms.Label();
             this.lblSenha = new System.Windows.Forms.Label();
@@ -35,6 +36,7 @@
             this.txtSenha = new System.Windows.Forms.TextBox();
             this.lblERRO = new System.Windows.Forms.Label();
             this.btnEntrar2 = new System.Windows.Forms.Button();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.SuspendLayout();
             // 
             // label1
@@ -92,6 +94,7 @@
             this.lblERRO.TabIndex = 6;
             this.lblERRO.Text = "*Usuário e/ou Senha Incorreta";
             this.lblERRO.Visible = false;
+            this.lblERRO.Click += new System.EventHandler(this.lblERRO_Click);
             // 
             // btnEntrar2
             // 
@@ -102,6 +105,10 @@
             this.btnEntrar2.Text = "Entrar";
             this.btnEntrar2.UseVisualStyleBackColor = true;
             this.btnEntrar2.Click += new System.EventHandler(this.btnEntrar2_Click);
+            // 
+            // timer1
+            // 
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // frmLogin
             // 
@@ -135,6 +142,7 @@
         private System.Windows.Forms.TextBox txtSenha;
         private System.Windows.Forms.Label lblERRO;
         private System.Windows.Forms.Button btnEntrar2;
+        private System.Windows.Forms.Timer timer1;
     }
 }
 

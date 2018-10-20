@@ -8,8 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.OleDb;
-/* using CamadaDados;
-using CamadaModelo; */
+using CamadaDados;
+using CamadaModelo;
 
 namespace PIM4
 {
@@ -70,6 +70,7 @@ namespace PIM4
                 _frmmenu.Show();
                 this.DialogResult = DialogResult.OK;
                 this.Close();
+                conexaoDB.desconectar();
 
             }
             else if (branco ==0)
@@ -77,9 +78,25 @@ namespace PIM4
                 lblERRO.Visible = true;
                 txtSenha.Text = "";
                 txtSenha.Focus();
-
+                IniciaContagem();
             }
             
+
+        }
+
+        private void IniciaContagem()
+        {
+            timer1.Interval = 5000;
+            timer1.Start();
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            lblERRO.Visible = false;
+        }
+
+        private void lblERRO_Click(object sender, EventArgs e)
+        {
 
         }
     }

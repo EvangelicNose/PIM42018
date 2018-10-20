@@ -17,5 +17,9 @@ namespace PIM4
             cn.ConnectionString = @"Provider=Microsoft.Jet.OLEDB.4.0;Data Source=D:\PIM4\Banco\senhas.mdb";
             cn.Open();
         }
+        public void desconectar()
+        {
+            cn.Close();
+        }
     }
 }
