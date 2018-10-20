@@ -49,8 +49,22 @@ namespace PIM4
             cmd.Parameters.AddWithValue("@Senha", txtSenha.Text);
 
             OleDbDataReader dr = cmd.ExecuteReader();
+            int branco = 0;
 
-            if (dr.Read())
+            if (txtUsuario.Text=="")
+            {
+                MessageBox.Show("Usuário não pode ficar em branco !");
+                branco = 1;
+                txtUsuario.Focus();
+            }
+            else if (txtSenha.Text=="")
+            {
+                MessageBox.Show("Senha não pode ficar em branco !");
+                branco = 1;
+                txtSenha.Focus();
+            }
+
+            if (dr.Read() && branco ==0)
             {
                 frmMenu _frmmenu = new frmMenu();
                 _frmmenu.Show();
@@ -58,7 +72,7 @@ namespace PIM4
                 this.Close();
 
             }
-            else
+            else if (branco ==0)
             {
                 lblERRO.Visible = true;
                 txtSenha.Text = "";
