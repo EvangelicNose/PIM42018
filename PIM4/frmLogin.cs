@@ -35,17 +35,18 @@ namespace PIM4
             
         }
 
+        public static string UsuarioConectado;
 
         private void btnEntrar2_Click(object sender, EventArgs e)
         {
   
-            string Query = "select * from tb_usuarios where nomes=@Nome and senhas=@Senha";
+            string Query = "select * from tb_usuarios where usuarios=@Usuarios and senhas=@Senha";
             Conexao conexaoDB = new Conexao();
             conexaoDB.conectar();
 
             OleDbCommand cmd = new OleDbCommand(Query, conexaoDB.cn);
 
-            cmd.Parameters.AddWithValue("@Nome", txtUsuario.Text);
+            cmd.Parameters.AddWithValue("@Usuarios", txtUsuario.Text);
             cmd.Parameters.AddWithValue("@Senha", txtSenha.Text);
 
             OleDbDataReader dr = cmd.ExecuteReader();
@@ -66,6 +67,7 @@ namespace PIM4
 
             if (dr.Read() && branco ==0)
             {
+                UsuarioConectado = txtUsuario.Text;
                 frmMenu _frmmenu = new frmMenu();
                 _frmmenu.Show();
                 this.DialogResult = DialogResult.OK;

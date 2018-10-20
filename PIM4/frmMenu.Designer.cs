@@ -59,15 +59,16 @@
             // abrirChamadosToolStripMenuItem
             // 
             this.abrirChamadosToolStripMenuItem.Name = "abrirChamadosToolStripMenuItem";
-            this.abrirChamadosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.abrirChamadosToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
             this.abrirChamadosToolStripMenuItem.Text = "&Abrir Chamados";
             this.abrirChamadosToolStripMenuItem.Click += new System.EventHandler(this.abrirChamadosToolStripMenuItem_Click);
             // 
             // listarChamadosToolStripMenuItem
             // 
             this.listarChamadosToolStripMenuItem.Name = "listarChamadosToolStripMenuItem";
-            this.listarChamadosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.listarChamadosToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
             this.listarChamadosToolStripMenuItem.Text = "&Listar Chamados";
+            this.listarChamadosToolStripMenuItem.Click += new System.EventHandler(this.listarChamadosToolStripMenuItem_Click);
             // 
             // sairToolStripMenuItem
             // 
@@ -86,7 +87,6 @@
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "frmMenu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
-            this.Text = "Menu Principal";
             this.Load += new System.EventHandler(this.frmMenu_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();

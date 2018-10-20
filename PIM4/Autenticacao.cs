@@ -8,20 +8,20 @@ namespace PIM4
 {
     static class Autenticacao
     {
-        static string Nome;
+        static string Usuario;
         static string Senha;
 
 
-        public static void login(string nome1, string senha1)
+        public static void login(string usuario1, string senha1)
         {
-            Nome = nome1;
+            Usuario = usuario1;
             Senha = senha1;
 
         }
 
         public static String getUsuario()
         {
-            return "Nome: " + Nome + "\nSenha: " + Senha;
+            return "Usuario: " + Usuario + "\nSenha: " + Senha;
         }
     }
 }

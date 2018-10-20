@@ -23,6 +23,9 @@ namespace PIM4
         {
             DateTime DataHoje = DateTime.Today;
             lblData.Text = DataHoje.ToString("dd/MM/yyy");
+            txtUsuario.Text= frmLogin.UsuarioConectado;
+
+
         }
 
         private void lblHora_Click(object sender, EventArgs e)
@@ -51,6 +54,11 @@ namespace PIM4
         }
 
         private void btnEnviar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtUsuario_TextChanged(object sender, EventArgs e)
         {
 
         }

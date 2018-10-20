@@ -37,6 +37,7 @@
             this.lblERRO = new System.Windows.Forms.Label();
             this.btnEntrar2 = new System.Windows.Forms.Button();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.label2 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -110,11 +111,21 @@
             // 
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(12, 201);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(70, 13);
+            this.label2.TabIndex = 8;
+            this.label2.Text = "v1.34->v1.35";
+            // 
             // frmLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(489, 223);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.btnEntrar2);
             this.Controls.Add(this.lblERRO);
             this.Controls.Add(this.txtSenha);
@@ -143,6 +154,7 @@
         private System.Windows.Forms.Label lblERRO;
         private System.Windows.Forms.Button btnEntrar2;
         private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Label label2;
     }
 }
 
