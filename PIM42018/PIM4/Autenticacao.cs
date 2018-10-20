@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PIM4
 {
-    class Autenticacao
+    static class Autenticacao
     {
         static string Nome;
         static string Senha;

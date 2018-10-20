@@ -22,6 +22,7 @@ namespace PIM4
                 Application.Run(_frmLogin);
                 if (_frmLogin.DialogResult == DialogResult.OK)
                     Application.Run(new frmMenu());
+
             }
         }
     }
