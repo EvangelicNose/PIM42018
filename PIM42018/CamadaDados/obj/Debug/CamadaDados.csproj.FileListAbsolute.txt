@@ -1,0 +1,6 @@
+D:\PIM4\PIM42018\PIM42018\CamadaDados\bin\Debug\CamadaDados.dll
+D:\PIM4\PIM42018\PIM42018\CamadaDados\bin\Debug\CamadaDados.pdb
+D:\PIM4\PIM42018\PIM42018\CamadaDados\obj\Debug\CamadaDados.csprojResolveAssemblyReference.cache
+D:\PIM4\PIM42018\PIM42018\CamadaDados\obj\Debug\CamadaDados.csproj.CoreCompileInputs.cache
+D:\PIM4\PIM42018\PIM42018\CamadaDados\obj\Debug\CamadaDados.dll
+D:\PIM4\PIM42018\PIM42018\CamadaDados\obj\Debug\CamadaDados.pdb

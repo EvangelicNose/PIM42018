@@ -26,13 +26,20 @@ namespace PIM4
 
         private void frmMenu_Load(object sender, EventArgs e)
         {
-
+            this.Text = "Menus Principal - Usuário: " + frmLogin.UsuarioConectado;
         }
 
         private void sairToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Close();
 
+        }
+
+        private void listarChamadosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmListarChamado _frmListarChamado = new frmListarChamado();
+            _frmListarChamado.MdiParent = this;
+            _frmListarChamado.Show();
         }
     }
 }

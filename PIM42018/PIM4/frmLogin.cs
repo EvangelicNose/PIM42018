@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.OleDb;
+using CamadaDados;
+using CamadaModelo;
 
 namespace PIM4
 {
@@ -16,7 +18,6 @@ namespace PIM4
         public frmLogin()
         {
             InitializeComponent();
-            timer1.Interval = 3000;
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -26,58 +27,79 @@ namespace PIM4
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            string Query = "select * from tb_usuarios where usuario=@Nome and senha=@Senha";
+                         
+        }
+
+        private void frmLogin_Load(object sender, EventArgs e)
+        {
+            
+        }
+
+        public static string UsuarioConectado;
+
+        private void btnEntrar2_Click(object sender, EventArgs e)
+        {
+  
+            string Query = "select * from tb_usuarios where usuarios=@Usuarios and senhas=@Senha";
             Conexao conexaoDB = new Conexao();
             conexaoDB.conectar();
 
             OleDbCommand cmd = new OleDbCommand(Query, conexaoDB.cn);
 
-            var pmtnome = cmd.CreateParameter();
-            pmtnome.ParameterName = "@nome";
-            pmtnome.DbType = DbType.String;
-            pmtnome.Value = txtUsuario.Text;
-            cmd.Parameters.Add(pmtnome);
-
-            var pmtsenha = cmd.CreateParameter();
-            pmtsenha.ParameterName = "@senha";
-            pmtsenha.DbType = DbType.String;
-            pmtsenha.Value = txtSenha.Text;
-            cmd.Parameters.Add(pmtsenha);
+            cmd.Parameters.AddWithValue("@Usuarios", txtUsuario.Text);
+            cmd.Parameters.AddWithValue("@Senha", txtSenha.Text);
 
             OleDbDataReader dr = cmd.ExecuteReader();
+            int branco = 0;
 
-            if (dr.Read())
+            if (txtUsuario.Text=="")
             {
+                MessageBox.Show("Usuário não pode ficar em branco !");
+                branco = 1;
+                txtUsuario.Focus();
+            }
+            else if (txtSenha.Text=="")
+            {
+                MessageBox.Show("Senha não pode ficar em branco !");
+                branco = 1;
+                txtSenha.Focus();
+            }
+
+            if (dr.Read() && branco ==0)
+            {
+                UsuarioConectado = txtUsuario.Text;
                 frmMenu _frmmenu = new frmMenu();
                 _frmmenu.Show();
                 this.DialogResult = DialogResult.OK;
                 this.Close();
-                mdlUsuario _mdlUsuario = new mdlUsuario();
-                _mdlUsuario.Usuario = txtUsuario.Text;
-
+                conexaoDB.desconectar();
 
             }
-            else
+            else if (branco ==0)
             {
                 lblERRO.Visible = true;
                 txtSenha.Text = "";
                 txtSenha.Focus();
-                conexaoDB.cn.Close();
-                timer1.Start();
+                IniciaContagem();
             }
-
-
+            
 
         }
 
-        private void frmLogin_Load(object sender, EventArgs e)
+        private void IniciaContagem()
         {
-            txtUsuario.Focus();
+            timer1.Interval = 5000;
+            timer1.Start();
         }
 
         private void timer1_Tick(object sender, EventArgs e)
         {
             lblERRO.Visible = false;
+        }
+
+        private void lblERRO_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

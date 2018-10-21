@@ -120,5 +120,15 @@
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </COMReference>
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CamadaDados\CamadaDados.csproj">
+      <Project>{ebe247aa-ad05-4987-bc6a-a48fe22ed704}</Project>
+      <Name>CamadaDados</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ClassLibrary1\CamadaModelo.csproj">
+      <Project>{5baeded6-d46a-4bb6-acf4-450a79aa9298}</Project>
+      <Name>CamadaModelo</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
