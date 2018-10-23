@@ -39,6 +39,7 @@ namespace PIM4
 
         private void btnEntrar2_Click(object sender, EventArgs e)
         {
+            mdlUsuario _mdlusuario = new mdlUsuario();
   
             string Query = "select * from tb_usuarios where usuarios=@Usuarios and senhas=@Senha";
             Conexao conexaoDB = new Conexao();
@@ -68,6 +69,7 @@ namespace PIM4
             if (dr.Read() && branco ==0)
             {
                 UsuarioConectado = txtUsuario.Text;
+                _mdlusuario.Usuario = txtUsuario.Text;
                 frmMenu _frmmenu = new frmMenu();
                 _frmmenu.Show();
                 this.DialogResult = DialogResult.OK;

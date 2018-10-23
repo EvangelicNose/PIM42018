@@ -5,9 +5,9 @@ using System.Text;
 using System.Threading.Tasks;
 
 
-namespace PIM4
+namespace CamadaModelo
 {
-    class mdlUsuario
+    public class mdlUsuario
     {
         public string NomeUsuario { get; set; }
         public string EmpresaUsuario { get; set; }
