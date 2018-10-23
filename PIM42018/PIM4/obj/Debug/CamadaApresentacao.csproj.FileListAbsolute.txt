@@ -32,3 +32,8 @@ D:\PIM4\PIM42018\PIM42018\PIM4\bin\Debug\CamadaDados.dll
 D:\PIM4\PIM42018\PIM42018\PIM4\bin\Debug\ClassLibrary1.dll
 D:\PIM4\PIM42018\PIM42018\PIM4\bin\Debug\CamadaDados.pdb
 D:\PIM4\PIM42018\PIM42018\PIM4\bin\Debug\ClassLibrary1.pdb
+C:\Users\Very Good\Desktop\PIM4\PIM42018\PIM42018\PIM4\bin\Debug\CamadaDados.dll
+C:\Users\Very Good\Desktop\PIM4\PIM42018\PIM42018\PIM4\bin\Debug\ClassLibrary1.dll
+C:\Users\Very Good\Desktop\PIM4\PIM42018\PIM42018\PIM4\bin\Debug\CamadaDados.pdb
+C:\Users\Very Good\Desktop\PIM4\PIM42018\PIM42018\PIM4\bin\Debug\ClassLibrary1.pdb
+C:\Users\Very Good\Desktop\PIM4\PIM42018\PIM42018\PIM4\obj\Debug\CamadaApresentacao.csproj.CopyComplete

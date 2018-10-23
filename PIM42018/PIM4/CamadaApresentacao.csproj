@@ -47,7 +47,6 @@
   <ItemGroup>
     <Compile Include="Autenticacao.cs" />
     <Compile Include="Conexao.cs" />
-    <Compile Include="ctlUsuario.cs" />
     <Compile Include="frmAberturaChamados.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -72,7 +71,6 @@
     <Compile Include="frmMenu.Designer.cs">
       <DependentUpon>frmMenu.cs</DependentUpon>
     </Compile>
-    <Compile Include="mdlUsuario.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="frmAberturaChamados.resx">

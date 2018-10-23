@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data.OleDb;
+using CamadaModelo;
 
 namespace CamadaDados
 {
@@ -13,6 +15,11 @@ namespace CamadaDados
             bool RetornoLogin = false;
             return RetornoLogin;
 
+        }
+        
+        public OleDbCommand RetornarDados(int x)
+        {
+            
         }
     }
 }

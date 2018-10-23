@@ -43,5 +43,11 @@
     <Compile Include="ctlLogin.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ClassLibrary1\CamadaModelo.csproj">
+      <Project>{5baeded6-d46a-4bb6-acf4-450a79aa9298}</Project>
+      <Name>CamadaModelo</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
