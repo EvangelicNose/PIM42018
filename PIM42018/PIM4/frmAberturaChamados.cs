@@ -7,11 +7,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using CamadaDados;
 
 namespace PIM4
 {
     public partial class frmAberturaChamados : Form
     {
+        ctlLogin _ctllogin = new ctlLogin();
         public frmAberturaChamados()
         {
             InitializeComponent();
@@ -24,7 +26,8 @@ namespace PIM4
             DateTime DataHoje = DateTime.Today;
             lblData.Text = DataHoje.ToString("dd/MM/yyy");
             txtUsuario.Text= frmLogin.UsuarioConectado;
-
+            txtEmpresa.Text = _ctllogin.RetornarDados(2, txtUsuario.Text);
+            txtNome.Text = _ctllogin.RetornarDados(1, txtUsuario.Text);
 
         }
 
