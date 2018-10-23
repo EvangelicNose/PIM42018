@@ -11,11 +11,10 @@ namespace PIM4
 
     class Conexao
     {
-    public OleDbConnection cn = new OleDbConnection();
+    public OleDbConnection cn = new OleDbConnection(@"Provider=Microsoft.JET.OLEDB.4.0;data source=" + Application.StartupPath + @"\helpdesk.mdb");
     
         public void conectar()
         {
-            cn.ConnectionString = @"Provider=Microsoft.JET.OLEDB.4.0;data source="+ Application.StartupPath + @"\helpdesk.mdb";
             cn.Open();
         }
         public void desconectar()

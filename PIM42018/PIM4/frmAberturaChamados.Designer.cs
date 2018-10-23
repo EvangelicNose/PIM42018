@@ -30,7 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -38,7 +37,6 @@
             this.label7 = new System.Windows.Forms.Label();
             this.lblData = new System.Windows.Forms.Label();
             this.lblHora = new System.Windows.Forms.Label();
-            this.txtOS = new System.Windows.Forms.TextBox();
             this.txtUsuario = new System.Windows.Forms.TextBox();
             this.txtNome = new System.Windows.Forms.TextBox();
             this.txtEmpresa = new System.Windows.Forms.TextBox();
@@ -59,15 +57,6 @@
             this.label1.Size = new System.Drawing.Size(399, 26);
             this.label1.TabIndex = 0;
             this.label1.Text = "MANUTENÇÃO DE COMPUTADORES";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(49, 61);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(31, 13);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "O.S.:";
             // 
             // label3
             // 
@@ -133,14 +122,6 @@
             this.lblHora.TabIndex = 8;
             this.lblHora.Text = "Hora";
             this.lblHora.Click += new System.EventHandler(this.lblHora_Click);
-            // 
-            // txtOS
-            // 
-            this.txtOS.Enabled = false;
-            this.txtOS.Location = new System.Drawing.Point(79, 58);
-            this.txtOS.Name = "txtOS";
-            this.txtOS.Size = new System.Drawing.Size(152, 20);
-            this.txtOS.TabIndex = 9;
             // 
             // txtUsuario
             // 
@@ -229,7 +210,6 @@
             this.Controls.Add(this.txtEmpresa);
             this.Controls.Add(this.txtNome);
             this.Controls.Add(this.txtUsuario);
-            this.Controls.Add(this.txtOS);
             this.Controls.Add(this.lblHora);
             this.Controls.Add(this.lblData);
             this.Controls.Add(this.label7);
@@ -237,7 +217,6 @@
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "frmAberturaChamados";
             this.Text = "AberturaChamados";
@@ -250,7 +229,6 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
@@ -258,7 +236,6 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label lblData;
         private System.Windows.Forms.Label lblHora;
-        private System.Windows.Forms.TextBox txtOS;
         private System.Windows.Forms.TextBox txtUsuario;
         private System.Windows.Forms.TextBox txtNome;
         private System.Windows.Forms.TextBox txtEmpresa;

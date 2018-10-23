@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using CamadaDados;
+using System.Data.OleDb;
 
 namespace PIM4
 {
@@ -58,7 +59,15 @@ namespace PIM4
 
         private void btnEnviar_Click(object sender, EventArgs e)
         {
+            Conexao conexao = new Conexao();
+            conexao.conectar();
 
+            string query = "insert into tb_chamados (idusuarios, nome, idempresas, idmotivos, obs) Values ";
+            query += "(@idusuario, @nome, @idempresa, @idmotivo, @obs)";
+
+            OleDbCommand cmd = new OleDbCommand(query, conexao.cn);
+
+            cmd.Parameters.AddWithValue("@idusuario", )
         }
 
         private void txtUsuario_TextChanged(object sender, EventArgs e)
