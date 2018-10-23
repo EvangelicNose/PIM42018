@@ -21,7 +21,6 @@ namespace CamadaDados
         
         public string RetornarDados(int x, string y)
         {
-            mdlUsuario _mdlusuario = new mdlUsuario();
             OleDbConnection Conexao = new OleDbConnection(Conn);
             Conexao.Open();
 
@@ -59,10 +58,8 @@ namespace CamadaDados
             {
                 retorno = resultado[result].ToString();
             }
-<<<<<<< HEAD
             resultado.Close();
-=======
->>>>>>> b5cd5f1b41c5a43b6e454f48d3952b4a3450eceb
+
             Conexao.Close();
             return retorno;
 
