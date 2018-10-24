@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.OleDb;
 using CamadaDados;
@@ -20,32 +13,30 @@ namespace PIM4
             InitializeComponent();
         }
 
-        private void label1_Click(object sender, EventArgs e)
+        void label1_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void btnLogin_Click(object sender, EventArgs e)
+        void btnLogin_Click(object sender, EventArgs e)
         {
                          
         }
 
-        private void frmLogin_Load(object sender, EventArgs e)
+        void frmLogin_Load(object sender, EventArgs e)
         {
             
         }
 
         public static string UsuarioConectado;
 
-        private void btnEntrar2_Click(object sender, EventArgs e)
+        void btnEntrar2_Click(object sender, EventArgs e)
         {
             mdlUsuario _mdlusuario = new mdlUsuario();
   
-            string Query = "select * from tb_usuarios where usuarios=@Usuarios and senhas=@Senha";
-            Conexao conexaoDB = new Conexao();
-            conexaoDB.conectar();
+            Conexao conexao = new Conexao();
 
-            OleDbCommand cmd = new OleDbCommand(Query, conexaoDB.cn);
+            OleDbCommand cmd = conexao.Comando("select * from tb_usuarios where usuarios=@Usuarios and senhas=@Senha");
 
             cmd.Parameters.AddWithValue("@Usuarios", txtUsuario.Text);
             cmd.Parameters.AddWithValue("@Senha", txtSenha.Text);
@@ -74,8 +65,7 @@ namespace PIM4
                 _frmmenu.Show();
                 this.DialogResult = DialogResult.OK;
                 this.Close();
-                conexaoDB.desconectar();
-
+                conexao.Fechar();
             }
             else if (branco ==0)
             {
@@ -84,22 +74,20 @@ namespace PIM4
                 txtSenha.Focus();
                 IniciaContagem();
             }
-            
-
         }
 
-        private void IniciaContagem()
+        void IniciaContagem()
         {
             timer1.Interval = 5000;
             timer1.Start();
         }
 
-        private void timer1_Tick(object sender, EventArgs e)
+        void timer1_Tick(object sender, EventArgs e)
         {
             lblERRO.Visible = false;
         }
 
-        private void lblERRO_Click(object sender, EventArgs e)
+        void lblERRO_Click(object sender, EventArgs e)
         {
 
         }

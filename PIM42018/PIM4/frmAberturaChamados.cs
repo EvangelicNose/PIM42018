@@ -14,7 +14,6 @@ namespace PIM4
 {
     public partial class frmAberturaChamados : Form
     {
-        ctlLogin _ctllogin = new ctlLogin();
         public frmAberturaChamados()
         {
             InitializeComponent();
@@ -27,9 +26,8 @@ namespace PIM4
             DateTime DataHoje = DateTime.Today;
             lblData.Text = DataHoje.ToString("dd/MM/yyy");
             txtUsuario.Text= frmLogin.UsuarioConectado;
-            txtEmpresa.Text = _ctllogin.RetornarDados(2, txtUsuario.Text);
-            txtNome.Text = _ctllogin.RetornarDados(1, txtUsuario.Text);
-
+            txtEmpresa.Text = ctlLogin.RetornarDados(2, txtUsuario.Text);
+            txtNome.Text = ctlLogin.RetornarDados(1, txtUsuario.Text);
         }
 
         private void lblHora_Click(object sender, EventArgs e)
@@ -60,14 +58,14 @@ namespace PIM4
         private void btnEnviar_Click(object sender, EventArgs e)
         {
             Conexao conexao = new Conexao();
-            conexao.conectar();
 
-            string query = "insert into tb_chamados (idusuarios, nome, idempresas, idmotivos, obs) Values ";
-            query += "(@idusuario, @nome, @idempresa, @idmotivo, @obs)";
+            OleDbCommand cmd = conexao.Comando(@"
+                insert into tb_chamados
+                (idusuarios, nome, idempresas, idmotivos, obs) values
+                (@idusuario, @nome, @idempresa, @idmotivo, @obs)
+            ");
 
-            OleDbCommand cmd = new OleDbCommand(query, conexao.cn);
-
-            cmd.Parameters.AddWithValue("@idusuario", )
+            // cmd.Parameters.AddWithValue("@idusuario", );
         }
 
         private void txtUsuario_TextChanged(object sender, EventArgs e)

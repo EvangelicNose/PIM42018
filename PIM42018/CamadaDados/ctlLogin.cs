@@ -1,37 +1,26 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Data.OleDb;
+﻿using System.Data.OleDb;
 using CamadaModelo;
 using System.Windows.Forms;
 
 namespace CamadaDados
 {
-    public class ctlLogin
+    public static class ctlLogin
     {
-        string Conn = @"Provider=Microsoft.JET.OLEDB.4.0;data source=" + Application.StartupPath + @"\helpdesk.mdb";
-        public bool Login(string Nome, string Senha)
+        public static bool Login(string Nome, string Senha)
         {
             bool RetornoLogin = false;
             return RetornoLogin;
-
         }
         
-        public string RetornarDados(int x, string y)
+        public static string RetornarDados(int x, string y)
         {
-            OleDbConnection Conexao = new OleDbConnection(Conn);
-            Conexao.Open();
-
-            string query = "select id from tb_usuarios where usuarios = @usuario";
-            OleDbCommand cmd = new OleDbCommand(query, Conexao);
+            Conexao conexao = new Conexao();
+            OleDbCommand cmd = conexao.Comando("select id from tb_usuarios where usuarios = @usuario");
             cmd.Parameters.AddWithValue("@usuario", y);
             string id = "";
             OleDbDataReader resultado = cmd.ExecuteReader();
             if (resultado.Read())
-            id = resultado["id"].ToString();
-
+                id = resultado["id"].ToString();
             resultado.Close();
 
             string result = "";
@@ -46,10 +35,7 @@ namespace CamadaDados
                 query2 = "select NomeEmpresa from tb_empresas where id = @id";
                 result = "NomeEmpresa";
             }
-            OleDbCommand cmd2 = new OleDbCommand(query2, Conexao);
-            
-            
-            
+            OleDbCommand cmd2 = conexao.Comando(query2);
             
             cmd2.Parameters.AddWithValue("@id", id);
             string retorno = "";
@@ -60,11 +46,8 @@ namespace CamadaDados
             }
             resultado.Close();
 
-            Conexao.Close();
+            conexao.Fechar();
             return retorno;
-
-
-
         }
     }
 }

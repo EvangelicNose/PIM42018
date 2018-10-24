@@ -1,0 +1,17 @@
+﻿<Properties StartupConfiguration="{E76A4C5E-4915-47D9-A021-0C9A6B6DCB37}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="CamadaDados/ctlLogin.cs">
+    <Files>
+      <File FileName="ClassLibrary1/mdlChamados.cs" Line="8" Column="23" />
+      <File FileName="ClassLibrary1/mdlUsuario.cs" Line="10" Column="18" />
+      <File FileName="CamadaDados/Conexao.cs" Line="8" Column="19" />
+      <File FileName="CamadaDados/ctlLogin.cs" Line="13" Column="10" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.ItemProperties.CamadaApresentacao PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MultiItemStartupConfigurations />
+</Properties>
