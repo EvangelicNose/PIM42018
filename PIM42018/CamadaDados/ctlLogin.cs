@@ -11,43 +11,30 @@ namespace CamadaDados
             bool RetornoLogin = false;
             return RetornoLogin;
         }
-        
-        public static string RetornarDados(int x, string y)
+
+        public static void GuardarDados(string Usuario)
         {
+            mdlUsuario _mdlusuario = new mdlUsuario();
             Conexao conexao = new Conexao();
-            OleDbCommand cmd = conexao.Comando("select id from tb_usuarios where usuarios = @usuario");
-            cmd.Parameters.AddWithValue("@usuario", y);
-            string id = "";
-            OleDbDataReader resultado = cmd.ExecuteReader();
-            if (resultado.Read())
-                id = resultado["id"].ToString();
-            resultado.Close();
-
-            string result = "";
-            string query2;
-            if (x == 1)
-            {
-                query2 = "SELECT nomes FROM tb_usuarios WHERE id = @id";
-                result = "nomes";
-            }
-            else
-            {
-                query2 = "select NomeEmpresa from tb_empresas where id = @id";
-                result = "NomeEmpresa";
-            }
-            OleDbCommand cmd2 = conexao.Comando(query2);
+            conexao.abrir();
+            string query = "select * from tb_usuarios where usuarios = @usuario";
+            OleDbCommand cmd = new OleDbCommand(query, conexao.GetConexao());
+            cmd.Parameters.AddWithValue("@usuario", Usuario);
+            OleDbDataReader reader = cmd.ExecuteReader();
             
-            cmd2.Parameters.AddWithValue("@id", id);
-            string retorno = "";
-            resultado = cmd2.ExecuteReader();
-            if (resultado.Read())
+            while (reader.Read())
             {
-                retorno = resultado[result].ToString();
+                _mdlusuario.NomeUsuario = reader["nomes"].ToString();
+                _mdlusuario.NivelUsuario = reader["nivelAcesso"].ToString();
+                _mdlusuario.IDusuario = reader["id"].ToString();
+                _mdlusuario.Usuario = reader["usuarios"].ToString();
+                
             }
-            resultado.Close();
-
+            reader.Close();
             conexao.Fechar();
-            return retorno;
+            
+
+
         }
     }
 }

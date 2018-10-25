@@ -35,6 +35,7 @@ namespace PIM4
             mdlUsuario _mdlusuario = new mdlUsuario();
   
             Conexao conexao = new Conexao();
+            conexao.abrir();
 
             OleDbCommand cmd = conexao.Comando("select * from tb_usuarios where usuarios=@Usuarios and senhas=@Senha");
 
@@ -60,12 +61,13 @@ namespace PIM4
             if (dr.Read() && branco ==0)
             {
                 UsuarioConectado = txtUsuario.Text;
-                _mdlusuario.Usuario = txtUsuario.Text;
                 frmMenu _frmmenu = new frmMenu();
                 _frmmenu.Show();
                 this.DialogResult = DialogResult.OK;
                 this.Close();
                 conexao.Fechar();
+                ctlLogin.GuardarDados(UsuarioConectado);
+
             }
             else if (branco ==0)
             {

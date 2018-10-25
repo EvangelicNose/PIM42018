@@ -7,7 +7,7 @@ namespace CamadaDados
     {
         OleDbConnection connection = new OleDbConnection(@"Provider=Microsoft.JET.OLEDB.4.0;data source=" + Application.StartupPath + @"\helpdesk.mdb");
 
-        public Conexao()
+        public void abrir()
         {
             connection.Open();
         }

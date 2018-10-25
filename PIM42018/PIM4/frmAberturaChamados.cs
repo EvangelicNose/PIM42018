@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using CamadaDados;
 using System.Data.OleDb;
+using CamadaModelo;
 
 namespace PIM4
 {
@@ -23,11 +24,11 @@ namespace PIM4
 
         private void AberturaChamados_Load(object sender, EventArgs e)
         {
+            mdlUsuario _mdlusuario = new mdlUsuario();
             DateTime DataHoje = DateTime.Today;
-            lblData.Text = DataHoje.ToString("dd/MM/yyy");
-            txtUsuario.Text= frmLogin.UsuarioConectado;
-            txtEmpresa.Text = ctlLogin.RetornarDados(2, txtUsuario.Text);
-            txtNome.Text = ctlLogin.RetornarDados(1, txtUsuario.Text);
+            lblData.Text = DataHoje.ToString("dd/MM/yyyy");
+            txtNome.Text = _mdlusuario.NomeUsuario;
+            txtUsuario.Text = _mdlusuario.Usuario;
         }
 
         private void lblHora_Click(object sender, EventArgs e)
