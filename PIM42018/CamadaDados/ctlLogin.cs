@@ -1,4 +1,5 @@
-﻿using System.Data.OleDb;
+﻿using System;
+using System.Data.OleDb;
 using CamadaModelo;
 
 namespace CamadaDados
@@ -23,9 +24,9 @@ namespace CamadaDados
             
             while (reader.Read())
             {
-                _mdlusuario.NomeUsuario = reader["nomes"].ToString();
-                _mdlusuario.NivelUsuario = reader["nivelAcesso"].ToString();
-                _mdlusuario.IDusuario = reader["id"].ToString();
+                _mdlusuario.Nome = reader["nomes"].ToString();
+                _mdlusuario.Nivel = reader["nivelAcesso"].ToString();
+                _mdlusuario.ID = Convert.ToInt32(reader["id"]);
                 _mdlusuario.Usuario = reader["usuarios"].ToString();
                 
             }
