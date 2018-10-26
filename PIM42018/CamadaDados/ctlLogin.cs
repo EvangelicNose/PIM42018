@@ -23,7 +23,7 @@ namespace CamadaDados
             
             while (reader.Read())
             {
-                mdlUsuario _mdlusuario = new mdlUsuario(
+                mdlUsuario.Logado = new mdlUsuario(
                     id: Convert.ToInt32(reader["id"]),
                     nome: reader["nomes"].ToString(),
                     nivel: reader["nivelAcesso"].ToString(),
