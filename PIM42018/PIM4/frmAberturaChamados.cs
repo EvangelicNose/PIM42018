@@ -16,11 +16,13 @@ namespace PIM4
 
         private void AberturaChamados_Load(object sender, EventArgs e)
         {
-            mdlUsuario _mdlusuario = new mdlUsuario();
+            // mdlUsuario _mdlusuario = new mdlUsuario();
             DateTime DataHoje = DateTime.Today;
             lblData.Text = DataHoje.ToString("dd/MM/yyyy");
-            txtNome.Text = _mdlusuario.NomeUsuario;
-            txtUsuario.Text = _mdlusuario.Usuario;
+            txtNome.Text = "";
+            // txtNome.Text = _mdlusuario.NomeUsuario;
+            txtUsuario.Text = "";
+            // txtUsuario.Text = _mdlusuario.Usuario;
             // txtEmpresa.Text = ctlChamados.ConsultaEmpresa(txtUsuario.Text);
             // txtNome.Text = ctlChamados.ConsultaUsuario(txtUsuario.Text);
         }

@@ -32,7 +32,7 @@ namespace PIM4
 
         void btnEntrar2_Click(object sender, EventArgs e)
         {
-            mdlUsuario _mdlusuario = new mdlUsuario();
+            // mdlUsuario _mdlusuario = new mdlUsuario();
   
             Conexao conexao = new Conexao();
             conexao.abrir();
