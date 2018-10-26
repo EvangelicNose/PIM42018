@@ -14,27 +14,25 @@ namespace CamadaDados
 
         public static void GuardarDados(string Usuario)
         {
-            mdlUsuario _mdlusuario = new mdlUsuario();
             Conexao conexao = new Conexao();
             conexao.abrir();
-            string query = "select * from tb_usuarios where usuarios = @usuario";
+            string query = "select top 1 * from tb_usuarios where usuarios = @usuario";
             OleDbCommand cmd = new OleDbCommand(query, conexao.GetConexao());
             cmd.Parameters.AddWithValue("@usuario", Usuario);
             OleDbDataReader reader = cmd.ExecuteReader();
             
             while (reader.Read())
             {
-                _mdlusuario.Nome = reader["nomes"].ToString();
-                _mdlusuario.Nivel = reader["nivelAcesso"].ToString();
-                _mdlusuario.ID = Convert.ToInt32(reader["id"]);
-                _mdlusuario.Usuario = reader["usuarios"].ToString();
+                mdlUsuario _mdlusuario = new mdlUsuario(
+                    id: Convert.ToInt32(reader["id"]),
+                    nome: reader["nomes"].ToString(),
+                    nivel: reader["nivelAcesso"].ToString(),
+                    usuario: reader["usuarios"].ToString()
+                );
                 
             }
             reader.Close();
             conexao.Fechar();
-            
-
-
         }
     }
 }

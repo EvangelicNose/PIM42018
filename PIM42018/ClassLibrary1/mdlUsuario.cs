@@ -9,7 +9,7 @@
         public string Nivel { get; set; }
         public string Empresa { get; set; }
 
-        public mdlUsuario(int id, string usuario, string senha, string nome, string nivel)
+        public mdlUsuario(int id, string usuario, string nome, string nivel, string senha = "")
         {
             ID = id;
             Usuario = usuario;
