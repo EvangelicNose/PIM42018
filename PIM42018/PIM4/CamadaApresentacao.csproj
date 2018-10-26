@@ -45,7 +45,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Autenticacao.cs" />
     <Compile Include="frmAberturaChamados.cs">
       <SubType>Form</SubType>
     </Compile>

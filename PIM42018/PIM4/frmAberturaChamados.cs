@@ -1,14 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using CamadaDados;
-using System.Data.OleDb;
 using CamadaModelo;
 
 namespace PIM4
@@ -29,6 +21,8 @@ namespace PIM4
             lblData.Text = DataHoje.ToString("dd/MM/yyyy");
             txtNome.Text = _mdlusuario.NomeUsuario;
             txtUsuario.Text = _mdlusuario.Usuario;
+            // txtEmpresa.Text = ctlChamados.ConsultaEmpresa(txtUsuario.Text);
+            // txtNome.Text = ctlChamados.ConsultaUsuario(txtUsuario.Text);
         }
 
         private void lblHora_Click(object sender, EventArgs e)
@@ -58,15 +52,6 @@ namespace PIM4
 
         private void btnEnviar_Click(object sender, EventArgs e)
         {
-            Conexao conexao = new Conexao();
-
-            OleDbCommand cmd = conexao.Comando(@"
-                insert into tb_chamados
-                (idusuarios, nome, idempresas, idmotivos, obs) values
-                (@idusuario, @nome, @idempresa, @idmotivo, @obs)
-            ");
-
-            // cmd.Parameters.AddWithValue("@idusuario", );
         }
 
         private void txtUsuario_TextChanged(object sender, EventArgs e)
