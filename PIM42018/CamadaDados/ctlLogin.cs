@@ -33,8 +33,6 @@ namespace CamadaDados
                 
             }
             reader.Close();
-            conexao.Fechar();
-            conexao.abrir();
 
             query = "select top 1 * from tb_empresas where IDEmpresas = @idempresas";
             OleDbCommand cmdEmpresa = new OleDbCommand(query, conexao.GetConexao());
@@ -42,7 +40,7 @@ namespace CamadaDados
             reader = cmdEmpresa.ExecuteReader();
             while (reader.Read())
             {
-                mdlEmpresa Logado = new mdlEmpresa(
+                mdlEmpresa.Logado = new mdlEmpresa(
                     id: Convert.ToInt32(reader["IDEmpresas"]),
                     nomeempresa: reader["NomeEmpresa"].ToString(),
                     enderecoempresa: reader["Endereco"].ToString()

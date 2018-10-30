@@ -21,7 +21,6 @@ namespace PIM4
             txtNome.Text = mdlUsuario.Logado.Nome;
             txtEmpresa.Text = mdlEmpresa.Logado.NomeEmpresa;
             txtUsuario.Text = mdlUsuario.Logado.Usuario;
-            txtUsuario.Text = "";
         }
 
         private void lblHora_Click(object sender, EventArgs e)
