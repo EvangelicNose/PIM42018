@@ -50,11 +50,53 @@ namespace PIM4
 
         private void btnEnviar_Click(object sender, EventArgs e)
         {
+            string retorno = ctlChamados.Abrirchamado(cbbMotivo.Text, txtDescricao.Text);
+
+            if (retorno == "")
+            {
+                MessageBox.Show("Ocorreu um erro ao abrir seu chamado. Por favor, tente novamente mais tarde");
+
+            }else if (retorno != "")
+            {
+                MessageBox.Show("Seu chamado foi cadastrado com sucesso! Sua ordem de serviço é : " + retorno);
+
+                txtDescricao.Text = "";
+                cbbMotivo.Text = "";
+            }
         }
 
         private void txtUsuario_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void label7_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cbbMotivo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cbbMotivo.Text != "" && txtDescricao.Text != "")
+            {
+                btnEnviar.Enabled = true;
+            }
+            else
+            {
+                btnEnviar.Enabled = false;
+            }
+        }
+
+        private void txtDescricao_TextChanged(object sender, EventArgs e)
+        {
+            if (cbbMotivo.Text != "" && txtDescricao.Text != "")
+            {
+                btnEnviar.Enabled = true;
+            }
+            else
+            {
+                btnEnviar.Enabled = false;
+            }
         }
     }
 }

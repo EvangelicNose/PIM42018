@@ -40,7 +40,7 @@
             this.txtUsuario = new System.Windows.Forms.TextBox();
             this.txtNome = new System.Windows.Forms.TextBox();
             this.txtEmpresa = new System.Windows.Forms.TextBox();
-            this.txtOBS = new System.Windows.Forms.TextBox();
+            this.txtDescricao = new System.Windows.Forms.TextBox();
             this.cbbMotivo = new System.Windows.Forms.ComboBox();
             this.btnAnexo = new System.Windows.Forms.Button();
             this.btnEnviar = new System.Windows.Forms.Button();
@@ -97,11 +97,12 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(11, 270);
+            this.label7.Location = new System.Drawing.Point(15, 270);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(68, 13);
+            this.label7.Size = new System.Drawing.Size(58, 13);
             this.label7.TabIndex = 6;
-            this.label7.Text = "Observação:";
+            this.label7.Text = "Descrição:";
+            this.label7.Click += new System.EventHandler(this.label7_Click);
             // 
             // lblData
             // 
@@ -148,13 +149,14 @@
             this.txtEmpresa.Size = new System.Drawing.Size(261, 20);
             this.txtEmpresa.TabIndex = 12;
             // 
-            // txtOBS
+            // txtDescricao
             // 
-            this.txtOBS.Location = new System.Drawing.Point(79, 267);
-            this.txtOBS.Multiline = true;
-            this.txtOBS.Name = "txtOBS";
-            this.txtOBS.Size = new System.Drawing.Size(373, 79);
-            this.txtOBS.TabIndex = 2;
+            this.txtDescricao.Location = new System.Drawing.Point(79, 267);
+            this.txtDescricao.Multiline = true;
+            this.txtDescricao.Name = "txtDescricao";
+            this.txtDescricao.Size = new System.Drawing.Size(373, 79);
+            this.txtDescricao.TabIndex = 2;
+            this.txtDescricao.TextChanged += new System.EventHandler(this.txtDescricao_TextChanged);
             // 
             // cbbMotivo
             // 
@@ -163,6 +165,7 @@
             this.cbbMotivo.Name = "cbbMotivo";
             this.cbbMotivo.Size = new System.Drawing.Size(372, 21);
             this.cbbMotivo.TabIndex = 1;
+            this.cbbMotivo.SelectedIndexChanged += new System.EventHandler(this.cbbMotivo_SelectedIndexChanged);
             // 
             // btnAnexo
             // 
@@ -175,6 +178,7 @@
             // 
             // btnEnviar
             // 
+            this.btnEnviar.Enabled = false;
             this.btnEnviar.Location = new System.Drawing.Point(477, 107);
             this.btnEnviar.Name = "btnEnviar";
             this.btnEnviar.Size = new System.Drawing.Size(75, 23);
@@ -206,7 +210,7 @@
             this.Controls.Add(this.btnEnviar);
             this.Controls.Add(this.btnAnexo);
             this.Controls.Add(this.cbbMotivo);
-            this.Controls.Add(this.txtOBS);
+            this.Controls.Add(this.txtDescricao);
             this.Controls.Add(this.txtEmpresa);
             this.Controls.Add(this.txtNome);
             this.Controls.Add(this.txtUsuario);
@@ -239,7 +243,7 @@
         private System.Windows.Forms.TextBox txtUsuario;
         private System.Windows.Forms.TextBox txtNome;
         private System.Windows.Forms.TextBox txtEmpresa;
-        private System.Windows.Forms.TextBox txtOBS;
+        private System.Windows.Forms.TextBox txtDescricao;
         private System.Windows.Forms.ComboBox cbbMotivo;
         private System.Windows.Forms.Button btnAnexo;
         private System.Windows.Forms.Button btnEnviar;

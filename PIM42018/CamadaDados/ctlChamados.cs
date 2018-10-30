@@ -3,82 +3,44 @@ using CamadaModelo;
 
 namespace CamadaDados
 {
-    public static class ctlChamados
+    public class ctlChamados
     {
-        public static void Abrir(string motivo, string descricao)
+        public static string Abrirchamado(string motivo, string descricao)
         {
             Conexao conexao = new Conexao();
 
-            OleDbCommand cmd = conexao.Comando(@"
+            conexao.abrir();
+
+            OleDbCommand cmdAbrir = conexao.Comando(@"
                 insert into tb_chamados
-                (idusuarios, nome, idempresas, idmotivos, obs) values
-                (@idusuario, @nome, @idempresa, @idmotivo, @obs)
+                (idusuarios, nome, empresa, motivo, descricao) values
+                (@idusuario, @nome, @empresa, @motivo, @obs)
             ");
 
-            // cmd.Parameters.AddWithValue("@idusuario", );
-        }
+            cmdAbrir.Parameters.AddWithValue("@idusuario", mdlUsuario.Logado.ID);
+            cmdAbrir.Parameters.AddWithValue("@nome", mdlUsuario.Logado.Nome);
+            cmdAbrir.Parameters.AddWithValue("@empresa", mdlEmpresa.Logado.NomeEmpresa);
+            cmdAbrir.Parameters.AddWithValue("@motivo", motivo);
+            cmdAbrir.Parameters.AddWithValue("@descicao", descricao);
 
-        public static string ConsultaUsuario(string usuario)
-        {
-            Conexao conexao = new Conexao();
-            OleDbCommand cmd = conexao.Comando("select id from tb_usuarios where usuarios = @usuario");
-            cmd.Parameters.AddWithValue("@usuario", usuario);
-            string id = "";
-            OleDbDataReader resultado = cmd.ExecuteReader();
-            if (resultado.Read())
-                id = resultado["id"].ToString();
-            resultado.Close();
-
-            string result = "";
-            string query2;
-            query2 = "SELECT nomes FROM tb_usuarios WHERE id = @id";
-            result = "nomes";
-            OleDbCommand cmd2 = conexao.Comando(query2);
-
-            cmd2.Parameters.AddWithValue("@id", id);
             string retorno = "";
-            resultado = cmd2.ExecuteReader();
-            if (resultado.Read())
-            {
-                retorno = resultado[result].ToString();
-            }
-            resultado.Close();
 
-            conexao.Fechar();
-            return retorno;
-        }
+            cmdAbrir.ExecuteNonQuery();
 
-        public static string ConsultaEmpresa(string empresa)
-        {
-            Conexao conexao = new Conexao();
-            OleDbCommand cmd = conexao.Comando(@"
-                select id from tb_usuarios
-                where usuarios = @usuario
-            ");
-            cmd.Parameters.AddWithValue("@usuario", empresa);
-            string id = "";
-            OleDbDataReader resultado = cmd.ExecuteReader();
-            if (resultado.Read())
-                id = resultado["id"].ToString();
-            resultado.Close();
-
-            string result = "";
-            result = "NomeEmpresa";
-            OleDbCommand cmd2 = conexao.Comando(@"
-                select NomeEmpresa from tb_empresas
-                where id = @id
+            OleDbCommand cmdOS = conexao.Comando(@"
+            select top 1 * from tb_chamados order by OS DESC
             ");
 
-            cmd2.Parameters.AddWithValue("@id", id);
-            string retorno = "";
-            resultado = cmd2.ExecuteReader();
-            if (resultado.Read())
+            OleDbDataReader reader = cmdOS.ExecuteReader();
+            
+            while (reader.Read())
             {
-                retorno = resultado[result].ToString();
-            }
-            resultado.Close();
+                retorno = reader["OS"].ToString();
 
+            }
+            reader.Close();
             conexao.Fechar();
+
             return retorno;
         }
     }
