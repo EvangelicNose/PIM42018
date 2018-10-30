@@ -2,19 +2,19 @@
 {
     public class mdlEmpresa
     {
-        public int ID { get; set; }
-        public string Usuario { get; set; }
-        string Senha { get; set; }
-        public string Nome { get; set; }
-        public string Nivel { get; set; }
+        public static mdlEmpresa Logado;
 
-        public mdlEmpresa(int id, string usuario, string senha, string nome, string nivel)
+        public int ID { get; }
+        public string NomeEmpresa { get; }
+        public string EnderecoEmpresa { get; }
+
+        public mdlEmpresa(int id, string nomeempresa, string enderecoempresa)
         {
             ID = id;
-            Usuario = usuario;
-            Senha = senha;
-            Nome = nome;
-            Nivel = nivel;
+            NomeEmpresa = nomeempresa;
+            EnderecoEmpresa = enderecoempresa;
         }
     }
+    
+
 }

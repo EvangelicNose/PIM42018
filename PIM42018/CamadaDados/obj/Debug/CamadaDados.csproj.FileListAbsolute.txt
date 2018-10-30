@@ -20,3 +20,4 @@ C:\Users\Very Good\Desktop\PIM4\PIM42018\PIM42018\CamadaDados\bin\Debug\CamadaDa
 C:\Users\Very Good\Desktop\PIM4\PIM42018\PIM42018\CamadaDados\bin\Debug\ClassLibrary1.dll
 C:\Users\Very Good\Desktop\PIM4\PIM42018\PIM42018\CamadaDados\bin\Debug\ClassLibrary1.pdb
 C:\Users\Very Good\Desktop\PIM4\PIM42018\PIM42018\CamadaDados\obj\Debug\CamadaDados.csproj.CopyComplete
+C:\Users\Very Good\Desktop\PIM4\PIM42018\PIM42018\CamadaDados\obj\Debug\CamadaDados.csprojAssemblyReference.cache

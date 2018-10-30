@@ -20,3 +20,4 @@ C:\Users\Very Good\Desktop\PIM4\PIM42018\PIM42018\ClassLibrary1\obj\Debug\Camada
 C:\Users\Very Good\Desktop\PIM4\PIM42018\PIM42018\ClassLibrary1\obj\Debug\ClassLibrary1.dll
 C:\Users\Very Good\Desktop\PIM4\PIM42018\PIM42018\ClassLibrary1\obj\Debug\ClassLibrary1.pdb
 /Users/lucas/Development/college/PIM42018/PIM42018/ClassLibrary1/obj/Debug/CamadaModelo.csprojResolveAssemblyReference.cache
+C:\Users\Very Good\Desktop\PIM4\PIM42018\PIM42018\ClassLibrary1\obj\Debug\CamadaModelo.csprojAssemblyReference.cache

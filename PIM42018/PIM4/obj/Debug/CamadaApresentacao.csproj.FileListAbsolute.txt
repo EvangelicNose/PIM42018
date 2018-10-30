@@ -1,18 +1,3 @@
-C:/Users/Very Good/Desktop/PIM4/PIM42018/PIM42018/PIM4/bin/Debug/PIM4.exe.config
-C:/Users/Very Good/Desktop/PIM4/PIM42018/PIM42018/PIM4/bin/Debug/PIM4.exe
-C:/Users/Very Good/Desktop/PIM4/PIM42018/PIM42018/PIM4/bin/Debug/PIM4.pdb
-C:/Users/Very Good/Desktop/PIM4/PIM42018/PIM42018/PIM4/obj/Debug/CamadaApresentacao.csprojAssemblyReference.cache
-C:/Users/Very Good/Desktop/PIM4/PIM42018/PIM42018/PIM4/obj/Debug/PIM4.frmAberturaChamados.resources
-C:/Users/Very Good/Desktop/PIM4/PIM42018/PIM42018/PIM4/obj/Debug/PIM4.frmListarChamado.resources
-C:/Users/Very Good/Desktop/PIM4/PIM42018/PIM42018/PIM4/obj/Debug/PIM4.frmLogin.resources
-C:/Users/Very Good/Desktop/PIM4/PIM42018/PIM42018/PIM4/obj/Debug/PIM4.frmMenu.resources
-C:/Users/Very Good/Desktop/PIM4/PIM42018/PIM42018/PIM4/obj/Debug/PIM4.Properties.Resources.resources
-C:/Users/Very Good/Desktop/PIM4/PIM42018/PIM42018/PIM4/obj/Debug/CamadaApresentacao.csproj.GenerateResource.cache
-C:/Users/Very Good/Desktop/PIM4/PIM42018/PIM42018/PIM4/obj/Debug/CamadaApresentacao.csproj.CoreCompileInputs.cache
-C:/Users/Very Good/Desktop/PIM4/PIM42018/PIM42018/PIM4/obj/Debug/PIM4.exe
-C:/Users/Very Good/Desktop/PIM4/PIM42018/PIM42018/PIM4/obj/Debug/PIM4.pdb
-C:/Users/Very Good/Desktop/PIM4/PIM42018/PIM42018/PIM4/obj/Debug/Interop.ADOX.dll
-C:/Users/Very Good/Desktop/PIM4/PIM42018/PIM42018/PIM4/obj/Debug/CamadaApresentacao.csproj.ResolveComReference.cache
 D:/PIM4/PIM42018/PIM42018/PIM4/obj/Debug/CamadaApresentacao.csprojResolveAssemblyReference.cache
 D:/PIM4/PIM42018/PIM42018/PIM4/obj/Debug/Interop.ADOX.dll
 D:/PIM4/PIM42018/PIM42018/PIM4/obj/Debug/CamadaApresentacao.csproj.ResolveComReference.cache
@@ -32,11 +17,26 @@ D:/PIM4/PIM42018/PIM42018/PIM4/bin/Debug/CamadaDados.dll
 D:/PIM4/PIM42018/PIM42018/PIM4/bin/Debug/ClassLibrary1.dll
 D:/PIM4/PIM42018/PIM42018/PIM4/bin/Debug/CamadaDados.pdb
 D:/PIM4/PIM42018/PIM42018/PIM4/bin/Debug/ClassLibrary1.pdb
-C:/Users/Very Good/Desktop/PIM4/PIM42018/PIM42018/PIM4/bin/Debug/CamadaDados.dll
-C:/Users/Very Good/Desktop/PIM4/PIM42018/PIM42018/PIM4/bin/Debug/ClassLibrary1.dll
-C:/Users/Very Good/Desktop/PIM4/PIM42018/PIM42018/PIM4/bin/Debug/CamadaDados.pdb
-C:/Users/Very Good/Desktop/PIM4/PIM42018/PIM42018/PIM4/bin/Debug/ClassLibrary1.pdb
-C:/Users/Very Good/Desktop/PIM4/PIM42018/PIM42018/PIM4/obj/Debug/CamadaApresentacao.csproj.CopyComplete
 /Users/lucas/Development/college/PIM42018/PIM42018/PIM4/obj/Debug/CamadaApresentacao.csprojResolveAssemblyReference.cache
 /Users/lucas/Development/college/PIM42018/PIM42018/PIM4/obj/Debug/PIM4.exe
 /Users/lucas/Development/college/PIM42018/PIM42018/PIM4/obj/Debug/PIM4.pdb
+C:\Users\Very Good\Desktop\PIM4\PIM42018\PIM42018\PIM4\bin\Debug\PIM4.exe.config
+C:\Users\Very Good\Desktop\PIM4\PIM42018\PIM42018\PIM4\bin\Debug\PIM4.exe
+C:\Users\Very Good\Desktop\PIM4\PIM42018\PIM42018\PIM4\bin\Debug\PIM4.pdb
+C:\Users\Very Good\Desktop\PIM4\PIM42018\PIM42018\PIM4\bin\Debug\CamadaDados.dll
+C:\Users\Very Good\Desktop\PIM4\PIM42018\PIM42018\PIM4\bin\Debug\ClassLibrary1.dll
+C:\Users\Very Good\Desktop\PIM4\PIM42018\PIM42018\PIM4\bin\Debug\CamadaDados.pdb
+C:\Users\Very Good\Desktop\PIM4\PIM42018\PIM42018\PIM4\bin\Debug\ClassLibrary1.pdb
+C:\Users\Very Good\Desktop\PIM4\PIM42018\PIM42018\PIM4\obj\Debug\Interop.ADOX.dll
+C:\Users\Very Good\Desktop\PIM4\PIM42018\PIM42018\PIM4\obj\Debug\CamadaApresentacao.csproj.ResolveComReference.cache
+C:\Users\Very Good\Desktop\PIM4\PIM42018\PIM42018\PIM4\obj\Debug\PIM4.frmAberturaChamados.resources
+C:\Users\Very Good\Desktop\PIM4\PIM42018\PIM42018\PIM4\obj\Debug\PIM4.frmListarChamado.resources
+C:\Users\Very Good\Desktop\PIM4\PIM42018\PIM42018\PIM4\obj\Debug\PIM4.frmLogin.resources
+C:\Users\Very Good\Desktop\PIM4\PIM42018\PIM42018\PIM4\obj\Debug\PIM4.frmMenu.resources
+C:\Users\Very Good\Desktop\PIM4\PIM42018\PIM42018\PIM4\obj\Debug\PIM4.Properties.Resources.resources
+C:\Users\Very Good\Desktop\PIM4\PIM42018\PIM42018\PIM4\obj\Debug\CamadaApresentacao.csproj.GenerateResource.cache
+C:\Users\Very Good\Desktop\PIM4\PIM42018\PIM42018\PIM4\obj\Debug\CamadaApresentacao.csproj.CoreCompileInputs.cache
+C:\Users\Very Good\Desktop\PIM4\PIM42018\PIM42018\PIM4\obj\Debug\CamadaApresentacao.csproj.CopyComplete
+C:\Users\Very Good\Desktop\PIM4\PIM42018\PIM42018\PIM4\obj\Debug\PIM4.exe
+C:\Users\Very Good\Desktop\PIM4\PIM42018\PIM42018\PIM4\obj\Debug\PIM4.pdb
+C:\Users\Very Good\Desktop\PIM4\PIM42018\PIM42018\PIM4\obj\Debug\CamadaApresentacao.csprojAssemblyReference.cache

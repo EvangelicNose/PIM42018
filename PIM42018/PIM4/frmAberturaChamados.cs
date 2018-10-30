@@ -19,10 +19,9 @@ namespace PIM4
             DateTime DataHoje = DateTime.Today;
             lblData.Text = DataHoje.ToString("dd/MM/yyyy");
             txtNome.Text = mdlUsuario.Logado.Nome;
+            txtEmpresa.Text = mdlEmpresa.Logado.NomeEmpresa;
+            txtUsuario.Text = mdlUsuario.Logado.Usuario;
             txtUsuario.Text = "";
-            // txtUsuario.Text = _mdlusuario.Usuario;
-            // txtEmpresa.Text = ctlChamados.ConsultaEmpresa(txtUsuario.Text);
-            // txtNome.Text = ctlChamados.ConsultaUsuario(txtUsuario.Text);
         }
 
         private void lblHora_Click(object sender, EventArgs e)
