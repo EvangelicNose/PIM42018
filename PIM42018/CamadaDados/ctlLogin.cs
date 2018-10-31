@@ -28,22 +28,22 @@ namespace CamadaDados
                     nome: reader["nomes"].ToString(),
                     nivel: reader["nivelAcesso"].ToString(),
                     usuario: reader["usuarios"].ToString(),
-                    idempresa: Convert.ToInt32(reader["IDempresa"])
+                    idempresa: Convert.ToInt32(reader["id"])
                 );
                 
             }
             reader.Close();
 
-            query = "select top 1 * from tb_empresas where IDEmpresas = @idempresas";
+            query = "select top 1 * from tb_empresas where id = @idempresas";
             OleDbCommand cmdEmpresa = new OleDbCommand(query, conexao.GetConexao());
             cmdEmpresa.Parameters.AddWithValue("@idempresas", mdlUsuario.Logado.IDempresa);
             reader = cmdEmpresa.ExecuteReader();
             while (reader.Read())
             {
                 mdlEmpresa.Logado = new mdlEmpresa(
-                    id: Convert.ToInt32(reader["IDEmpresas"]),
-                    nomeempresa: reader["NomeEmpresa"].ToString(),
-                    enderecoempresa: reader["Endereco"].ToString()
+                    id: Convert.ToInt32(reader["id"]),
+                    nomeempresa: reader["nome"].ToString(),
+                    enderecoempresa: reader["endereco"].ToString()
                     );
             }
             reader.Close();

@@ -40,3 +40,24 @@ C:\Users\Very Good\Desktop\PIM4\PIM42018\PIM42018\PIM4\obj\Debug\CamadaApresenta
 C:\Users\Very Good\Desktop\PIM4\PIM42018\PIM42018\PIM4\obj\Debug\PIM4.exe
 C:\Users\Very Good\Desktop\PIM4\PIM42018\PIM42018\PIM4\obj\Debug\PIM4.pdb
 C:\Users\Very Good\Desktop\PIM4\PIM42018\PIM42018\PIM4\obj\Debug\CamadaApresentacao.csprojAssemblyReference.cache
+D:\Pim4\EvangelicNose\PIM42018\PIM42018\PIM4\bin\Debug\PIM4.exe.config
+D:\Pim4\EvangelicNose\PIM42018\PIM42018\PIM4\bin\Debug\PIM4.exe
+D:\Pim4\EvangelicNose\PIM42018\PIM42018\PIM4\bin\Debug\PIM4.pdb
+D:\Pim4\EvangelicNose\PIM42018\PIM42018\PIM4\bin\Debug\CamadaDados.dll
+D:\Pim4\EvangelicNose\PIM42018\PIM42018\PIM4\bin\Debug\ClassLibrary1.dll
+D:\Pim4\EvangelicNose\PIM42018\PIM42018\PIM4\bin\Debug\CamadaDados.pdb
+D:\Pim4\EvangelicNose\PIM42018\PIM42018\PIM4\bin\Debug\ClassLibrary1.pdb
+D:\Pim4\EvangelicNose\PIM42018\PIM42018\PIM4\obj\Debug\CamadaApresentacao.csprojResolveAssemblyReference.cache
+D:\Pim4\EvangelicNose\PIM42018\PIM42018\PIM4\obj\Debug\Interop.ADOX.dll
+D:\Pim4\EvangelicNose\PIM42018\PIM42018\PIM4\obj\Debug\CamadaApresentacao.csproj.ResolveComReference.cache
+D:\Pim4\EvangelicNose\PIM42018\PIM42018\PIM4\obj\Debug\PIM4.frmAberturaChamados.resources
+D:\Pim4\EvangelicNose\PIM42018\PIM42018\PIM4\obj\Debug\PIM4.frmListarChamado.resources
+D:\Pim4\EvangelicNose\PIM42018\PIM42018\PIM4\obj\Debug\PIM4.frmLogin.resources
+D:\Pim4\EvangelicNose\PIM42018\PIM42018\PIM4\obj\Debug\PIM4.frmMenu.resources
+D:\Pim4\EvangelicNose\PIM42018\PIM42018\PIM4\obj\Debug\PIM4.Properties.Resources.resources
+D:\Pim4\EvangelicNose\PIM42018\PIM42018\PIM4\obj\Debug\CamadaApresentacao.csproj.GenerateResource.Cache
+D:\Pim4\EvangelicNose\PIM42018\PIM42018\PIM4\obj\Debug\CamadaApresentacao.csproj.CoreCompileInputs.cache
+D:\Pim4\EvangelicNose\PIM42018\PIM42018\PIM4\obj\Debug\PIM4.exe
+D:\Pim4\EvangelicNose\PIM42018\PIM42018\PIM4\obj\Debug\PIM4.pdb
+D:\Pim4\EvangelicNose\PIM42018\PIM42018\PIM4\obj\Debug\PIM4.frmManutencaoEmpresas.resources
+D:\Pim4\EvangelicNose\PIM42018\PIM42018\PIM4\obj\Debug\PIM4.frmManutencaoUsuario.resources

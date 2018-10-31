@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using CamadaModelo;
+using CamadaDados;
 
 namespace PIM4
 {
@@ -40,6 +42,27 @@ namespace PIM4
             frmListarChamado _frmListarChamado = new frmListarChamado();
             _frmListarChamado.MdiParent = this;
             _frmListarChamado.Show();
+        }
+
+        private void usuáriosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmManutencaoUsuario _frmUsuario = new frmManutencaoUsuario();
+            _frmUsuario.MdiParent = this;
+            _frmUsuario.Show();
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void empresasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmManutencaoEmpresas _frmEmpresas = new frmManutencaoEmpresas();
+            _frmEmpresas.MdiParent = this;
+            _frmEmpresas.Show();
+
         }
     }
 }

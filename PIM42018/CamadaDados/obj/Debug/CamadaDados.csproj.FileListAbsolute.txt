@@ -21,3 +21,11 @@ C:\Users\Very Good\Desktop\PIM4\PIM42018\PIM42018\CamadaDados\bin\Debug\ClassLib
 C:\Users\Very Good\Desktop\PIM4\PIM42018\PIM42018\CamadaDados\bin\Debug\ClassLibrary1.pdb
 C:\Users\Very Good\Desktop\PIM4\PIM42018\PIM42018\CamadaDados\obj\Debug\CamadaDados.csproj.CopyComplete
 C:\Users\Very Good\Desktop\PIM4\PIM42018\PIM42018\CamadaDados\obj\Debug\CamadaDados.csprojAssemblyReference.cache
+D:\Pim4\EvangelicNose\PIM42018\PIM42018\CamadaDados\bin\Debug\CamadaDados.dll
+D:\Pim4\EvangelicNose\PIM42018\PIM42018\CamadaDados\bin\Debug\CamadaDados.pdb
+D:\Pim4\EvangelicNose\PIM42018\PIM42018\CamadaDados\bin\Debug\ClassLibrary1.dll
+D:\Pim4\EvangelicNose\PIM42018\PIM42018\CamadaDados\bin\Debug\ClassLibrary1.pdb
+D:\Pim4\EvangelicNose\PIM42018\PIM42018\CamadaDados\obj\Debug\CamadaDados.csprojResolveAssemblyReference.cache
+D:\Pim4\EvangelicNose\PIM42018\PIM42018\CamadaDados\obj\Debug\CamadaDados.csproj.CoreCompileInputs.cache
+D:\Pim4\EvangelicNose\PIM42018\PIM42018\CamadaDados\obj\Debug\CamadaDados.dll
+D:\Pim4\EvangelicNose\PIM42018\PIM42018\CamadaDados\obj\Debug\CamadaDados.pdb

@@ -41,6 +41,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="mdlChamados.cs" />
+    <Compile Include="mdlManutecaoEmpresas.cs" />
+    <Compile Include="mdlManutencaoUsuario.cs" />
     <Compile Include="mdlUsuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="mdlEmpresa.cs" />

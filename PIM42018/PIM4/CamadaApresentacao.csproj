@@ -45,6 +45,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ctlManutencaoUsuario.cs" />
     <Compile Include="frmAberturaChamados.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -63,6 +64,18 @@
     <Compile Include="frmLogin.Designer.cs">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmManutencaoEmpresas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmManutencaoEmpresas.Designer.cs">
+      <DependentUpon>frmManutencaoEmpresas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmManutencaoUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmManutencaoUsuario.Designer.cs">
+      <DependentUpon>frmManutencaoUsuario.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmMenu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -79,6 +92,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmManutencaoEmpresas.resx">
+      <DependentUpon>frmManutencaoEmpresas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmManutencaoUsuario.resx">
+      <DependentUpon>frmManutencaoUsuario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmMenu.resx">
       <DependentUpon>frmMenu.cs</DependentUpon>
