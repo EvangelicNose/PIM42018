@@ -28,7 +28,7 @@ namespace CamadaDados
                     nome: reader["nomes"].ToString(),
                     nivel: reader["nivelAcesso"].ToString(),
                     usuario: reader["usuarios"].ToString(),
-                    idempresa: Convert.ToInt32(reader["id"])
+                    idempresa: Convert.ToInt32(reader["idempresas"])
                 );
                 
             }
@@ -42,8 +42,8 @@ namespace CamadaDados
             {
                 mdlEmpresa.Logado = new mdlEmpresa(
                     id: Convert.ToInt32(reader["id"]),
-                    nomeempresa: reader["nome"].ToString(),
-                    enderecoempresa: reader["endereco"].ToString()
+                    nomeempresa: reader["nomes"].ToString(),
+                    enderecoempresa: reader["enderecos"].ToString()
                     );
             }
             reader.Close();
