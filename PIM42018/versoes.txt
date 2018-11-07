@@ -1,6 +1,9 @@
 Login
 v1.35 
 string para lembrar usuario
+v1.444
+shake quando erra 2x
+enter dos 2 campos
 
 Menu Principal
 v1.04 

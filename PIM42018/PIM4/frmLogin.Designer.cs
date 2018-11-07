@@ -76,6 +76,7 @@
             this.txtUsuario.Name = "txtUsuario";
             this.txtUsuario.Size = new System.Drawing.Size(100, 20);
             this.txtUsuario.TabIndex = 1;
+            this.txtUsuario.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtUsuario_KeyPress);
             // 
             // txtSenha
             // 
@@ -84,6 +85,7 @@
             this.txtSenha.PasswordChar = '*';
             this.txtSenha.Size = new System.Drawing.Size(100, 20);
             this.txtSenha.TabIndex = 2;
+            this.txtSenha.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Enter);
             // 
             // lblERRO
             // 
@@ -106,6 +108,7 @@
             this.btnEntrar2.Text = "Entrar";
             this.btnEntrar2.UseVisualStyleBackColor = true;
             this.btnEntrar2.Click += new System.EventHandler(this.btnEntrar2_Click);
+            this.btnEntrar2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.btnEntrar2_KeyPress);
             // 
             // timer1
             // 
@@ -116,9 +119,9 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(12, 201);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(76, 13);
+            this.label2.Size = new System.Drawing.Size(82, 13);
             this.label2.TabIndex = 8;
-            this.label2.Text = "v1.34->v1.351";
+            this.label2.Text = "v1.351->v1.444";
             // 
             // frmLogin
             // 

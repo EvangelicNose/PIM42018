@@ -29,13 +29,11 @@ namespace PIM4
         private void frmMenu_Load(object sender, EventArgs e)
         {
             this.Text = "Menus Principal - Usuário: " + frmLogin.UsuarioConectado;
-
-            //+ mdlUsuario.Logado.Nome;
+            //   frmLogin.UsuarioConectado;
+            //   mdlUsuario.Logado.Nome;
             //   mdlUsuario.Logado.Nome;
             //   mdlEmpresa.Logado.NomeEmpresa +
             //   mdlUsuario.Logado.Usuario;
-
-
         }
 
         private void sairToolStripMenuItem_Click(object sender, EventArgs e)

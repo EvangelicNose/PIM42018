@@ -30,10 +30,10 @@ namespace PIM4
 
         public static string UsuarioConectado;
 
-        void btnEntrar2_Click(object sender, EventArgs e)
+        void Entrar()
         {
             // mdlUsuario _mdlusuario = new mdlUsuario();
-  
+
             Conexao conexao = new Conexao();
             conexao.abrir();
 
@@ -45,20 +45,20 @@ namespace PIM4
             OleDbDataReader dr = cmd.ExecuteReader();
             int branco = 0;
 
-            if (txtUsuario.Text=="")
+            if (txtUsuario.Text == "")
             {
                 MessageBox.Show("Usuário não pode ficar em branco !");
                 branco = 1;
                 txtUsuario.Focus();
             }
-            else if (txtSenha.Text=="")
+            else if (txtSenha.Text == "")
             {
                 MessageBox.Show("Senha não pode ficar em branco !");
                 branco = 1;
                 txtSenha.Focus();
             }
 
-            if (dr.Read() && branco ==0)
+            if (dr.Read() && branco == 0)
             {
                 UsuarioConectado = txtUsuario.Text;
                 frmMenu _frmmenu = new frmMenu();
@@ -69,13 +69,33 @@ namespace PIM4
                 ctlLogin.GuardarDados(UsuarioConectado);
 
             }
-            else if (branco ==0)
+            else if (branco == 0)
             {
                 lblERRO.Visible = true;
                 txtSenha.Text = "";
                 txtSenha.Focus();
-                IniciaContagem();
+                Mexer();
+                //  IniciaContagem();
             }
+        }
+
+        void btnEntrar2_Click(object sender, EventArgs e)
+        {
+            Entrar();
+        }
+
+        void Mexer()
+        {
+            var original = lblERRO.Location;
+            var rnd = new Random(1337);
+            const int shake_amplitude = 10;
+            for (int i = 0; i < 10; i++)
+            {
+                lblERRO.Location = new System.Drawing.Point (original.X + rnd.Next(-shake_amplitude, shake_amplitude), original.Y + rnd.Next(-shake_amplitude, shake_amplitude));
+                System.Threading.Thread.Sleep(20);
+            }
+            lblERRO.Location = original;
+            IniciaContagem();
         }
 
         void IniciaContagem()
@@ -87,11 +107,34 @@ namespace PIM4
         void timer1_Tick(object sender, EventArgs e)
         {
             lblERRO.Visible = false;
+            timer1.Stop();
         }
 
         void lblERRO_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnEntrar2_KeyPress(object sender, KeyPressEventArgs e)
+        {
+
+        }
+
+        private void Enter(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 13)
+            {
+                Entrar();
+            }
+
+        }
+
+        private void txtUsuario_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 13)
+            {
+                txtSenha.Focus();
+            }
         }
     }
 }
