@@ -7,7 +7,7 @@
         public string Senha { get; set; }
         public string Telefone { get; set; }
         public string Nivel { get; set; }
-        public string Empresa { get; set; }
+        public int Empresa { get; set; }
     }
 
 }

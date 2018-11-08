@@ -17,26 +17,26 @@ namespace CamadaDados
         {
             Conexao conexao = new Conexao();
             conexao.abrir();
-            string query = "insert into tb_empresas(nomes, telefones, enderecos) values(@nomes, @telefones, @enderecos)";
+            string query = "insert into tb_empresas(nome, telefone, endereco) values(@nome, @telefone, @endereco)";
             OleDbCommand cmd = new OleDbCommand(query, conexao.GetConexao());
 
-            var pmtnomes = cmd.CreateParameter();
-            pmtnomes.ParameterName = "@nomes";
-            pmtnomes.DbType = DbType.String;
-            pmtnomes.Value = _mdlManutencaoEmpresas.Nome;
-            cmd.Parameters.Add(pmtnomes);
+            var pmtnome = cmd.CreateParameter();
+            pmtnome.ParameterName = "@nome";
+            pmtnome.DbType = DbType.String;
+            pmtnome.Value = _mdlManutencaoEmpresas.Nome;
+            cmd.Parameters.Add(pmtnome);
 
-            var pmttelefones = cmd.CreateParameter();
-            pmttelefones.ParameterName = "@telefones";
-            pmttelefones.DbType = DbType.String;
-            pmttelefones.Value = _mdlManutencaoEmpresas.Telefone;
-            cmd.Parameters.Add(pmttelefones);
+            var pmttelefone = cmd.CreateParameter();
+            pmttelefone.ParameterName = "@telefone";
+            pmttelefone.DbType = DbType.String;
+            pmttelefone.Value = _mdlManutencaoEmpresas.Telefone;
+            cmd.Parameters.Add(pmttelefone);
 
-            var pmtenderecos = cmd.CreateParameter();
-            pmtenderecos.ParameterName = "@enderecos";
-            pmtenderecos.DbType = DbType.String;
-            pmtenderecos.Value = _mdlManutencaoEmpresas.Endereco;
-            cmd.Parameters.Add(pmtenderecos);
+            var pmtendereco = cmd.CreateParameter();
+            pmtendereco.ParameterName = "@endereco";
+            pmtendereco.DbType = DbType.String;
+            pmtendereco.Value = _mdlManutencaoEmpresas.Endereco;
+            cmd.Parameters.Add(pmtendereco);
 
             if (cmd.ExecuteNonQuery() > 0)
             {

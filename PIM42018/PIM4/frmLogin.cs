@@ -37,9 +37,9 @@ namespace PIM4
             Conexao conexao = new Conexao();
             conexao.abrir();
 
-            OleDbCommand cmd = conexao.Comando("select * from tb_usuarios where usuarios=@Usuarios and senhas=@Senha");
+            OleDbCommand cmd = conexao.Comando("select * from tb_usuarios where usuario=@Usuario and senha=@Senha");
 
-            cmd.Parameters.AddWithValue("@Usuarios", txtUsuario.Text);
+            cmd.Parameters.AddWithValue("@Usuario", txtUsuario.Text);
             cmd.Parameters.AddWithValue("@Senha", txtSenha.Text);
 
             OleDbDataReader dr = cmd.ExecuteReader();
@@ -75,7 +75,6 @@ namespace PIM4
                 txtSenha.Text = "";
                 txtSenha.Focus();
                 Mexer();
-                //  IniciaContagem();
             }
         }
 

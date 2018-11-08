@@ -17,29 +17,29 @@ namespace CamadaDados
         {
             Conexao conexao = new Conexao();
             conexao.abrir();
-            string query = "insert into tb_usuarios(usuarios, nomes, senhas, telefones, nivelAcesso, idempresas) values(@usuarios, @nomes, @senhas, @telefones, @nivelAcesso, @idempresas)";
+            string query = "insert into tb_usuarios(usuario, nome, senha, telefone, nivelAcesso, fk_idempresa) values(@usuario, @nome, @senha, @telefone, @nivelAcesso, @fk_idempresa)";
             OleDbCommand cmd = new OleDbCommand(query, conexao.GetConexao());
             
             var pmtusuarios = cmd.CreateParameter();
-            pmtusuarios.ParameterName = "@usuarios";
+            pmtusuarios.ParameterName = "@usuario";
             pmtusuarios.DbType = DbType.String;
             pmtusuarios.Value = _mdlManutencaoUsuario.Usuario;
             cmd.Parameters.Add(pmtusuarios);
 
             var pmtnomes = cmd.CreateParameter();
-            pmtnomes.ParameterName = "@nomes";
+            pmtnomes.ParameterName = "@nome";
             pmtnomes.DbType = DbType.String;
             pmtnomes.Value = _mdlManutencaoUsuario.Nome;
             cmd.Parameters.Add(pmtnomes);
 
             var pmtsenhas = cmd.CreateParameter();
-            pmtsenhas.ParameterName = "@senhas";
+            pmtsenhas.ParameterName = "@senha";
             pmtsenhas.DbType = DbType.String;
             pmtsenhas.Value = _mdlManutencaoUsuario.Senha;
             cmd.Parameters.Add(pmtsenhas);
 
             var pmttelefones = cmd.CreateParameter();
-            pmttelefones.ParameterName = "@telefones";
+            pmttelefones.ParameterName = "@telefone";
             pmttelefones.DbType = DbType.String;
             pmttelefones.Value = _mdlManutencaoUsuario.Senha;
             cmd.Parameters.Add(pmttelefones);
@@ -51,7 +51,7 @@ namespace CamadaDados
             cmd.Parameters.Add(pmtnivelAcesso);
 
             var pmtidempresas = cmd.CreateParameter();
-            pmtidempresas.ParameterName = "@idempresas";
+            pmtidempresas.ParameterName = "@fk_idempresa";
             pmtidempresas.DbType = DbType.String;
             pmtidempresas.Value = _mdlManutencaoUsuario.Empresa;
             cmd.Parameters.Add(pmtidempresas);

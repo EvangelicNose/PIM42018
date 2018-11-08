@@ -95,7 +95,7 @@ namespace PIM4
                 _mdlManutencaoUsuario.Nome = txtNome.Text;
                 _mdlManutencaoUsuario.Senha = txtSenha.Text;
                 _mdlManutencaoUsuario.Nivel = nivel;
-                _mdlManutencaoUsuario.Empresa = idd;
+                _mdlManutencaoUsuario.Empresa = cbEmpresas.SelectedIndex+1;
 
                 bool retorno1 = _ctlManutencaoUsuario.InserirUsuarioMDL(_mdlManutencaoUsuario);
                 if (retorno1)
@@ -123,7 +123,6 @@ namespace PIM4
         {
 
         }
-        string idd = "";
 
         private void frmManutencaoUsuario_Load(object sender, EventArgs e)
         {
@@ -135,11 +134,9 @@ namespace PIM4
 
             while (ler.Read())
             {
-                
-                cbEmpresas.Items.Add(ler["nomes"].ToString());
-                idd = (ler["id"].ToString());
-
+                cbEmpresas.Items.Add(ler["nome"].ToString());
             }
+           
             conexao.Fechar();
 
         }

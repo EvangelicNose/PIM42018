@@ -13,8 +13,8 @@ namespace CamadaDados
 
             OleDbCommand cmdAbrir = conexao.Comando(@"
                 insert into tb_chamados
-                (idusuarios, nome, empresa, motivo, descricao) values
-                (@idusuario, @nome, @empresa, @motivo, @obs)
+                (fk_idusuario, fk_idmotivo, fk_idstatus, descricao) values
+                (@fk_idusuario, @fk_idmotivo, @fk_idstatus, @obs)
             ");
 
             cmdAbrir.Parameters.AddWithValue("@idusuario", mdlUsuario.Logado.ID);
