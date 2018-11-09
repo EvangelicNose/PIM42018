@@ -24,6 +24,8 @@ namespace helpdesk2018.View
             lbUsuario.Text = mdlUsuario.Logado.Usuario;
             ctlMotivo.CarregaDados();
             cbbMotivo.Text="Selecione o motivo...";
+            cbbMotivo.Items.Clear();
+            cbbMotivo.Refresh();
             for (int i = 0; i < ctlMotivo.motivo.Count; i++)
             {
                 cbbMotivo.Items.Add(ctlMotivo.motivo[i].ToString());

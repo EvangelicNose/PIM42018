@@ -18,13 +18,14 @@ namespace helpdesk2018.Controller
             string query = "select * from tb_motivos";
             OleDbCommand cmd = new OleDbCommand(query, conexao.GetConexao());
             OleDbDataReader reader = cmd.ExecuteReader();
-
+            motivo.Clear();
         int i = 0;
             while (reader.Read())
             {
                 motivo.Add(reader["descricao"].ToString());      
             }
             reader.Close();
+            conexao.Fechar();
         }
     }
 }
