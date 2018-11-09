@@ -46,11 +46,7 @@ namespace helpdesk2018.View
             //   mdlUsuario.Logado.Usuario;
         }
 
-        private void sairToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Close();
 
-        }
 
         private void listarChamadosToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -78,6 +74,19 @@ namespace helpdesk2018.View
             _frmEmpresas.MdiParent = this;
             _frmEmpresas.Show();
 
+        }
+
+        private void finalizarSistemaToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void fazerLogoffToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            frmLogin login = new frmLogin();
+            this.Hide();
+            login.ShowDialog();
+            this.Close();
         }
     }
 }
