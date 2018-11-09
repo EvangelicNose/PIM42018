@@ -21,9 +21,18 @@ namespace helpdesk2018.View
 
         private void abrirChamadosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmAberturaChamados _frmaberturachamados = new frmAberturaChamados();
-            _frmaberturachamados.MdiParent = this;
-            _frmaberturachamados.Show();
+            if (Application.OpenForms["frmAberturaChamados"] == null)
+
+            {
+                frmAberturaChamados _frmaberturachamados = new frmAberturaChamados();
+                _frmaberturachamados.MdiParent = this;
+                _frmaberturachamados.Show();
+            }
+            else
+            {
+                if (MessageBox.Show("Finalize a sessão aberta para continuar!", "Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Warning) == DialogResult.OK)
+                    return;
+            }
         }
 
         private void frmMenu_Load(object sender, EventArgs e)

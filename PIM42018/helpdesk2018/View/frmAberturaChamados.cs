@@ -17,9 +17,9 @@ namespace helpdesk2018.View
         {
             DateTime DataHoje = DateTime.Today;
             lblData.Text = DataHoje.ToString("dd/MM/yyyy");
-            txtNome.Text = mdlUsuario.Logado.Nome;
-            txtEmpresa.Text = mdlEmpresa.Logado.NomeEmpresa;
-            txtUsuario.Text = mdlUsuario.Logado.Usuario;
+            lbNome.Text = mdlUsuario.Logado.Nome;
+            lbEmpresa.Text = mdlEmpresa.Logado.NomeEmpresa;
+            lbUsuario.Text = mdlUsuario.Logado.Usuario;
         }
 
         private void lblHora_Click(object sender, EventArgs e)

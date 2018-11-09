@@ -41,3 +41,4 @@ F:\GitHub\PIM42018\PIM42018\PIM42018\helpdesk2018\obj\Debug\helpdesk2018.csproj.
 F:\GitHub\PIM42018\PIM42018\PIM42018\helpdesk2018\obj\Debug\helpdesk2018.csproj.CoreCompileInputs.cache
 F:\GitHub\PIM42018\PIM42018\PIM42018\helpdesk2018\obj\Debug\helpdesk2018.exe
 F:\GitHub\PIM42018\PIM42018\PIM42018\helpdesk2018\obj\Debug\helpdesk2018.pdb
+F:\GitHub\PIM42018\PIM42018\PIM42018\helpdesk2018\obj\Debug\helpdesk2018.csprojAssemblyReference.cache

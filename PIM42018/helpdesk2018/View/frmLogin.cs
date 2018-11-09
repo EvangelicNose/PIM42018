@@ -64,8 +64,8 @@ namespace helpdesk2018.View
                 conexao.Fechar();
                 ctlLogin.GuardarDados(UsuarioConectado);
                 frmMenu _frmmenu = new frmMenu();
-                _frmmenu.ShowDialog();
                 this.Hide();
+                _frmmenu.ShowDialog();
                 this.Close();
             }
             else if (branco == 0)
