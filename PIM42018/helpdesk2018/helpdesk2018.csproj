@@ -50,11 +50,11 @@
     <Compile Include="Controller\ctlLogin.cs" />
     <Compile Include="Controller\ctlManutencaoEmpresas.cs" />
     <Compile Include="Controller\ctlManutencaoUsuario.cs" />
-    <Compile Include="Controller\mdlChamados.cs" />
-    <Compile Include="Controller\mdlEmpresa.cs" />
-    <Compile Include="Controller\mdlManutecaoEmpresas.cs" />
-    <Compile Include="Controller\mdlManutencaoUsuario.cs" />
-    <Compile Include="Controller\mdlUsuario.cs" />
+    <Compile Include="Model\mdlChamados.cs" />
+    <Compile Include="Model\mdlEmpresa.cs" />
+    <Compile Include="Model\mdlManutecaoEmpresas.cs" />
+    <Compile Include="Model\mdlManutencaoUsuario.cs" />
+    <Compile Include="Model\mdlUsuario.cs" />
     <Compile Include="Model\Conexao.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

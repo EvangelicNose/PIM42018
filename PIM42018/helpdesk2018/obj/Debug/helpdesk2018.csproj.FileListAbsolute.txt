@@ -27,3 +27,17 @@ D:\Pim4\PIM42018\helpdesk2018\obj\Debug\helpdesk2018.csproj.GenerateResource.Cac
 D:\Pim4\PIM42018\helpdesk2018\obj\Debug\helpdesk2018.csproj.CoreCompileInputs.cache
 D:\Pim4\PIM42018\helpdesk2018\obj\Debug\helpdesk2018.exe
 D:\Pim4\PIM42018\helpdesk2018\obj\Debug\helpdesk2018.pdb
+F:\GitHub\PIM42018\PIM42018\PIM42018\helpdesk2018\bin\Debug\helpdesk2018.exe.config
+F:\GitHub\PIM42018\PIM42018\PIM42018\helpdesk2018\bin\Debug\helpdesk2018.exe
+F:\GitHub\PIM42018\PIM42018\PIM42018\helpdesk2018\bin\Debug\helpdesk2018.pdb
+F:\GitHub\PIM42018\PIM42018\PIM42018\helpdesk2018\obj\Debug\helpdesk2018.Properties.Resources.resources
+F:\GitHub\PIM42018\PIM42018\PIM42018\helpdesk2018\obj\Debug\helpdesk2018.View.frmAberturaChamados.resources
+F:\GitHub\PIM42018\PIM42018\PIM42018\helpdesk2018\obj\Debug\helpdesk2018.frmListarChamado.resources
+F:\GitHub\PIM42018\PIM42018\PIM42018\helpdesk2018\obj\Debug\helpdesk2018.View.frmLogin.resources
+F:\GitHub\PIM42018\PIM42018\PIM42018\helpdesk2018\obj\Debug\helpdesk2018.View.frmManutencaoEmpresas.resources
+F:\GitHub\PIM42018\PIM42018\PIM42018\helpdesk2018\obj\Debug\helpdesk2018.frmManutencaoUsuario.resources
+F:\GitHub\PIM42018\PIM42018\PIM42018\helpdesk2018\obj\Debug\helpdesk2018.View.frmMenu.resources
+F:\GitHub\PIM42018\PIM42018\PIM42018\helpdesk2018\obj\Debug\helpdesk2018.csproj.GenerateResource.cache
+F:\GitHub\PIM42018\PIM42018\PIM42018\helpdesk2018\obj\Debug\helpdesk2018.csproj.CoreCompileInputs.cache
+F:\GitHub\PIM42018\PIM42018\PIM42018\helpdesk2018\obj\Debug\helpdesk2018.exe
+F:\GitHub\PIM42018\PIM42018\PIM42018\helpdesk2018\obj\Debug\helpdesk2018.pdb

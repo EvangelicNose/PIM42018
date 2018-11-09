@@ -84,7 +84,7 @@
             this.txtSenha.PasswordChar = '*';
             this.txtSenha.Size = new System.Drawing.Size(100, 20);
             this.txtSenha.TabIndex = 2;
-            this.txtSenha.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Enter);
+            this.txtSenha.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSenha_KeyPress);
             // 
             // lblERRO
             // 

@@ -118,16 +118,17 @@ namespace helpdesk2018.View
 
         }
 
-        private void Enter(object sender, KeyPressEventArgs e)
+
+
+        private void txtUsuario_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (e.KeyChar == 13)
             {
-                Entrar();
+                txtSenha.Focus();
             }
-
         }
 
-        private void txtUsuario_KeyPress(object sender, KeyPressEventArgs e)
+        private void txtSenha_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (e.KeyChar == 13)
             {
