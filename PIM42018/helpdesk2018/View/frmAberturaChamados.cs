@@ -1,6 +1,8 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Windows.Forms;
 using helpdesk2018.Controller;
+using helpdesk2018.Model;
 
 namespace helpdesk2018.View
 {
@@ -20,6 +22,13 @@ namespace helpdesk2018.View
             lbNome.Text = mdlUsuario.Logado.Nome;
             lbEmpresa.Text = mdlEmpresa.Logado.NomeEmpresa;
             lbUsuario.Text = mdlUsuario.Logado.Usuario;
+            ctlMotivo.CarregaDados();
+            cbbMotivo.Text="Selecione o motivo...";
+            for (int i = 0; i < ctlMotivo.motivo.Count; i++)
+            {
+                cbbMotivo.Items.Add(ctlMotivo.motivo[i].ToString());
+            }
+
         }
 
         private void lblHora_Click(object sender, EventArgs e)
