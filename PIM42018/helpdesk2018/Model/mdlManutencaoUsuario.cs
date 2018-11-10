@@ -1,4 +1,4 @@
-﻿namespace helpdesk2018.Controller
+﻿namespace helpdesk2018.Model
 {
     public class mdlManutencaoUsuario
     {
@@ -8,6 +8,7 @@
         public string Telefone { get; set; }
         public string Nivel { get; set; }
         public int Empresa { get; set; }
+        public bool Ativo { get; set; }
     }
 
 }

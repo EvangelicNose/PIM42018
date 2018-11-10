@@ -12,11 +12,11 @@ namespace helpdesk2018.Controller
     public class ctlManutencaoUsuario
     {
 
-        public bool InserirUsuarioMDL(global::helpdesk2018.Controller.mdlManutencaoUsuario _mdlManutencaoUsuario)
+        public bool InserirUsuarioMDL(global::helpdesk2018.Model.mdlManutencaoUsuario _mdlManutencaoUsuario)
         {
             Conexao conexao = new Conexao();
             conexao.abrir();
-            string query = "insert into tb_usuarios(usuario, nome, senha, telefone, nivelAcesso, fk_idempresa) values(@usuario, @nome, @senha, @telefone, @nivelAcesso, @fk_idempresa)";
+            string query = "insert into tb_usuarios(usuario, nome, senha, telefone, nivelAcesso, fk_idempresa, ativo) values(@usuario, @nome, @senha, @telefone, @nivelAcesso, @fk_idempresa, @ativo)";
             OleDbCommand cmd = new OleDbCommand(query, conexao.GetConexao());
             
             var pmtusuarios = cmd.CreateParameter();
@@ -40,7 +40,7 @@ namespace helpdesk2018.Controller
             var pmttelefones = cmd.CreateParameter();
             pmttelefones.ParameterName = "@telefone";
             pmttelefones.DbType = DbType.String;
-            pmttelefones.Value = _mdlManutencaoUsuario.Senha;
+            pmttelefones.Value = _mdlManutencaoUsuario.Telefone;
             cmd.Parameters.Add(pmttelefones);
 
             var pmtnivelAcesso = cmd.CreateParameter();
@@ -55,6 +55,12 @@ namespace helpdesk2018.Controller
             pmtidempresas.Value = _mdlManutencaoUsuario.Empresa;
             cmd.Parameters.Add(pmtidempresas);
 
+            var pmtativo = cmd.CreateParameter();
+            pmtativo.ParameterName = "@ativo";
+            pmtativo.DbType = DbType.Boolean;
+            pmtativo.Value = _mdlManutencaoUsuario.Ativo;
+            cmd.Parameters.Add(pmtativo);
+
             if (cmd.ExecuteNonQuery() > 0)
             {
                 conexao.Fechar();
@@ -65,6 +71,34 @@ namespace helpdesk2018.Controller
                 conexao.Fechar();
                 return false;
             }
+        } // fim inserir usuario
+
+
+        public bool PesquisaNome(string Nome)
+        {
+            bool RetornoPesquisar = false;
+            return RetornoPesquisar;
+
         }
+
+        public DataTable PesquisaNomeMDL(global::helpdesk2018.Model.mdlManutencaoUsuario _mdlmanutencaousuario)
+        {
+            Conexao conexao = new Conexao();
+            conexao.abrir();
+            string Query = "select * from tb_usuarios where nome LIKE @nome + \"%\"";
+            OleDbCommand cmd = new OleDbCommand(Query);
+            cmd.CommandType = CommandType.Text;
+            var pmtnome = cmd.CreateParameter();
+            pmtnome.ParameterName = "@nome";
+            pmtnome.DbType = DbType.String;
+            pmtnome.Value = _mdlmanutencaousuario.Nome;
+            cmd.Parameters.Add(pmtnome);
+
+            OleDbDataAdapter da = new OleDbDataAdapter(cmd);
+            DataTable usuarios = new DataTable();
+            da.Fill(usuarios);
+            return usuarios;
+        }
+
     }
 }

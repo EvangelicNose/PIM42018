@@ -25,7 +25,9 @@ namespace helpdesk2018
             txtUsuario.Text = "";
             txtNome.Text = "";
             txtSenha.Text = "";
+            txtTelefone.Text = "";
             cbNivel.SelectedIndex = -1;
+            cbEmpresas.SelectedIndex = -1;
 
         }
 
@@ -65,11 +67,23 @@ namespace helpdesk2018
                 branco = "1";
                 txtSenha.Focus();
             }
+            else if (txtTelefone.Text == "")
+            {
+                MessageBox.Show("Telfone não pode ficar em branco !");
+                branco = "1";
+                txtTelefone.Focus();
+            }
             else if (cbNivel.Text == "")
             {
                 MessageBox.Show("Nivel não pode ficar em branco !");
                 branco = "1";
                 cbNivel.Focus();
+            }
+            else if (cbEmpresas.Text == "")
+            {
+                MessageBox.Show("Empresa não pode ficar em branco !");
+                branco = "1";
+                cbEmpresas.Focus();
             }
 
 
@@ -94,9 +108,11 @@ namespace helpdesk2018
                 _mdlManutencaoUsuario.Usuario = txtUsuario.Text;
                 _mdlManutencaoUsuario.Nome = txtNome.Text;
                 _mdlManutencaoUsuario.Senha = txtSenha.Text;
+                _mdlManutencaoUsuario.Telefone = txtTelefone.Text;
                 _mdlManutencaoUsuario.Nivel = nivel;
                 _mdlManutencaoUsuario.Empresa = cbEmpresas.SelectedIndex+1;
-
+                _mdlManutencaoUsuario.Ativo = ckbAtivo.Checked;
+                
                 bool retorno1 = _ctlManutencaoUsuario.InserirUsuarioMDL(_mdlManutencaoUsuario);
                 if (retorno1)
                 {
@@ -153,6 +169,27 @@ namespace helpdesk2018
 
         private void cbNivel_SelectedIndexChanged(object sender, EventArgs e)
         {
+
+        }
+
+        private void btnAlterar_Click(object sender, EventArgs e)
+        {
+            gbDados.Visible = false;
+            gpbAltera.Visible = true;
+        }
+
+        private void btnAlteraPesquisa_Click(object sender, EventArgs e)
+        {
+            ctlManutencaoUsuario _ctlmanutencaousuario = new ctlManutencaoUsuario();
+            mdlManutencaoUsuario _mdlmanutencaousuario = new mdlManutencaoUsuario();
+            _mdlmanutencaousuario.Nome = txtPesquisaNome.Text;
+            dtgAlteraResultado.DataSource = _ctlmanutencaousuario.PesquisaNomeMDL(_mdlmanutencaousuario);
+        }
+
+        private void btnAlteraCancelar_Click(object sender, EventArgs e)
+        {
+            gpbAltera.Visible = false;
+            gbEscolha.Enabled = true;
 
         }
     }

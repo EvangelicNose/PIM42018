@@ -21,7 +21,7 @@ namespace helpdesk2018.Controller
             cmdAbrir.Parameters.AddWithValue("@nome", mdlUsuario.Logado.Nome);
             cmdAbrir.Parameters.AddWithValue("@empresa", mdlEmpresa.Logado.NomeEmpresa);
             cmdAbrir.Parameters.AddWithValue("@motivo", motivo);
-            cmdAbrir.Parameters.AddWithValue("@descicao", descricao);
+            cmdAbrir.Parameters.AddWithValue("@descricao", descricao);
 
             string retorno = "";
 

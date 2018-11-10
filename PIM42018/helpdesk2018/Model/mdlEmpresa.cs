@@ -1,4 +1,4 @@
-﻿namespace helpdesk2018.Controller
+﻿namespace helpdesk2018.Model
 {
     public class mdlEmpresa
     {

@@ -98,7 +98,7 @@ namespace helpdesk2018.View
 
         void IniciaContagem()
         {
-            timer1.Interval = 5000;
+            timer1.Interval = 15000;
             timer1.Start();
         }
 
@@ -132,7 +132,7 @@ namespace helpdesk2018.View
         {
             if (e.KeyChar == 13)
             {
-                txtSenha.Focus();
+                Entrar();
             }
         }
     }

@@ -13,7 +13,7 @@ namespace helpdesk2018.Controller
     public class ctlManutencaoEmpresas
     {
 
-        public bool InserirEmpresasMDL(global::helpdesk2018.Controller.mdlManutencaoEmpresas _mdlManutencaoEmpresas)
+        public bool InserirEmpresasMDL(global::helpdesk2018.Model.mdlManutencaoEmpresas _mdlManutencaoEmpresas)
         {
             Conexao conexao = new Conexao();
             conexao.abrir();
