@@ -88,5 +88,13 @@ namespace helpdesk2018.View
             login.ShowDialog();
             this.Close();
         }
+
+        private void motivosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmManutencaoMotivo _frmmanutencaomotivo = new frmManutencaoMotivo();
+            _frmmanutencaomotivo.MdiParent = this;
+            _frmmanutencaomotivo.Show();
+
+        }
     }
 }

@@ -244,7 +244,6 @@ namespace helpdesk2018
             ctlManutencaoUsuario _ctlmanutencaousuario = new ctlManutencaoUsuario();
             mdlManutencaoUsuario _mdlmanutencaousuario = new mdlManutencaoUsuario();
             _mdlmanutencaousuario.Usuario = txtAlteraUsuario.Text;
-
             _mdlmanutencaousuario.Nome = txtAlteraNome.Text;
             _mdlmanutencaousuario.Senha = txtAlteraSenha.Text;
             _mdlmanutencaousuario.Telefone = txtAlteraTelefone.Text;
@@ -252,9 +251,6 @@ namespace helpdesk2018
           //  _mdlmanutencaousuario.Empresa = Convert.ToInt32(cbbAlteraEmpresa.SelectedValue.ToString());
             _mdlmanutencaousuario.Empresa = cbbAlteraEmpresa.SelectedIndex;
             _mdlmanutencaousuario.Ativo = ckbAlteraAtivo.Checked;
-
-
-
             _mdlmanutencaousuario.IDUsuario = Convert.ToInt16(dtgAlteraResultado.CurrentRow.Cells["idusuario"].Value.ToString());
             dtgAlteraResultado.DataSource = _ctlmanutencaousuario.AlteraUsuarioMDL(_mdlmanutencaousuario);
 

@@ -7,6 +7,7 @@ using System.Data;
 using System.Data.OleDb;
 using helpdesk2018.Model;
 
+
 namespace helpdesk2018.Controller
 {
     public class ctlManutencaoUsuario
@@ -72,7 +73,6 @@ namespace helpdesk2018.Controller
                 return false;
             }
         } // fim inserir usuario
-
 
         public bool PesquisaNome(string Nome)
         {

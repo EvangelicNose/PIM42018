@@ -49,8 +49,10 @@
     <Compile Include="Controller\ctlChamados.cs" />
     <Compile Include="Controller\ctlLogin.cs" />
     <Compile Include="Controller\ctlManutencaoEmpresas.cs" />
+    <Compile Include="Controller\ctlManutencaoMotivo.cs" />
     <Compile Include="Controller\ctlManutencaoUsuario.cs" />
     <Compile Include="Controller\ctlMotivo.cs" />
+    <Compile Include="Model\mdlManutencaoMotivo.cs" />
     <Compile Include="Model\mdlChamados.cs" />
     <Compile Include="Model\mdlEmpresa.cs" />
     <Compile Include="Model\mdlManutecaoEmpresas.cs" />
@@ -82,6 +84,12 @@
     </Compile>
     <Compile Include="View\frmManutencaoEmpresas.Designer.cs">
       <DependentUpon>frmManutencaoEmpresas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\frmManutencaoMotivo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\frmManutencaoMotivo.Designer.cs">
+      <DependentUpon>frmManutencaoMotivo.cs</DependentUpon>
     </Compile>
     <Compile Include="View\frmManutencaoUsuario.cs">
       <SubType>Form</SubType>
@@ -116,6 +124,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\frmManutencaoEmpresas.resx">
       <DependentUpon>frmManutencaoEmpresas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\frmManutencaoMotivo.resx">
+      <DependentUpon>frmManutencaoMotivo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\frmManutencaoUsuario.resx">
       <DependentUpon>frmManutencaoUsuario.cs</DependentUpon>
