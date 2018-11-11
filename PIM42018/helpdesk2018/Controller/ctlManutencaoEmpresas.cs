@@ -17,7 +17,7 @@ namespace helpdesk2018.Controller
         {
             Conexao conexao = new Conexao();
             conexao.abrir();
-            string query = "insert into tb_empresas(nome, telefone, endereco) values(@nome, @telefone, @endereco)";
+            string query = "insert into tb_empresas(nome, telefone, endereco, ativa) values(@nome, @telefone, @endereco, @ativa)";
             OleDbCommand cmd = new OleDbCommand(query, conexao.GetConexao());
 
             var pmtnome = cmd.CreateParameter();
@@ -37,6 +37,12 @@ namespace helpdesk2018.Controller
             pmtendereco.DbType = DbType.String;
             pmtendereco.Value = _mdlManutencaoEmpresas.Endereco;
             cmd.Parameters.Add(pmtendereco);
+
+            var pmtativa = cmd.CreateParameter();
+            pmtativa.ParameterName = "@ativa";
+            pmtativa.DbType = DbType.String;
+            pmtativa.Value = _mdlManutencaoEmpresas.Ativa;
+            cmd.Parameters.Add(pmtativa);
 
             if (cmd.ExecuteNonQuery() > 0)
             {

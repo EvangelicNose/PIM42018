@@ -100,5 +100,88 @@ namespace helpdesk2018.Controller
             return usuarios;
         }
 
+        public bool AlteraUsuarioMDL(global::helpdesk2018.Model.mdlManutencaoUsuario _mdlmanutencaousuario)
+        {
+            Conexao conexao = new Conexao();
+            conexao.abrir();
+            string Query = "update tb_usuarios set " +
+                "usuario      = @usuario, " +
+                "nome         = @nome, " +
+                "senha        = @senha, " +
+                "telefone     = @telefone, " +
+                "nivelAcesso  = @nivelAcesso, " +
+                "fk_idempresa = @fk_idempresa, " +
+                "ativo        = @ativo " +
+                "where idusuario=@idusuario";
+            OleDbCommand cmd = new OleDbCommand(Query, conexao.GetConexao());
+            cmd.CommandType = CommandType.Text;
+            
+            var pmtusuarios = cmd.CreateParameter();
+            pmtusuarios.ParameterName = "@usuario";
+            pmtusuarios.DbType = DbType.String;
+            pmtusuarios.Value = _mdlmanutencaousuario.Usuario;
+            cmd.Parameters.Add(pmtusuarios);
+
+            var pmtnomes = cmd.CreateParameter();
+            pmtnomes.ParameterName = "@nome";
+            pmtnomes.DbType = DbType.String;
+            pmtnomes.Value = _mdlmanutencaousuario.Nome;
+            cmd.Parameters.Add(pmtnomes);
+
+            var pmtsenhas = cmd.CreateParameter();
+            pmtsenhas.ParameterName = "@senha";
+            pmtsenhas.DbType = DbType.String;
+            pmtsenhas.Value = _mdlmanutencaousuario.Senha;
+            cmd.Parameters.Add(pmtsenhas);
+
+            var pmttelefones = cmd.CreateParameter();
+            pmttelefones.ParameterName = "@telefone";
+            pmttelefones.DbType = DbType.String;
+            pmttelefones.Value = _mdlmanutencaousuario.Telefone;
+            cmd.Parameters.Add(pmttelefones);
+
+            var pmtnivelAcesso = cmd.CreateParameter();
+            pmtnivelAcesso.ParameterName = "@nivelAcesso";
+            pmtnivelAcesso.DbType = DbType.String;
+            pmtnivelAcesso.Value = _mdlmanutencaousuario.Nivel;
+            cmd.Parameters.Add(pmtnivelAcesso);
+
+            var pmtidempresas = cmd.CreateParameter();
+            pmtidempresas.ParameterName = "@fk_idempresa";
+            pmtidempresas.DbType = DbType.String;
+            pmtidempresas.Value = _mdlmanutencaousuario.Empresa;
+            cmd.Parameters.Add(pmtidempresas);
+
+            var pmtativo = cmd.CreateParameter();
+            pmtativo.ParameterName = "@ativo";
+            pmtativo.DbType = DbType.Boolean;
+            pmtativo.Value = _mdlmanutencaousuario.Ativo;
+            cmd.Parameters.Add(pmtativo);
+            
+            var pmtidusuario = cmd.CreateParameter();
+            pmtidusuario.ParameterName = "@idusuario";
+            pmtidusuario.DbType = DbType.String;
+            pmtidusuario.Value = _mdlmanutencaousuario.IDUsuario;
+            cmd.Parameters.Add(pmtidusuario);
+
+            if (cmd.ExecuteNonQuery() > 0)
+            {
+                conexao.Fechar();
+                return true;
+            }
+            else
+            {
+                conexao.Fechar();
+                return false;
+            }
+
+            /*  SqlDataAdapter da = new SqlDataAdapter(cmd);
+              DataTable usuarios = new DataTable();
+              da.Fill(usuarios);
+              return usuarios;*/
+
+
+        }
+
     }
 }

@@ -9,6 +9,7 @@
         public string Nivel { get; set; }
         public int Empresa { get; set; }
         public bool Ativo { get; set; }
+        public int IDUsuario { get; set; }
     }
 
 }

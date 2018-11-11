@@ -90,15 +90,15 @@ namespace helpdesk2018
             string nivel = "0";
             if (cbNivel.Text == "Usuário" && branco == "0")
             {
-                nivel = "1";
+                nivel = "0";
             }
             else if (cbNivel.Text == "Técnico" && branco == "0")
             {
-                nivel = "2";
+                nivel = "1";
             }
             else if (cbNivel.Text == "Administrador" && branco == "0")
             {
-                nivel = "3";
+                nivel = "2";
             }
 
             if (branco == "0")
@@ -110,7 +110,7 @@ namespace helpdesk2018
                 _mdlManutencaoUsuario.Senha = txtSenha.Text;
                 _mdlManutencaoUsuario.Telefone = txtTelefone.Text;
                 _mdlManutencaoUsuario.Nivel = nivel;
-                _mdlManutencaoUsuario.Empresa = cbEmpresas.SelectedIndex+1;
+                _mdlManutencaoUsuario.Empresa = cbEmpresas.SelectedIndex;
                 _mdlManutencaoUsuario.Ativo = ckbAtivo.Checked;
                 
                 bool retorno1 = _ctlManutencaoUsuario.InserirUsuarioMDL(_mdlManutencaoUsuario);
@@ -152,6 +152,8 @@ namespace helpdesk2018
             while (ler.Read())
             {
                 cbEmpresas.Items.Add(ler["nome"].ToString());
+                cbbAlteraEmpresa.Items.Add(ler["nome"].ToString());
+
             }
            
             conexao.Fechar();
@@ -212,9 +214,57 @@ namespace helpdesk2018
             txtAlteraNome.Text = dtgAlteraResultado.CurrentRow.Cells["nome"].Value.ToString();
             txtAlteraSenha.Text = dtgAlteraResultado.CurrentRow.Cells["senha"].Value.ToString();
             txtAlteraTelefone.Text = dtgAlteraResultado.CurrentRow.Cells["telefone"].Value.ToString();
-            cbbAlteraNivel.Text = dtgAlteraResultado.CurrentRow.Cells["nivelAcesso"].Value.ToString();
-            cbbAlteraEmpresa.SelectedText = dtgAlteraResultado.CurrentRow.Cells["fk_idempresa"].Value.ToString();
+            cbbAlteraNivel.SelectedIndex = Convert.ToInt16(dtgAlteraResultado.CurrentRow.Cells["nivelAcesso"].Value.ToString());
+            cbbAlteraEmpresa.SelectedIndex = Convert.ToInt16(dtgAlteraResultado.CurrentRow.Cells["fk_idempresa"].Value.ToString());
             ckbAlteraAtivo.Checked = Convert.ToBoolean(dtgAlteraResultado.CurrentRow.Cells["ativo"].Value.ToString());
+        }
+
+        private void btnAlteraOK_Click(object sender, EventArgs e)
+        {
+            string Anivel = "0";
+            if (cbbAlteraNivel.Text == "Usuário")
+            {
+                Anivel = "0";
+            }
+            else if (cbbAlteraNivel.Text == "Técnico")
+            {
+                Anivel = "1";
+            }
+            else if (cbbAlteraNivel.Text == "Administrador")
+            {
+                Anivel = "2";
+            }
+
+
+            ctlManutencaoUsuario _ctlmanutencaousuario = new ctlManutencaoUsuario();
+            mdlManutencaoUsuario _mdlmanutencaousuario = new mdlManutencaoUsuario();
+            _mdlmanutencaousuario.Usuario = txtAlteraUsuario.Text;
+
+            _mdlmanutencaousuario.Nome = txtAlteraNome.Text;
+            _mdlmanutencaousuario.Senha = txtAlteraSenha.Text;
+            _mdlmanutencaousuario.Telefone = txtAlteraTelefone.Text;
+            _mdlmanutencaousuario.Nivel = Anivel;
+            _mdlmanutencaousuario.Empresa = cbbAlteraEmpresa.SelectedIndex;
+            _mdlmanutencaousuario.Ativo = ckbAlteraAtivo.Checked;
+
+
+
+            _mdlmanutencaousuario.IDUsuario = Convert.ToInt16(dtgAlteraResultado.CurrentRow.Cells["idusuario"].Value.ToString());
+            dtgAlteraResultado.DataSource = _ctlmanutencaousuario.AlteraUsuarioMDL(_mdlmanutencaousuario);
+
+            bool retorno1 = _ctlmanutencaousuario.AlteraUsuarioMDL(_mdlmanutencaousuario);
+            if (retorno1)
+            {
+                MessageBox.Show("Dados alterados com sucesso");
+                
+            }
+            else
+            {
+                MessageBox.Show("Erro ao alterar");
+            }
+
+
+
         }
     }
 }

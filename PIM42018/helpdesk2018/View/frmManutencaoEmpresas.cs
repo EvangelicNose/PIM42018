@@ -79,7 +79,9 @@ namespace helpdesk2018.View
                 _mdlManutencaoEmpresas.Nome = txtNome.Text;
                 _mdlManutencaoEmpresas.Telefone = txtTelefone.Text;
                 _mdlManutencaoEmpresas.Endereco = txtEndereco.Text;
-                
+                _mdlManutencaoEmpresas.Ativa = ckbIncluirAtiva.Checked;
+
+
                 bool retorno1 = _ctlManutencaoEmpresas.InserirEmpresasMDL(_mdlManutencaoEmpresas);
                 if (retorno1)
                 {

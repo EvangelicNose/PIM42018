@@ -428,6 +428,7 @@
             this.btnAlteraOK.TabIndex = 9;
             this.btnAlteraOK.Text = "OK";
             this.btnAlteraOK.UseVisualStyleBackColor = true;
+            this.btnAlteraOK.Click += new System.EventHandler(this.btnAlteraOK_Click);
             // 
             // cbbAlteraNivel
             // 
