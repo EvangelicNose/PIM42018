@@ -50,5 +50,28 @@ namespace helpdesk2018.Controller
             }
         }
 
+
+        public DataTable PesquisaEmpresaMDL(global::helpdesk2018.Model.mdlManutencaoEmpresas _mdlmanutencaoempresas)
+        {
+            Conexao conexao = new Conexao();
+            conexao.abrir();
+            string Query = "select nome, endereco from tb_empresas where nome LIKE @nome + \"%\"";
+            OleDbCommand cmd = new OleDbCommand(Query, conexao.GetConexao());
+            cmd.CommandType = CommandType.Text;
+            var pmtnome = cmd.CreateParameter();
+            pmtnome.ParameterName = "@nome";
+            pmtnome.DbType = DbType.String;
+            pmtnome.Value = _mdlmanutencaoempresas.Nome;
+            cmd.Parameters.Add(pmtnome);
+
+            OleDbDataAdapter da = new OleDbDataAdapter(cmd);
+            DataTable empresas = new DataTable();
+            da.Fill(empresas);
+            return empresas;
+        }
+
+
+
+
     }
 }

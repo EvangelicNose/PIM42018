@@ -131,6 +131,7 @@ namespace helpdesk2018
         private void btCancelar_Click(object sender, EventArgs e)
         {
             gbDados.Visible = false;
+            gbEscolha.Visible = true;
             gbEscolha.Enabled = true;
             limpar();
         }
@@ -174,6 +175,7 @@ namespace helpdesk2018
 
         private void btnAlterar_Click(object sender, EventArgs e)
         {
+            gbEscolha.Visible = false;
             gbDados.Visible = false;
             gpbAltera.Visible = true;
         }
@@ -190,7 +192,29 @@ namespace helpdesk2018
         {
             gpbAltera.Visible = false;
             gbEscolha.Enabled = true;
+            gbEscolha.Visible = true;
 
+        }
+
+        private void gbDados_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dtgAlteraResultado_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            
+        }
+
+        private void dtgAlteraResultado_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            txtAlteraUsuario.Text = dtgAlteraResultado.CurrentRow.Cells["usuario"].Value.ToString();
+            txtAlteraNome.Text = dtgAlteraResultado.CurrentRow.Cells["nome"].Value.ToString();
+            txtAlteraSenha.Text = dtgAlteraResultado.CurrentRow.Cells["senha"].Value.ToString();
+            txtAlteraTelefone.Text = dtgAlteraResultado.CurrentRow.Cells["telefone"].Value.ToString();
+            cbbAlteraNivel.Text = dtgAlteraResultado.CurrentRow.Cells["nivelAcesso"].Value.ToString();
+            cbbAlteraEmpresa.SelectedText = dtgAlteraResultado.CurrentRow.Cells["fk_idempresa"].Value.ToString();
+            ckbAlteraAtivo.Checked = Convert.ToBoolean(dtgAlteraResultado.CurrentRow.Cells["ativo"].Value.ToString());
         }
     }
 }

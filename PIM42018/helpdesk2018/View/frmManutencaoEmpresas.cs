@@ -31,8 +31,6 @@ namespace helpdesk2018.View
 
         private void button1_Click(object sender, EventArgs e)
         {
-            gbDados.Visible = true;
-            gbEscolha.Enabled = false;
             txtNome.Focus();
         }
 
@@ -87,8 +85,6 @@ namespace helpdesk2018.View
                 {
                     MessageBox.Show("Empresa gravada com sucesso");
                     limpar();
-                    gbEscolha.Enabled = true;
-                    gbDados.Visible = false;
                 }
                 else
                 {
@@ -101,9 +97,26 @@ namespace helpdesk2018.View
 
         private void btCancelar_Click(object sender, EventArgs e)
         {
-            gbDados.Visible = false;
-            gbEscolha.Enabled = true;
             limpar();
+        }
+
+        private void tabPage1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void frmManutencaoEmpresas_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnPesquisarEmpresa_Click(object sender, EventArgs e)
+        {
+            ctlManutencaoEmpresas _ctlmanutencaoempresas = new ctlManutencaoEmpresas();
+            mdlManutencaoEmpresas _mdlmanutencaoempresas = new mdlManutencaoEmpresas();
+            _mdlmanutencaoempresas.Nome = txtPesquisarEmpresa.Text;
+            dtgAlterarResultado.DataSource = _ctlmanutencaoempresas.PesquisaEmpresaMDL(_mdlmanutencaoempresas);
+
         }
     }
 }

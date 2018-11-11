@@ -132,7 +132,7 @@
             this.btnCancelar.Location = new System.Drawing.Point(155, 318);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(75, 23);
-            this.btnCancelar.TabIndex = 7;
+            this.btnCancelar.TabIndex = 8;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
             this.btnCancelar.Click += new System.EventHandler(this.btCancelar_Click);
@@ -142,7 +142,7 @@
             this.btnOK.Location = new System.Drawing.Point(51, 318);
             this.btnOK.Name = "btnOK";
             this.btnOK.Size = new System.Drawing.Size(75, 23);
-            this.btnOK.TabIndex = 6;
+            this.btnOK.TabIndex = 7;
             this.btnOK.Text = "OK";
             this.btnOK.UseVisualStyleBackColor = true;
             this.btnOK.Click += new System.EventHandler(this.button5_Click);
@@ -242,6 +242,7 @@
             this.gbDados.TabStop = false;
             this.gbDados.Text = "Incluir:";
             this.gbDados.Visible = false;
+            this.gbDados.Enter += new System.EventHandler(this.gbDados_Enter);
             // 
             // ckbAtivo
             // 
@@ -252,7 +253,7 @@
             this.ckbAtivo.Name = "ckbAtivo";
             this.ckbAtivo.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.ckbAtivo.Size = new System.Drawing.Size(68, 17);
-            this.ckbAtivo.TabIndex = 9;
+            this.ckbAtivo.TabIndex = 6;
             this.ckbAtivo.Text = "  : Ativo  ";
             this.ckbAtivo.UseVisualStyleBackColor = true;
             // 
@@ -328,6 +329,8 @@
             this.dtgAlteraResultado.Name = "dtgAlteraResultado";
             this.dtgAlteraResultado.Size = new System.Drawing.Size(396, 150);
             this.dtgAlteraResultado.TabIndex = 27;
+            this.dtgAlteraResultado.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgAlteraResultado_CellClick);
+            this.dtgAlteraResultado.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgAlteraResultado_CellContentClick);
             // 
             // btnAlteraPesquisa
             // 
@@ -344,7 +347,7 @@
             this.txtPesquisaNome.Location = new System.Drawing.Point(99, 26);
             this.txtPesquisaNome.Name = "txtPesquisaNome";
             this.txtPesquisaNome.Size = new System.Drawing.Size(215, 20);
-            this.txtPesquisaNome.TabIndex = 1;
+            this.txtPesquisaNome.TabIndex = 0;
             // 
             // label13
             // 
@@ -358,8 +361,6 @@
             // ckbAlteraAtivo
             // 
             this.ckbAlteraAtivo.AutoSize = true;
-            this.ckbAlteraAtivo.Checked = true;
-            this.ckbAlteraAtivo.CheckState = System.Windows.Forms.CheckState.Checked;
             this.ckbAlteraAtivo.Location = new System.Drawing.Point(14, 325);
             this.ckbAlteraAtivo.Name = "ckbAlteraAtivo";
             this.ckbAlteraAtivo.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
@@ -498,8 +499,8 @@
             this.ClientSize = new System.Drawing.Size(452, 386);
             this.ControlBox = false;
             this.Controls.Add(this.gpbAltera);
-            this.Controls.Add(this.gbDados);
             this.Controls.Add(this.gbEscolha);
+            this.Controls.Add(this.gbDados);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "frmManutencaoUsuario";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

@@ -86,7 +86,7 @@ namespace helpdesk2018.Controller
             Conexao conexao = new Conexao();
             conexao.abrir();
             string Query = "select * from tb_usuarios where nome LIKE @nome + \"%\"";
-            OleDbCommand cmd = new OleDbCommand(Query);
+            OleDbCommand cmd = new OleDbCommand(Query, conexao.GetConexao());
             cmd.CommandType = CommandType.Text;
             var pmtnome = cmd.CreateParameter();
             pmtnome.ParameterName = "@nome";
