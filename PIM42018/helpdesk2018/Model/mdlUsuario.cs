@@ -11,8 +11,9 @@
         public string Nivel { get; }
         public string Empresa { get; }
         public int IDempresa { get; }
+        public bool Ativo { get; }
 
-        public mdlUsuario(int id, int idempresa, string usuario, string nome, string nivel, string senha = "")
+        public mdlUsuario(int id, int idempresa, string usuario, string nome, string nivel, bool ativo, string senha = "")
         {
             ID = id;
             Usuario = usuario;
@@ -20,6 +21,7 @@
             Nome = nome;
             Nivel = nivel;
             IDempresa = idempresa;
+            Ativo = ativo;
         }
     }
 }

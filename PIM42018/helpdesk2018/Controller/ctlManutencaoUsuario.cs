@@ -175,12 +175,6 @@ namespace helpdesk2018.Controller
                 return false;
             }
 
-            /*  SqlDataAdapter da = new SqlDataAdapter(cmd);
-              DataTable usuarios = new DataTable();
-              da.Fill(usuarios);
-              return usuarios;*/
-
-
         }
 
     }

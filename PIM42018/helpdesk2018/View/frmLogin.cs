@@ -37,10 +37,12 @@ namespace helpdesk2018.View
             Conexao conexao = new Conexao();
             conexao.abrir();
 
-            OleDbCommand cmd = conexao.Comando("select * from tb_usuarios where usuario=@Usuario and senha=@Senha");
+            OleDbCommand cmd = conexao.Comando("select * from tb_usuarios where usuario=@Usuario and senha=@Senha and ativo=@ativo");
 
             cmd.Parameters.AddWithValue("@Usuario", txtUsuario.Text);
             cmd.Parameters.AddWithValue("@Senha", txtSenha.Text);
+            bool ativo=true;
+            cmd.Parameters.AddWithValue("@ativo", ativo);
 
             OleDbDataReader dr = cmd.ExecuteReader();
             int branco = 0;
@@ -60,6 +62,7 @@ namespace helpdesk2018.View
 
             if (dr.Read() && branco == 0)
             {
+
                 UsuarioConectado = txtUsuario.Text;
                 conexao.Fechar();
                 ctlLogin.GuardarDados(UsuarioConectado);

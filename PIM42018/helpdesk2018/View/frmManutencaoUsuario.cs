@@ -149,15 +149,20 @@ namespace helpdesk2018
             OleDbCommand cmd = new OleDbCommand(Query, conexao.GetConexao());
             OleDbDataReader ler = cmd.ExecuteReader();
 
+           // cbbAlteraEmpresa.ValueMember = "idempresa";
+           // cbbAlteraEmpresa.DisplayMember = "nome";
+
+                         
+            cbbAlteraEmpresa.DisplayMember = "idEmpresa";
+            cbbAlteraEmpresa.ValueMember = "nome";
+
             while (ler.Read())
             {
+
                 cbEmpresas.Items.Add(ler["nome"].ToString());
                 cbbAlteraEmpresa.Items.Add(ler["nome"].ToString());
-
             }
-           
             conexao.Fechar();
-
         }
 
         private void cbEmpresas_MouseClick(object sender, MouseEventArgs e)
@@ -244,6 +249,7 @@ namespace helpdesk2018
             _mdlmanutencaousuario.Senha = txtAlteraSenha.Text;
             _mdlmanutencaousuario.Telefone = txtAlteraTelefone.Text;
             _mdlmanutencaousuario.Nivel = Anivel;
+          //  _mdlmanutencaousuario.Empresa = Convert.ToInt32(cbbAlteraEmpresa.SelectedValue.ToString());
             _mdlmanutencaousuario.Empresa = cbbAlteraEmpresa.SelectedIndex;
             _mdlmanutencaousuario.Ativo = ckbAlteraAtivo.Checked;
 

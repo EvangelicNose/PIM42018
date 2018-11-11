@@ -118,9 +118,9 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(12, 201);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(82, 13);
+            this.label2.Size = new System.Drawing.Size(64, 13);
             this.label2.TabIndex = 8;
-            this.label2.Text = "v1.351->v1.444";
+            this.label2.Text = "v1.444->1.5";
             // 
             // frmLogin
             // 

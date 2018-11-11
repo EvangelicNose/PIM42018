@@ -6,7 +6,7 @@ namespace helpdesk2018.Controller
 {
     public static class ctlLogin
     {
-        public static bool Login(string Nome, string Senha)
+        public static bool Login(string Nome, string Senha, bool ativo)
         {
             bool RetornoLogin = false;
             return RetornoLogin;
@@ -28,8 +28,8 @@ namespace helpdesk2018.Controller
                     nome: reader["nome"].ToString(),
                     nivel: reader["nivelAcesso"].ToString(),
                     usuario: reader["usuario"].ToString(),
-                    idempresa: Convert.ToInt32(reader["fk_idempresa"])
-                );
+                    ativo: Convert.ToBoolean(reader["ativo"]),
+                    idempresa: Convert.ToInt32(reader["fk_idempresa"]));
                 
             }
             reader.Close();

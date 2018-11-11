@@ -256,6 +256,7 @@
             this.ckbAtivo.TabIndex = 6;
             this.ckbAtivo.Text = "  : Ativo  ";
             this.ckbAtivo.UseVisualStyleBackColor = true;
+            this.ckbAtivo.Visible = false;
             // 
             // txtTelefone
             // 
