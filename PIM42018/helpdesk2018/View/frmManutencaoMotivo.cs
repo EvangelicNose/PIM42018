@@ -1,19 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using helpdesk2018.Controller;
+﻿using helpdesk2018.Controller;
 using helpdesk2018.Model;
+using System;
+using System.Windows.Forms;
 
 namespace helpdesk2018.View
 {
     public partial class frmManutencaoMotivo : Form
     {
+        int id = -1;
         public frmManutencaoMotivo()
         {
             InitializeComponent();
@@ -91,6 +85,7 @@ namespace helpdesk2018.View
             mdlManutencaoMotivo _mdlmanutencaomotivo = new mdlManutencaoMotivo();
             _mdlmanutencaomotivo.Descricao = txtAlteraMotivo.Text;
             _mdlmanutencaomotivo.Ativo = ckbAlteraAtivo.Checked;
+            _mdlmanutencaomotivo.IDMotivo = id;
             dtgAlteraResultado.DataSource = _ctlmanutencaomotivo.AlteraMotivoMDL(_mdlmanutencaomotivo);
 
             bool retorno1 = _ctlmanutencaomotivo.AlteraMotivoMDL(_mdlmanutencaomotivo);
@@ -121,7 +116,7 @@ namespace helpdesk2018.View
         {
             txtAlteraMotivo.Text = dtgAlteraResultado.CurrentRow.Cells["descricao"].Value.ToString();
             ckbAlteraAtivo.Checked = Convert.ToBoolean(dtgAlteraResultado.CurrentRow.Cells["ativo"].Value.ToString());
-
+            id = Convert.ToInt16(dtgAlteraResultado.CurrentRow.Cells["idmotivo"].Value);
         }
     }
 }

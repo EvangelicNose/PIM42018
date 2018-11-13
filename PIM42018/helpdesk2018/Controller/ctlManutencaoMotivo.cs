@@ -75,42 +75,35 @@ namespace helpdesk2018.Controller
         {
             Conexao conexao = new Conexao();
             conexao.abrir();
-            string Query = "update tb_motivos set " +
-                "descricao      = @descricao, " +
-                "ativo        = @ativo " +
-                "where idmotivo=@idmotivo";
+            string Query = @"
+                update tb_motivos
+                set descricao = @descricao, ativo = @ativo
+                where idmotivo = @idmotivo
+            ";
             OleDbCommand cmd = new OleDbCommand(Query, conexao.GetConexao());
             cmd.CommandType = CommandType.Text;
 
-            var pmtdescricao = cmd.CreateParameter();
+            OleDbParameter pmtdescricao = cmd.CreateParameter();
             pmtdescricao.ParameterName = "@descricao";
             pmtdescricao.DbType = DbType.String;
-            pmtdescricao.Value = _mdlmanutencaomotivo;
+            pmtdescricao.Value = _mdlmanutencaomotivo.Descricao;
             cmd.Parameters.Add(pmtdescricao);
 
-            var pmtativo = cmd.CreateParameter();
+            OleDbParameter pmtativo = cmd.CreateParameter();
             pmtativo.ParameterName = "@ativo";
             pmtativo.DbType = DbType.Boolean;
             pmtativo.Value = _mdlmanutencaomotivo.Ativo;
             cmd.Parameters.Add(pmtativo);
 
-             var pmtidmotivo = cmd.CreateParameter();
+            OleDbParameter pmtidmotivo = cmd.CreateParameter();
             pmtidmotivo.ParameterName = "@idmotivo";
-            pmtidmotivo.DbType = DbType.String;
+            pmtidmotivo.DbType = DbType.Int16;
             pmtidmotivo.Value = _mdlmanutencaomotivo.IDMotivo;
-            cmd.Parameters.Add(pmtidmotivo); 
-             
-            if (cmd.ExecuteNonQuery() > 0)
-            {
-                conexao.Fechar();
-                return true;
-            }
-            else
-            {
-                conexao.Fechar();
-                return false;
-            }
+            cmd.Parameters.Add(pmtidmotivo);
 
+            int resultado = cmd.ExecuteNonQuery();
+            conexao.Fechar();
+            return resultado > 0;
         } // fim altera motivo
 
 

@@ -403,6 +403,7 @@
             this.cbbAlteraEmpresa.Name = "cbbAlteraEmpresa";
             this.cbbAlteraEmpresa.Size = new System.Drawing.Size(133, 21);
             this.cbbAlteraEmpresa.TabIndex = 7;
+            this.cbbAlteraEmpresa.SelectedIndexChanged += new System.EventHandler(this.cbbAlteraEmpresa_SelectedIndexChanged);
             // 
             // btnAlteraCancelar
             // 

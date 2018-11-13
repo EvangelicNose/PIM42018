@@ -15,6 +15,9 @@ namespace helpdesk2018
 {
     public partial class frmManutencaoUsuario : Form
     {
+        List<mdlManutencaoEmpresas> empresas = new List<mdlManutencaoEmpresas>();
+        int id = 0;
+        
         public frmManutencaoUsuario()
         {
             InitializeComponent();
@@ -147,21 +150,22 @@ namespace helpdesk2018
             conexao.abrir();
             string Query = "select * from tb_empresas";
             OleDbCommand cmd = new OleDbCommand(Query, conexao.GetConexao());
-            OleDbDataReader ler = cmd.ExecuteReader();
+            OleDbDataAdapter ler = new OleDbDataAdapter(Query, conexao.GetConexao());
 
            // cbbAlteraEmpresa.ValueMember = "idempresa";
            // cbbAlteraEmpresa.DisplayMember = "nome";
 
-                         
-            cbbAlteraEmpresa.DisplayMember = "idEmpresa";
-            cbbAlteraEmpresa.ValueMember = "nome";
 
-            while (ler.Read())
-            {
+            //cbbAlteraEmpresa.DisplayMember = "idempresa";
+            //cbbAlteraEmpresa.ValueMember = "nome";
 
-                cbEmpresas.Items.Add(ler["nome"].ToString());
-                cbbAlteraEmpresa.Items.Add(ler["nome"].ToString());
-            }
+
+            DataTable resultado = new DataTable();
+            ler.Fill(resultado);
+
+            cbbAlteraEmpresa.DataSource = resultado;
+            cbbAlteraEmpresa.DisplayMember = "nome";
+            cbbAlteraEmpresa.ValueMember = "idempresa";
             conexao.Fechar();
         }
 
@@ -220,7 +224,7 @@ namespace helpdesk2018
             txtAlteraSenha.Text = dtgAlteraResultado.CurrentRow.Cells["senha"].Value.ToString();
             txtAlteraTelefone.Text = dtgAlteraResultado.CurrentRow.Cells["telefone"].Value.ToString();
             cbbAlteraNivel.SelectedIndex = Convert.ToInt16(dtgAlteraResultado.CurrentRow.Cells["nivelAcesso"].Value.ToString());
-            cbbAlteraEmpresa.SelectedIndex = Convert.ToInt16(dtgAlteraResultado.CurrentRow.Cells["fk_idempresa"].Value.ToString());
+            cbbAlteraEmpresa.SelectedIndex = Convert.ToInt16(dtgAlteraResultado.CurrentRow.Cells["fk_idempresa"].Value.ToString())-1;
             ckbAlteraAtivo.Checked = Convert.ToBoolean(dtgAlteraResultado.CurrentRow.Cells["ativo"].Value.ToString());
         }
 
@@ -248,8 +252,8 @@ namespace helpdesk2018
             _mdlmanutencaousuario.Senha = txtAlteraSenha.Text;
             _mdlmanutencaousuario.Telefone = txtAlteraTelefone.Text;
             _mdlmanutencaousuario.Nivel = Anivel;
-          //  _mdlmanutencaousuario.Empresa = Convert.ToInt32(cbbAlteraEmpresa.SelectedValue.ToString());
-            _mdlmanutencaousuario.Empresa = cbbAlteraEmpresa.SelectedIndex;
+            _mdlmanutencaousuario.Empresa = Convert.ToInt16(cbbAlteraEmpresa.SelectedValue.ToString());
+            //_mdlmanutencaousuario.Empresa = cbbAlteraEmpresa.SelectedIndex;
             _mdlmanutencaousuario.Ativo = ckbAlteraAtivo.Checked;
             _mdlmanutencaousuario.IDUsuario = Convert.ToInt16(dtgAlteraResultado.CurrentRow.Cells["idusuario"].Value.ToString());
             dtgAlteraResultado.DataSource = _ctlmanutencaousuario.AlteraUsuarioMDL(_mdlmanutencaousuario);
@@ -266,6 +270,11 @@ namespace helpdesk2018
             }
 
 
+
+        }
+
+        private void cbbAlteraEmpresa_SelectedIndexChanged(object sender, EventArgs e)
+        {
 
         }
     }
