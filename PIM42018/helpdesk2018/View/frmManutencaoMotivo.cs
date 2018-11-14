@@ -1,13 +1,19 @@
-﻿using helpdesk2018.Controller;
-using helpdesk2018.Model;
-using System;
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Forms;
+using helpdesk2018.Controller;
+using helpdesk2018.Model;
 
 namespace helpdesk2018.View
 {
     public partial class frmManutencaoMotivo : Form
     {
-        int id = -1;
         public frmManutencaoMotivo()
         {
             InitializeComponent();
@@ -20,7 +26,7 @@ namespace helpdesk2018.View
 
         private void btnCadastrar_Click(object sender, EventArgs e)
         {
-            CadastrarMotivo();            
+            CadastrarMotivo();
         }
 
 
@@ -53,7 +59,7 @@ namespace helpdesk2018.View
                 {
                     MessageBox.Show("Erro ao Gravar !!!");
                 }
-                
+
             }
 
 
@@ -61,7 +67,7 @@ namespace helpdesk2018.View
 
         private void txtIncluirMotivo_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if(e.KeyChar == 13)
+            if (e.KeyChar == 13)
             {
                 CadastrarMotivo();
             }
@@ -80,12 +86,12 @@ namespace helpdesk2018.View
 
         private void btnAlteraMotivo_Click(object sender, EventArgs e)
         {
-    
+
             ctlManutencaoMotivo _ctlmanutencaomotivo = new ctlManutencaoMotivo();
             mdlManutencaoMotivo _mdlmanutencaomotivo = new mdlManutencaoMotivo();
             _mdlmanutencaomotivo.Descricao = txtAlteraMotivo.Text;
             _mdlmanutencaomotivo.Ativo = ckbAlteraAtivo.Checked;
-            _mdlmanutencaomotivo.IDMotivo = id;
+            _mdlmanutencaomotivo.IDMotivo = Convert.ToInt16(dtgAlteraResultado.CurrentRow.Cells["idmotivo"].Value.ToString());
             dtgAlteraResultado.DataSource = _ctlmanutencaomotivo.AlteraMotivoMDL(_mdlmanutencaomotivo);
 
             bool retorno1 = _ctlmanutencaomotivo.AlteraMotivoMDL(_mdlmanutencaomotivo);
@@ -104,7 +110,6 @@ namespace helpdesk2018.View
 
         private void btnPesquisar_Click(object sender, EventArgs e)
         {
-
             ctlManutencaoMotivo _ctlmanutencaomotivo = new ctlManutencaoMotivo();
             mdlManutencaoMotivo _mdlmanutencaomotivo = new mdlManutencaoMotivo();
             _mdlmanutencaomotivo.Descricao = txtPesquisaMotivo.Text;
@@ -116,7 +121,16 @@ namespace helpdesk2018.View
         {
             txtAlteraMotivo.Text = dtgAlteraResultado.CurrentRow.Cells["descricao"].Value.ToString();
             ckbAlteraAtivo.Checked = Convert.ToBoolean(dtgAlteraResultado.CurrentRow.Cells["ativo"].Value.ToString());
-            id = Convert.ToInt16(dtgAlteraResultado.CurrentRow.Cells["idmotivo"].Value);
+        }
+
+        private void frmManutencaoMotivo_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void frmManutencaoMotivo_Load_1(object sender, EventArgs e)
+        {
+
         }
     }
 }

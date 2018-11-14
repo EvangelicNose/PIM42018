@@ -150,22 +150,25 @@ namespace helpdesk2018
             conexao.abrir();
             string Query = "select * from tb_empresas";
             OleDbCommand cmd = new OleDbCommand(Query, conexao.GetConexao());
-            OleDbDataAdapter ler = new OleDbDataAdapter(Query, conexao.GetConexao());
-
-           // cbbAlteraEmpresa.ValueMember = "idempresa";
-           // cbbAlteraEmpresa.DisplayMember = "nome";
-
-
+            OleDbDataReader popularIncluirEmpresa = cmd.ExecuteReader();
+            OleDbDataAdapter popularAlterarEmpresa = new OleDbDataAdapter(Query, conexao.GetConexao());
+            // cbbAlteraEmpresa.ValueMember = "idempresa";
+            // cbbAlteraEmpresa.DisplayMember = "nome";
+            
             //cbbAlteraEmpresa.DisplayMember = "idempresa";
             //cbbAlteraEmpresa.ValueMember = "nome";
 
+            DataTable resultadoAltera = new DataTable();
+            popularAlterarEmpresa.Fill(resultadoAltera);
 
-            DataTable resultado = new DataTable();
-            ler.Fill(resultado);
-
-            cbbAlteraEmpresa.DataSource = resultado;
+            cbbAlteraEmpresa.DataSource = resultadoAltera;
             cbbAlteraEmpresa.DisplayMember = "nome";
             cbbAlteraEmpresa.ValueMember = "idempresa";
+
+            while (popularIncluirEmpresa.Read())
+            {
+                cbEmpresas.Items.Add(popularIncluirEmpresa["nome"].ToString());
+            }
             conexao.Fechar();
         }
 

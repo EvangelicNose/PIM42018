@@ -40,15 +40,15 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tbpIncluirEmpresa = new System.Windows.Forms.TabPage();
             this.tbpAlterarEmpresa = new System.Windows.Forms.TabPage();
-            this.dtgAlterarResultado = new System.Windows.Forms.DataGridView();
-            this.ckbAlterarAtiva = new System.Windows.Forms.CheckBox();
+            this.dtgAlteraResultado = new System.Windows.Forms.DataGridView();
+            this.ckbAlteraAtiva = new System.Windows.Forms.CheckBox();
             this.btnPesquisarEmpresa = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
             this.txtPesquisarEmpresa = new System.Windows.Forms.TextBox();
             this.txtAlteraNome = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.btnAlterarCancelar = new System.Windows.Forms.Button();
-            this.txtAlterarTelefone = new System.Windows.Forms.TextBox();
+            this.txtAlteraTelefone = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.btnAlterarOK = new System.Windows.Forms.Button();
@@ -56,7 +56,7 @@
             this.tabControl1.SuspendLayout();
             this.tbpIncluirEmpresa.SuspendLayout();
             this.tbpAlterarEmpresa.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dtgAlterarResultado)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgAlteraResultado)).BeginInit();
             this.SuspendLayout();
             // 
             // btnCancelar
@@ -141,6 +141,7 @@
             this.ckbIncluirAtiva.TabIndex = 12;
             this.ckbIncluirAtiva.Text = "    : Ativa";
             this.ckbIncluirAtiva.UseVisualStyleBackColor = true;
+            this.ckbIncluirAtiva.Visible = false;
             // 
             // tabControl1
             // 
@@ -175,15 +176,15 @@
             // 
             // tbpAlterarEmpresa
             // 
-            this.tbpAlterarEmpresa.Controls.Add(this.dtgAlterarResultado);
-            this.tbpAlterarEmpresa.Controls.Add(this.ckbAlterarAtiva);
+            this.tbpAlterarEmpresa.Controls.Add(this.dtgAlteraResultado);
+            this.tbpAlterarEmpresa.Controls.Add(this.ckbAlteraAtiva);
             this.tbpAlterarEmpresa.Controls.Add(this.btnPesquisarEmpresa);
             this.tbpAlterarEmpresa.Controls.Add(this.label7);
             this.tbpAlterarEmpresa.Controls.Add(this.txtPesquisarEmpresa);
             this.tbpAlterarEmpresa.Controls.Add(this.txtAlteraNome);
             this.tbpAlterarEmpresa.Controls.Add(this.label6);
             this.tbpAlterarEmpresa.Controls.Add(this.btnAlterarCancelar);
-            this.tbpAlterarEmpresa.Controls.Add(this.txtAlterarTelefone);
+            this.tbpAlterarEmpresa.Controls.Add(this.txtAlteraTelefone);
             this.tbpAlterarEmpresa.Controls.Add(this.label4);
             this.tbpAlterarEmpresa.Controls.Add(this.label5);
             this.tbpAlterarEmpresa.Controls.Add(this.btnAlterarOK);
@@ -196,27 +197,28 @@
             this.tbpAlterarEmpresa.Text = "Alterar Empresa";
             this.tbpAlterarEmpresa.UseVisualStyleBackColor = true;
             // 
-            // dtgAlterarResultado
+            // dtgAlteraResultado
             // 
-            this.dtgAlterarResultado.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtgAlterarResultado.Location = new System.Drawing.Point(9, 38);
-            this.dtgAlterarResultado.Name = "dtgAlterarResultado";
-            this.dtgAlterarResultado.Size = new System.Drawing.Size(339, 129);
-            this.dtgAlterarResultado.TabIndex = 14;
+            this.dtgAlteraResultado.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgAlteraResultado.Location = new System.Drawing.Point(9, 38);
+            this.dtgAlteraResultado.Name = "dtgAlteraResultado";
+            this.dtgAlteraResultado.Size = new System.Drawing.Size(339, 129);
+            this.dtgAlteraResultado.TabIndex = 14;
+            this.dtgAlteraResultado.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgAlterarResultado_CellClick);
             // 
-            // ckbAlterarAtiva
+            // ckbAlteraAtiva
             // 
-            this.ckbAlterarAtiva.AutoSize = true;
-            this.ckbAlterarAtiva.Checked = true;
-            this.ckbAlterarAtiva.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.ckbAlterarAtiva.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.ckbAlterarAtiva.Location = new System.Drawing.Point(273, 207);
-            this.ckbAlterarAtiva.Name = "ckbAlterarAtiva";
-            this.ckbAlterarAtiva.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.ckbAlterarAtiva.Size = new System.Drawing.Size(68, 17);
-            this.ckbAlterarAtiva.TabIndex = 13;
-            this.ckbAlterarAtiva.Text = "    : Ativa";
-            this.ckbAlterarAtiva.UseVisualStyleBackColor = true;
+            this.ckbAlteraAtiva.AutoSize = true;
+            this.ckbAlteraAtiva.Checked = true;
+            this.ckbAlteraAtiva.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.ckbAlteraAtiva.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.ckbAlteraAtiva.Location = new System.Drawing.Point(273, 207);
+            this.ckbAlteraAtiva.Name = "ckbAlteraAtiva";
+            this.ckbAlteraAtiva.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.ckbAlteraAtiva.Size = new System.Drawing.Size(68, 17);
+            this.ckbAlteraAtiva.TabIndex = 13;
+            this.ckbAlteraAtiva.Text = "    : Ativa";
+            this.ckbAlteraAtiva.UseVisualStyleBackColor = true;
             // 
             // btnPesquisarEmpresa
             // 
@@ -268,13 +270,14 @@
             this.btnAlterarCancelar.TabIndex = 5;
             this.btnAlterarCancelar.Text = "Cancelar";
             this.btnAlterarCancelar.UseVisualStyleBackColor = true;
+            this.btnAlterarCancelar.Click += new System.EventHandler(this.btnAlterarCancelar_Click);
             // 
-            // txtAlterarTelefone
+            // txtAlteraTelefone
             // 
-            this.txtAlterarTelefone.Location = new System.Drawing.Point(64, 205);
-            this.txtAlterarTelefone.Name = "txtAlterarTelefone";
-            this.txtAlterarTelefone.Size = new System.Drawing.Size(129, 20);
-            this.txtAlterarTelefone.TabIndex = 2;
+            this.txtAlteraTelefone.Location = new System.Drawing.Point(64, 205);
+            this.txtAlteraTelefone.Name = "txtAlteraTelefone";
+            this.txtAlteraTelefone.Size = new System.Drawing.Size(129, 20);
+            this.txtAlteraTelefone.TabIndex = 2;
             // 
             // label4
             // 
@@ -302,6 +305,7 @@
             this.btnAlterarOK.TabIndex = 4;
             this.btnAlterarOK.Text = "OK";
             this.btnAlterarOK.UseVisualStyleBackColor = true;
+            this.btnAlterarOK.Click += new System.EventHandler(this.btnAlterarOK_Click);
             // 
             // txtAlteraEndereco
             // 
@@ -327,7 +331,7 @@
             this.tbpIncluirEmpresa.PerformLayout();
             this.tbpAlterarEmpresa.ResumeLayout(false);
             this.tbpAlterarEmpresa.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dtgAlterarResultado)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgAlteraResultado)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -349,14 +353,14 @@
         private System.Windows.Forms.Button btnAlterarOK;
         private System.Windows.Forms.TextBox txtAlteraEndereco;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox txtAlterarTelefone;
+        private System.Windows.Forms.TextBox txtAlteraTelefone;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox txtAlteraNome;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button btnPesquisarEmpresa;
         private System.Windows.Forms.TextBox txtPesquisarEmpresa;
         private System.Windows.Forms.CheckBox ckbIncluirAtiva;
-        private System.Windows.Forms.CheckBox ckbAlterarAtiva;
-        private System.Windows.Forms.DataGridView dtgAlterarResultado;
+        private System.Windows.Forms.CheckBox ckbAlteraAtiva;
+        private System.Windows.Forms.DataGridView dtgAlteraResultado;
     }
 }

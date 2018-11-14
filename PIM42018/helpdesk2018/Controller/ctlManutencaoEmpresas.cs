@@ -40,7 +40,7 @@ namespace helpdesk2018.Controller
 
             var pmtativa = cmd.CreateParameter();
             pmtativa.ParameterName = "@ativa";
-            pmtativa.DbType = DbType.String;
+            pmtativa.DbType = DbType.Boolean;
             pmtativa.Value = _mdlManutencaoEmpresas.Ativa;
             cmd.Parameters.Add(pmtativa);
 
@@ -61,7 +61,7 @@ namespace helpdesk2018.Controller
         {
             Conexao conexao = new Conexao();
             conexao.abrir();
-            string Query = "select nome, endereco from tb_empresas where nome LIKE @nome + \"%\"";
+            string Query = "select * from tb_empresas where nome LIKE \"%\" + @nome + \"%\"";
             OleDbCommand cmd = new OleDbCommand(Query, conexao.GetConexao());
             cmd.CommandType = CommandType.Text;
             var pmtnome = cmd.CreateParameter();
@@ -76,7 +76,56 @@ namespace helpdesk2018.Controller
             return empresas;
         }
 
+        public bool AlteraEmpresaMDL(global::helpdesk2018.Model.mdlManutencaoEmpresas _mdlmanutencaoempresa)
+        {
+            Conexao conexao = new Conexao();
+            conexao.abrir();
+            string Query = @"
+                update tb_empresas
+                set 
+                    nome = @nome, 
+                    telefone = @telefone,
+                    endereco = @endereco,
+                    ativa = @ativa
+                where idempresa = @idempresa
+            ";
+            OleDbCommand cmd = new OleDbCommand(Query, conexao.GetConexao());
+            cmd.CommandType = CommandType.Text;
 
+            OleDbParameter pmtnome = cmd.CreateParameter();
+            pmtnome.ParameterName = "@nome";
+            pmtnome.DbType = DbType.String;
+            pmtnome.Value = _mdlmanutencaoempresa.Nome;
+            cmd.Parameters.Add(pmtnome);
+
+            OleDbParameter pmttelefone = cmd.CreateParameter();
+            pmttelefone.ParameterName = "@telefone";
+            pmttelefone.DbType = DbType.String;
+            pmttelefone.Value = _mdlmanutencaoempresa.Telefone;
+            cmd.Parameters.Add(pmttelefone);
+
+            OleDbParameter pmtendereco = cmd.CreateParameter();
+            pmtendereco.ParameterName = "@endereco";
+            pmtendereco.DbType = DbType.String;
+            pmtendereco.Value = _mdlmanutencaoempresa.Endereco;
+            cmd.Parameters.Add(pmtendereco);
+
+            OleDbParameter pmtativa = cmd.CreateParameter();
+            pmtativa.ParameterName = "@ativa";
+            pmtativa.DbType = DbType.Boolean;
+            pmtativa.Value = _mdlmanutencaoempresa.Ativa;
+            cmd.Parameters.Add(pmtativa);
+
+            OleDbParameter pmtempresa = cmd.CreateParameter();
+            pmtempresa.ParameterName = "@idempresa";
+            pmtempresa.DbType = DbType.Int16;
+            pmtempresa.Value = _mdlmanutencaoempresa.ID;
+            cmd.Parameters.Add(pmtempresa);
+
+            int resultado = cmd.ExecuteNonQuery();
+            conexao.Fechar();
+            return resultado > 0;
+        } // fim altera motivo
 
 
     }

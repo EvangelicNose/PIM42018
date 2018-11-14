@@ -99,7 +99,7 @@ namespace helpdesk2018.View
 
         private void btCancelar_Click(object sender, EventArgs e)
         {
-            limpar();
+            Close();
         }
 
         private void tabPage1_Click(object sender, EventArgs e)
@@ -117,8 +117,44 @@ namespace helpdesk2018.View
             ctlManutencaoEmpresas _ctlmanutencaoempresas = new ctlManutencaoEmpresas();
             mdlManutencaoEmpresas _mdlmanutencaoempresas = new mdlManutencaoEmpresas();
             _mdlmanutencaoempresas.Nome = txtPesquisarEmpresa.Text;
-            dtgAlterarResultado.DataSource = _ctlmanutencaoempresas.PesquisaEmpresaMDL(_mdlmanutencaoempresas);
+            dtgAlteraResultado.DataSource = _ctlmanutencaoempresas.PesquisaEmpresaMDL(_mdlmanutencaoempresas);
 
+        }
+
+        private void btnAlterarCancelar_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void dtgAlterarResultado_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            txtAlteraNome.Text = dtgAlteraResultado.CurrentRow.Cells["nome"].Value.ToString();
+            txtAlteraTelefone.Text = dtgAlteraResultado.CurrentRow.Cells["telefone"].Value.ToString();
+            txtAlteraEndereco.Text = dtgAlteraResultado.CurrentRow.Cells["endereco"].Value.ToString();
+            ckbAlteraAtiva.Checked = Convert.ToBoolean(dtgAlteraResultado.CurrentRow.Cells["ativa"].Value.ToString());
+        }
+
+        private void btnAlterarOK_Click(object sender, EventArgs e)
+        {
+            ctlManutencaoEmpresas _ctlmanutencaoempresa = new ctlManutencaoEmpresas();
+            mdlManutencaoEmpresas _mdlmanutencaoempresa = new mdlManutencaoEmpresas();
+            _mdlmanutencaoempresa.Nome = txtAlteraNome.Text;
+            _mdlmanutencaoempresa.Endereco = txtAlteraEndereco.Text;
+            _mdlmanutencaoempresa.Telefone = txtAlteraTelefone.Text;
+            _mdlmanutencaoempresa.Ativa = ckbAlteraAtiva.Checked;
+            _mdlmanutencaoempresa.ID = Convert.ToInt16(dtgAlteraResultado.CurrentRow.Cells["idempresa"].Value.ToString());
+            dtgAlteraResultado.DataSource = _ctlmanutencaoempresa.AlteraEmpresaMDL(_mdlmanutencaoempresa);
+
+            bool retorno1 = _ctlmanutencaoempresa.AlteraEmpresaMDL(_mdlmanutencaoempresa);
+            if (retorno1)
+            {
+                MessageBox.Show("Dados alterados com sucesso");
+
+            }
+            else
+            {
+                MessageBox.Show("Erro ao alterar");
+            }
         }
     }
 }

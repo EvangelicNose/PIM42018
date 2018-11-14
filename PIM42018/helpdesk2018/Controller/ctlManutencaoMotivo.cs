@@ -55,7 +55,7 @@ namespace helpdesk2018.Controller
         {
             Conexao conexao = new Conexao();
             conexao.abrir();
-            string Query = "select * from tb_motivos where motivo LIKE @motivo + \"%\"";
+            string Query = "select * from tb_motivos where descricao LIKE \"%\" + @motivo + \"%\"";
             OleDbCommand cmd = new OleDbCommand(Query, conexao.GetConexao());
             cmd.CommandType = CommandType.Text;
             var pmtmotivo = cmd.CreateParameter();
