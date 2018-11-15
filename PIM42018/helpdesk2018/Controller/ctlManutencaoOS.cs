@@ -16,8 +16,9 @@ namespace helpdesk2018.Controller
         {
             Conexao conexao = new Conexao();
             conexao.abrir();
-            string SQL = "SELECT tb_chamados.os, tb_empresas.nome, tb_motivos.descricao, tb_status.descricao," +
-                " tb_usuarios.usuario FROM (tb_empresas INNER JOIN tb_usuarios ON tb_empresas.idempresa = " +
+            string SQL = "SELECT tb_chamados.os AS OS, tb_empresas.nome AS EMPRESA, tb_motivos.descricao AS CAUSA," +
+                " tb_status.descricao AS STATUS," +
+                " tb_usuarios.usuario AS RESPONSÁVEL FROM (tb_empresas INNER JOIN tb_usuarios ON tb_empresas.idempresa = " +
                 "tb_usuarios.fk_idempresa) INNER JOIN(tb_status INNER JOIN" +
                 " (tb_motivos INNER JOIN tb_chamados ON tb_motivos.idmotivo =" +
                 " tb_chamados.fk_idmotivo) ON tb_status.idstatus = tb_chamados.fk_idstatus) " +
