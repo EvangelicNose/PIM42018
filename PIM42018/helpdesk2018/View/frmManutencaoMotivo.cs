@@ -21,7 +21,8 @@ namespace helpdesk2018.View
 
         private void tbpAlterarMotivo_Click(object sender, EventArgs e)
         {
-
+            txtPesquisaMotivo.Focus();
+            txtPesquisaMotivo.Select();
         }
 
         private void btnCadastrar_Click(object sender, EventArgs e)
@@ -134,14 +135,16 @@ namespace helpdesk2018.View
             ckbAlteraAtivo.Checked = Convert.ToBoolean(dtgAlteraResultado.CurrentRow.Cells["ativo"].Value.ToString());
         }
 
-        private void frmManutencaoMotivo_Load(object sender, EventArgs e)
+        private void frmManutencaoMotivo_Load_1(object sender, EventArgs e)
         {
+            txtIncluirMotivo.Select();
 
         }
 
-        private void frmManutencaoMotivo_Load_1(object sender, EventArgs e)
+         private void tbpManutencaoMotivo_MouseClick(object sender, MouseEventArgs e)
         {
-
+            txtPesquisaMotivo.Focus();
+            txtIncluirMotivo.Focus();
         }
     }
 }

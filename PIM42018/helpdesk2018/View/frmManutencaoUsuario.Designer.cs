@@ -50,6 +50,14 @@
             this.cbEmpresas = new System.Windows.Forms.ComboBox();
             this.gpbAltera = new System.Windows.Forms.GroupBox();
             this.dtgAlteraResultado = new System.Windows.Forms.DataGridView();
+            this.idusuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fk_idempresa = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.usuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.telefone = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.senha = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nivelAcesso = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ativo = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.btnAlteraPesquisa = new System.Windows.Forms.Button();
             this.txtPesquisaNome = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
@@ -205,7 +213,6 @@
             this.cbNivel.Name = "cbNivel";
             this.cbNivel.Size = new System.Drawing.Size(133, 21);
             this.cbNivel.TabIndex = 4;
-            this.cbNivel.SelectedIndexChanged += new System.EventHandler(this.cbNivel_SelectedIndexChanged);
             // 
             // gbDados
             // 
@@ -231,7 +238,6 @@
             this.gbDados.TabStop = false;
             this.gbDados.Text = "Incluir:";
             this.gbDados.Visible = false;
-            this.gbDados.Enter += new System.EventHandler(this.gbDados_Enter);
             // 
             // ckbAtivo
             // 
@@ -280,8 +286,6 @@
             this.cbEmpresas.Name = "cbEmpresas";
             this.cbEmpresas.Size = new System.Drawing.Size(133, 21);
             this.cbEmpresas.TabIndex = 5;
-            this.cbEmpresas.SelectedIndexChanged += new System.EventHandler(this.cbEmpresas_SelectedIndexChanged);
-            this.cbEmpresas.MouseClick += new System.Windows.Forms.MouseEventHandler(this.cbEmpresas_MouseClick);
             // 
             // gpbAltera
             // 
@@ -317,6 +321,15 @@
             this.dtgAlteraResultado.AllowUserToAddRows = false;
             this.dtgAlteraResultado.AllowUserToResizeRows = false;
             this.dtgAlteraResultado.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgAlteraResultado.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idusuario,
+            this.fk_idempresa,
+            this.usuario,
+            this.nome,
+            this.telefone,
+            this.senha,
+            this.nivelAcesso,
+            this.ativo});
             this.dtgAlteraResultado.Location = new System.Drawing.Point(17, 59);
             this.dtgAlteraResultado.MultiSelect = false;
             this.dtgAlteraResultado.Name = "dtgAlteraResultado";
@@ -324,7 +337,63 @@
             this.dtgAlteraResultado.Size = new System.Drawing.Size(396, 150);
             this.dtgAlteraResultado.TabIndex = 27;
             this.dtgAlteraResultado.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgAlteraResultado_CellClick);
-            this.dtgAlteraResultado.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgAlteraResultado_CellContentClick);
+            // 
+            // idusuario
+            // 
+            this.idusuario.DataPropertyName = "idusuario";
+            this.idusuario.HeaderText = "idusuario";
+            this.idusuario.Name = "idusuario";
+            this.idusuario.Visible = false;
+            // 
+            // fk_idempresa
+            // 
+            this.fk_idempresa.DataPropertyName = "fk_idempresa";
+            this.fk_idempresa.HeaderText = "fk_idempresa";
+            this.fk_idempresa.Name = "fk_idempresa";
+            this.fk_idempresa.Visible = false;
+            // 
+            // usuario
+            // 
+            this.usuario.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.usuario.DataPropertyName = "usuario";
+            this.usuario.HeaderText = "Usuário";
+            this.usuario.Name = "usuario";
+            // 
+            // nome
+            // 
+            this.nome.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.nome.DataPropertyName = "nome";
+            this.nome.HeaderText = "Nome";
+            this.nome.Name = "nome";
+            // 
+            // telefone
+            // 
+            this.telefone.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.telefone.DataPropertyName = "telefone";
+            this.telefone.HeaderText = "Telefone";
+            this.telefone.Name = "telefone";
+            // 
+            // senha
+            // 
+            this.senha.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.senha.DataPropertyName = "senha";
+            this.senha.HeaderText = "Senha";
+            this.senha.Name = "senha";
+            // 
+            // nivelAcesso
+            // 
+            this.nivelAcesso.DataPropertyName = "nivelAcesso";
+            this.nivelAcesso.HeaderText = "Nível de Acesso";
+            this.nivelAcesso.Name = "nivelAcesso";
+            this.nivelAcesso.Visible = false;
+            // 
+            // ativo
+            // 
+            this.ativo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.ativo.DataPropertyName = "ativo";
+            this.ativo.HeaderText = "Ativo ?";
+            this.ativo.Name = "ativo";
+            this.ativo.Width = 46;
             // 
             // btnAlteraPesquisa
             // 
@@ -396,7 +465,6 @@
             this.cbbAlteraEmpresa.Name = "cbbAlteraEmpresa";
             this.cbbAlteraEmpresa.Size = new System.Drawing.Size(133, 21);
             this.cbbAlteraEmpresa.TabIndex = 7;
-            this.cbbAlteraEmpresa.SelectedIndexChanged += new System.EventHandler(this.cbbAlteraEmpresa_SelectedIndexChanged);
             // 
             // btnAlteraCancelar
             // 
@@ -493,7 +561,6 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(452, 386);
-            this.ControlBox = false;
             this.Controls.Add(this.gpbAltera);
             this.Controls.Add(this.gbEscolha);
             this.Controls.Add(this.gbDados);
@@ -554,5 +621,13 @@
         private System.Windows.Forms.DataGridView dtgAlteraResultado;
         private System.Windows.Forms.Button btnAlteraPesquisa;
         private System.Windows.Forms.TextBox txtPesquisaNome;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idusuario;
+        private System.Windows.Forms.DataGridViewTextBoxColumn fk_idempresa;
+        private System.Windows.Forms.DataGridViewTextBoxColumn usuario;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nome;
+        private System.Windows.Forms.DataGridViewTextBoxColumn telefone;
+        private System.Windows.Forms.DataGridViewTextBoxColumn senha;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nivelAcesso;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn ativo;
     }
 }

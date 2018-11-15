@@ -67,7 +67,8 @@ namespace helpdesk2018.View
 
             }else if (retorno != "")
             {
-                MessageBox.Show("Seu chamado foi cadastrado com sucesso! Sua ordem de serviço é : " + retorno);
+                // coloquei + "\n" + pra pular linha
+                MessageBox.Show("Seu chamado foi cadastrado com sucesso!" + "\n" + "Sua ordem de serviço é : " + retorno);
 
                 txtDescricao.Text = "";
                 cbbMotivo.Text = "";

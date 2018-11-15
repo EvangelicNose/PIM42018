@@ -25,8 +25,8 @@ namespace helpdesk2018.View
 
             {
                 frmAberturaChamados _frmaberturachamados = new frmAberturaChamados();
-                _frmaberturachamados.MdiParent = this;
-                _frmaberturachamados.Show();
+               // _frmaberturachamados.MdiParent = this;
+                _frmaberturachamados.ShowDialog();
             }
             else
             {
@@ -66,34 +66,23 @@ namespace helpdesk2018.View
             //   mdlUsuario.Logado.Usuario;
         }
 
-
-
         private void listarChamadosToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frmListarChamado _frmListarChamado = new frmListarChamado();
-            _frmListarChamado.MdiParent = this;
-            _frmListarChamado.Show();
+            // _frmListarChamado.MdiParent = this;
+            _frmListarChamado.ShowDialog();
         }
 
         private void usuáriosToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frmManutencaoUsuario _frmUsuario = new frmManutencaoUsuario();
-            _frmUsuario.MdiParent = this;
-            _frmUsuario.Show();
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
+            _frmUsuario.ShowDialog();
         }
 
         private void empresasToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frmManutencaoEmpresas _frmEmpresas = new frmManutencaoEmpresas();
-            _frmEmpresas.MdiParent = this;
-            _frmEmpresas.Show();
-
+            _frmEmpresas.ShowDialog();
         }
 
         private void fazerLogoffToolStripMenuItem1_Click(object sender, EventArgs e)
@@ -107,8 +96,7 @@ namespace helpdesk2018.View
         private void motivosToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frmManutencaoMotivo _frmmanutencaomotivo = new frmManutencaoMotivo();
-            _frmmanutencaomotivo.MdiParent = this;
-            _frmmanutencaomotivo.Show();
+            _frmmanutencaomotivo.ShowDialog();
 
         }
 
@@ -134,5 +122,10 @@ namespace helpdesk2018.View
             }
         }
 
+        private void sobreToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmSobre _frmSobre = new frmSobre();
+            _frmSobre.ShowDialog();
+        }
     }
 }

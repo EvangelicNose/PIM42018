@@ -41,6 +41,11 @@
             this.tbpIncluirEmpresa = new System.Windows.Forms.TabPage();
             this.tbpAlterarEmpresa = new System.Windows.Forms.TabPage();
             this.dtgAlteraResultado = new System.Windows.Forms.DataGridView();
+            this.idempresa = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.telefone = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.endereco = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ativa = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.ckbAlteraAtiva = new System.Windows.Forms.CheckBox();
             this.btnPesquisarEmpresa = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
@@ -112,7 +117,7 @@
             this.txtNome.Location = new System.Drawing.Point(102, 81);
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new System.Drawing.Size(212, 20);
-            this.txtNome.TabIndex = 0;
+            this.txtNome.TabIndex = 1;
             // 
             // txtTelefone
             // 
@@ -200,15 +205,65 @@
             // dtgAlteraResultado
             // 
             this.dtgAlteraResultado.AllowUserToAddRows = false;
+            this.dtgAlteraResultado.AllowUserToDeleteRows = false;
             this.dtgAlteraResultado.AllowUserToResizeRows = false;
             this.dtgAlteraResultado.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgAlteraResultado.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idempresa,
+            this.nome,
+            this.telefone,
+            this.endereco,
+            this.ativa});
             this.dtgAlteraResultado.Location = new System.Drawing.Point(9, 38);
             this.dtgAlteraResultado.MultiSelect = false;
             this.dtgAlteraResultado.Name = "dtgAlteraResultado";
+            this.dtgAlteraResultado.ReadOnly = true;
             this.dtgAlteraResultado.RowHeadersVisible = false;
             this.dtgAlteraResultado.Size = new System.Drawing.Size(339, 129);
-            this.dtgAlteraResultado.TabIndex = 14;
+            this.dtgAlteraResultado.TabIndex = 3;
             this.dtgAlteraResultado.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgAlterarResultado_CellClick);
+            // 
+            // idempresa
+            // 
+            this.idempresa.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.idempresa.DataPropertyName = "idempresa";
+            this.idempresa.HeaderText = "idempresa";
+            this.idempresa.Name = "idempresa";
+            this.idempresa.ReadOnly = true;
+            this.idempresa.Visible = false;
+            // 
+            // nome
+            // 
+            this.nome.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.nome.DataPropertyName = "nome";
+            this.nome.HeaderText = "Nome";
+            this.nome.Name = "nome";
+            this.nome.ReadOnly = true;
+            // 
+            // telefone
+            // 
+            this.telefone.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.telefone.DataPropertyName = "telefone";
+            this.telefone.HeaderText = "Telefone";
+            this.telefone.Name = "telefone";
+            this.telefone.ReadOnly = true;
+            // 
+            // endereco
+            // 
+            this.endereco.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.endereco.DataPropertyName = "endereco";
+            this.endereco.HeaderText = "Endereço";
+            this.endereco.Name = "endereco";
+            this.endereco.ReadOnly = true;
+            // 
+            // ativa
+            // 
+            this.ativa.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.ativa.DataPropertyName = "ativa";
+            this.ativa.HeaderText = "Ativa ?";
+            this.ativa.Name = "ativa";
+            this.ativa.ReadOnly = true;
+            this.ativa.Width = 46;
             // 
             // ckbAlteraAtiva
             // 
@@ -220,7 +275,7 @@
             this.ckbAlteraAtiva.Name = "ckbAlteraAtiva";
             this.ckbAlteraAtiva.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.ckbAlteraAtiva.Size = new System.Drawing.Size(68, 17);
-            this.ckbAlteraAtiva.TabIndex = 13;
+            this.ckbAlteraAtiva.TabIndex = 7;
             this.ckbAlteraAtiva.Text = "    : Ativa";
             this.ckbAlteraAtiva.UseVisualStyleBackColor = true;
             // 
@@ -229,7 +284,7 @@
             this.btnPesquisarEmpresa.Location = new System.Drawing.Point(282, 10);
             this.btnPesquisarEmpresa.Name = "btnPesquisarEmpresa";
             this.btnPesquisarEmpresa.Size = new System.Drawing.Size(66, 23);
-            this.btnPesquisarEmpresa.TabIndex = 10;
+            this.btnPesquisarEmpresa.TabIndex = 2;
             this.btnPesquisarEmpresa.Text = "Pesquisar";
             this.btnPesquisarEmpresa.UseVisualStyleBackColor = true;
             this.btnPesquisarEmpresa.Click += new System.EventHandler(this.btnPesquisarEmpresa_Click);
@@ -248,14 +303,14 @@
             this.txtPesquisarEmpresa.Location = new System.Drawing.Point(108, 12);
             this.txtPesquisarEmpresa.Name = "txtPesquisarEmpresa";
             this.txtPesquisarEmpresa.Size = new System.Drawing.Size(168, 20);
-            this.txtPesquisarEmpresa.TabIndex = 9;
+            this.txtPesquisarEmpresa.TabIndex = 1;
             // 
             // txtAlteraNome
             // 
             this.txtAlteraNome.Location = new System.Drawing.Point(64, 173);
             this.txtAlteraNome.Name = "txtAlteraNome";
             this.txtAlteraNome.Size = new System.Drawing.Size(284, 20);
-            this.txtAlteraNome.TabIndex = 0;
+            this.txtAlteraNome.TabIndex = 4;
             // 
             // label6
             // 
@@ -271,7 +326,7 @@
             this.btnAlterarCancelar.Location = new System.Drawing.Point(273, 268);
             this.btnAlterarCancelar.Name = "btnAlterarCancelar";
             this.btnAlterarCancelar.Size = new System.Drawing.Size(75, 23);
-            this.btnAlterarCancelar.TabIndex = 5;
+            this.btnAlterarCancelar.TabIndex = 9;
             this.btnAlterarCancelar.Text = "Cancelar";
             this.btnAlterarCancelar.UseVisualStyleBackColor = true;
             this.btnAlterarCancelar.Click += new System.EventHandler(this.btnAlterarCancelar_Click);
@@ -281,7 +336,7 @@
             this.txtAlteraTelefone.Location = new System.Drawing.Point(64, 205);
             this.txtAlteraTelefone.Name = "txtAlteraTelefone";
             this.txtAlteraTelefone.Size = new System.Drawing.Size(129, 20);
-            this.txtAlteraTelefone.TabIndex = 2;
+            this.txtAlteraTelefone.TabIndex = 5;
             // 
             // label4
             // 
@@ -306,7 +361,7 @@
             this.btnAlterarOK.Location = new System.Drawing.Point(6, 268);
             this.btnAlterarOK.Name = "btnAlterarOK";
             this.btnAlterarOK.Size = new System.Drawing.Size(75, 23);
-            this.btnAlterarOK.TabIndex = 4;
+            this.btnAlterarOK.TabIndex = 8;
             this.btnAlterarOK.Text = "OK";
             this.btnAlterarOK.UseVisualStyleBackColor = true;
             this.btnAlterarOK.Click += new System.EventHandler(this.btnAlterarOK_Click);
@@ -316,14 +371,13 @@
             this.txtAlteraEndereco.Location = new System.Drawing.Point(64, 238);
             this.txtAlteraEndereco.Name = "txtAlteraEndereco";
             this.txtAlteraEndereco.Size = new System.Drawing.Size(284, 20);
-            this.txtAlteraEndereco.TabIndex = 3;
+            this.txtAlteraEndereco.TabIndex = 6;
             // 
             // frmManutencaoEmpresas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(386, 398);
-            this.ControlBox = false;
             this.Controls.Add(this.tabControl1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "frmManutencaoEmpresas";
@@ -366,5 +420,10 @@
         private System.Windows.Forms.CheckBox ckbIncluirAtiva;
         private System.Windows.Forms.CheckBox ckbAlteraAtiva;
         private System.Windows.Forms.DataGridView dtgAlteraResultado;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idempresa;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nome;
+        private System.Windows.Forms.DataGridViewTextBoxColumn telefone;
+        private System.Windows.Forms.DataGridViewTextBoxColumn endereco;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn ativa;
     }
 }

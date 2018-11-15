@@ -37,6 +37,9 @@
             this.txtIncluirMotivo = new System.Windows.Forms.TextBox();
             this.tbpAlterarMotivo = new System.Windows.Forms.TabPage();
             this.dtgAlteraResultado = new System.Windows.Forms.DataGridView();
+            this.idmotivo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.descricao = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ativo = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.txtPesquisaMotivo = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.btnPesquisar = new System.Windows.Forms.Button();
@@ -60,6 +63,7 @@
             this.tbpManutencaoMotivo.SelectedIndex = 0;
             this.tbpManutencaoMotivo.Size = new System.Drawing.Size(345, 337);
             this.tbpManutencaoMotivo.TabIndex = 0;
+            this.tbpManutencaoMotivo.MouseClick += new System.Windows.Forms.MouseEventHandler(this.tbpManutencaoMotivo_MouseClick);
             // 
             // tbpIncluir
             // 
@@ -113,7 +117,7 @@
             this.btnCadastrar.Location = new System.Drawing.Point(82, 139);
             this.btnCadastrar.Name = "btnCadastrar";
             this.btnCadastrar.Size = new System.Drawing.Size(75, 28);
-            this.btnCadastrar.TabIndex = 1;
+            this.btnCadastrar.TabIndex = 2;
             this.btnCadastrar.Text = "Cadastrar";
             this.btnCadastrar.UseVisualStyleBackColor = true;
             this.btnCadastrar.Click += new System.EventHandler(this.btnCadastrar_Click);
@@ -123,7 +127,7 @@
             this.txtIncluirMotivo.Location = new System.Drawing.Point(82, 55);
             this.txtIncluirMotivo.Name = "txtIncluirMotivo";
             this.txtIncluirMotivo.Size = new System.Drawing.Size(170, 20);
-            this.txtIncluirMotivo.TabIndex = 0;
+            this.txtIncluirMotivo.TabIndex = 1;
             this.txtIncluirMotivo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtIncluirMotivo_KeyPress);
             // 
             // tbpAlterarMotivo
@@ -151,20 +155,48 @@
             this.dtgAlteraResultado.AllowUserToAddRows = false;
             this.dtgAlteraResultado.AllowUserToResizeRows = false;
             this.dtgAlteraResultado.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgAlteraResultado.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idmotivo,
+            this.descricao,
+            this.ativo});
             this.dtgAlteraResultado.Location = new System.Drawing.Point(6, 35);
             this.dtgAlteraResultado.MultiSelect = false;
             this.dtgAlteraResultado.Name = "dtgAlteraResultado";
             this.dtgAlteraResultado.RowHeadersVisible = false;
             this.dtgAlteraResultado.Size = new System.Drawing.Size(321, 177);
-            this.dtgAlteraResultado.TabIndex = 12;
+            this.dtgAlteraResultado.TabIndex = 3;
             this.dtgAlteraResultado.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgAlteraResultado_CellClick);
+            // 
+            // idmotivo
+            // 
+            this.idmotivo.DataPropertyName = "idmotivo";
+            this.idmotivo.HeaderText = "idmotivo";
+            this.idmotivo.Name = "idmotivo";
+            this.idmotivo.Visible = false;
+            // 
+            // descricao
+            // 
+            this.descricao.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.descricao.DataPropertyName = "descricao";
+            this.descricao.HeaderText = "Descrição";
+            this.descricao.Name = "descricao";
+            // 
+            // ativo
+            // 
+            this.ativo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.ativo.DataPropertyName = "ativo";
+            this.ativo.HeaderText = "Ativo ?";
+            this.ativo.Name = "ativo";
+            this.ativo.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.ativo.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.ativo.Width = 65;
             // 
             // txtPesquisaMotivo
             // 
             this.txtPesquisaMotivo.Location = new System.Drawing.Point(102, 8);
             this.txtPesquisaMotivo.Name = "txtPesquisaMotivo";
             this.txtPesquisaMotivo.Size = new System.Drawing.Size(144, 20);
-            this.txtPesquisaMotivo.TabIndex = 11;
+            this.txtPesquisaMotivo.TabIndex = 1;
             // 
             // label3
             // 
@@ -180,7 +212,7 @@
             this.btnPesquisar.Location = new System.Drawing.Point(252, 6);
             this.btnPesquisar.Name = "btnPesquisar";
             this.btnPesquisar.Size = new System.Drawing.Size(75, 23);
-            this.btnPesquisar.TabIndex = 9;
+            this.btnPesquisar.TabIndex = 2;
             this.btnPesquisar.Text = "Pesquisar";
             this.btnPesquisar.UseVisualStyleBackColor = true;
             this.btnPesquisar.Click += new System.EventHandler(this.btnPesquisar_Click);
@@ -191,7 +223,7 @@
             this.ckbAlteraAtivo.Location = new System.Drawing.Point(130, 256);
             this.ckbAlteraAtivo.Name = "ckbAlteraAtivo";
             this.ckbAlteraAtivo.Size = new System.Drawing.Size(50, 17);
-            this.ckbAlteraAtivo.TabIndex = 8;
+            this.ckbAlteraAtivo.TabIndex = 5;
             this.ckbAlteraAtivo.Text = "Ativo";
             this.ckbAlteraAtivo.UseVisualStyleBackColor = true;
             // 
@@ -208,7 +240,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(37, 221);
+            this.label2.Location = new System.Drawing.Point(3, 221);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(42, 13);
             this.label2.TabIndex = 6;
@@ -219,16 +251,16 @@
             this.btnAlteraMotivo.Location = new System.Drawing.Point(6, 256);
             this.btnAlteraMotivo.Name = "btnAlteraMotivo";
             this.btnAlteraMotivo.Size = new System.Drawing.Size(75, 23);
-            this.btnAlteraMotivo.TabIndex = 5;
+            this.btnAlteraMotivo.TabIndex = 6;
             this.btnAlteraMotivo.Text = "Alterar";
             this.btnAlteraMotivo.UseVisualStyleBackColor = true;
             this.btnAlteraMotivo.Click += new System.EventHandler(this.btnAlteraMotivo_Click);
             // 
             // txtAlteraMotivo
             // 
-            this.txtAlteraMotivo.Location = new System.Drawing.Point(85, 218);
+            this.txtAlteraMotivo.Location = new System.Drawing.Point(45, 218);
             this.txtAlteraMotivo.Name = "txtAlteraMotivo";
-            this.txtAlteraMotivo.Size = new System.Drawing.Size(170, 20);
+            this.txtAlteraMotivo.Size = new System.Drawing.Size(280, 20);
             this.txtAlteraMotivo.TabIndex = 4;
             // 
             // frmManutencaoMotivo
@@ -236,10 +268,8 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(344, 337);
-            this.ControlBox = false;
             this.Controls.Add(this.tbpManutencaoMotivo);
-            this.MaximizeBox = false;
-            this.MinimizeBox = false;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             this.Name = "frmManutencaoMotivo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Manutenção Motivo";
@@ -273,5 +303,8 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnPesquisar;
         private System.Windows.Forms.DataGridView dtgAlteraResultado;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idmotivo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn descricao;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn ativo;
     }
 }

@@ -143,11 +143,6 @@ namespace helpdesk2018
             limpar();
         }
 
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void frmManutencaoUsuario_Load(object sender, EventArgs e)
         {
             Conexao conexao = new Conexao();
@@ -177,21 +172,6 @@ namespace helpdesk2018
 
         }
 
-        private void cbEmpresas_MouseClick(object sender, MouseEventArgs e)
-        {
-
-        }
-
-        private void cbEmpresas_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void cbNivel_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnAlterar_Click(object sender, EventArgs e)
         {
             gbEscolha.Visible = false;
@@ -213,17 +193,6 @@ namespace helpdesk2018
             gbEscolha.Enabled = true;
             gbEscolha.Visible = true;
             limpar();
-
-        }
-
-        private void gbDados_Enter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dtgAlteraResultado_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            
         }
 
         private void dtgAlteraResultado_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -277,20 +246,6 @@ namespace helpdesk2018
             {
                 MessageBox.Show("Erro ao alterar");
             }
-
-
-
-        }
-      
-
-        private void cbbAlteraEmpresa_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnExcluir_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

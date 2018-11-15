@@ -18,7 +18,8 @@ namespace helpdesk2018.Controller
                 (@fk_idusuario, @fk_idmotivo, @fk_idstatus, @descricao)
             ");
 
-            int status = 1;
+            int status = 1; // pode tirar essa linha e alterar para linha 36
+
 
             var pmtIdUsuario = cmdAbrir.CreateParameter();
             pmtIdUsuario.Value = mdlUsuario.Logado.ID;
@@ -33,6 +34,7 @@ namespace helpdesk2018.Controller
             cmdAbrir.Parameters.Add(pmtidmotivo);
 
             var pmtidstatus= cmdAbrir.CreateParameter();
+            // pmtidstatus.Value = 1; se fizer assim tbem resolve, nao precisa de variavel
             pmtidstatus.Value = status;
             pmtidstatus.ParameterName = "@fk_idstatus";
             pmtidstatus.DbType = DbType.Int16;
