@@ -167,5 +167,10 @@
   <ItemGroup>
     <None Include="Resources\Anexo.ico" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="helpdesk.mdb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
