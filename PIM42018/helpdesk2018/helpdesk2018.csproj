@@ -50,6 +50,7 @@
     <Compile Include="Controller\ctlLogin.cs" />
     <Compile Include="Controller\ctlManutencaoEmpresas.cs" />
     <Compile Include="Controller\ctlManutencaoMotivo.cs" />
+    <Compile Include="Controller\ctlManutencaoOS.cs" />
     <Compile Include="Controller\ctlManutencaoUsuario.cs" />
     <Compile Include="Controller\ctlMotivo.cs" />
     <Compile Include="helpdeskDataSet.Designer.cs">

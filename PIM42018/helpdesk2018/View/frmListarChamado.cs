@@ -16,5 +16,11 @@ namespace helpdesk2018
         {
             InitializeComponent();
         }
+
+        private void frmListarChamado_Load(object sender, EventArgs e)
+        {
+            helpdesk2018.Controller.ctlManutencaoOS listar = new Controller.ctlManutencaoOS();
+            dataGridView1.DataSource = listar.ListarOS();
+        }
     }
 }

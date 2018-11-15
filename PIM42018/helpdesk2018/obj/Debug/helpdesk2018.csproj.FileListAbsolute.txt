@@ -74,3 +74,19 @@ C:\Users\Very Good\Desktop\PIM4\PIM42018\PIM42018\helpdesk2018\obj\Debug\helpdes
 C:\Users\Very Good\Desktop\PIM4\PIM42018\PIM42018\helpdesk2018\obj\Debug\helpdesk2018.csproj.CoreCompileInputs.cache
 C:\Users\Very Good\Desktop\PIM4\PIM42018\PIM42018\helpdesk2018\obj\Debug\helpdesk2018.exe
 C:\Users\Very Good\Desktop\PIM4\PIM42018\PIM42018\helpdesk2018\obj\Debug\helpdesk2018.pdb
+F:\GitHub\PIM4\PIM42018\PIM42018\helpdesk2018\bin\Debug\helpdesk2018.exe.config
+F:\GitHub\PIM4\PIM42018\PIM42018\helpdesk2018\bin\Debug\helpdesk2018.exe
+F:\GitHub\PIM4\PIM42018\PIM42018\helpdesk2018\bin\Debug\helpdesk2018.pdb
+F:\GitHub\PIM4\PIM42018\PIM42018\helpdesk2018\obj\Debug\helpdesk2018.csprojAssemblyReference.cache
+F:\GitHub\PIM4\PIM42018\PIM42018\helpdesk2018\obj\Debug\helpdesk2018.Properties.Resources.resources
+F:\GitHub\PIM4\PIM42018\PIM42018\helpdesk2018\obj\Debug\helpdesk2018.View.frmAberturaChamados.resources
+F:\GitHub\PIM4\PIM42018\PIM42018\helpdesk2018\obj\Debug\helpdesk2018.frmListarChamado.resources
+F:\GitHub\PIM4\PIM42018\PIM42018\helpdesk2018\obj\Debug\helpdesk2018.View.frmLogin.resources
+F:\GitHub\PIM4\PIM42018\PIM42018\helpdesk2018\obj\Debug\helpdesk2018.View.frmManutencaoEmpresas.resources
+F:\GitHub\PIM4\PIM42018\PIM42018\helpdesk2018\obj\Debug\helpdesk2018.View.frmManutencaoMotivo.resources
+F:\GitHub\PIM4\PIM42018\PIM42018\helpdesk2018\obj\Debug\helpdesk2018.frmManutencaoUsuario.resources
+F:\GitHub\PIM4\PIM42018\PIM42018\helpdesk2018\obj\Debug\helpdesk2018.View.frmMenu.resources
+F:\GitHub\PIM4\PIM42018\PIM42018\helpdesk2018\obj\Debug\helpdesk2018.csproj.GenerateResource.cache
+F:\GitHub\PIM4\PIM42018\PIM42018\helpdesk2018\obj\Debug\helpdesk2018.csproj.CoreCompileInputs.cache
+F:\GitHub\PIM4\PIM42018\PIM42018\helpdesk2018\obj\Debug\helpdesk2018.exe
+F:\GitHub\PIM4\PIM42018\PIM42018\helpdesk2018\obj\Debug\helpdesk2018.pdb

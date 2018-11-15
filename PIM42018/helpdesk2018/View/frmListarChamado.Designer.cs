@@ -81,6 +81,7 @@
             this.Controls.Add(this.label1);
             this.Name = "frmListarChamado";
             this.Text = "frmListarChamado";
+            this.Load += new System.EventHandler(this.frmListarChamado_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
