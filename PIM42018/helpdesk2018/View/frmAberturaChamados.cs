@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Windows.Forms;
 using helpdesk2018.Controller;
 using helpdesk2018.Model;
+using System.Data;
 
 namespace helpdesk2018.View
 {
@@ -22,15 +23,13 @@ namespace helpdesk2018.View
             lbNome.Text = mdlUsuario.Logado.Nome;
             lbEmpresa.Text = mdlEmpresa.Logado.NomeEmpresa;
             lbUsuario.Text = mdlUsuario.Logado.Usuario;
-            ctlMotivo.CarregaDados();
-            cbbMotivo.Text="Selecione o motivo...";
-            cbbMotivo.Items.Clear();
-            cbbMotivo.Refresh();
-            for (int i = 0; i < ctlMotivo.motivo.Count; i++)
-            {
-                cbbMotivo.Items.Add(ctlMotivo.motivo[i].ToString());
-            }
+            DataTable dadosmotivo = ctlMotivo.CarregaDados();
 
+            cbbMotivo.DataSource = dadosmotivo;
+            cbbMotivo.DisplayMember = "descricao";
+            cbbMotivo.ValueMember = "idmotivo";
+
+            cbbMotivo.Text="Selecione o motivo...";
         }
 
         private void lblHora_Click(object sender, EventArgs e)
@@ -60,7 +59,7 @@ namespace helpdesk2018.View
 
         private void btnEnviar_Click(object sender, EventArgs e)
         {
-            string retorno = ctlChamados.Abrirchamado(cbbMotivo.Text, txtDescricao.Text);
+            string retorno = ctlChamados.Abrirchamado(Convert.ToInt16(cbbMotivo.SelectedValue), txtDescricao.Text);
 
             if (retorno == "")
             {
