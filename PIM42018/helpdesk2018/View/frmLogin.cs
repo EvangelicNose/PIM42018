@@ -32,8 +32,6 @@ namespace helpdesk2018.View
 
         void Entrar()
         {
-            // mdlUsuario _mdlusuario = new mdlUsuario();
-
             Conexao conexao = new Conexao();
             conexao.abrir();
 

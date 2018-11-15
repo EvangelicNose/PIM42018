@@ -37,8 +37,28 @@ namespace helpdesk2018.View
 
         private void frmMenu_Load(object sender, EventArgs e)
         {
-            this.Text = "Menus Principal - Usuário: " + frmLogin.UsuarioConectado;
- 
+            string NivelUser = "";
+            if (mdlUsuario.Logado.Nivel == "0")
+            {
+                NivelUser = "Usuário";
+            }
+            if (mdlUsuario.Logado.Nivel == "1")
+            {
+                NivelUser = "Técnico";
+            }
+            if (mdlUsuario.Logado.Nivel == "2")
+            {
+                NivelUser = "Administrador";
+            }
+
+            this.Text = "Menus Principal - Usuário: " + frmLogin.UsuarioConectado + " | Nivel: " + NivelUser;
+
+
+            if (mdlUsuario.Logado.Nivel== "0" || mdlUsuario.Logado.Nivel == "1")
+            {
+                manutençãoToolStripMenuItem.Visible = false;
+            }
+
             //   frmLogin.UsuarioConectado;
             //   mdlUsuario.Logado.Nome;
             //   mdlUsuario.Logado.Nome;
@@ -76,11 +96,6 @@ namespace helpdesk2018.View
 
         }
 
-        private void finalizarSistemaToolStripMenuItem1_Click(object sender, EventArgs e)
-        {
-            Close();
-        }
-
         private void fazerLogoffToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             frmLogin login = new frmLogin();
@@ -96,5 +111,28 @@ namespace helpdesk2018.View
             _frmmanutencaomotivo.Show();
 
         }
+
+        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
+        }
+
+        private void manutençãoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void finalizarSistemaToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+        private void frmMenu_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (MessageBox.Show("Deseja realmente sair ?", "CONFIRMAR", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
+            {
+                e.Cancel = true;
+            }
+        }
+
     }
 }

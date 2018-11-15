@@ -52,6 +52,11 @@
     <Compile Include="Controller\ctlManutencaoMotivo.cs" />
     <Compile Include="Controller\ctlManutencaoUsuario.cs" />
     <Compile Include="Controller\ctlMotivo.cs" />
+    <Compile Include="helpdeskDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>helpdeskDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Model\mdlManutencaoMotivo.cs" />
     <Compile Include="Model\mdlChamados.cs" />
     <Compile Include="Model\mdlEmpresa.cs" />
@@ -134,6 +139,17 @@
     <EmbeddedResource Include="View\frmMenu.resx">
       <DependentUpon>frmMenu.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="helpdeskDataSet.xsc">
+      <DependentUpon>helpdeskDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="helpdeskDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>helpdeskDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="helpdeskDataSet.xss">
+      <DependentUpon>helpdeskDataSet.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

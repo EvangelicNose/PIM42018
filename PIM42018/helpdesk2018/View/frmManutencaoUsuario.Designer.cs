@@ -30,7 +30,6 @@
         {
             this.gbEscolha = new System.Windows.Forms.GroupBox();
             this.btnVoltar = new System.Windows.Forms.Button();
-            this.btnExcluir = new System.Windows.Forms.Button();
             this.btnAlterar = new System.Windows.Forms.Button();
             this.btnIncluir = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
@@ -78,7 +77,6 @@
             // gbEscolha
             // 
             this.gbEscolha.Controls.Add(this.btnVoltar);
-            this.gbEscolha.Controls.Add(this.btnExcluir);
             this.gbEscolha.Controls.Add(this.btnAlterar);
             this.gbEscolha.Controls.Add(this.btnIncluir);
             this.gbEscolha.Location = new System.Drawing.Point(350, 12);
@@ -97,15 +95,6 @@
             this.btnVoltar.Text = "Voltar";
             this.btnVoltar.UseVisualStyleBackColor = true;
             this.btnVoltar.Click += new System.EventHandler(this.button4_Click);
-            // 
-            // btnExcluir
-            // 
-            this.btnExcluir.Location = new System.Drawing.Point(6, 116);
-            this.btnExcluir.Name = "btnExcluir";
-            this.btnExcluir.Size = new System.Drawing.Size(75, 23);
-            this.btnExcluir.TabIndex = 2;
-            this.btnExcluir.Text = "Excluir";
-            this.btnExcluir.UseVisualStyleBackColor = true;
             // 
             // btnAlterar
             // 
@@ -325,9 +314,13 @@
             // 
             // dtgAlteraResultado
             // 
+            this.dtgAlteraResultado.AllowUserToAddRows = false;
+            this.dtgAlteraResultado.AllowUserToResizeRows = false;
             this.dtgAlteraResultado.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgAlteraResultado.Location = new System.Drawing.Point(17, 59);
+            this.dtgAlteraResultado.MultiSelect = false;
             this.dtgAlteraResultado.Name = "dtgAlteraResultado";
+            this.dtgAlteraResultado.RowHeadersVisible = false;
             this.dtgAlteraResultado.Size = new System.Drawing.Size(396, 150);
             this.dtgAlteraResultado.TabIndex = 27;
             this.dtgAlteraResultado.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgAlteraResultado_CellClick);
@@ -523,7 +516,6 @@
 
         private System.Windows.Forms.GroupBox gbEscolha;
         private System.Windows.Forms.Button btnVoltar;
-        private System.Windows.Forms.Button btnExcluir;
         private System.Windows.Forms.Button btnAlterar;
         private System.Windows.Forms.Button btnIncluir;
         private System.Windows.Forms.Button btnCancelar;

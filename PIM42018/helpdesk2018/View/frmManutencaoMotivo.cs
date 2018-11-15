@@ -29,7 +29,15 @@ namespace helpdesk2018.View
             CadastrarMotivo();
         }
 
+        public void limpar()
+        {
+            txtPesquisaMotivo.Text = "";
+            txtAlteraMotivo.Text = "";
+            txtIncluirMotivo.Text = "";
+            txtPesquisaMotivo.Text = "";
+        }
 
+    
         void CadastrarMotivo()
         {
             string branco = "0";
@@ -53,7 +61,7 @@ namespace helpdesk2018.View
                 if (retorno1)
                 {
                     MessageBox.Show("Motivo gravado com sucesso");
-                    txtIncluirMotivo.Text = "";
+                    limpar();
                 }
                 else
                 {
@@ -75,12 +83,14 @@ namespace helpdesk2018.View
 
         private void btnAlterarSair_Click(object sender, EventArgs e)
         {
+            limpar();
             Close();
 
         }
 
         private void btnSair_Click(object sender, EventArgs e)
         {
+            limpar();
             Close();
         }
 
@@ -97,6 +107,7 @@ namespace helpdesk2018.View
             bool retorno1 = _ctlmanutencaomotivo.AlteraMotivoMDL(_mdlmanutencaomotivo);
             if (retorno1)
             {
+                limpar();
                 MessageBox.Show("Dados alterados com sucesso");
 
             }

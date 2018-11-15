@@ -120,7 +120,7 @@ namespace helpdesk2018.Controller
             cmd.CommandType = CommandType.Text;
             
             OleDbParameter pmtusuarios = cmd.CreateParameter();
-            pmtusuarios.ParameterName = "@usuario";
+            pmtusuarios.ParameterName = "@Usuario";
             pmtusuarios.DbType = DbType.String;
             pmtusuarios.Value = _mdlmanutencaousuario.Usuario;
             cmd.Parameters.Add(pmtusuarios);

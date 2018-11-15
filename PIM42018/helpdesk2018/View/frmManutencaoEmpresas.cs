@@ -42,9 +42,14 @@ namespace helpdesk2018.View
 
         public void limpar()
         {
+            txtPesquisarEmpresa.Text = "";
             txtNome.Text = "";
             txtEndereco.Text = "";
             txtTelefone.Text = "";
+
+            txtAlteraEndereco.Text = "";
+            txtAlteraNome.Text = "";
+            txtAlteraTelefone.Text = "";
         }
 
         private void btOK_Click(object sender, EventArgs e)
@@ -149,7 +154,7 @@ namespace helpdesk2018.View
             if (retorno1)
             {
                 MessageBox.Show("Dados alterados com sucesso");
-
+                limpar();
             }
             else
             {

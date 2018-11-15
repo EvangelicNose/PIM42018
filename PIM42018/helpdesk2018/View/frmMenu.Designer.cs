@@ -35,12 +35,12 @@
             this.manutençãoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.usuáriosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.empresasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.motivosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sobreToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sairToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.fazerLogoffToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.finalizarSistemaToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.label1 = new System.Windows.Forms.Label();
-            this.motivosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -56,6 +56,7 @@
             this.menuStrip1.Size = new System.Drawing.Size(884, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
+            this.menuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip1_ItemClicked);
             // 
             // chamadosToolStripMenuItem
             // 
@@ -89,20 +90,28 @@
             this.manutençãoToolStripMenuItem.Name = "manutençãoToolStripMenuItem";
             this.manutençãoToolStripMenuItem.Size = new System.Drawing.Size(86, 20);
             this.manutençãoToolStripMenuItem.Text = "Manutenção";
+            this.manutençãoToolStripMenuItem.Click += new System.EventHandler(this.manutençãoToolStripMenuItem_Click);
             // 
             // usuáriosToolStripMenuItem
             // 
             this.usuáriosToolStripMenuItem.Name = "usuáriosToolStripMenuItem";
-            this.usuáriosToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.usuáriosToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
             this.usuáriosToolStripMenuItem.Text = "Usuários";
             this.usuáriosToolStripMenuItem.Click += new System.EventHandler(this.usuáriosToolStripMenuItem_Click);
             // 
             // empresasToolStripMenuItem
             // 
             this.empresasToolStripMenuItem.Name = "empresasToolStripMenuItem";
-            this.empresasToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.empresasToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
             this.empresasToolStripMenuItem.Text = "Empresas";
             this.empresasToolStripMenuItem.Click += new System.EventHandler(this.empresasToolStripMenuItem_Click);
+            // 
+            // motivosToolStripMenuItem
+            // 
+            this.motivosToolStripMenuItem.Name = "motivosToolStripMenuItem";
+            this.motivosToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
+            this.motivosToolStripMenuItem.Text = "Motivos";
+            this.motivosToolStripMenuItem.Click += new System.EventHandler(this.motivosToolStripMenuItem_Click);
             // 
             // sobreToolStripMenuItem
             // 
@@ -139,17 +148,9 @@
             this.label1.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.label1.Location = new System.Drawing.Point(2, 26);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(34, 13);
+            this.label1.Size = new System.Drawing.Size(70, 13);
             this.label1.TabIndex = 2;
-            this.label1.Text = "v1.41";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
-            // 
-            // motivosToolStripMenuItem
-            // 
-            this.motivosToolStripMenuItem.Name = "motivosToolStripMenuItem";
-            this.motivosToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.motivosToolStripMenuItem.Text = "Motivos";
-            this.motivosToolStripMenuItem.Click += new System.EventHandler(this.motivosToolStripMenuItem_Click);
+            this.label1.Text = "v1.41->v1.55";
             // 
             // frmMenu
             // 
@@ -163,6 +164,7 @@
             this.Name = "frmMenu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmMenu_FormClosing);
             this.Load += new System.EventHandler(this.frmMenu_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();

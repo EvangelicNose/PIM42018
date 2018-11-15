@@ -15,9 +15,6 @@ namespace helpdesk2018
 {
     public partial class frmManutencaoUsuario : Form
     {
-        List<mdlManutencaoEmpresas> empresas = new List<mdlManutencaoEmpresas>();
-        int id = 0;
-        
         public frmManutencaoUsuario()
         {
             InitializeComponent();
@@ -25,6 +22,7 @@ namespace helpdesk2018
 
         public void limpar()
         {
+            txtPesquisaNome.Text = "";
             txtUsuario.Text = "";
             txtNome.Text = "";
             txtSenha.Text = "";
@@ -32,6 +30,12 @@ namespace helpdesk2018
             cbNivel.SelectedIndex = -1;
             cbEmpresas.SelectedIndex = -1;
 
+            txtAlteraNome.Text = "";
+            txtAlteraSenha.Text = "";
+            txtAlteraTelefone.Text = "";
+            txtAlteraUsuario.Text = "";
+            cbbAlteraEmpresa.SelectedIndex = -1;
+            cbbAlteraNivel.SelectedIndex = -1;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -113,7 +117,7 @@ namespace helpdesk2018
                 _mdlManutencaoUsuario.Senha = txtSenha.Text;
                 _mdlManutencaoUsuario.Telefone = txtTelefone.Text;
                 _mdlManutencaoUsuario.Nivel = nivel;
-                _mdlManutencaoUsuario.Empresa = cbEmpresas.SelectedIndex;
+                _mdlManutencaoUsuario.Empresa = Convert.ToInt16(cbEmpresas.SelectedValue.ToString());
                 _mdlManutencaoUsuario.Ativo = ckbAtivo.Checked;
                 
                 bool retorno1 = _ctlManutencaoUsuario.InserirUsuarioMDL(_mdlManutencaoUsuario);
@@ -148,28 +152,29 @@ namespace helpdesk2018
         {
             Conexao conexao = new Conexao();
             conexao.abrir();
-            string Query = "select * from tb_empresas";
+            string Query = "select * from tb_empresas where ativa=true";
             OleDbCommand cmd = new OleDbCommand(Query, conexao.GetConexao());
-            OleDbDataReader popularIncluirEmpresa = cmd.ExecuteReader();
+            OleDbDataAdapter popularIncluirEmpresa = new OleDbDataAdapter(Query, conexao.GetConexao());
             OleDbDataAdapter popularAlterarEmpresa = new OleDbDataAdapter(Query, conexao.GetConexao());
-            // cbbAlteraEmpresa.ValueMember = "idempresa";
-            // cbbAlteraEmpresa.DisplayMember = "nome";
-            
-            //cbbAlteraEmpresa.DisplayMember = "idempresa";
-            //cbbAlteraEmpresa.ValueMember = "nome";
-
+        
+            DataTable resultadoInclui = new DataTable();
             DataTable resultadoAltera = new DataTable();
+
+            popularIncluirEmpresa.Fill(resultadoInclui);
             popularAlterarEmpresa.Fill(resultadoAltera);
+
+            cbEmpresas.DataSource = resultadoAltera;
+            cbEmpresas.DisplayMember = "nome";
+            cbEmpresas.ValueMember = "idempresa";
 
             cbbAlteraEmpresa.DataSource = resultadoAltera;
             cbbAlteraEmpresa.DisplayMember = "nome";
             cbbAlteraEmpresa.ValueMember = "idempresa";
 
-            while (popularIncluirEmpresa.Read())
-            {
-                cbEmpresas.Items.Add(popularIncluirEmpresa["nome"].ToString());
-            }
+            cbEmpresas.SelectedIndex = -1;
+            cbbAlteraEmpresa.SelectedIndex = -1;
             conexao.Fechar();
+
         }
 
         private void cbEmpresas_MouseClick(object sender, MouseEventArgs e)
@@ -207,6 +212,7 @@ namespace helpdesk2018
             gpbAltera.Visible = false;
             gbEscolha.Enabled = true;
             gbEscolha.Visible = true;
+            limpar();
 
         }
 
@@ -227,7 +233,7 @@ namespace helpdesk2018
             txtAlteraSenha.Text = dtgAlteraResultado.CurrentRow.Cells["senha"].Value.ToString();
             txtAlteraTelefone.Text = dtgAlteraResultado.CurrentRow.Cells["telefone"].Value.ToString();
             cbbAlteraNivel.SelectedIndex = Convert.ToInt16(dtgAlteraResultado.CurrentRow.Cells["nivelAcesso"].Value.ToString());
-            cbbAlteraEmpresa.SelectedIndex = Convert.ToInt16(dtgAlteraResultado.CurrentRow.Cells["fk_idempresa"].Value.ToString())-1;
+            cbbAlteraEmpresa.SelectedValue = Convert.ToInt16(dtgAlteraResultado.CurrentRow.Cells["fk_idempresa"].Value.ToString());
             ckbAlteraAtivo.Checked = Convert.ToBoolean(dtgAlteraResultado.CurrentRow.Cells["ativo"].Value.ToString());
         }
 
@@ -265,7 +271,7 @@ namespace helpdesk2018
             if (retorno1)
             {
                 MessageBox.Show("Dados alterados com sucesso");
-                
+                limpar();
             }
             else
             {
@@ -275,8 +281,14 @@ namespace helpdesk2018
 
 
         }
+      
 
         private void cbbAlteraEmpresa_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnExcluir_Click(object sender, EventArgs e)
         {
 
         }
