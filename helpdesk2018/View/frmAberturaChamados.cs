@@ -24,12 +24,15 @@ namespace helpdesk2018.View
             lbEmpresa.Text = mdlEmpresa.Logado.NomeEmpresa;
             lbUsuario.Text = mdlUsuario.Logado.Usuario;
             DataTable dadosmotivo = ctlMotivo.CarregaDados();
+  
+            DataRow nada = dadosmotivo.NewRow();
+            nada["descricao"] = "Selecione o motivo...";
+            nada["idmotivo"] = -1;
+            dadosmotivo.Rows.InsertAt(nada, 0);
 
-            cbbMotivo.DataSource = dadosmotivo;
             cbbMotivo.DisplayMember = "descricao";
             cbbMotivo.ValueMember = "idmotivo";
-
-            cbbMotivo.Text="Selecione o motivo...";
+            cbbMotivo.DataSource = dadosmotivo;
         }
 
         private void lblHora_Click(object sender, EventArgs e)
@@ -59,20 +62,29 @@ namespace helpdesk2018.View
 
         private void btnEnviar_Click(object sender, EventArgs e)
         {
-            string retorno = ctlChamados.Abrirchamado(Convert.ToInt16(cbbMotivo.SelectedValue), txtDescricao.Text);
+            int motivo = Convert.ToInt16(cbbMotivo.SelectedValue);
+            if (motivo == -1)
+            {
+                MessageBox.Show("Selecione um motivo.");
+                return;
+            }
+            string descricao = txtDescricao.Text;
+            if (descricao == "")
+            {
+                MessageBox.Show("Informe a descrição.");
+                return;
+            }
+            string retorno = ctlChamados.Abrirchamado(motivo, descricao);
 
             if (retorno == "")
             {
                 MessageBox.Show("Ocorreu um erro ao abrir seu chamado. Por favor, tente novamente mais tarde");
-
-            }else if (retorno != "")
-            {
-                // coloquei + "\n" + pra pular linha
-                MessageBox.Show("Seu chamado foi cadastrado com sucesso!" + "\n" + "Sua ordem de serviço é : " + retorno);
-
-                txtDescricao.Text = "";
-                cbbMotivo.Text = "";
+                return;
             }
+
+            MessageBox.Show("Seu chamado foi cadastrado com sucesso!" + "\n" + "Sua ordem de serviço é : " + retorno);
+            txtDescricao.Text = "";
+            cbbMotivo.SelectedValue = -1;
         }
 
         private void txtUsuario_TextChanged(object sender, EventArgs e)
@@ -87,26 +99,10 @@ namespace helpdesk2018.View
 
         private void cbbMotivo_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (cbbMotivo.Text != "" && txtDescricao.Text != "")
-            {
-                btnEnviar.Enabled = true;
-            }
-            else
-            {
-                btnEnviar.Enabled = false;
-            }
         }
 
         private void txtDescricao_TextChanged(object sender, EventArgs e)
         {
-            if (cbbMotivo.Text != "" && txtDescricao.Text != "")
-            {
-                btnEnviar.Enabled = true;
-            }
-            else
-            {
-                btnEnviar.Enabled = false;
-            }
         }
     }
 }

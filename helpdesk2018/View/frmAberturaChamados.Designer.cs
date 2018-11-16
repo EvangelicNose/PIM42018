@@ -159,7 +159,6 @@
             // 
             // btnEnviar
             // 
-            this.btnEnviar.Enabled = false;
             this.btnEnviar.Location = new System.Drawing.Point(458, 165);
             this.btnEnviar.Name = "btnEnviar";
             this.btnEnviar.Size = new System.Drawing.Size(93, 23);
