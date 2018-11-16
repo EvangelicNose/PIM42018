@@ -79,7 +79,6 @@ namespace helpdesk2018.View
 
             if (branco == "0")
             {
-                ctlManutencaoEmpresas _ctlManutencaoEmpresas = new ctlManutencaoEmpresas();
                 mdlManutencaoEmpresas _mdlManutencaoEmpresas = new mdlManutencaoEmpresas();
                 _mdlManutencaoEmpresas.Nome = txtNome.Text;
                 _mdlManutencaoEmpresas.Telefone = txtTelefone.Text;
@@ -87,7 +86,7 @@ namespace helpdesk2018.View
                 _mdlManutencaoEmpresas.Ativa = ckbIncluirAtiva.Checked;
 
 
-                bool retorno1 = _ctlManutencaoEmpresas.InserirEmpresasMDL(_mdlManutencaoEmpresas);
+                bool retorno1 = ctlManutencaoEmpresas.InserirEmpresasMDL(_mdlManutencaoEmpresas);
                 if (retorno1)
                 {
                     MessageBox.Show("Empresa gravada com sucesso");
@@ -119,10 +118,9 @@ namespace helpdesk2018.View
 
         private void btnPesquisarEmpresa_Click(object sender, EventArgs e)
         {
-            ctlManutencaoEmpresas _ctlmanutencaoempresas = new ctlManutencaoEmpresas();
             mdlManutencaoEmpresas _mdlmanutencaoempresas = new mdlManutencaoEmpresas();
             _mdlmanutencaoempresas.Nome = txtPesquisarEmpresa.Text;
-            dtgAlteraResultado.DataSource = _ctlmanutencaoempresas.PesquisaEmpresaMDL(_mdlmanutencaoempresas);
+            dtgAlteraResultado.DataSource = ctlManutencaoEmpresas.PesquisaEmpresaMDL(_mdlmanutencaoempresas);
 
         }
 
@@ -141,16 +139,15 @@ namespace helpdesk2018.View
 
         private void btnAlterarOK_Click(object sender, EventArgs e)
         {
-            ctlManutencaoEmpresas _ctlmanutencaoempresa = new ctlManutencaoEmpresas();
             mdlManutencaoEmpresas _mdlmanutencaoempresa = new mdlManutencaoEmpresas();
             _mdlmanutencaoempresa.Nome = txtAlteraNome.Text;
             _mdlmanutencaoempresa.Endereco = txtAlteraEndereco.Text;
             _mdlmanutencaoempresa.Telefone = txtAlteraTelefone.Text;
             _mdlmanutencaoempresa.Ativa = ckbAlteraAtiva.Checked;
             _mdlmanutencaoempresa.ID = Convert.ToInt16(dtgAlteraResultado.CurrentRow.Cells["idempresa"].Value.ToString());
-            dtgAlteraResultado.DataSource = _ctlmanutencaoempresa.AlteraEmpresaMDL(_mdlmanutencaoempresa);
+            dtgAlteraResultado.DataSource = ctlManutencaoEmpresas.AlteraEmpresaMDL(_mdlmanutencaoempresa);
 
-            bool retorno1 = _ctlmanutencaoempresa.AlteraEmpresaMDL(_mdlmanutencaoempresa);
+            bool retorno1 = ctlManutencaoEmpresas.AlteraEmpresaMDL(_mdlmanutencaoempresa);
             if (retorno1)
             {
                 MessageBox.Show("Dados alterados com sucesso");

@@ -10,10 +10,10 @@ using helpdesk2018.Model;
 
 namespace helpdesk2018.Controller
 {
-    public class ctlManutencaoEmpresas
+    public static class ctlManutencaoEmpresas
     {
 
-        public bool InserirEmpresasMDL(global::helpdesk2018.Model.mdlManutencaoEmpresas _mdlManutencaoEmpresas)
+        public static bool InserirEmpresasMDL(global::helpdesk2018.Model.mdlManutencaoEmpresas _mdlManutencaoEmpresas)
         {
             Conexao conexao = new Conexao();
             conexao.abrir();
@@ -57,7 +57,7 @@ namespace helpdesk2018.Controller
         }
 
 
-        public DataTable PesquisaEmpresaMDL(global::helpdesk2018.Model.mdlManutencaoEmpresas _mdlmanutencaoempresas)
+        public static DataTable PesquisaEmpresaMDL(global::helpdesk2018.Model.mdlManutencaoEmpresas _mdlmanutencaoempresas)
         {
             Conexao conexao = new Conexao();
             conexao.abrir();
@@ -76,7 +76,7 @@ namespace helpdesk2018.Controller
             return empresas;
         }
 
-        public bool AlteraEmpresaMDL(global::helpdesk2018.Model.mdlManutencaoEmpresas _mdlmanutencaoempresa)
+        public static bool AlteraEmpresaMDL(global::helpdesk2018.Model.mdlManutencaoEmpresas _mdlmanutencaoempresa)
         {
             Conexao conexao = new Conexao();
             conexao.abrir();
