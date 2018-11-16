@@ -4,7 +4,7 @@ using helpdesk2018.Model;
 
 namespace helpdesk2018.Controller
 {
-    public class ctlChamados
+    public static class ctlChamados
     {
         public static string Abrirchamado(int fk_motivo, string descricao)
         {
