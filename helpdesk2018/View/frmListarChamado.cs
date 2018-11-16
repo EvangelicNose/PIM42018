@@ -22,5 +22,10 @@ namespace helpdesk2018
             helpdesk2018.Controller.ctlManutencaoOS listar = new Controller.ctlManutencaoOS();
             dataGridView1.DataSource = listar.ListarOS();
         }
+
+        private void btnVoltar_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
 }
