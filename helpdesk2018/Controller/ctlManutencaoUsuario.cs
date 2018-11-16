@@ -10,10 +10,10 @@ using helpdesk2018.Model;
 
 namespace helpdesk2018.Controller
 {
-    public class ctlManutencaoUsuario
+    public static class ctlManutencaoUsuario
     {
 
-        public bool InserirUsuarioMDL(global::helpdesk2018.Model.mdlManutencaoUsuario _mdlManutencaoUsuario)
+        public static bool InserirUsuarioMDL(global::helpdesk2018.Model.mdlManutencaoUsuario _mdlManutencaoUsuario)
         {
             Conexao conexao = new Conexao();
             conexao.abrir();
@@ -74,14 +74,14 @@ namespace helpdesk2018.Controller
             }
         } // fim inserir usuario
 
-        public bool PesquisaNome(string Nome)
+        public static bool PesquisaNome(string Nome)
         {
             bool RetornoPesquisar = false;
             return RetornoPesquisar;
 
         }
 
-        public DataTable PesquisaNomeMDL(global::helpdesk2018.Model.mdlManutencaoUsuario _mdlmanutencaousuario)
+        public static DataTable PesquisaNomeMDL(global::helpdesk2018.Model.mdlManutencaoUsuario _mdlmanutencaousuario)
         {
             Conexao conexao = new Conexao();
             conexao.abrir();
@@ -100,7 +100,7 @@ namespace helpdesk2018.Controller
             return usuarios;
         }
 
-        public bool AlteraUsuarioMDL(global::helpdesk2018.Model.mdlManutencaoUsuario _mdlmanutencaousuario)
+        public static bool AlteraUsuarioMDL(global::helpdesk2018.Model.mdlManutencaoUsuario _mdlmanutencaousuario)
         {
             Conexao conexao = new Conexao();
             conexao.abrir();

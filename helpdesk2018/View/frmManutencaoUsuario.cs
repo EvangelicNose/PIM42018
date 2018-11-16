@@ -110,7 +110,6 @@ namespace helpdesk2018
 
             if (branco == "0")
             {
-                ctlManutencaoUsuario _ctlManutencaoUsuario = new ctlManutencaoUsuario();
                 mdlManutencaoUsuario _mdlManutencaoUsuario = new mdlManutencaoUsuario();
                 _mdlManutencaoUsuario.Usuario = txtUsuario.Text;
                 _mdlManutencaoUsuario.Nome = txtNome.Text;
@@ -120,7 +119,7 @@ namespace helpdesk2018
                 _mdlManutencaoUsuario.Empresa = Convert.ToInt16(cbEmpresas.SelectedValue.ToString());
                 _mdlManutencaoUsuario.Ativo = ckbAtivo.Checked;
                 
-                bool retorno1 = _ctlManutencaoUsuario.InserirUsuarioMDL(_mdlManutencaoUsuario);
+                bool retorno1 = ctlManutencaoUsuario.InserirUsuarioMDL(_mdlManutencaoUsuario);
                 if (retorno1)
                 {
                     MessageBox.Show("Usuário gravado com sucesso");
@@ -182,10 +181,9 @@ namespace helpdesk2018
 
         void Pesquisar()
         {
-            ctlManutencaoUsuario _ctlmanutencaousuario = new ctlManutencaoUsuario();
             mdlManutencaoUsuario _mdlmanutencaousuario = new mdlManutencaoUsuario();
             _mdlmanutencaousuario.Nome = txtPesquisaNome.Text;
-            dtgAlteraResultado.DataSource = _ctlmanutencaousuario.PesquisaNomeMDL(_mdlmanutencaousuario);
+            dtgAlteraResultado.DataSource = ctlManutencaoUsuario.PesquisaNomeMDL(_mdlmanutencaousuario);
         }
 
         private void btnAlteraPesquisa_Click(object sender, EventArgs e)
@@ -229,7 +227,6 @@ namespace helpdesk2018
             }
 
 
-            ctlManutencaoUsuario _ctlmanutencaousuario = new ctlManutencaoUsuario();
             mdlManutencaoUsuario _mdlmanutencaousuario = new mdlManutencaoUsuario();
             _mdlmanutencaousuario.Usuario = txtAlteraUsuario.Text;
             _mdlmanutencaousuario.Nome = txtAlteraNome.Text;
@@ -240,9 +237,9 @@ namespace helpdesk2018
             //_mdlmanutencaousuario.Empresa = cbbAlteraEmpresa.SelectedIndex;
             _mdlmanutencaousuario.Ativo = ckbAlteraAtivo.Checked;
             _mdlmanutencaousuario.IDUsuario = Convert.ToInt16(dtgAlteraResultado.CurrentRow.Cells["idusuario"].Value.ToString());
-            dtgAlteraResultado.DataSource = _ctlmanutencaousuario.AlteraUsuarioMDL(_mdlmanutencaousuario);
+            dtgAlteraResultado.DataSource = ctlManutencaoUsuario.AlteraUsuarioMDL(_mdlmanutencaousuario);
 
-            bool retorno1 = _ctlmanutencaousuario.AlteraUsuarioMDL(_mdlmanutencaousuario);
+            bool retorno1 = ctlManutencaoUsuario.AlteraUsuarioMDL(_mdlmanutencaousuario);
             if (retorno1)
             {
                 MessageBox.Show("Dados alterados com sucesso");
