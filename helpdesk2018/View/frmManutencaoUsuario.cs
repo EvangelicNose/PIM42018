@@ -169,6 +169,7 @@ namespace helpdesk2018
             cbEmpresas.SelectedIndex = -1;
             cbbAlteraEmpresa.SelectedIndex = -1;
             conexao.Fechar();
+            Pesquisar();
 
         }
 
@@ -179,12 +180,17 @@ namespace helpdesk2018
             gpbAltera.Visible = true;
         }
 
-        private void btnAlteraPesquisa_Click(object sender, EventArgs e)
+        void Pesquisar()
         {
             ctlManutencaoUsuario _ctlmanutencaousuario = new ctlManutencaoUsuario();
             mdlManutencaoUsuario _mdlmanutencaousuario = new mdlManutencaoUsuario();
             _mdlmanutencaousuario.Nome = txtPesquisaNome.Text;
             dtgAlteraResultado.DataSource = _ctlmanutencaousuario.PesquisaNomeMDL(_mdlmanutencaousuario);
+        }
+
+        private void btnAlteraPesquisa_Click(object sender, EventArgs e)
+        {
+            Pesquisar();
         }
 
         private void btnAlteraCancelar_Click(object sender, EventArgs e)
