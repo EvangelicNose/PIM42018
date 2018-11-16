@@ -19,8 +19,7 @@ namespace helpdesk2018
 
         private void frmListarChamado_Load(object sender, EventArgs e)
         {
-            helpdesk2018.Controller.ctlManutencaoOS listar = new Controller.ctlManutencaoOS();
-            dataGridView1.DataSource = listar.ListarOS();
+            dataGridView1.DataSource = Controller.ctlManutencaoOS.ListarOS();
         }
 
         private void btnVoltar_Click(object sender, EventArgs e)

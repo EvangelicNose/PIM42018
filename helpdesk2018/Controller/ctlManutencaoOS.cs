@@ -9,10 +9,10 @@ using System.Threading.Tasks;
 
 namespace helpdesk2018.Controller
 {
-    class ctlManutencaoOS
+    public static class ctlManutencaoOS
     {
 
-        public DataTable ListarOS()
+        public static DataTable ListarOS()
         {
             Conexao conexao = new Conexao();
             conexao.abrir();
