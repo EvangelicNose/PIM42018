@@ -9,7 +9,7 @@ using System.Data;
 
 namespace helpdesk2018.Controller
 {
-    class ctlMotivo
+    public static class ctlMotivo
     {
         public static List<string> motivo = new List<string>();
         public static DataTable CarregaDados()
