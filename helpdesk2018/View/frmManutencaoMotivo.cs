@@ -52,13 +52,12 @@ namespace helpdesk2018.View
 
             if (branco == "0")
             {
-                ctlManutencaoMotivo _ctlmanutencaomotivo = new ctlManutencaoMotivo();
                 mdlManutencaoMotivo _mdlmanutencaomotivo = new mdlManutencaoMotivo();
                 _mdlmanutencaomotivo.Descricao = txtIncluirMotivo.Text;
                 _mdlmanutencaomotivo.Ativo = ckbAtivo.Checked;
 
 
-                bool retorno1 = _ctlmanutencaomotivo.InserirMotivoMDL(_mdlmanutencaomotivo);
+                bool retorno1 = ctlManutencaoMotivo.InserirMotivoMDL(_mdlmanutencaomotivo);
                 if (retorno1)
                 {
                     MessageBox.Show("Motivo gravado com sucesso");
@@ -98,14 +97,13 @@ namespace helpdesk2018.View
         private void btnAlteraMotivo_Click(object sender, EventArgs e)
         {
 
-            ctlManutencaoMotivo _ctlmanutencaomotivo = new ctlManutencaoMotivo();
             mdlManutencaoMotivo _mdlmanutencaomotivo = new mdlManutencaoMotivo();
             _mdlmanutencaomotivo.Descricao = txtAlteraMotivo.Text;
             _mdlmanutencaomotivo.Ativo = ckbAlteraAtivo.Checked;
             _mdlmanutencaomotivo.IDMotivo = Convert.ToInt16(dtgAlteraResultado.CurrentRow.Cells["idmotivo"].Value.ToString());
-            dtgAlteraResultado.DataSource = _ctlmanutencaomotivo.AlteraMotivoMDL(_mdlmanutencaomotivo);
+            dtgAlteraResultado.DataSource = ctlManutencaoMotivo.AlteraMotivoMDL(_mdlmanutencaomotivo);
 
-            bool retorno1 = _ctlmanutencaomotivo.AlteraMotivoMDL(_mdlmanutencaomotivo);
+            bool retorno1 = ctlManutencaoMotivo.AlteraMotivoMDL(_mdlmanutencaomotivo);
             if (retorno1)
             {
                 limpar();
@@ -122,10 +120,9 @@ namespace helpdesk2018.View
 
         private void btnPesquisar_Click(object sender, EventArgs e)
         {
-            ctlManutencaoMotivo _ctlmanutencaomotivo = new ctlManutencaoMotivo();
             mdlManutencaoMotivo _mdlmanutencaomotivo = new mdlManutencaoMotivo();
             _mdlmanutencaomotivo.Descricao = txtPesquisaMotivo.Text;
-            dtgAlteraResultado.DataSource = _ctlmanutencaomotivo.PesquisaMotivoMDL(_mdlmanutencaomotivo);
+            dtgAlteraResultado.DataSource = ctlManutencaoMotivo.PesquisaMotivoMDL(_mdlmanutencaomotivo);
 
         }
 

@@ -10,10 +10,10 @@ using helpdesk2018.Model;
 
 namespace helpdesk2018.Controller
 {
-    public class ctlManutencaoMotivo
+    public static class ctlManutencaoMotivo
     {
 
-        public bool InserirMotivoMDL(global::helpdesk2018.Model.mdlManutencaoMotivo _mdlmanutencaomotivo)
+        public static bool InserirMotivoMDL(global::helpdesk2018.Model.mdlManutencaoMotivo _mdlmanutencaomotivo)
         {
             Conexao conexao = new Conexao();
             conexao.abrir();
@@ -44,14 +44,14 @@ namespace helpdesk2018.Controller
             }
         } // fim inserir motivo
 
-        public bool PesquisaMotivo(string Descricao)
+        public static bool PesquisaMotivo(string Descricao)
         {
             bool RetornoPesquisar = false;
             return RetornoPesquisar;
 
         }
 
-        public DataTable PesquisaMotivoMDL(global::helpdesk2018.Model.mdlManutencaoMotivo _mdlmanutencaomotivo)
+        public static DataTable PesquisaMotivoMDL(global::helpdesk2018.Model.mdlManutencaoMotivo _mdlmanutencaomotivo)
         {
             Conexao conexao = new Conexao();
             conexao.abrir();
@@ -71,7 +71,7 @@ namespace helpdesk2018.Controller
         } // fim pesquisa motivo
 
 
-        public bool AlteraMotivoMDL(global::helpdesk2018.Model.mdlManutencaoMotivo _mdlmanutencaomotivo)
+        public static bool AlteraMotivoMDL(global::helpdesk2018.Model.mdlManutencaoMotivo _mdlmanutencaomotivo)
         {
             Conexao conexao = new Conexao();
             conexao.abrir();
