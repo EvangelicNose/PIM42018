@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.tbpManutencaoMotivo = new System.Windows.Forms.TabControl();
             this.tbpIncluir = new System.Windows.Forms.TabPage();
             this.btnAMaior = new System.Windows.Forms.Button();
@@ -52,6 +53,7 @@
             this.lblAlteraMotivo = new System.Windows.Forms.Label();
             this.btnAlteraMotivo = new System.Windows.Forms.Button();
             this.txtAlteraMotivo = new System.Windows.Forms.TextBox();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.tbpManutencaoMotivo.SuspendLayout();
             this.tbpIncluir.SuspendLayout();
             this.tbpAlterarMotivo.SuspendLayout();
@@ -93,6 +95,7 @@
             this.btnAMaior.Size = new System.Drawing.Size(28, 23);
             this.btnAMaior.TabIndex = 11;
             this.btnAMaior.Text = "A+";
+            this.toolTip1.SetToolTip(this.btnAMaior, "Aumentar Fonte");
             this.btnAMaior.UseVisualStyleBackColor = true;
             this.btnAMaior.Click += new System.EventHandler(this.btnAMaior_Click);
             // 
@@ -104,6 +107,7 @@
             this.btnAMenor.Size = new System.Drawing.Size(24, 23);
             this.btnAMenor.TabIndex = 10;
             this.btnAMenor.Text = "A-";
+            this.toolTip1.SetToolTip(this.btnAMenor, "Diminuir Fonte");
             this.btnAMenor.UseVisualStyleBackColor = true;
             this.btnAMenor.Click += new System.EventHandler(this.btnAMenor_Click);
             // 
@@ -128,6 +132,7 @@
             this.btnSair.Size = new System.Drawing.Size(75, 28);
             this.btnSair.TabIndex = 3;
             this.btnSair.Text = "Sair";
+            this.toolTip1.SetToolTip(this.btnSair, "Saor da tela de Mantenção Motivo");
             this.btnSair.UseVisualStyleBackColor = true;
             this.btnSair.Click += new System.EventHandler(this.btnSair_Click);
             // 
@@ -149,6 +154,7 @@
             this.btnCadastrar.Size = new System.Drawing.Size(87, 28);
             this.btnCadastrar.TabIndex = 2;
             this.btnCadastrar.Text = "Cadastrar";
+            this.toolTip1.SetToolTip(this.btnCadastrar, "Cadastrar Motivo");
             this.btnCadastrar.UseVisualStyleBackColor = true;
             this.btnCadastrar.Click += new System.EventHandler(this.btnCadastrar_Click);
             // 
@@ -159,6 +165,7 @@
             this.txtIncluirMotivo.Name = "txtIncluirMotivo";
             this.txtIncluirMotivo.Size = new System.Drawing.Size(211, 20);
             this.txtIncluirMotivo.TabIndex = 1;
+            this.toolTip1.SetToolTip(this.txtIncluirMotivo, "Digitar o nome do motivo");
             this.txtIncluirMotivo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtIncluirMotivo_KeyPress);
             // 
             // tbpAlterarMotivo
@@ -192,6 +199,7 @@
             this.btnAlterarAMaior.Size = new System.Drawing.Size(28, 23);
             this.btnAlterarAMaior.TabIndex = 13;
             this.btnAlterarAMaior.Text = "A+";
+            this.toolTip1.SetToolTip(this.btnAlterarAMaior, "Aumentar Fonte");
             this.btnAlterarAMaior.UseVisualStyleBackColor = true;
             this.btnAlterarAMaior.Click += new System.EventHandler(this.btnAlterarAMaior_Click);
             // 
@@ -203,6 +211,7 @@
             this.btnAlterarAMenor.Size = new System.Drawing.Size(24, 23);
             this.btnAlterarAMenor.TabIndex = 12;
             this.btnAlterarAMenor.Text = "A-";
+            this.toolTip1.SetToolTip(this.btnAlterarAMenor, "Diminuir Fonte");
             this.btnAlterarAMenor.UseVisualStyleBackColor = true;
             this.btnAlterarAMenor.Click += new System.EventHandler(this.btnAlterarAMenor_Click);
             // 
@@ -254,6 +263,7 @@
             this.txtPesquisaMotivo.Name = "txtPesquisaMotivo";
             this.txtPesquisaMotivo.Size = new System.Drawing.Size(144, 20);
             this.txtPesquisaMotivo.TabIndex = 1;
+            this.toolTip1.SetToolTip(this.txtPesquisaMotivo, "Digitar o nome do morivo para pesquisar");
             // 
             // lblAlteraPesquisarMotivo
             // 
@@ -273,6 +283,7 @@
             this.btnPesquisar.Size = new System.Drawing.Size(91, 28);
             this.btnPesquisar.TabIndex = 2;
             this.btnPesquisar.Text = "Pesquisar";
+            this.toolTip1.SetToolTip(this.btnPesquisar, "Pesquisar motivo");
             this.btnPesquisar.UseVisualStyleBackColor = true;
             this.btnPesquisar.Click += new System.EventHandler(this.btnPesquisar_Click);
             // 
@@ -285,6 +296,7 @@
             this.ckbAlteraAtivo.Size = new System.Drawing.Size(50, 17);
             this.ckbAlteraAtivo.TabIndex = 5;
             this.ckbAlteraAtivo.Text = "Ativo";
+            this.toolTip1.SetToolTip(this.ckbAlteraAtivo, "Selecionar se est[a ativo o motivo");
             this.ckbAlteraAtivo.UseVisualStyleBackColor = true;
             // 
             // btnAlterarSair
@@ -295,6 +307,7 @@
             this.btnAlterarSair.Size = new System.Drawing.Size(75, 28);
             this.btnAlterarSair.TabIndex = 7;
             this.btnAlterarSair.Text = "Sair";
+            this.toolTip1.SetToolTip(this.btnAlterarSair, "Sair da tela de Manutenção Motivo");
             this.btnAlterarSair.UseVisualStyleBackColor = true;
             this.btnAlterarSair.Click += new System.EventHandler(this.btnAlterarSair_Click);
             // 
@@ -316,6 +329,7 @@
             this.btnAlteraMotivo.Size = new System.Drawing.Size(75, 27);
             this.btnAlteraMotivo.TabIndex = 6;
             this.btnAlteraMotivo.Text = "Alterar";
+            this.toolTip1.SetToolTip(this.btnAlteraMotivo, "Confirmar alteração");
             this.btnAlteraMotivo.UseVisualStyleBackColor = true;
             this.btnAlteraMotivo.Click += new System.EventHandler(this.btnAlteraMotivo_Click);
             // 
@@ -326,6 +340,7 @@
             this.txtAlteraMotivo.Name = "txtAlteraMotivo";
             this.txtAlteraMotivo.Size = new System.Drawing.Size(317, 20);
             this.txtAlteraMotivo.TabIndex = 4;
+            this.toolTip1.SetToolTip(this.txtAlteraMotivo, "Digitar a alterção do motivo");
             // 
             // frmManutencaoMotivo
             // 
@@ -374,5 +389,6 @@
         private System.Windows.Forms.Button btnAMenor;
         private System.Windows.Forms.Button btnAlterarAMaior;
         private System.Windows.Forms.Button btnAlterarAMenor;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }

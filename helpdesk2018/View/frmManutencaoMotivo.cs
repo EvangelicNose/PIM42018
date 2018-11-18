@@ -193,6 +193,7 @@ namespace helpdesk2018.View
 
         private void btnAlterarAMaior_Click(object sender, EventArgs e)
         {
+            
             float tamanhoAtual;
             if (tamAlt < 12)
             {
