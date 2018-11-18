@@ -26,5 +26,10 @@ namespace helpdesk2018
         {
             Close();
         }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

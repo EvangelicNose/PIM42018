@@ -143,5 +143,104 @@ namespace helpdesk2018.View
             txtPesquisaMotivo.Focus();
             txtIncluirMotivo.Focus();
         }
+
+        int tamInc = 8;
+        int tamAlt = 8;
+        string font = "'Microsoft Sans Serif'";
+
+        private void btnAMenor_Click(object sender, EventArgs e)
+        {
+            float tamanhoAtual;
+            if (tamInc > 6)
+            {
+                btnAMaior.Enabled = true;
+                tamanhoAtual = txtIncluirMotivo.Font.Size;
+                tamInc -= 2;
+                tamanhoAtual -= 2.0F;
+                lblMotivo.Font = new Font(lblMotivo.Font.Name, tamanhoAtual);
+                txtIncluirMotivo.Font = new Font(txtIncluirMotivo.Font.Name, tamanhoAtual);
+                btnCadastrar.Font = new Font(btnCadastrar.Font.Name, tamanhoAtual);
+                btnSair.Font = new Font(btnCadastrar.Font.Name, tamanhoAtual);
+            }
+            if (tamInc == 6)
+            {
+                btnAMenor.Enabled = false;
+            }
+
+        }
+        
+        private void btnAMaior_Click(object sender, EventArgs e)
+        {
+
+            float tamanhoAtual;
+            if (tamInc < 12)
+            {
+                btnAMenor.Enabled = true;
+                tamanhoAtual = txtIncluirMotivo.Font.Size;
+                tamInc += 2;
+                tamanhoAtual += 2.0F;
+                lblMotivo.Font = new Font(lblMotivo.Font.Name, tamanhoAtual);
+                txtIncluirMotivo.Font = new Font(txtIncluirMotivo.Font.Name, tamanhoAtual);
+                btnCadastrar.Font = new Font(btnCadastrar.Font.Name, tamanhoAtual);
+                btnSair.Font = new Font(btnCadastrar.Font.Name, tamanhoAtual);
+            }
+            if (tamInc == 12)
+            {
+                btnAMaior.Enabled = false;
+            }
+           
+        }
+
+        private void btnAlterarAMaior_Click(object sender, EventArgs e)
+        {
+            float tamanhoAtual;
+            if (tamAlt < 12)
+            {
+                btnAlterarAMenor.Enabled = true;
+                tamanhoAtual = txtPesquisaMotivo.Font.Size;
+                tamAlt += 2;
+                tamanhoAtual += 2.0F;
+
+                lblAlteraPesquisarMotivo.Font = new Font(lblAlteraPesquisarMotivo.Font.Name, tamanhoAtual);
+                txtPesquisaMotivo.Font = new Font(txtPesquisaMotivo.Font.Name, tamanhoAtual);
+                btnPesquisar.Font = new Font(btnPesquisar.Font.Name, tamanhoAtual);
+                lblAlteraMotivo.Font = new Font(lblAlteraMotivo.Font.Name, tamanhoAtual);
+                txtAlteraMotivo.Font = new Font(txtAlteraMotivo.Font.Name, tamanhoAtual);
+                btnAlteraMotivo.Font = new Font(btnAlteraMotivo.Font.Name, tamanhoAtual);
+                ckbAlteraAtivo.Font = new Font(ckbAlteraAtivo.Font.Name, tamanhoAtual);
+                btnAlterarSair.Font = new Font(btnAlterarSair.Font.Name, tamanhoAtual);
+            }
+            if (tamAlt == 12)
+            {
+                btnAlterarAMaior.Enabled = false;
+            }
+        }
+
+        private void btnAlterarAMenor_Click(object sender, EventArgs e)
+        {
+            float tamanhoAtual;
+            if (tamAlt > 6)
+            {
+                btnAlterarAMaior.Enabled = true;
+                tamanhoAtual = txtPesquisaMotivo.Font.Size;
+                tamAlt -= 2;
+                tamanhoAtual -= 2.0F;
+
+                lblAlteraPesquisarMotivo.Font = new Font(lblAlteraPesquisarMotivo.Font.Name, tamanhoAtual);
+                txtPesquisaMotivo.Font = new Font(txtPesquisaMotivo.Font.Name, tamanhoAtual);
+                btnPesquisar.Font = new Font(btnPesquisar.Font.Name, tamanhoAtual);
+                lblAlteraMotivo.Font = new Font(lblAlteraMotivo.Font.Name, tamanhoAtual);
+                txtAlteraMotivo.Font = new Font(txtAlteraMotivo.Font.Name, tamanhoAtual);
+                btnAlteraMotivo.Font = new Font(btnAlteraMotivo.Font.Name, tamanhoAtual);
+                ckbAlteraAtivo.Font = new Font(ckbAlteraAtivo.Font.Name, tamanhoAtual);
+                btnAlterarSair.Font = new Font(btnAlterarSair.Font.Name, tamanhoAtual);
+            }
+            if (tamAlt == 6)
+            {
+                btnAlterarAMenor.Enabled = false;
+            }
+
+        }
+    
     }
 }

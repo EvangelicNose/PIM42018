@@ -30,22 +30,26 @@
         {
             this.tbpManutencaoMotivo = new System.Windows.Forms.TabControl();
             this.tbpIncluir = new System.Windows.Forms.TabPage();
+            this.btnAMaior = new System.Windows.Forms.Button();
+            this.btnAMenor = new System.Windows.Forms.Button();
             this.ckbAtivo = new System.Windows.Forms.CheckBox();
             this.btnSair = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblMotivo = new System.Windows.Forms.Label();
             this.btnCadastrar = new System.Windows.Forms.Button();
             this.txtIncluirMotivo = new System.Windows.Forms.TextBox();
             this.tbpAlterarMotivo = new System.Windows.Forms.TabPage();
+            this.btnAlterarAMaior = new System.Windows.Forms.Button();
+            this.btnAlterarAMenor = new System.Windows.Forms.Button();
             this.dtgAlteraResultado = new System.Windows.Forms.DataGridView();
             this.idmotivo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.descricao = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ativo = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.txtPesquisaMotivo = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
+            this.lblAlteraPesquisarMotivo = new System.Windows.Forms.Label();
             this.btnPesquisar = new System.Windows.Forms.Button();
             this.ckbAlteraAtivo = new System.Windows.Forms.CheckBox();
             this.btnAlterarSair = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
+            this.lblAlteraMotivo = new System.Windows.Forms.Label();
             this.btnAlteraMotivo = new System.Windows.Forms.Button();
             this.txtAlteraMotivo = new System.Windows.Forms.TextBox();
             this.tbpManutencaoMotivo.SuspendLayout();
@@ -61,31 +65,54 @@
             this.tbpManutencaoMotivo.Location = new System.Drawing.Point(0, 0);
             this.tbpManutencaoMotivo.Name = "tbpManutencaoMotivo";
             this.tbpManutencaoMotivo.SelectedIndex = 0;
-            this.tbpManutencaoMotivo.Size = new System.Drawing.Size(345, 337);
+            this.tbpManutencaoMotivo.Size = new System.Drawing.Size(395, 386);
             this.tbpManutencaoMotivo.TabIndex = 0;
             this.tbpManutencaoMotivo.MouseClick += new System.Windows.Forms.MouseEventHandler(this.tbpManutencaoMotivo_MouseClick);
             // 
             // tbpIncluir
             // 
+            this.tbpIncluir.Controls.Add(this.btnAMaior);
+            this.tbpIncluir.Controls.Add(this.btnAMenor);
             this.tbpIncluir.Controls.Add(this.ckbAtivo);
             this.tbpIncluir.Controls.Add(this.btnSair);
-            this.tbpIncluir.Controls.Add(this.label1);
+            this.tbpIncluir.Controls.Add(this.lblMotivo);
             this.tbpIncluir.Controls.Add(this.btnCadastrar);
             this.tbpIncluir.Controls.Add(this.txtIncluirMotivo);
             this.tbpIncluir.Location = new System.Drawing.Point(4, 22);
             this.tbpIncluir.Name = "tbpIncluir";
             this.tbpIncluir.Padding = new System.Windows.Forms.Padding(3);
-            this.tbpIncluir.Size = new System.Drawing.Size(337, 311);
+            this.tbpIncluir.Size = new System.Drawing.Size(387, 360);
             this.tbpIncluir.TabIndex = 0;
             this.tbpIncluir.Text = "Incluir Motivo";
             this.tbpIncluir.UseVisualStyleBackColor = true;
+            // 
+            // btnAMaior
+            // 
+            this.btnAMaior.Location = new System.Drawing.Point(356, 6);
+            this.btnAMaior.Name = "btnAMaior";
+            this.btnAMaior.Size = new System.Drawing.Size(28, 23);
+            this.btnAMaior.TabIndex = 11;
+            this.btnAMaior.Text = "A+";
+            this.btnAMaior.UseVisualStyleBackColor = true;
+            this.btnAMaior.Click += new System.EventHandler(this.btnAMaior_Click);
+            // 
+            // btnAMenor
+            // 
+            this.btnAMenor.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAMenor.Location = new System.Drawing.Point(333, 6);
+            this.btnAMenor.Name = "btnAMenor";
+            this.btnAMenor.Size = new System.Drawing.Size(24, 23);
+            this.btnAMenor.TabIndex = 10;
+            this.btnAMenor.Text = "A-";
+            this.btnAMenor.UseVisualStyleBackColor = true;
+            this.btnAMenor.Click += new System.EventHandler(this.btnAMenor_Click);
             // 
             // ckbAtivo
             // 
             this.ckbAtivo.AutoSize = true;
             this.ckbAtivo.Checked = true;
             this.ckbAtivo.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.ckbAtivo.Location = new System.Drawing.Point(202, 107);
+            this.ckbAtivo.Location = new System.Drawing.Point(227, 144);
             this.ckbAtivo.Name = "ckbAtivo";
             this.ckbAtivo.Size = new System.Drawing.Size(50, 17);
             this.ckbAtivo.TabIndex = 9;
@@ -95,7 +122,8 @@
             // 
             // btnSair
             // 
-            this.btnSair.Location = new System.Drawing.Point(177, 139);
+            this.btnSair.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSair.Location = new System.Drawing.Point(218, 167);
             this.btnSair.Name = "btnSair";
             this.btnSair.Size = new System.Drawing.Size(75, 28);
             this.btnSair.TabIndex = 3;
@@ -103,20 +131,22 @@
             this.btnSair.UseVisualStyleBackColor = true;
             this.btnSair.Click += new System.EventHandler(this.btnSair_Click);
             // 
-            // label1
+            // lblMotivo
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(34, 58);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(42, 13);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Motivo:";
+            this.lblMotivo.AutoSize = true;
+            this.lblMotivo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMotivo.Location = new System.Drawing.Point(23, 86);
+            this.lblMotivo.Name = "lblMotivo";
+            this.lblMotivo.Size = new System.Drawing.Size(42, 13);
+            this.lblMotivo.TabIndex = 2;
+            this.lblMotivo.Text = "Motivo:";
             // 
             // btnCadastrar
             // 
-            this.btnCadastrar.Location = new System.Drawing.Point(82, 139);
+            this.btnCadastrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCadastrar.Location = new System.Drawing.Point(82, 167);
             this.btnCadastrar.Name = "btnCadastrar";
-            this.btnCadastrar.Size = new System.Drawing.Size(75, 28);
+            this.btnCadastrar.Size = new System.Drawing.Size(87, 28);
             this.btnCadastrar.TabIndex = 2;
             this.btnCadastrar.Text = "Cadastrar";
             this.btnCadastrar.UseVisualStyleBackColor = true;
@@ -124,31 +154,57 @@
             // 
             // txtIncluirMotivo
             // 
-            this.txtIncluirMotivo.Location = new System.Drawing.Point(82, 55);
+            this.txtIncluirMotivo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtIncluirMotivo.Location = new System.Drawing.Point(82, 83);
             this.txtIncluirMotivo.Name = "txtIncluirMotivo";
-            this.txtIncluirMotivo.Size = new System.Drawing.Size(170, 20);
+            this.txtIncluirMotivo.Size = new System.Drawing.Size(211, 20);
             this.txtIncluirMotivo.TabIndex = 1;
             this.txtIncluirMotivo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtIncluirMotivo_KeyPress);
             // 
             // tbpAlterarMotivo
             // 
+            this.tbpAlterarMotivo.Controls.Add(this.btnAlterarAMaior);
+            this.tbpAlterarMotivo.Controls.Add(this.btnAlterarAMenor);
             this.tbpAlterarMotivo.Controls.Add(this.dtgAlteraResultado);
             this.tbpAlterarMotivo.Controls.Add(this.txtPesquisaMotivo);
-            this.tbpAlterarMotivo.Controls.Add(this.label3);
+            this.tbpAlterarMotivo.Controls.Add(this.lblAlteraPesquisarMotivo);
             this.tbpAlterarMotivo.Controls.Add(this.btnPesquisar);
             this.tbpAlterarMotivo.Controls.Add(this.ckbAlteraAtivo);
             this.tbpAlterarMotivo.Controls.Add(this.btnAlterarSair);
-            this.tbpAlterarMotivo.Controls.Add(this.label2);
+            this.tbpAlterarMotivo.Controls.Add(this.lblAlteraMotivo);
             this.tbpAlterarMotivo.Controls.Add(this.btnAlteraMotivo);
             this.tbpAlterarMotivo.Controls.Add(this.txtAlteraMotivo);
             this.tbpAlterarMotivo.Location = new System.Drawing.Point(4, 22);
             this.tbpAlterarMotivo.Name = "tbpAlterarMotivo";
             this.tbpAlterarMotivo.Padding = new System.Windows.Forms.Padding(3);
-            this.tbpAlterarMotivo.Size = new System.Drawing.Size(337, 311);
+            this.tbpAlterarMotivo.Size = new System.Drawing.Size(387, 360);
             this.tbpAlterarMotivo.TabIndex = 1;
             this.tbpAlterarMotivo.Text = "Alterar Motivo";
             this.tbpAlterarMotivo.UseVisualStyleBackColor = true;
             this.tbpAlterarMotivo.Click += new System.EventHandler(this.tbpAlterarMotivo_Click);
+            // 
+            // btnAlterarAMaior
+            // 
+            this.btnAlterarAMaior.AccessibleDescription = "";
+            this.btnAlterarAMaior.AccessibleName = "Aumentar a Fonte";
+            this.btnAlterarAMaior.Location = new System.Drawing.Point(356, 6);
+            this.btnAlterarAMaior.Name = "btnAlterarAMaior";
+            this.btnAlterarAMaior.Size = new System.Drawing.Size(28, 23);
+            this.btnAlterarAMaior.TabIndex = 13;
+            this.btnAlterarAMaior.Text = "A+";
+            this.btnAlterarAMaior.UseVisualStyleBackColor = true;
+            this.btnAlterarAMaior.Click += new System.EventHandler(this.btnAlterarAMaior_Click);
+            // 
+            // btnAlterarAMenor
+            // 
+            this.btnAlterarAMenor.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAlterarAMenor.Location = new System.Drawing.Point(333, 6);
+            this.btnAlterarAMenor.Name = "btnAlterarAMenor";
+            this.btnAlterarAMenor.Size = new System.Drawing.Size(24, 23);
+            this.btnAlterarAMenor.TabIndex = 12;
+            this.btnAlterarAMenor.Text = "A-";
+            this.btnAlterarAMenor.UseVisualStyleBackColor = true;
+            this.btnAlterarAMenor.Click += new System.EventHandler(this.btnAlterarAMenor_Click);
             // 
             // dtgAlteraResultado
             // 
@@ -159,11 +215,11 @@
             this.idmotivo,
             this.descricao,
             this.ativo});
-            this.dtgAlteraResultado.Location = new System.Drawing.Point(6, 35);
+            this.dtgAlteraResultado.Location = new System.Drawing.Point(6, 76);
             this.dtgAlteraResultado.MultiSelect = false;
             this.dtgAlteraResultado.Name = "dtgAlteraResultado";
             this.dtgAlteraResultado.RowHeadersVisible = false;
-            this.dtgAlteraResultado.Size = new System.Drawing.Size(321, 177);
+            this.dtgAlteraResultado.Size = new System.Drawing.Size(373, 177);
             this.dtgAlteraResultado.TabIndex = 3;
             this.dtgAlteraResultado.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgAlteraResultado_CellClick);
             // 
@@ -193,25 +249,28 @@
             // 
             // txtPesquisaMotivo
             // 
-            this.txtPesquisaMotivo.Location = new System.Drawing.Point(102, 8);
+            this.txtPesquisaMotivo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPesquisaMotivo.Location = new System.Drawing.Point(138, 46);
             this.txtPesquisaMotivo.Name = "txtPesquisaMotivo";
             this.txtPesquisaMotivo.Size = new System.Drawing.Size(144, 20);
             this.txtPesquisaMotivo.TabIndex = 1;
             // 
-            // label3
+            // lblAlteraPesquisarMotivo
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(8, 11);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(88, 13);
-            this.label3.TabIndex = 10;
-            this.label3.Text = "Pesquisar Motivo";
+            this.lblAlteraPesquisarMotivo.AutoSize = true;
+            this.lblAlteraPesquisarMotivo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAlteraPesquisarMotivo.Location = new System.Drawing.Point(8, 49);
+            this.lblAlteraPesquisarMotivo.Name = "lblAlteraPesquisarMotivo";
+            this.lblAlteraPesquisarMotivo.Size = new System.Drawing.Size(88, 13);
+            this.lblAlteraPesquisarMotivo.TabIndex = 10;
+            this.lblAlteraPesquisarMotivo.Text = "Pesquisar Motivo";
             // 
             // btnPesquisar
             // 
-            this.btnPesquisar.Location = new System.Drawing.Point(252, 6);
+            this.btnPesquisar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPesquisar.Location = new System.Drawing.Point(288, 44);
             this.btnPesquisar.Name = "btnPesquisar";
-            this.btnPesquisar.Size = new System.Drawing.Size(75, 23);
+            this.btnPesquisar.Size = new System.Drawing.Size(91, 28);
             this.btnPesquisar.TabIndex = 2;
             this.btnPesquisar.Text = "Pesquisar";
             this.btnPesquisar.UseVisualStyleBackColor = true;
@@ -220,7 +279,8 @@
             // ckbAlteraAtivo
             // 
             this.ckbAlteraAtivo.AutoSize = true;
-            this.ckbAlteraAtivo.Location = new System.Drawing.Point(130, 256);
+            this.ckbAlteraAtivo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ckbAlteraAtivo.Location = new System.Drawing.Point(162, 294);
             this.ckbAlteraAtivo.Name = "ckbAlteraAtivo";
             this.ckbAlteraAtivo.Size = new System.Drawing.Size(50, 17);
             this.ckbAlteraAtivo.TabIndex = 5;
@@ -229,28 +289,31 @@
             // 
             // btnAlterarSair
             // 
-            this.btnAlterarSair.Location = new System.Drawing.Point(250, 256);
+            this.btnAlterarSair.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAlterarSair.Location = new System.Drawing.Point(304, 291);
             this.btnAlterarSair.Name = "btnAlterarSair";
-            this.btnAlterarSair.Size = new System.Drawing.Size(75, 23);
+            this.btnAlterarSair.Size = new System.Drawing.Size(75, 28);
             this.btnAlterarSair.TabIndex = 7;
             this.btnAlterarSair.Text = "Sair";
             this.btnAlterarSair.UseVisualStyleBackColor = true;
             this.btnAlterarSair.Click += new System.EventHandler(this.btnAlterarSair_Click);
             // 
-            // label2
+            // lblAlteraMotivo
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(3, 221);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(42, 13);
-            this.label2.TabIndex = 6;
-            this.label2.Text = "Motivo:";
+            this.lblAlteraMotivo.AutoSize = true;
+            this.lblAlteraMotivo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAlteraMotivo.Location = new System.Drawing.Point(3, 259);
+            this.lblAlteraMotivo.Name = "lblAlteraMotivo";
+            this.lblAlteraMotivo.Size = new System.Drawing.Size(42, 13);
+            this.lblAlteraMotivo.TabIndex = 6;
+            this.lblAlteraMotivo.Text = "Motivo:";
             // 
             // btnAlteraMotivo
             // 
-            this.btnAlteraMotivo.Location = new System.Drawing.Point(6, 256);
+            this.btnAlteraMotivo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAlteraMotivo.Location = new System.Drawing.Point(7, 292);
             this.btnAlteraMotivo.Name = "btnAlteraMotivo";
-            this.btnAlteraMotivo.Size = new System.Drawing.Size(75, 23);
+            this.btnAlteraMotivo.Size = new System.Drawing.Size(75, 27);
             this.btnAlteraMotivo.TabIndex = 6;
             this.btnAlteraMotivo.Text = "Alterar";
             this.btnAlteraMotivo.UseVisualStyleBackColor = true;
@@ -258,16 +321,17 @@
             // 
             // txtAlteraMotivo
             // 
-            this.txtAlteraMotivo.Location = new System.Drawing.Point(45, 218);
+            this.txtAlteraMotivo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtAlteraMotivo.Location = new System.Drawing.Point(62, 256);
             this.txtAlteraMotivo.Name = "txtAlteraMotivo";
-            this.txtAlteraMotivo.Size = new System.Drawing.Size(280, 20);
+            this.txtAlteraMotivo.Size = new System.Drawing.Size(317, 20);
             this.txtAlteraMotivo.TabIndex = 4;
             // 
             // frmManutencaoMotivo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(344, 337);
+            this.ClientSize = new System.Drawing.Size(395, 382);
             this.Controls.Add(this.tbpManutencaoMotivo);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             this.Name = "frmManutencaoMotivo";
@@ -289,22 +353,26 @@
         private System.Windows.Forms.TabControl tbpManutencaoMotivo;
         private System.Windows.Forms.TabPage tbpIncluir;
         private System.Windows.Forms.Button btnSair;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblMotivo;
         private System.Windows.Forms.Button btnCadastrar;
         private System.Windows.Forms.TextBox txtIncluirMotivo;
         private System.Windows.Forms.TabPage tbpAlterarMotivo;
         private System.Windows.Forms.Button btnAlterarSair;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lblAlteraMotivo;
         private System.Windows.Forms.Button btnAlteraMotivo;
         private System.Windows.Forms.TextBox txtAlteraMotivo;
         private System.Windows.Forms.CheckBox ckbAtivo;
         private System.Windows.Forms.CheckBox ckbAlteraAtivo;
         private System.Windows.Forms.TextBox txtPesquisaMotivo;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lblAlteraPesquisarMotivo;
         private System.Windows.Forms.Button btnPesquisar;
         private System.Windows.Forms.DataGridView dtgAlteraResultado;
         private System.Windows.Forms.DataGridViewTextBoxColumn idmotivo;
         private System.Windows.Forms.DataGridViewTextBoxColumn descricao;
         private System.Windows.Forms.DataGridViewCheckBoxColumn ativo;
+        private System.Windows.Forms.Button btnAMaior;
+        private System.Windows.Forms.Button btnAMenor;
+        private System.Windows.Forms.Button btnAlterarAMaior;
+        private System.Windows.Forms.Button btnAlterarAMenor;
     }
 }

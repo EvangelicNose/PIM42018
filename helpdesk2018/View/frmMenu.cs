@@ -95,6 +95,20 @@ namespace helpdesk2018.View
 
         private void motivosToolStripMenuItem_Click(object sender, EventArgs e)
         {
+
+
+        /* teste de verificar se está aberto
+            if (Application.OpenForms.OfType<FrmNomeDoForm>().Count() > 0)
+            {
+                Application.OpenForms.OfType<FrmNomeDoForm>().First().Focus();
+            }
+            else
+            {
+                FrmNomeDoForm frmNomeDoForm = new FrmNomeDoForm();
+                frmNomeDoForm.Show();
+            }
+        */
+
             frmManutencaoMotivo _frmmanutencaomotivo = new frmManutencaoMotivo();
             _frmmanutencaomotivo.ShowDialog();
 
