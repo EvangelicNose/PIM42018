@@ -53,9 +53,10 @@ namespace helpdesk2018.View
             if (branco == "0")
             {
                 mdlManutencaoMotivo _mdlmanutencaomotivo = new mdlManutencaoMotivo();
+               // ctlManutencaoMotivo _ctlmanutencaomotivo = new ctlManutencaoMotivo();
                 _mdlmanutencaomotivo.Descricao = txtIncluirMotivo.Text;
                 _mdlmanutencaomotivo.Ativo = ckbAtivo.Checked;
-
+                
 
                 bool retorno1 = ctlManutencaoMotivo.InserirMotivoMDL(_mdlmanutencaomotivo);
                 if (retorno1)
@@ -63,9 +64,10 @@ namespace helpdesk2018.View
                     MessageBox.Show("Motivo gravado com sucesso");
                     limpar();
                 }
+                
                 else
                 {
-                    MessageBox.Show("Erro ao Gravar !!!");
+                    MessageBox.Show("Erro ao Gravar !!! "+ "\n" + "Dado Duplicado");
                 }
 
             }
