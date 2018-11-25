@@ -64,6 +64,7 @@
             this.txtVermAltNome = new System.Windows.Forms.TextBox();
             this.txtVermAltTelefone = new System.Windows.Forms.TextBox();
             this.txtVermAltEndereco = new System.Windows.Forms.TextBox();
+            this.lblVermErro = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tbpIncluirEmpresa.SuspendLayout();
             this.tbpAlterarEmpresa.SuspendLayout();
@@ -170,6 +171,7 @@
             // 
             // tbpIncluirEmpresa
             // 
+            this.tbpIncluirEmpresa.Controls.Add(this.lblVermErro);
             this.tbpIncluirEmpresa.Controls.Add(this.ckbIncluirAtiva);
             this.tbpIncluirEmpresa.Controls.Add(this.btnCancelar);
             this.tbpIncluirEmpresa.Controls.Add(this.label1);
@@ -463,6 +465,17 @@
             this.txtVermAltEndereco.TabIndex = 12;
             this.txtVermAltEndereco.Visible = false;
             // 
+            // lblVermErro
+            // 
+            this.lblVermErro.AutoSize = true;
+            this.lblVermErro.ForeColor = System.Drawing.Color.Red;
+            this.lblVermErro.Location = new System.Drawing.Point(77, 38);
+            this.lblVermErro.Name = "lblVermErro";
+            this.lblVermErro.Size = new System.Drawing.Size(233, 13);
+            this.lblVermErro.TabIndex = 16;
+            this.lblVermErro.Text = "Campo em vermelho, não pode ficar em branco ";
+            this.lblVermErro.Visible = false;
+            // 
             // frmManutencaoEmpresas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -521,5 +534,6 @@
         private System.Windows.Forms.TextBox txtVermAltNome;
         private System.Windows.Forms.TextBox txtVermAltTelefone;
         private System.Windows.Forms.TextBox txtVermAltEndereco;
+        private System.Windows.Forms.Label lblVermErro;
     }
 }

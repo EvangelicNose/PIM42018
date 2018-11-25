@@ -52,13 +52,16 @@ namespace helpdesk2018.View
             txtAlteraTelefone.Text = "";
         }
 
-        private void btOK_Click(object sender, EventArgs e)
+
+        void CadastrarEmpresa()
         {
+
 
             string branco = "0";
 
             if (txtNome.Text == "")
             {
+                lblVermErro.Visible = true;
                 txtVermIncNome.Visible = true;
                 MessageBox.Show("Nome não pode ficar em branco !");
                 branco = "1";
@@ -66,6 +69,7 @@ namespace helpdesk2018.View
             }
             else if (txtTelefone.Text == "")
             {
+                lblVermErro.Visible = true;
                 txtVermIncTelefone.Visible = true;
                 MessageBox.Show("Telefone não pode ficar em branco !");
                 branco = "1";
@@ -73,6 +77,7 @@ namespace helpdesk2018.View
             }
             else if (txtEndereco.Text == "")
             {
+                lblVermErro.Visible = true;
                 txtVermIncEndereco.Visible = true;
                 MessageBox.Show("Endereço não pode ficar em branco !");
                 branco = "1";
@@ -102,6 +107,16 @@ namespace helpdesk2018.View
 
 
             }
+
+
+
+        }
+
+
+
+        private void btOK_Click(object sender, EventArgs e)
+        {
+            CadastrarEmpresa();
         }
 
         private void btCancelar_Click(object sender, EventArgs e)
@@ -187,6 +202,7 @@ namespace helpdesk2018.View
 
         private void txtNome_KeyPress(object sender, KeyPressEventArgs e)
         {
+            lblVermErro.Visible = false;
             txtVermIncNome.Visible = false;
                 if (e.KeyChar == 13)
                 {
@@ -196,6 +212,7 @@ namespace helpdesk2018.View
 
         private void txtTelefone_KeyPress(object sender, KeyPressEventArgs e)
         {
+            lblVermErro.Visible = false;
             txtVermIncTelefone.Visible = false;
             if (e.KeyChar==13)
             {
@@ -205,10 +222,11 @@ namespace helpdesk2018.View
 
         private void txtEndereco_KeyPress(object sender, KeyPressEventArgs e)
         {
+            lblVermErro.Visible = false;
             txtVermIncEndereco.Visible = false;
             if (e.KeyChar == 13)
             {
-                //
+                CadastrarEmpresa();
             }
         }
 

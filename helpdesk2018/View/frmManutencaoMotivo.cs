@@ -104,7 +104,7 @@ namespace helpdesk2018.View
             if (txtAlteraMotivo.Text == "")
             {
                 txtAlteraVermelho.Visible = true;
-                MessageBox.Show(" Selecione uma opção ");
+                MessageBox.Show(" Motivo não pode ficar em branco ");
                 txtAlteraMotivo.Focus();
                 return;
             }
