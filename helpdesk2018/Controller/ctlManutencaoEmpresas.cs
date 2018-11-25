@@ -123,6 +123,7 @@ namespace helpdesk2018.Controller
             cmd.Parameters.Add(pmtempresa);
 
             int resultado = cmd.ExecuteNonQuery();
+            
             conexao.Fechar();
             return resultado > 0;
         } // fim altera motivo

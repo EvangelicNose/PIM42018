@@ -18,28 +18,14 @@ namespace helpdesk2018.View
         {
             InitializeComponent();
         }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void gbDados_Enter(object sender, EventArgs e)
-        {
-
-        }
-
         private void button1_Click(object sender, EventArgs e)
         {
             txtNome.Focus();
         }
-
         private void btVoltar_Click(object sender, EventArgs e)
         {
             Close();
-
         }
-
         public void limpar()
         {
             txtPesquisarEmpresa.Text = "";
@@ -51,40 +37,53 @@ namespace helpdesk2018.View
             txtAlteraNome.Text = "";
             txtAlteraTelefone.Text = "";
         }
-
-
         void CadastrarEmpresa()
         {
-
-
             string branco = "0";
-
             if (txtNome.Text == "")
             {
                 lblVermErro.Visible = true;
                 txtVermIncNome.Visible = true;
-                MessageBox.Show("Nome não pode ficar em branco !");
+               // MessageBox.Show("Nome não pode ficar em branco !");
                 branco = "1";
                 txtNome.Focus();
             }
-            else if (txtTelefone.Text == "")
+            //else
+            if (txtTelefone.Text == "")
             {
-                lblVermErro.Visible = true;
+                lblVermErroTelefone.Visible = true;
                 txtVermIncTelefone.Visible = true;
-                MessageBox.Show("Telefone não pode ficar em branco !");
+              //  MessageBox.Show("Telefone não pode ficar em branco !");
                 branco = "1";
-                txtTelefone.Focus();
+                if (txtNome.Text == "")
+                {
+                    txtNome.Focus();
+                }
+                else
+                {
+                    txtTelefone.Focus();
+                }
             }
-            else if (txtEndereco.Text == "")
+           // else 
+            if (txtEndereco.Text == "")
             {
-                lblVermErro.Visible = true;
+                lblVermEndereco.Visible = true;
                 txtVermIncEndereco.Visible = true;
-                MessageBox.Show("Endereço não pode ficar em branco !");
+               // MessageBox.Show("Endereço não pode ficar em branco !");
                 branco = "1";
-                txtEndereco.Focus();
+                if (txtNome.Text == "")
+                {
+                    txtNome.Focus();
+                }
+                else if (txtTelefone.Text=="")
+                {
+                    txtTelefone.Focus();
+                }
+                else
+                {
+                    txtEndereco.Focus();
+                }
             }
-
-
             if (branco == "0")
             {
                 mdlManutencaoEmpresas _mdlManutencaoEmpresas = new mdlManutencaoEmpresas();
@@ -212,7 +211,7 @@ namespace helpdesk2018.View
 
         private void txtTelefone_KeyPress(object sender, KeyPressEventArgs e)
         {
-            lblVermErro.Visible = false;
+            lblVermErroTelefone.Visible = false;
             txtVermIncTelefone.Visible = false;
             if (e.KeyChar==13)
             {
@@ -222,7 +221,7 @@ namespace helpdesk2018.View
 
         private void txtEndereco_KeyPress(object sender, KeyPressEventArgs e)
         {
-            lblVermErro.Visible = false;
+            lblVermEndereco.Visible = false;
             txtVermIncEndereco.Visible = false;
             if (e.KeyChar == 13)
             {
