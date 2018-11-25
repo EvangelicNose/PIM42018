@@ -38,6 +38,7 @@
             this.lblMotivo = new System.Windows.Forms.Label();
             this.btnCadastrar = new System.Windows.Forms.Button();
             this.txtIncluirMotivo = new System.Windows.Forms.TextBox();
+            this.txtVermelho = new System.Windows.Forms.TextBox();
             this.tbpAlterarMotivo = new System.Windows.Forms.TabPage();
             this.btnAlterarAMaior = new System.Windows.Forms.Button();
             this.btnAlterarAMenor = new System.Windows.Forms.Button();
@@ -53,9 +54,8 @@
             this.lblAlteraMotivo = new System.Windows.Forms.Label();
             this.btnAlteraMotivo = new System.Windows.Forms.Button();
             this.txtAlteraMotivo = new System.Windows.Forms.TextBox();
-            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.txtVermelho = new System.Windows.Forms.TextBox();
             this.txtAlteraVermelho = new System.Windows.Forms.TextBox();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.tbpManutencaoMotivo.SuspendLayout();
             this.tbpIncluir.SuspendLayout();
             this.tbpAlterarMotivo.SuspendLayout();
@@ -170,6 +170,18 @@
             this.txtIncluirMotivo.TabIndex = 1;
             this.toolTip1.SetToolTip(this.txtIncluirMotivo, "Digitar o nome do motivo");
             this.txtIncluirMotivo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtIncluirMotivo_KeyPress);
+            // 
+            // txtVermelho
+            // 
+            this.txtVermelho.BackColor = System.Drawing.Color.Red;
+            this.txtVermelho.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtVermelho.ForeColor = System.Drawing.Color.Red;
+            this.txtVermelho.Location = new System.Drawing.Point(81, 82);
+            this.txtVermelho.Multiline = true;
+            this.txtVermelho.Name = "txtVermelho";
+            this.txtVermelho.Size = new System.Drawing.Size(213, 22);
+            this.txtVermelho.TabIndex = 12;
+            this.txtVermelho.Visible = false;
             // 
             // tbpAlterarMotivo
             // 
@@ -327,6 +339,7 @@
             // 
             // btnAlteraMotivo
             // 
+            this.btnAlteraMotivo.Enabled = false;
             this.btnAlteraMotivo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAlteraMotivo.Location = new System.Drawing.Point(7, 292);
             this.btnAlteraMotivo.Name = "btnAlteraMotivo";
@@ -346,18 +359,6 @@
             this.txtAlteraMotivo.TabIndex = 4;
             this.toolTip1.SetToolTip(this.txtAlteraMotivo, "Digitar a alterção do motivo");
             this.txtAlteraMotivo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtAlteraMotivo_KeyPress);
-            // 
-            // txtVermelho
-            // 
-            this.txtVermelho.BackColor = System.Drawing.Color.Red;
-            this.txtVermelho.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtVermelho.ForeColor = System.Drawing.Color.Red;
-            this.txtVermelho.Location = new System.Drawing.Point(81, 82);
-            this.txtVermelho.Multiline = true;
-            this.txtVermelho.Name = "txtVermelho";
-            this.txtVermelho.Size = new System.Drawing.Size(213, 22);
-            this.txtVermelho.TabIndex = 12;
-            this.txtVermelho.Visible = false;
             // 
             // txtAlteraVermelho
             // 

@@ -39,6 +39,9 @@
             this.ckbIncluirAtiva = new System.Windows.Forms.CheckBox();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tbpIncluirEmpresa = new System.Windows.Forms.TabPage();
+            this.txtVermIncNome = new System.Windows.Forms.TextBox();
+            this.txtVermIncTelefone = new System.Windows.Forms.TextBox();
+            this.txtVermIncEndereco = new System.Windows.Forms.TextBox();
             this.tbpAlterarEmpresa = new System.Windows.Forms.TabPage();
             this.dtgAlteraResultado = new System.Windows.Forms.DataGridView();
             this.idempresa = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -58,6 +61,9 @@
             this.label5 = new System.Windows.Forms.Label();
             this.btnAlterarOK = new System.Windows.Forms.Button();
             this.txtAlteraEndereco = new System.Windows.Forms.TextBox();
+            this.txtVermAltNome = new System.Windows.Forms.TextBox();
+            this.txtVermAltTelefone = new System.Windows.Forms.TextBox();
+            this.txtVermAltEndereco = new System.Windows.Forms.TextBox();
             this.tabControl1.SuspendLayout();
             this.tbpIncluirEmpresa.SuspendLayout();
             this.tbpAlterarEmpresa.SuspendLayout();
@@ -118,6 +124,7 @@
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new System.Drawing.Size(212, 20);
             this.txtNome.TabIndex = 1;
+            this.txtNome.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNome_KeyPress);
             // 
             // txtTelefone
             // 
@@ -125,6 +132,7 @@
             this.txtTelefone.Name = "txtTelefone";
             this.txtTelefone.Size = new System.Drawing.Size(100, 20);
             this.txtTelefone.TabIndex = 2;
+            this.txtTelefone.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTelefone_KeyPress);
             // 
             // txtEndereco
             // 
@@ -132,6 +140,7 @@
             this.txtEndereco.Name = "txtEndereco";
             this.txtEndereco.Size = new System.Drawing.Size(212, 20);
             this.txtEndereco.TabIndex = 3;
+            this.txtEndereco.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtEndereco_KeyPress);
             // 
             // ckbIncluirAtiva
             // 
@@ -170,6 +179,9 @@
             this.tbpIncluirEmpresa.Controls.Add(this.txtEndereco);
             this.tbpIncluirEmpresa.Controls.Add(this.txtTelefone);
             this.tbpIncluirEmpresa.Controls.Add(this.label2);
+            this.tbpIncluirEmpresa.Controls.Add(this.txtVermIncNome);
+            this.tbpIncluirEmpresa.Controls.Add(this.txtVermIncTelefone);
+            this.tbpIncluirEmpresa.Controls.Add(this.txtVermIncEndereco);
             this.tbpIncluirEmpresa.Location = new System.Drawing.Point(4, 25);
             this.tbpIncluirEmpresa.Name = "tbpIncluirEmpresa";
             this.tbpIncluirEmpresa.Padding = new System.Windows.Forms.Padding(3);
@@ -178,6 +190,42 @@
             this.tbpIncluirEmpresa.Text = "Incluir Empresa";
             this.tbpIncluirEmpresa.UseVisualStyleBackColor = true;
             this.tbpIncluirEmpresa.Click += new System.EventHandler(this.tabPage1_Click);
+            // 
+            // txtVermIncNome
+            // 
+            this.txtVermIncNome.BackColor = System.Drawing.Color.Red;
+            this.txtVermIncNome.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtVermIncNome.Location = new System.Drawing.Point(101, 80);
+            this.txtVermIncNome.Multiline = true;
+            this.txtVermIncNome.Name = "txtVermIncNome";
+            this.txtVermIncNome.Size = new System.Drawing.Size(214, 22);
+            this.txtVermIncNome.TabIndex = 13;
+            this.txtVermIncNome.TabStop = false;
+            this.txtVermIncNome.Visible = false;
+            // 
+            // txtVermIncTelefone
+            // 
+            this.txtVermIncTelefone.BackColor = System.Drawing.Color.Red;
+            this.txtVermIncTelefone.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtVermIncTelefone.Location = new System.Drawing.Point(101, 112);
+            this.txtVermIncTelefone.Multiline = true;
+            this.txtVermIncTelefone.Name = "txtVermIncTelefone";
+            this.txtVermIncTelefone.Size = new System.Drawing.Size(102, 22);
+            this.txtVermIncTelefone.TabIndex = 14;
+            this.txtVermIncTelefone.TabStop = false;
+            this.txtVermIncTelefone.Visible = false;
+            // 
+            // txtVermIncEndereco
+            // 
+            this.txtVermIncEndereco.BackColor = System.Drawing.Color.Red;
+            this.txtVermIncEndereco.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtVermIncEndereco.Location = new System.Drawing.Point(101, 145);
+            this.txtVermIncEndereco.Multiline = true;
+            this.txtVermIncEndereco.Name = "txtVermIncEndereco";
+            this.txtVermIncEndereco.Size = new System.Drawing.Size(214, 22);
+            this.txtVermIncEndereco.TabIndex = 15;
+            this.txtVermIncEndereco.TabStop = false;
+            this.txtVermIncEndereco.Visible = false;
             // 
             // tbpAlterarEmpresa
             // 
@@ -194,6 +242,9 @@
             this.tbpAlterarEmpresa.Controls.Add(this.label5);
             this.tbpAlterarEmpresa.Controls.Add(this.btnAlterarOK);
             this.tbpAlterarEmpresa.Controls.Add(this.txtAlteraEndereco);
+            this.tbpAlterarEmpresa.Controls.Add(this.txtVermAltNome);
+            this.tbpAlterarEmpresa.Controls.Add(this.txtVermAltTelefone);
+            this.tbpAlterarEmpresa.Controls.Add(this.txtVermAltEndereco);
             this.tbpAlterarEmpresa.Location = new System.Drawing.Point(4, 25);
             this.tbpAlterarEmpresa.Name = "tbpAlterarEmpresa";
             this.tbpAlterarEmpresa.Padding = new System.Windows.Forms.Padding(3);
@@ -311,15 +362,16 @@
             this.txtAlteraNome.Name = "txtAlteraNome";
             this.txtAlteraNome.Size = new System.Drawing.Size(284, 20);
             this.txtAlteraNome.TabIndex = 4;
+            this.txtAlteraNome.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtAlteraNome_KeyPress);
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(8, 241);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(59, 13);
+            this.label6.Size = new System.Drawing.Size(56, 13);
             this.label6.TabIndex = 7;
-            this.label6.Text = "Endereço: ";
+            this.label6.Text = "Endereço:";
             // 
             // btnAlterarCancelar
             // 
@@ -337,6 +389,7 @@
             this.txtAlteraTelefone.Name = "txtAlteraTelefone";
             this.txtAlteraTelefone.Size = new System.Drawing.Size(129, 20);
             this.txtAlteraTelefone.TabIndex = 5;
+            this.txtAlteraTelefone.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtAlteraTelefone_KeyPress);
             // 
             // label4
             // 
@@ -358,6 +411,7 @@
             // 
             // btnAlterarOK
             // 
+            this.btnAlterarOK.Enabled = false;
             this.btnAlterarOK.Location = new System.Drawing.Point(6, 268);
             this.btnAlterarOK.Name = "btnAlterarOK";
             this.btnAlterarOK.Size = new System.Drawing.Size(75, 23);
@@ -368,10 +422,46 @@
             // 
             // txtAlteraEndereco
             // 
-            this.txtAlteraEndereco.Location = new System.Drawing.Point(64, 238);
+            this.txtAlteraEndereco.Location = new System.Drawing.Point(66, 238);
             this.txtAlteraEndereco.Name = "txtAlteraEndereco";
-            this.txtAlteraEndereco.Size = new System.Drawing.Size(284, 20);
+            this.txtAlteraEndereco.Size = new System.Drawing.Size(281, 20);
             this.txtAlteraEndereco.TabIndex = 6;
+            this.txtAlteraEndereco.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtAlteraEndereco_KeyPress);
+            // 
+            // txtVermAltNome
+            // 
+            this.txtVermAltNome.BackColor = System.Drawing.Color.Red;
+            this.txtVermAltNome.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtVermAltNome.Location = new System.Drawing.Point(63, 172);
+            this.txtVermAltNome.Multiline = true;
+            this.txtVermAltNome.Name = "txtVermAltNome";
+            this.txtVermAltNome.Size = new System.Drawing.Size(286, 22);
+            this.txtVermAltNome.TabIndex = 10;
+            this.txtVermAltNome.TabStop = false;
+            this.txtVermAltNome.Visible = false;
+            // 
+            // txtVermAltTelefone
+            // 
+            this.txtVermAltTelefone.BackColor = System.Drawing.Color.Red;
+            this.txtVermAltTelefone.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtVermAltTelefone.Location = new System.Drawing.Point(63, 204);
+            this.txtVermAltTelefone.Multiline = true;
+            this.txtVermAltTelefone.Name = "txtVermAltTelefone";
+            this.txtVermAltTelefone.Size = new System.Drawing.Size(131, 22);
+            this.txtVermAltTelefone.TabIndex = 11;
+            this.txtVermAltTelefone.TabStop = false;
+            this.txtVermAltTelefone.Visible = false;
+            // 
+            // txtVermAltEndereco
+            // 
+            this.txtVermAltEndereco.BackColor = System.Drawing.Color.Red;
+            this.txtVermAltEndereco.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtVermAltEndereco.Location = new System.Drawing.Point(65, 237);
+            this.txtVermAltEndereco.Multiline = true;
+            this.txtVermAltEndereco.Name = "txtVermAltEndereco";
+            this.txtVermAltEndereco.Size = new System.Drawing.Size(283, 22);
+            this.txtVermAltEndereco.TabIndex = 12;
+            this.txtVermAltEndereco.Visible = false;
             // 
             // frmManutencaoEmpresas
             // 
@@ -425,5 +515,11 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn telefone;
         private System.Windows.Forms.DataGridViewTextBoxColumn endereco;
         private System.Windows.Forms.DataGridViewCheckBoxColumn ativa;
+        private System.Windows.Forms.TextBox txtVermIncNome;
+        private System.Windows.Forms.TextBox txtVermIncTelefone;
+        private System.Windows.Forms.TextBox txtVermIncEndereco;
+        private System.Windows.Forms.TextBox txtVermAltNome;
+        private System.Windows.Forms.TextBox txtVermAltTelefone;
+        private System.Windows.Forms.TextBox txtVermAltEndereco;
     }
 }

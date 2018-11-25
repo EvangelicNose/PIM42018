@@ -142,6 +142,7 @@ namespace helpdesk2018.View
         {
             txtAlteraMotivo.Text = dtgAlteraResultado.CurrentRow.Cells["descricao"].Value.ToString();
             ckbAlteraAtivo.Checked = Convert.ToBoolean(dtgAlteraResultado.CurrentRow.Cells["ativo"].Value.ToString());
+            btnAlteraMotivo.Enabled = true;
         }
 
         private void frmManutencaoMotivo_Load_1(object sender, EventArgs e)

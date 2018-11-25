@@ -136,5 +136,10 @@ namespace helpdesk2018.View
                 Entrar();
             }
         }
+
+        private void txtSenha_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

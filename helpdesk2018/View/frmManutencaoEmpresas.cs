@@ -59,18 +59,21 @@ namespace helpdesk2018.View
 
             if (txtNome.Text == "")
             {
+                txtVermIncNome.Visible = true;
                 MessageBox.Show("Nome não pode ficar em branco !");
                 branco = "1";
                 txtNome.Focus();
             }
             else if (txtTelefone.Text == "")
             {
+                txtVermIncTelefone.Visible = true;
                 MessageBox.Show("Telefone não pode ficar em branco !");
                 branco = "1";
                 txtTelefone.Focus();
             }
             else if (txtEndereco.Text == "")
             {
+                txtVermIncEndereco.Visible = true;
                 MessageBox.Show("Endereço não pode ficar em branco !");
                 branco = "1";
                 txtEndereco.Focus();
@@ -121,7 +124,6 @@ namespace helpdesk2018.View
             mdlManutencaoEmpresas _mdlmanutencaoempresas = new mdlManutencaoEmpresas();
             _mdlmanutencaoempresas.Nome = txtPesquisarEmpresa.Text;
             dtgAlteraResultado.DataSource = ctlManutencaoEmpresas.PesquisaEmpresaMDL(_mdlmanutencaoempresas);
-
         }
 
         private void btnAlterarCancelar_Click(object sender, EventArgs e)
@@ -135,10 +137,33 @@ namespace helpdesk2018.View
             txtAlteraTelefone.Text = dtgAlteraResultado.CurrentRow.Cells["telefone"].Value.ToString();
             txtAlteraEndereco.Text = dtgAlteraResultado.CurrentRow.Cells["endereco"].Value.ToString();
             ckbAlteraAtiva.Checked = Convert.ToBoolean(dtgAlteraResultado.CurrentRow.Cells["ativa"].Value.ToString());
+            btnAlterarOK.Enabled = true;
         }
 
         private void btnAlterarOK_Click(object sender, EventArgs e)
         {
+            if (txtAlteraNome.Text=="")
+            {
+                txtVermAltNome.Visible = true;
+                MessageBox.Show(" Nome não pode ficar em Branco ");
+                txtAlteraNome.Focus();
+                return;
+            }
+            if(txtAlteraTelefone.Text=="")
+            {
+                txtVermAltTelefone.Visible = true;
+                MessageBox.Show(" Telefone não pode ficar em branco ");
+                txtAlteraTelefone.Focus();
+                return;
+            }
+            if (txtAlteraEndereco.Text == "")
+            {
+                txtVermAltEndereco.Visible = true;
+                MessageBox.Show(" Endereço não pode ficar em branco ");
+                txtAlteraEndereco.Focus();
+                return;
+            }
+
             mdlManutencaoEmpresas _mdlmanutencaoempresa = new mdlManutencaoEmpresas();
             _mdlmanutencaoempresa.Nome = txtAlteraNome.Text;
             _mdlmanutencaoempresa.Endereco = txtAlteraEndereco.Text;
@@ -146,6 +171,7 @@ namespace helpdesk2018.View
             _mdlmanutencaoempresa.Ativa = ckbAlteraAtiva.Checked;
             _mdlmanutencaoempresa.ID = Convert.ToInt16(dtgAlteraResultado.CurrentRow.Cells["idempresa"].Value.ToString());
             dtgAlteraResultado.DataSource = ctlManutencaoEmpresas.AlteraEmpresaMDL(_mdlmanutencaoempresa);
+            btnAlterarOK.Enabled = false;
 
             bool retorno1 = ctlManutencaoEmpresas.AlteraEmpresaMDL(_mdlmanutencaoempresa);
             if (retorno1)
@@ -157,6 +183,48 @@ namespace helpdesk2018.View
             {
                 MessageBox.Show("Erro ao alterar");
             }
+        }
+
+        private void txtNome_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            txtVermIncNome.Visible = false;
+                if (e.KeyChar == 13)
+                {
+                txtTelefone.Focus();
+                }
+        }
+
+        private void txtTelefone_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            txtVermIncTelefone.Visible = false;
+            if (e.KeyChar==13)
+            {
+                txtEndereco.Focus();
+            }
+        }
+
+        private void txtEndereco_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            txtVermIncEndereco.Visible = false;
+            if (e.KeyChar == 13)
+            {
+                //
+            }
+        }
+
+        private void txtAlteraNome_KeyPress(object sender, KeyPressEventArgs e)
+        { 
+            txtVermAltNome.Visible = false;
+        }
+
+        private void txtAlteraTelefone_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            txtVermAltTelefone.Visible = false;
+        }
+
+        private void txtAlteraEndereco_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            txtVermAltEndereco.Visible = false;
         }
     }
 }
