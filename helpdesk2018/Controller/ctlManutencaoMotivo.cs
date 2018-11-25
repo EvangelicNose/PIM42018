@@ -18,8 +18,8 @@ namespace helpdesk2018.Controller
             Conexao conexao = new Conexao();
             conexao.abrir();
 
-            string stm = "select count(1) from tb_motivos where descricao = @descricao";
-            OleDbCommand cmdver = new OleDbCommand(stm, conexao.GetConexao());
+            string qexiste = "select count(1) from tb_motivos where descricao = @descricao";
+            OleDbCommand cmdver = new OleDbCommand(qexiste, conexao.GetConexao());
            
             cmdver.CommandType = CommandType.Text;
             var pmtmotivo = cmdver.CreateParameter();

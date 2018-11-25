@@ -54,6 +54,8 @@
             this.btnAlteraMotivo = new System.Windows.Forms.Button();
             this.txtAlteraMotivo = new System.Windows.Forms.TextBox();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.txtVermelho = new System.Windows.Forms.TextBox();
+            this.txtAlteraVermelho = new System.Windows.Forms.TextBox();
             this.tbpManutencaoMotivo.SuspendLayout();
             this.tbpIncluir.SuspendLayout();
             this.tbpAlterarMotivo.SuspendLayout();
@@ -80,6 +82,7 @@
             this.tbpIncluir.Controls.Add(this.lblMotivo);
             this.tbpIncluir.Controls.Add(this.btnCadastrar);
             this.tbpIncluir.Controls.Add(this.txtIncluirMotivo);
+            this.tbpIncluir.Controls.Add(this.txtVermelho);
             this.tbpIncluir.Location = new System.Drawing.Point(4, 22);
             this.tbpIncluir.Name = "tbpIncluir";
             this.tbpIncluir.Padding = new System.Windows.Forms.Padding(3);
@@ -181,6 +184,7 @@
             this.tbpAlterarMotivo.Controls.Add(this.lblAlteraMotivo);
             this.tbpAlterarMotivo.Controls.Add(this.btnAlteraMotivo);
             this.tbpAlterarMotivo.Controls.Add(this.txtAlteraMotivo);
+            this.tbpAlterarMotivo.Controls.Add(this.txtAlteraVermelho);
             this.tbpAlterarMotivo.Location = new System.Drawing.Point(4, 22);
             this.tbpAlterarMotivo.Name = "tbpAlterarMotivo";
             this.tbpAlterarMotivo.Padding = new System.Windows.Forms.Padding(3);
@@ -341,6 +345,30 @@
             this.txtAlteraMotivo.Size = new System.Drawing.Size(317, 20);
             this.txtAlteraMotivo.TabIndex = 4;
             this.toolTip1.SetToolTip(this.txtAlteraMotivo, "Digitar a alterção do motivo");
+            this.txtAlteraMotivo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtAlteraMotivo_KeyPress);
+            // 
+            // txtVermelho
+            // 
+            this.txtVermelho.BackColor = System.Drawing.Color.Red;
+            this.txtVermelho.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtVermelho.ForeColor = System.Drawing.Color.Red;
+            this.txtVermelho.Location = new System.Drawing.Point(81, 82);
+            this.txtVermelho.Multiline = true;
+            this.txtVermelho.Name = "txtVermelho";
+            this.txtVermelho.Size = new System.Drawing.Size(213, 22);
+            this.txtVermelho.TabIndex = 12;
+            this.txtVermelho.Visible = false;
+            // 
+            // txtAlteraVermelho
+            // 
+            this.txtAlteraVermelho.BackColor = System.Drawing.Color.Red;
+            this.txtAlteraVermelho.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtAlteraVermelho.Location = new System.Drawing.Point(61, 255);
+            this.txtAlteraVermelho.Multiline = true;
+            this.txtAlteraVermelho.Name = "txtAlteraVermelho";
+            this.txtAlteraVermelho.Size = new System.Drawing.Size(319, 22);
+            this.txtAlteraVermelho.TabIndex = 14;
+            this.txtAlteraVermelho.Visible = false;
             // 
             // frmManutencaoMotivo
             // 
@@ -390,5 +418,7 @@
         private System.Windows.Forms.Button btnAlterarAMaior;
         private System.Windows.Forms.Button btnAlterarAMenor;
         private System.Windows.Forms.ToolTip toolTip1;
+        private System.Windows.Forms.TextBox txtVermelho;
+        private System.Windows.Forms.TextBox txtAlteraVermelho;
     }
 }

@@ -45,6 +45,7 @@ namespace helpdesk2018.View
 
             if (txtIncluirMotivo.Text == "")
             {
+                txtVermelho.Visible = true;
                 MessageBox.Show("Motivo não pode ficar em branco !");
                 branco = "1";
                 txtIncluirMotivo.Focus();
@@ -67,7 +68,7 @@ namespace helpdesk2018.View
                 
                 else
                 {
-                    MessageBox.Show("Erro ao Gravar !!! "+ "\n" + "Dado Duplicado");
+                    MessageBox.Show("  Erro ao Gravar !!!  "+ "\n" + "   Dado Duplicado   ");
                 }
 
             }
@@ -77,6 +78,7 @@ namespace helpdesk2018.View
 
         private void txtIncluirMotivo_KeyPress(object sender, KeyPressEventArgs e)
         {
+            txtVermelho.Visible = false;
             if (e.KeyChar == 13)
             {
                 CadastrarMotivo();
@@ -98,6 +100,14 @@ namespace helpdesk2018.View
 
         private void btnAlteraMotivo_Click(object sender, EventArgs e)
         {
+
+            if (txtAlteraMotivo.Text == "")
+            {
+                txtAlteraVermelho.Visible = true;
+                MessageBox.Show(" Selecione uma opção ");
+                txtAlteraMotivo.Focus();
+                return;
+            }
 
             mdlManutencaoMotivo _mdlmanutencaomotivo = new mdlManutencaoMotivo();
             _mdlmanutencaomotivo.Descricao = txtAlteraMotivo.Text;
@@ -244,6 +254,10 @@ namespace helpdesk2018.View
             }
 
         }
-    
+
+        private void txtAlteraMotivo_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            txtAlteraVermelho.Visible = false;
+        }
     }
 }
