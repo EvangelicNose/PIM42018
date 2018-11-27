@@ -87,12 +87,15 @@ namespace helpdesk2018.View
 
         private void fazerLogoffToolStripMenuItem1_Click(object sender, EventArgs e)
         {
+
             using (frmLogin frmLogin = new frmLogin())
             {
                 this.Hide();
                 frmLogin.ShowDialog();
                 Close();
             }
+            
+
         }
 
         private void motivosToolStripMenuItem_Click(object sender, EventArgs e)
@@ -153,9 +156,5 @@ namespace helpdesk2018.View
             _frmSobre.ShowDialog();
         }
 
-        private void frmMenu_FormClosed(object sender, FormClosedEventArgs e)
-        {
-
-        }
     }
 }
