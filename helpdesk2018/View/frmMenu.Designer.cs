@@ -132,14 +132,14 @@
             // fazerLogoffToolStripMenuItem1
             // 
             this.fazerLogoffToolStripMenuItem1.Name = "fazerLogoffToolStripMenuItem1";
-            this.fazerLogoffToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.fazerLogoffToolStripMenuItem1.Size = new System.Drawing.Size(161, 22);
             this.fazerLogoffToolStripMenuItem1.Text = "Fazer Logoff";
             this.fazerLogoffToolStripMenuItem1.Click += new System.EventHandler(this.fazerLogoffToolStripMenuItem1_Click);
             // 
             // finalizarSistemaToolStripMenuItem1
             // 
             this.finalizarSistemaToolStripMenuItem1.Name = "finalizarSistemaToolStripMenuItem1";
-            this.finalizarSistemaToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.finalizarSistemaToolStripMenuItem1.Size = new System.Drawing.Size(161, 22);
             this.finalizarSistemaToolStripMenuItem1.Text = "Finalizar Sistema";
             this.finalizarSistemaToolStripMenuItem1.Click += new System.EventHandler(this.finalizarSistemaToolStripMenuItem1_Click);
             // 
@@ -160,6 +160,7 @@
             this.ClientSize = new System.Drawing.Size(884, 461);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.menuStrip1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "frmMenu";

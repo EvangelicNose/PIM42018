@@ -14,6 +14,16 @@ namespace helpdesk2018.View
 {
     public partial class frmMenu : Form
     {
+        private const int CP_NOCLOSE_BUTTON = 0x200;
+        protected override CreateParams CreateParams
+        {
+            get
+            {
+                CreateParams myCp = base.CreateParams;
+                myCp.ClassStyle = myCp.ClassStyle | CP_NOCLOSE_BUTTON;
+                return myCp;
+            }
+        }
         public frmMenu()
         {
             InitializeComponent();
@@ -131,14 +141,8 @@ namespace helpdesk2018.View
 
         private void finalizarSistemaToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Deseja realmente sair ?", "CONFIRMAR", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
-            {
-                return;
-            }
-            else
-            {
-                Application.Exit();
-            }
+
+            if (msgFechar() == 0) { Application.Exit(); }
 
         }
         private void frmMenu_FormClosing(object sender, FormClosingEventArgs e)
@@ -156,5 +160,22 @@ namespace helpdesk2018.View
             _frmSobre.ShowDialog();
         }
 
+        int msgFechar()
+        {
+
+            if (MessageBox.Show("Deseja realmente sair ?", "CONFIRMAR", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
+            {
+
+                return 1;
+            }
+            else
+            {
+                Application.Exit();
+                return 0;
+            }
+        }
+
     }
+
+
 }
