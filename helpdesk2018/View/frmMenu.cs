@@ -170,7 +170,6 @@ namespace helpdesk2018.View
             }
             else
             {
-                Application.Exit();
                 return 0;
             }
         }
