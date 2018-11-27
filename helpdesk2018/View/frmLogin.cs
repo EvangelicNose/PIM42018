@@ -69,8 +69,6 @@ namespace helpdesk2018.View
                     this.Hide();
                     frmmenu.ShowDialog();
                     this.Close();
-                    this.Dispose(true);
-                    this.DestroyHandle();
                 }
             }
             else if (branco == 0)
