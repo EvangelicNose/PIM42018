@@ -64,10 +64,14 @@ namespace helpdesk2018.View
                 UsuarioConectado = txtUsuario.Text;
                 conexao.Fechar();
                 ctlLogin.GuardarDados(UsuarioConectado);
-                frmMenu _frmmenu = new frmMenu();
-                this.Hide();
-                _frmmenu.ShowDialog();
-                this.Close();
+                using (frmMenu frmmenu = new frmMenu())
+                {
+                    this.Hide();
+                    frmmenu.ShowDialog();
+                    this.Close();
+                    this.Dispose(true);
+                    this.DestroyHandle();
+                }
             }
             else if (branco == 0)
             {

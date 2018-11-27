@@ -87,10 +87,12 @@ namespace helpdesk2018.View
 
         private void fazerLogoffToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            frmLogin login = new frmLogin();
-            this.Hide();
-            login.ShowDialog();
-            this.Close();
+            using (frmLogin frmLogin = new frmLogin())
+            {
+                this.Hide();
+                frmLogin.ShowDialog();
+                Close();
+            }
         }
 
         private void motivosToolStripMenuItem_Click(object sender, EventArgs e)
@@ -126,20 +128,34 @@ namespace helpdesk2018.View
 
         private void finalizarSistemaToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            Close();
+            if (MessageBox.Show("Deseja realmente sair ?", "CONFIRMAR", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
+            {
+                return;
+            }
+            else
+            {
+                Application.Exit();
+            }
+
         }
         private void frmMenu_FormClosing(object sender, FormClosingEventArgs e)
         {
-            if (MessageBox.Show("Deseja realmente sair ?", "CONFIRMAR", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
-            {
-                e.Cancel = true;
-            }
+
+
+
         }
+
+        
 
         private void sobreToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frmSobre _frmSobre = new frmSobre();
             _frmSobre.ShowDialog();
+        }
+
+        private void frmMenu_FormClosed(object sender, FormClosedEventArgs e)
+        {
+
         }
     }
 }

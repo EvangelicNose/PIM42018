@@ -132,14 +132,14 @@
             // fazerLogoffToolStripMenuItem1
             // 
             this.fazerLogoffToolStripMenuItem1.Name = "fazerLogoffToolStripMenuItem1";
-            this.fazerLogoffToolStripMenuItem1.Size = new System.Drawing.Size(161, 22);
+            this.fazerLogoffToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
             this.fazerLogoffToolStripMenuItem1.Text = "Fazer Logoff";
             this.fazerLogoffToolStripMenuItem1.Click += new System.EventHandler(this.fazerLogoffToolStripMenuItem1_Click);
             // 
             // finalizarSistemaToolStripMenuItem1
             // 
             this.finalizarSistemaToolStripMenuItem1.Name = "finalizarSistemaToolStripMenuItem1";
-            this.finalizarSistemaToolStripMenuItem1.Size = new System.Drawing.Size(161, 22);
+            this.finalizarSistemaToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
             this.finalizarSistemaToolStripMenuItem1.Text = "Finalizar Sistema";
             this.finalizarSistemaToolStripMenuItem1.Click += new System.EventHandler(this.finalizarSistemaToolStripMenuItem1_Click);
             // 
@@ -166,6 +166,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmMenu_FormClosing);
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmMenu_FormClosed);
             this.Load += new System.EventHandler(this.frmMenu_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
