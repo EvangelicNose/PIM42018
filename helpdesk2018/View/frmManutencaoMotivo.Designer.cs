@@ -38,7 +38,7 @@
             this.lblMotivo = new System.Windows.Forms.Label();
             this.btnCadastrar = new System.Windows.Forms.Button();
             this.txtIncluirMotivo = new System.Windows.Forms.TextBox();
-            this.txtVermelho = new System.Windows.Forms.TextBox();
+            this.VermelhoIncluir = new System.Windows.Forms.TextBox();
             this.tbpAlterarMotivo = new System.Windows.Forms.TabPage();
             this.btnAlterarAMaior = new System.Windows.Forms.Button();
             this.btnAlterarAMenor = new System.Windows.Forms.Button();
@@ -54,7 +54,7 @@
             this.lblAlteraMotivo = new System.Windows.Forms.Label();
             this.btnAlteraMotivo = new System.Windows.Forms.Button();
             this.txtAlteraMotivo = new System.Windows.Forms.TextBox();
-            this.txtAlteraVermelho = new System.Windows.Forms.TextBox();
+            this.VermelhoAlterar = new System.Windows.Forms.TextBox();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.tbpManutencaoMotivo.SuspendLayout();
             this.tbpIncluir.SuspendLayout();
@@ -82,7 +82,7 @@
             this.tbpIncluir.Controls.Add(this.lblMotivo);
             this.tbpIncluir.Controls.Add(this.btnCadastrar);
             this.tbpIncluir.Controls.Add(this.txtIncluirMotivo);
-            this.tbpIncluir.Controls.Add(this.txtVermelho);
+            this.tbpIncluir.Controls.Add(this.VermelhoIncluir);
             this.tbpIncluir.Location = new System.Drawing.Point(4, 22);
             this.tbpIncluir.Name = "tbpIncluir";
             this.tbpIncluir.Padding = new System.Windows.Forms.Padding(3);
@@ -143,7 +143,7 @@
             // 
             this.lblMotivo.AutoSize = true;
             this.lblMotivo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMotivo.Location = new System.Drawing.Point(23, 86);
+            this.lblMotivo.Location = new System.Drawing.Point(15, 86);
             this.lblMotivo.Name = "lblMotivo";
             this.lblMotivo.Size = new System.Drawing.Size(42, 13);
             this.lblMotivo.TabIndex = 2;
@@ -171,17 +171,18 @@
             this.toolTip1.SetToolTip(this.txtIncluirMotivo, "Digitar o nome do motivo");
             this.txtIncluirMotivo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtIncluirMotivo_KeyPress);
             // 
-            // txtVermelho
+            // VermelhoIncluir
             // 
-            this.txtVermelho.BackColor = System.Drawing.Color.Red;
-            this.txtVermelho.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtVermelho.ForeColor = System.Drawing.Color.Red;
-            this.txtVermelho.Location = new System.Drawing.Point(81, 82);
-            this.txtVermelho.Multiline = true;
-            this.txtVermelho.Name = "txtVermelho";
-            this.txtVermelho.Size = new System.Drawing.Size(213, 22);
-            this.txtVermelho.TabIndex = 12;
-            this.txtVermelho.Visible = false;
+            this.VermelhoIncluir.BackColor = System.Drawing.Color.Red;
+            this.VermelhoIncluir.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.VermelhoIncluir.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.VermelhoIncluir.ForeColor = System.Drawing.Color.Red;
+            this.VermelhoIncluir.Location = new System.Drawing.Point(81, 82);
+            this.VermelhoIncluir.Name = "VermelhoIncluir";
+            this.VermelhoIncluir.Size = new System.Drawing.Size(213, 22);
+            this.VermelhoIncluir.TabIndex = 12;
+            this.VermelhoIncluir.TabStop = false;
+            this.VermelhoIncluir.Visible = false;
             // 
             // tbpAlterarMotivo
             // 
@@ -196,7 +197,7 @@
             this.tbpAlterarMotivo.Controls.Add(this.lblAlteraMotivo);
             this.tbpAlterarMotivo.Controls.Add(this.btnAlteraMotivo);
             this.tbpAlterarMotivo.Controls.Add(this.txtAlteraMotivo);
-            this.tbpAlterarMotivo.Controls.Add(this.txtAlteraVermelho);
+            this.tbpAlterarMotivo.Controls.Add(this.VermelhoAlterar);
             this.tbpAlterarMotivo.Location = new System.Drawing.Point(4, 22);
             this.tbpAlterarMotivo.Name = "tbpAlterarMotivo";
             this.tbpAlterarMotivo.Padding = new System.Windows.Forms.Padding(3);
@@ -280,12 +281,13 @@
             this.txtPesquisaMotivo.Size = new System.Drawing.Size(144, 20);
             this.txtPesquisaMotivo.TabIndex = 1;
             this.toolTip1.SetToolTip(this.txtPesquisaMotivo, "Digitar o nome do morivo para pesquisar");
+            this.txtPesquisaMotivo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPesquisaMotivo_KeyPress);
             // 
             // lblAlteraPesquisarMotivo
             // 
             this.lblAlteraPesquisarMotivo.AutoSize = true;
             this.lblAlteraPesquisarMotivo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAlteraPesquisarMotivo.Location = new System.Drawing.Point(8, 49);
+            this.lblAlteraPesquisarMotivo.Location = new System.Drawing.Point(5, 47);
             this.lblAlteraPesquisarMotivo.Name = "lblAlteraPesquisarMotivo";
             this.lblAlteraPesquisarMotivo.Size = new System.Drawing.Size(88, 13);
             this.lblAlteraPesquisarMotivo.TabIndex = 10;
@@ -331,7 +333,7 @@
             // 
             this.lblAlteraMotivo.AutoSize = true;
             this.lblAlteraMotivo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAlteraMotivo.Location = new System.Drawing.Point(3, 259);
+            this.lblAlteraMotivo.Location = new System.Drawing.Point(-1, 259);
             this.lblAlteraMotivo.Name = "lblAlteraMotivo";
             this.lblAlteraMotivo.Size = new System.Drawing.Size(42, 13);
             this.lblAlteraMotivo.TabIndex = 6;
@@ -360,16 +362,17 @@
             this.toolTip1.SetToolTip(this.txtAlteraMotivo, "Digitar a alterção do motivo");
             this.txtAlteraMotivo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtAlteraMotivo_KeyPress);
             // 
-            // txtAlteraVermelho
+            // VermelhoAlterar
             // 
-            this.txtAlteraVermelho.BackColor = System.Drawing.Color.Red;
-            this.txtAlteraVermelho.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtAlteraVermelho.Location = new System.Drawing.Point(61, 255);
-            this.txtAlteraVermelho.Multiline = true;
-            this.txtAlteraVermelho.Name = "txtAlteraVermelho";
-            this.txtAlteraVermelho.Size = new System.Drawing.Size(319, 22);
-            this.txtAlteraVermelho.TabIndex = 14;
-            this.txtAlteraVermelho.Visible = false;
+            this.VermelhoAlterar.BackColor = System.Drawing.Color.Red;
+            this.VermelhoAlterar.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.VermelhoAlterar.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.VermelhoAlterar.Location = new System.Drawing.Point(61, 255);
+            this.VermelhoAlterar.Name = "VermelhoAlterar";
+            this.VermelhoAlterar.Size = new System.Drawing.Size(319, 22);
+            this.VermelhoAlterar.TabIndex = 14;
+            this.VermelhoAlterar.TabStop = false;
+            this.VermelhoAlterar.Visible = false;
             // 
             // frmManutencaoMotivo
             // 
@@ -419,7 +422,7 @@
         private System.Windows.Forms.Button btnAlterarAMaior;
         private System.Windows.Forms.Button btnAlterarAMenor;
         private System.Windows.Forms.ToolTip toolTip1;
-        private System.Windows.Forms.TextBox txtVermelho;
-        private System.Windows.Forms.TextBox txtAlteraVermelho;
+        private System.Windows.Forms.TextBox VermelhoIncluir;
+        private System.Windows.Forms.TextBox VermelhoAlterar;
     }
 }

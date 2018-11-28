@@ -45,7 +45,7 @@ namespace helpdesk2018.View
 
             if (txtIncluirMotivo.Text == "")
             {
-                txtVermelho.Visible = true;
+                VermelhoIncluir.Visible = true;
                 MessageBox.Show("Motivo não pode ficar em branco !");
                 branco = "1";
                 txtIncluirMotivo.Focus();
@@ -60,6 +60,12 @@ namespace helpdesk2018.View
                 
 
                 bool retorno1 = ctlManutencaoMotivo.InserirMotivoMDL(_mdlmanutencaomotivo);
+                if (ctlManutencaoMotivo.retorno == 1)
+                {
+                    txtIncluirMotivo.Focus();
+                    MessageBox.Show("  Dado Duplicado  ");
+                    return;
+                }
                 if (retorno1)
                 {
                     MessageBox.Show("Motivo gravado com sucesso");
@@ -68,7 +74,7 @@ namespace helpdesk2018.View
                 
                 else
                 {
-                    MessageBox.Show("  Erro ao Gravar !!!  "+ "\n" + "   Dado Duplicado   ");
+                    MessageBox.Show("  Erro ao Gravar !!! ");
                 }
 
             }
@@ -78,7 +84,7 @@ namespace helpdesk2018.View
 
         private void txtIncluirMotivo_KeyPress(object sender, KeyPressEventArgs e)
         {
-            txtVermelho.Visible = false;
+            VermelhoIncluir.Visible = false;
             if (e.KeyChar == 13)
             {
                 CadastrarMotivo();
@@ -98,12 +104,11 @@ namespace helpdesk2018.View
             Close();
         }
 
-        private void btnAlteraMotivo_Click(object sender, EventArgs e)
+        void AlterarMotivo()
         {
-
             if (txtAlteraMotivo.Text == "")
             {
-                txtAlteraVermelho.Visible = true;
+                VermelhoAlterar.Visible = true;
                 MessageBox.Show(" Motivo não pode ficar em branco ");
                 txtAlteraMotivo.Focus();
                 return;
@@ -114,9 +119,18 @@ namespace helpdesk2018.View
             _mdlmanutencaomotivo.Ativo = ckbAlteraAtivo.Checked;
             _mdlmanutencaomotivo.IDMotivo = Convert.ToInt16(dtgAlteraResultado.CurrentRow.Cells["idmotivo"].Value.ToString());
             dtgAlteraResultado.DataSource = ctlManutencaoMotivo.AlteraMotivoMDL(_mdlmanutencaomotivo);
+            txtAlteraMotivo.Text = "";
+            if (ctlManutencaoMotivo.retornoA == 1)
+            {
+                txtIncluirMotivo.Focus();
+                MessageBox.Show("  Dado Duplicado  ");
+                return;
+            }
+
 
             bool retorno1 = ctlManutencaoMotivo.AlteraMotivoMDL(_mdlmanutencaomotivo);
-            if (retorno1)
+            
+            if (retorno1 || ctlManutencaoMotivo.ja == 1)
             {
                 limpar();
                 MessageBox.Show("Dados alterados com sucesso");
@@ -126,16 +140,20 @@ namespace helpdesk2018.View
             {
                 MessageBox.Show("Erro ao alterar");
             }
-
-
         }
-
-        private void btnPesquisar_Click(object sender, EventArgs e)
+        private void btnAlteraMotivo_Click(object sender, EventArgs e)
+        {
+            AlterarMotivo();
+        }
+        void PesquisarMotivo()
         {
             mdlManutencaoMotivo _mdlmanutencaomotivo = new mdlManutencaoMotivo();
             _mdlmanutencaomotivo.Descricao = txtPesquisaMotivo.Text;
             dtgAlteraResultado.DataSource = ctlManutencaoMotivo.PesquisaMotivoMDL(_mdlmanutencaomotivo);
-
+        }
+        private void btnPesquisar_Click(object sender, EventArgs e)
+        {
+            PesquisarMotivo();
         }
 
         private void dtgAlteraResultado_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -159,7 +177,7 @@ namespace helpdesk2018.View
 
         int tamInc = 8;
         int tamAlt = 8;
-        string font = "'Microsoft Sans Serif'";
+        string Font = "'Microsoft Sans Serif'";
 
         private void btnAMenor_Click(object sender, EventArgs e)
         {
@@ -173,7 +191,9 @@ namespace helpdesk2018.View
                 lblMotivo.Font = new Font(lblMotivo.Font.Name, tamanhoAtual);
                 txtIncluirMotivo.Font = new Font(txtIncluirMotivo.Font.Name, tamanhoAtual);
                 btnCadastrar.Font = new Font(btnCadastrar.Font.Name, tamanhoAtual);
-                btnSair.Font = new Font(btnCadastrar.Font.Name, tamanhoAtual);
+                btnSair.Font = new Font(btnSair.Font.Name, tamanhoAtual);
+                VermelhoIncluir.Font = new Font(VermelhoIncluir.Font.Name, tamanhoAtual+6);
+                txtIncluirMotivo.Focus();
             }
             if (tamInc == 6)
             {
@@ -195,7 +215,9 @@ namespace helpdesk2018.View
                 lblMotivo.Font = new Font(lblMotivo.Font.Name, tamanhoAtual);
                 txtIncluirMotivo.Font = new Font(txtIncluirMotivo.Font.Name, tamanhoAtual);
                 btnCadastrar.Font = new Font(btnCadastrar.Font.Name, tamanhoAtual);
-                btnSair.Font = new Font(btnCadastrar.Font.Name, tamanhoAtual);
+                btnSair.Font = new Font(btnSair.Font.Name, tamanhoAtual);
+                VermelhoIncluir.Font= new Font(VermelhoIncluir.Font.Name, tamanhoAtual+6);
+                txtIncluirMotivo.Focus();
             }
             if (tamInc == 12)
             {
@@ -223,6 +245,8 @@ namespace helpdesk2018.View
                 btnAlteraMotivo.Font = new Font(btnAlteraMotivo.Font.Name, tamanhoAtual);
                 ckbAlteraAtivo.Font = new Font(ckbAlteraAtivo.Font.Name, tamanhoAtual);
                 btnAlterarSair.Font = new Font(btnAlterarSair.Font.Name, tamanhoAtual);
+                VermelhoAlterar.Font = new Font(VermelhoAlterar.Font.Name, tamanhoAtual + 6);
+                txtPesquisaMotivo.Focus();
             }
             if (tamAlt == 12)
             {
@@ -248,6 +272,8 @@ namespace helpdesk2018.View
                 btnAlteraMotivo.Font = new Font(btnAlteraMotivo.Font.Name, tamanhoAtual);
                 ckbAlteraAtivo.Font = new Font(ckbAlteraAtivo.Font.Name, tamanhoAtual);
                 btnAlterarSair.Font = new Font(btnAlterarSair.Font.Name, tamanhoAtual);
+                VermelhoAlterar.Font = new Font(VermelhoAlterar.Font.Name, tamanhoAtual + 6);
+                txtPesquisaMotivo.Focus();
             }
             if (tamAlt == 6)
             {
@@ -258,7 +284,20 @@ namespace helpdesk2018.View
 
         private void txtAlteraMotivo_KeyPress(object sender, KeyPressEventArgs e)
         {
-            txtAlteraVermelho.Visible = false;
+            VermelhoAlterar.Visible = false;
+            if (e.KeyChar == 13)
+            {
+                AlterarMotivo();
+            }
+        }
+
+        private void txtPesquisaMotivo_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            VermelhoIncluir.Visible = false;
+            if (e.KeyChar == 13)
+            {
+                PesquisarMotivo();
+            }
         }
     }
 }

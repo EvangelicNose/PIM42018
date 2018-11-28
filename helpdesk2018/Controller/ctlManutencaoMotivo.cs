@@ -12,7 +12,9 @@ namespace helpdesk2018.Controller
 {
     public static class ctlManutencaoMotivo
     {
-      
+        public static int retorno=0;
+        public static int retornoA = 1;
+        public static int ja = 0;
         public static bool InserirMotivoMDL(global::helpdesk2018.Model.mdlManutencaoMotivo _mdlmanutencaomotivo)
         {
             Conexao conexao = new Conexao();
@@ -73,6 +75,7 @@ namespace helpdesk2018.Controller
                 }
                 
             }
+            retorno = 1;
             return false;
 
         } // fim inserir motivo
@@ -106,37 +109,75 @@ namespace helpdesk2018.Controller
 
         public static bool AlteraMotivoMDL(global::helpdesk2018.Model.mdlManutencaoMotivo _mdlmanutencaomotivo)
         {
+
             Conexao conexao = new Conexao();
             conexao.abrir();
-            string Query = @"
+
+            string qexiste = "select count(1) from tb_motivos where descricao = @descricao";
+            OleDbCommand cmdver = new OleDbCommand(qexiste, conexao.GetConexao());
+
+            cmdver.CommandType = CommandType.Text;
+            var pmtmotivo = cmdver.CreateParameter();
+            pmtmotivo.ParameterName = "@descricao";
+            pmtmotivo.DbType = DbType.String;
+            pmtmotivo.Value = _mdlmanutencaomotivo.Descricao;
+            cmdver.Parameters.Add(pmtmotivo);
+
+            int verif = (int)cmdver.ExecuteScalar();
+            int existeok = 0;
+
+            if (verif > 0 && ja ==1)
+            {
+                // found = true;
+                existeok = 1;
+                retornoA = 1;
+               // retorno = 1;
+            }
+            else
+            {
+                //  found = false;   
+                existeok = 0;
+                retornoA = 0;
+            }
+
+
+            if (existeok == 0)
+            {
+
+                string Query = @"
                 update tb_motivos
                 set descricao = @descricao, ativo = @ativo
                 where idmotivo = @idmotivo
             ";
-            OleDbCommand cmd = new OleDbCommand(Query, conexao.GetConexao());
-            cmd.CommandType = CommandType.Text;
+                OleDbCommand cmd = new OleDbCommand(Query, conexao.GetConexao());
+                cmd.CommandType = CommandType.Text;
 
-            OleDbParameter pmtdescricao = cmd.CreateParameter();
-            pmtdescricao.ParameterName = "@descricao";
-            pmtdescricao.DbType = DbType.String;
-            pmtdescricao.Value = _mdlmanutencaomotivo.Descricao;
-            cmd.Parameters.Add(pmtdescricao);
+                OleDbParameter pmtdescricao = cmd.CreateParameter();
+                pmtdescricao.ParameterName = "@descricao";
+                pmtdescricao.DbType = DbType.String;
+                pmtdescricao.Value = _mdlmanutencaomotivo.Descricao;
+                cmd.Parameters.Add(pmtdescricao);
 
-            OleDbParameter pmtativo = cmd.CreateParameter();
-            pmtativo.ParameterName = "@ativo";
-            pmtativo.DbType = DbType.Boolean;
-            pmtativo.Value = _mdlmanutencaomotivo.Ativo;
-            cmd.Parameters.Add(pmtativo);
+                OleDbParameter pmtativo = cmd.CreateParameter();
+                pmtativo.ParameterName = "@ativo";
+                pmtativo.DbType = DbType.Boolean;
+                pmtativo.Value = _mdlmanutencaomotivo.Ativo;
+                cmd.Parameters.Add(pmtativo);
 
-            OleDbParameter pmtidmotivo = cmd.CreateParameter();
-            pmtidmotivo.ParameterName = "@idmotivo";
-            pmtidmotivo.DbType = DbType.Int16;
-            pmtidmotivo.Value = _mdlmanutencaomotivo.IDMotivo;
-            cmd.Parameters.Add(pmtidmotivo);
+                OleDbParameter pmtidmotivo = cmd.CreateParameter();
+                pmtidmotivo.ParameterName = "@idmotivo";
+                pmtidmotivo.DbType = DbType.Int16;
+                pmtidmotivo.Value = _mdlmanutencaomotivo.IDMotivo;
+                cmd.Parameters.Add(pmtidmotivo);
 
-            int resultado = cmd.ExecuteNonQuery();
-            conexao.Fechar();
-            return resultado > 0;
+                int resultado = cmd.ExecuteNonQuery();
+                conexao.Fechar();
+                ja = 1;
+                return resultado > 0;               
+            }
+
+             //ja = 0;
+            return false;
         } // fim altera motivo
 
 
