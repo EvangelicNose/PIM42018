@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using helpdesk2018.View;
 
 namespace helpdesk2018
 {
@@ -29,7 +30,9 @@ namespace helpdesk2018
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-
+            frmDetalharChamado _frmDetalharChamado = new frmDetalharChamado();
+            _frmDetalharChamado.ShowDialog();
+            
         }
     }
 }
