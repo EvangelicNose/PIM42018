@@ -63,13 +63,16 @@ namespace helpdesk2018.View
                 if (ctlManutencaoMotivo.retorno == 1)
                 {
                     txtIncluirMotivo.Focus();
-                    MessageBox.Show("  Dado Duplicado  ");
+                    MessageBox.Show("  Esse Motivo já está cadastrado ");
+                    ctlManutencaoMotivo.retorno = 0;
                     return;
                 }
                 if (retorno1)
                 {
-                    MessageBox.Show("Motivo gravado com sucesso");
+                    MessageBox.Show(" Motivo gravado com sucesso ");
+                    ctlManutencaoMotivo.retorno = 0;
                     limpar();
+                    txtIncluirMotivo.Focus();
                 }
                 
                 else

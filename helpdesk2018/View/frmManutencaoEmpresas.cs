@@ -98,6 +98,7 @@ namespace helpdesk2018.View
                 {
                     MessageBox.Show("Empresa gravada com sucesso");
                     limpar();
+                    txtNome.Focus();
                 }
                 else
                 {
@@ -123,14 +124,9 @@ namespace helpdesk2018.View
             Close();
         }
 
-        private void tabPage1_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void frmManutencaoEmpresas_Load(object sender, EventArgs e)
         {
-
+             txtNome.Select();
         }
 
         private void btnPesquisarEmpresa_Click(object sender, EventArgs e)

@@ -36,7 +36,7 @@ namespace helpdesk2018
 
         private void dtgListaChamado_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            mdlChamados.Chamado.OS = dtgListaChamado.CurrentRow.Cells["OS"].Value.ToString();
+            mdlChamados.Chamado.OS = Convert.ToInt16(dtgListaChamado.CurrentRow.Cells["OS"].Value.ToString());
             ctlChamados.getChamado();
             frmDetalharChamado _frmDetalharChamado = new frmDetalharChamado();
             _frmDetalharChamado.ShowDialog();

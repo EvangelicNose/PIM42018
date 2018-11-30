@@ -4,7 +4,7 @@
     {
         public static mdlChamados Chamado;
 
-        public string OS { get; set; }
+        public int OS { get; set; }
         public int IDusuarios { get; set; }
         public string NomeUsuario { get; set; }
         public string Empresa { get; set; }
