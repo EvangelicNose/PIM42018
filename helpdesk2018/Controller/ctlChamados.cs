@@ -71,5 +71,52 @@ namespace helpdesk2018.Controller
 
             return retorno;
         }
+
+        public static string getChamado()
+        {
+            string retorno = "";
+            Conexao conexao = new Conexao();
+            OleDbCommand cmd = conexao.Comando(@"select
+               tb_chamados.os,
+               tb_usuarios.nome as nome_usuario,
+               tb_empresas.nome as nome_empresa,
+               tb_motivos.descricao as descricao_motivo,
+               tb_status.descricao as descricao_status,
+               tb_chamados.descricao
+             from (
+               (
+                 (
+                   tb_chamados
+                   inner join tb_usuarios
+                   on tb_usuarios.idusuario = tb_chamados.fk_idusuario
+                 )
+                 inner join tb_empresas
+                 on tb_empresas.idempresa = tb_usuarios.fk_idempresa
+               )
+               inner join tb_motivos
+               on tb_motivos.idmotivo = tb_chamados.fk_idmotivo
+             )
+             inner join tb_status
+             on tb_status.idstatus = tb_chamados.fk_idstatus
+             where tb_chamados.os = @os
+            ");
+
+            cmd.Parameters.AddWithValue("@os", mdlChamados.Chamado.OS);
+
+            OleDbDataReader reader = cmd.ExecuteReader();
+
+            while (reader.Read())
+            {
+                mdlChamados.Chamado.Descricao = reader["descricao"].ToString();
+                mdlChamados.Chamado.Motivo = reader["descricao_motivo"].ToString();
+                mdlChamados.Chamado.Empresa = reader["nome_empresa"].ToString();
+                mdlChamados.Chamado.NomeUsuario = reader["nome_usuario"].ToString();
+
+            }
+            reader.Close();
+            conexao.Fechar();
+
+            return retorno;
+        }
     }
 }

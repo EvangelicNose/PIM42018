@@ -411,6 +411,7 @@
             this.txtPesquisaNome.Name = "txtPesquisaNome";
             this.txtPesquisaNome.Size = new System.Drawing.Size(215, 20);
             this.txtPesquisaNome.TabIndex = 0;
+            this.txtPesquisaNome.TextChanged += new System.EventHandler(this.txtPesquisaNome_TextChanged);
             // 
             // label13
             // 

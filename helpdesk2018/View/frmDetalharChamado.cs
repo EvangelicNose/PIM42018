@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using helpdesk2018.Controller;
 
 namespace helpdesk2018.View
 {
@@ -19,6 +20,10 @@ namespace helpdesk2018.View
 
         private void frmDetalharChamado_Load(object sender, EventArgs e)
         {
+            txtDescricao.Text = mdlChamados.Chamado.Descricao;
+            txtEmpresa.Text = mdlChamados.Chamado.Empresa;
+            txtNome.Text = mdlChamados.Chamado.NomeUsuario;
+            txtMotivo.Text = mdlChamados.Chamado.Motivo;
 
         }
     }

@@ -30,9 +30,9 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dtgListaChamado = new System.Windows.Forms.DataGridView();
             this.btnVoltar = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgListaChamado)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -53,14 +53,18 @@
             this.label2.TabIndex = 1;
             this.label2.Text = "Lista de Chamados";
             // 
-            // dataGridView1
+            // dtgListaChamado
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(15, 79);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(563, 150);
-            this.dataGridView1.TabIndex = 2;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            this.dtgListaChamado.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgListaChamado.Location = new System.Drawing.Point(15, 79);
+            this.dtgListaChamado.MultiSelect = false;
+            this.dtgListaChamado.Name = "dtgListaChamado";
+            this.dtgListaChamado.ReadOnly = true;
+            this.dtgListaChamado.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dtgListaChamado.Size = new System.Drawing.Size(563, 150);
+            this.dtgListaChamado.TabIndex = 2;
+            this.dtgListaChamado.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgListaChamado_CellClick);
+            this.dtgListaChamado.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // btnVoltar
             // 
@@ -78,13 +82,13 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(606, 305);
             this.Controls.Add(this.btnVoltar);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dtgListaChamado);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "frmListarChamado";
             this.Text = "frmListarChamado";
             this.Load += new System.EventHandler(this.frmListarChamado_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgListaChamado)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -94,7 +98,7 @@
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dtgListaChamado;
         private System.Windows.Forms.Button btnVoltar;
     }
 }

@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using helpdesk2018.View;
+using helpdesk2018.Controller;
 
 namespace helpdesk2018
 {
@@ -20,7 +21,7 @@ namespace helpdesk2018
 
         private void frmListarChamado_Load(object sender, EventArgs e)
         {
-            dataGridView1.DataSource = Controller.ctlManutencaoOS.ListarOS();
+            dtgListaChamado.DataSource = Controller.ctlManutencaoOS.ListarOS();
         }
 
         private void btnVoltar_Click(object sender, EventArgs e)
@@ -30,9 +31,15 @@ namespace helpdesk2018
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+
+        }
+
+        private void dtgListaChamado_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            mdlChamados.Chamado.OS = dtgListaChamado.CurrentRow.Cells["OS"].Value.ToString();
+            ctlChamados.getChamado();
             frmDetalharChamado _frmDetalharChamado = new frmDetalharChamado();
             _frmDetalharChamado.ShowDialog();
-            
         }
     }
 }

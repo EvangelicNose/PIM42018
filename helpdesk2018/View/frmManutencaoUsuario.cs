@@ -250,5 +250,10 @@ namespace helpdesk2018
                 MessageBox.Show("Erro ao alterar");
             }
         }
+
+        private void txtPesquisaNome_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
