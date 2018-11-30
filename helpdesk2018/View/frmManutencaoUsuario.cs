@@ -168,8 +168,6 @@ namespace helpdesk2018
             cbEmpresas.SelectedIndex = -1;
             cbbAlteraEmpresa.SelectedIndex = -1;
             conexao.Fechar();
-            Pesquisar();
-
         }
 
         private void btnAlterar_Click(object sender, EventArgs e)
@@ -177,6 +175,7 @@ namespace helpdesk2018
             gbEscolha.Visible = false;
             gbDados.Visible = false;
             gpbAltera.Visible = true;
+            txtPesquisaNome.Focus();
         }
 
         void Pesquisar()

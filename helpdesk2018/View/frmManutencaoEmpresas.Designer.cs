@@ -39,10 +39,12 @@
             this.ckbIncluirAtiva = new System.Windows.Forms.CheckBox();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tbpIncluirEmpresa = new System.Windows.Forms.TabPage();
-            this.lblVermErro = new System.Windows.Forms.Label();
             this.txtVermIncNome = new System.Windows.Forms.TextBox();
             this.txtVermIncTelefone = new System.Windows.Forms.TextBox();
             this.txtVermIncEndereco = new System.Windows.Forms.TextBox();
+            this.lblVermErroTelefone = new System.Windows.Forms.Label();
+            this.lblVermErro = new System.Windows.Forms.Label();
+            this.lblVermEndereco = new System.Windows.Forms.Label();
             this.tbpAlterarEmpresa = new System.Windows.Forms.TabPage();
             this.dtgAlteraResultado = new System.Windows.Forms.DataGridView();
             this.idempresa = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -65,8 +67,6 @@
             this.txtVermAltNome = new System.Windows.Forms.TextBox();
             this.txtVermAltTelefone = new System.Windows.Forms.TextBox();
             this.txtVermAltEndereco = new System.Windows.Forms.TextBox();
-            this.lblVermErroTelefone = new System.Windows.Forms.Label();
-            this.lblVermEndereco = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tbpIncluirEmpresa.SuspendLayout();
             this.tbpAlterarEmpresa.SuspendLayout();
@@ -194,18 +194,6 @@
             this.tbpIncluirEmpresa.TabIndex = 0;
             this.tbpIncluirEmpresa.Text = "Incluir Empresa";
             this.tbpIncluirEmpresa.UseVisualStyleBackColor = true;
-            this.tbpIncluirEmpresa.Click += new System.EventHandler(this.tabPage1_Click);
-            // 
-            // lblVermErro
-            // 
-            this.lblVermErro.AutoSize = true;
-            this.lblVermErro.ForeColor = System.Drawing.Color.Red;
-            this.lblVermErro.Location = new System.Drawing.Point(80, 38);
-            this.lblVermErro.Name = "lblVermErro";
-            this.lblVermErro.Size = new System.Drawing.Size(233, 13);
-            this.lblVermErro.TabIndex = 16;
-            this.lblVermErro.Text = "Campo em vermelho, não pode ficar em branco ";
-            this.lblVermErro.Visible = false;
             // 
             // txtVermIncNome
             // 
@@ -242,6 +230,39 @@
             this.txtVermIncEndereco.TabIndex = 15;
             this.txtVermIncEndereco.TabStop = false;
             this.txtVermIncEndereco.Visible = false;
+            // 
+            // lblVermErroTelefone
+            // 
+            this.lblVermErroTelefone.AutoSize = true;
+            this.lblVermErroTelefone.ForeColor = System.Drawing.Color.Red;
+            this.lblVermErroTelefone.Location = new System.Drawing.Point(80, 38);
+            this.lblVermErroTelefone.Name = "lblVermErroTelefone";
+            this.lblVermErroTelefone.Size = new System.Drawing.Size(233, 13);
+            this.lblVermErroTelefone.TabIndex = 17;
+            this.lblVermErroTelefone.Text = "Campo em vermelho, não pode ficar em branco ";
+            this.lblVermErroTelefone.Visible = false;
+            // 
+            // lblVermErro
+            // 
+            this.lblVermErro.AutoSize = true;
+            this.lblVermErro.ForeColor = System.Drawing.Color.Red;
+            this.lblVermErro.Location = new System.Drawing.Point(80, 38);
+            this.lblVermErro.Name = "lblVermErro";
+            this.lblVermErro.Size = new System.Drawing.Size(233, 13);
+            this.lblVermErro.TabIndex = 16;
+            this.lblVermErro.Text = "Campo em vermelho, não pode ficar em branco ";
+            this.lblVermErro.Visible = false;
+            // 
+            // lblVermEndereco
+            // 
+            this.lblVermEndereco.AutoSize = true;
+            this.lblVermEndereco.ForeColor = System.Drawing.Color.Red;
+            this.lblVermEndereco.Location = new System.Drawing.Point(80, 38);
+            this.lblVermEndereco.Name = "lblVermEndereco";
+            this.lblVermEndereco.Size = new System.Drawing.Size(233, 13);
+            this.lblVermEndereco.TabIndex = 18;
+            this.lblVermEndereco.Text = "Campo em vermelho, não pode ficar em branco ";
+            this.lblVermEndereco.Visible = false;
             // 
             // tbpAlterarEmpresa
             // 
@@ -478,28 +499,6 @@
             this.txtVermAltEndereco.Size = new System.Drawing.Size(283, 22);
             this.txtVermAltEndereco.TabIndex = 12;
             this.txtVermAltEndereco.Visible = false;
-            // 
-            // lblVermErroTelefone
-            // 
-            this.lblVermErroTelefone.AutoSize = true;
-            this.lblVermErroTelefone.ForeColor = System.Drawing.Color.Red;
-            this.lblVermErroTelefone.Location = new System.Drawing.Point(80, 38);
-            this.lblVermErroTelefone.Name = "lblVermErroTelefone";
-            this.lblVermErroTelefone.Size = new System.Drawing.Size(233, 13);
-            this.lblVermErroTelefone.TabIndex = 17;
-            this.lblVermErroTelefone.Text = "Campo em vermelho, não pode ficar em branco ";
-            this.lblVermErroTelefone.Visible = false;
-            // 
-            // lblVermEndereco
-            // 
-            this.lblVermEndereco.AutoSize = true;
-            this.lblVermEndereco.ForeColor = System.Drawing.Color.Red;
-            this.lblVermEndereco.Location = new System.Drawing.Point(80, 38);
-            this.lblVermEndereco.Name = "lblVermEndereco";
-            this.lblVermEndereco.Size = new System.Drawing.Size(233, 13);
-            this.lblVermEndereco.TabIndex = 18;
-            this.lblVermEndereco.Text = "Campo em vermelho, não pode ficar em branco ";
-            this.lblVermEndereco.Visible = false;
             // 
             // frmManutencaoEmpresas
             // 
