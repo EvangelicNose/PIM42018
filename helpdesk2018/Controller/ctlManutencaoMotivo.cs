@@ -14,7 +14,7 @@ namespace helpdesk2018.Controller
     {
         public static int retorno=0;
         public static int retornoA = 1;
-        public static int ja = 0;
+        public static int ja = 1;
         public static bool InserirMotivoMDL(global::helpdesk2018.Model.mdlManutencaoMotivo _mdlmanutencaomotivo)
         {
             Conexao conexao = new Conexao();

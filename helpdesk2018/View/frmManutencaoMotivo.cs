@@ -63,7 +63,7 @@ namespace helpdesk2018.View
                 if (ctlManutencaoMotivo.retorno == 1)
                 {
                     txtIncluirMotivo.Focus();
-                    MessageBox.Show("  Esse Motivo já está cadastrado ");
+                    MessageBox.Show(" Esse Motivo já está cadastrado ", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     ctlManutencaoMotivo.retorno = 0;
                     return;
                 }
@@ -127,6 +127,7 @@ namespace helpdesk2018.View
             {
                 txtIncluirMotivo.Focus();
                 MessageBox.Show("  Dado Duplicado  ");
+                ctlManutencaoMotivo.retornoA = 0;
                 return;
             }
 
@@ -137,6 +138,7 @@ namespace helpdesk2018.View
             {
                 limpar();
                 MessageBox.Show("Dados alterados com sucesso");
+
 
             }
             else
@@ -150,9 +152,19 @@ namespace helpdesk2018.View
         }
         void PesquisarMotivo()
         {
+           
+
+
             mdlManutencaoMotivo _mdlmanutencaomotivo = new mdlManutencaoMotivo();
             _mdlmanutencaomotivo.Descricao = txtPesquisaMotivo.Text;
             dtgAlteraResultado.DataSource = ctlManutencaoMotivo.PesquisaMotivoMDL(_mdlmanutencaomotivo);
+
+            dtgAlteraResultado.Columns[0].HeaderText = "idmotivo";
+            dtgAlteraResultado.Columns[0].Visible = false;
+            dtgAlteraResultado.Columns[1].HeaderText = "Descrição";
+            dtgAlteraResultado.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dtgAlteraResultado.Columns[2].HeaderText = "Ativo ?";
+            dtgAlteraResultado.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.ColumnHeader;
         }
         private void btnPesquisar_Click(object sender, EventArgs e)
         {
@@ -169,10 +181,9 @@ namespace helpdesk2018.View
         private void frmManutencaoMotivo_Load_1(object sender, EventArgs e)
         {
             txtIncluirMotivo.Select();
-
         }
 
-         private void tbpManutencaoMotivo_MouseClick(object sender, MouseEventArgs e)
+        private void tbpManutencaoMotivo_MouseClick(object sender, MouseEventArgs e)
         {
             txtPesquisaMotivo.Focus();
             txtIncluirMotivo.Focus();
@@ -301,6 +312,11 @@ namespace helpdesk2018.View
             {
                 PesquisarMotivo();
             }
+        }
+
+        private void dtgAlteraResultado_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+          
         }
     }
 }
