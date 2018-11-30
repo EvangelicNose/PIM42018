@@ -134,6 +134,17 @@ namespace helpdesk2018.View
             mdlManutencaoEmpresas _mdlmanutencaoempresas = new mdlManutencaoEmpresas();
             _mdlmanutencaoempresas.Nome = txtPesquisarEmpresa.Text;
             dtgAlteraResultado.DataSource = ctlManutencaoEmpresas.PesquisaEmpresaMDL(_mdlmanutencaoempresas);
+
+            dtgAlteraResultado.Columns[0].HeaderText = "idempresa";
+            dtgAlteraResultado.Columns[0].Visible = false;
+            dtgAlteraResultado.Columns[1].HeaderText = "Nome";
+            dtgAlteraResultado.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dtgAlteraResultado.Columns[2].HeaderText = "Telefone";
+            dtgAlteraResultado.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dtgAlteraResultado.Columns[3].HeaderText = "Endereço";
+            dtgAlteraResultado.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dtgAlteraResultado.Columns[4].HeaderText = "Ativa ?";
+            dtgAlteraResultado.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.ColumnHeader;
         }
 
         private void btnAlterarCancelar_Click(object sender, EventArgs e)
