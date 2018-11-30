@@ -2,7 +2,7 @@
 { 
     public class mdlChamados
     {
-        public static mdlChamados Chamado;
+        public static mdlChamados Chamado = new mdlChamados();
 
         public int OS { get; set; }
         public int IDusuarios { get; set; }

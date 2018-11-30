@@ -47,7 +47,7 @@
             this.txtNome.Enabled = false;
             this.txtNome.Location = new System.Drawing.Point(72, 20);
             this.txtNome.Name = "txtNome";
-            this.txtNome.Size = new System.Drawing.Size(100, 20);
+            this.txtNome.Size = new System.Drawing.Size(208, 20);
             this.txtNome.TabIndex = 0;
             // 
             // txtEmpresa
@@ -55,7 +55,7 @@
             this.txtEmpresa.Enabled = false;
             this.txtEmpresa.Location = new System.Drawing.Point(72, 46);
             this.txtEmpresa.Name = "txtEmpresa";
-            this.txtEmpresa.Size = new System.Drawing.Size(100, 20);
+            this.txtEmpresa.Size = new System.Drawing.Size(208, 20);
             this.txtEmpresa.TabIndex = 1;
             // 
             // txtMotivo
@@ -63,7 +63,7 @@
             this.txtMotivo.Enabled = false;
             this.txtMotivo.Location = new System.Drawing.Point(72, 72);
             this.txtMotivo.Name = "txtMotivo";
-            this.txtMotivo.Size = new System.Drawing.Size(100, 20);
+            this.txtMotivo.Size = new System.Drawing.Size(249, 20);
             this.txtMotivo.TabIndex = 2;
             // 
             // txtResposta
@@ -136,6 +136,7 @@
             this.button1.TabIndex = 10;
             this.button1.Text = "Fechar chamado";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 

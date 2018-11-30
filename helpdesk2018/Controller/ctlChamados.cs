@@ -72,33 +72,35 @@ namespace helpdesk2018.Controller
             return retorno;
         }
 
-        public static string getChamado()
+        public static void getChamado()
         {
             string retorno = "";
             Conexao conexao = new Conexao();
-            OleDbCommand cmd = conexao.Comando(@"select
-               tb_chamados.os,
-               tb_usuarios.nome as nome_usuario,
-               tb_empresas.nome as nome_empresa,
-               tb_motivos.descricao as descricao_motivo,
-               tb_status.descricao as descricao_status,
-               tb_chamados.descricao
-             from (
-               (
-                 (
-                   tb_chamados
-                   inner join tb_usuarios
-                   on tb_usuarios.idusuario = tb_chamados.fk_idusuario
-                 )
-                 inner join tb_empresas
-                 on tb_empresas.idempresa = tb_usuarios.fk_idempresa
-               )
-               inner join tb_motivos
-               on tb_motivos.idmotivo = tb_chamados.fk_idmotivo
-             )
-             inner join tb_status
-             on tb_status.idstatus = tb_chamados.fk_idstatus
-             where tb_chamados.os = @os
+            conexao.abrir();
+            OleDbCommand cmd = conexao.Comando(@"
+                select
+                    tb_chamados.os,
+                    tb_usuarios.nome as nome_usuario,
+                    tb_empresas.nome as nome_empresa,
+                    tb_motivos.descricao as descricao_motivo,
+                    tb_status.descricao as descricao_status,
+                    tb_chamados.descricao
+                from (
+                    (
+                        (
+                            tb_chamados
+                            inner join tb_usuarios
+                            on tb_usuarios.idusuario = tb_chamados.fk_idusuario
+                        )
+                        inner join tb_empresas
+                        on tb_empresas.idempresa = tb_usuarios.fk_idempresa
+                    )
+                    inner join tb_motivos
+                    on tb_motivos.idmotivo = tb_chamados.fk_idmotivo
+                )
+                inner join tb_status
+                on tb_status.idstatus = tb_chamados.fk_idstatus
+                where tb_chamados.os = @os
             ");
 
             cmd.Parameters.AddWithValue("@os", mdlChamados.Chamado.OS);
@@ -115,8 +117,35 @@ namespace helpdesk2018.Controller
             }
             reader.Close();
             conexao.Fechar();
+        }
 
-            return retorno;
+        public static bool FecharChamado(string resposta)
+        {
+            Conexao conexao = new Conexao();
+
+            conexao.abrir();
+            string SQL = "update tb_chamados " +
+                "set resposta = @resposta " +
+                "where os = 14;";
+
+            OleDbCommand cmd = new OleDbCommand(SQL, conexao.GetConexao());
+
+            cmd.Parameters.AddWithValue("@resposta", resposta);
+            cmd.Parameters.AddWithValue("@OS", mdlChamados.Chamado.OS);
+
+            cmd.ExecuteNonQuery();
+
+            SQL = "Update tb_chamados set fk_idstatus = 2 where OS = @os";
+
+            if (cmd.ExecuteNonQuery() > 0)
+            {
+                conexao.Fechar();
+                return true;
+            }else
+            {
+                conexao.Fechar();
+                return false;
+            }
         }
     }
 }

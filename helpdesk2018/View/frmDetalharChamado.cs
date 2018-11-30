@@ -26,5 +26,16 @@ namespace helpdesk2018.View
             txtMotivo.Text = mdlChamados.Chamado.Motivo;
 
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if(ctlChamados.FecharChamado(txtResposta.Text) == true)
+            {
+                MessageBox.Show("Chamado fechado com sucesso!");
+            }else
+            {
+                MessageBox.Show("Ocorreu um erro, tente novamente");
+            }
+        }
     }
 }
