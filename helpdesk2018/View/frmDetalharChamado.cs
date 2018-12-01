@@ -23,8 +23,7 @@ namespace helpdesk2018.View
             if (mdlUsuario.Logado.Nivel == "0")
             {
                 btnFecharChamado.Visible = false;
-                txtResposta.Visible = false;
-                lblResposta.Visible = false;
+                txtResposta.Enabled = false;
             }
 
             txtOS.Text = mdlChamados.Chamado.OS.ToString();
