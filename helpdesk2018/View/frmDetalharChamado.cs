@@ -32,10 +32,20 @@ namespace helpdesk2018.View
             if(ctlChamados.FecharChamado(txtResposta.Text) == true)
             {
                 MessageBox.Show("Chamado fechado com sucesso!");
+                txtResposta.Enabled = false;
+                btnFecharChamado.Enabled = false;
             }else
             {
                 MessageBox.Show("Ocorreu um erro, tente novamente");
             }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            //frmListarChamado.ActiveForm.Update();
+           
+          //  a1.dtgListaChamado.Update();
+            Close();
         }
     }
 }

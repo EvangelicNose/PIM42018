@@ -125,17 +125,17 @@ namespace helpdesk2018.Controller
 
             conexao.abrir();
             string SQL = "update tb_chamados " +
-                "set resposta = @resposta " +
-                "where os = 14;";
+                "set resposta = @resposta, " +
+                "fk_idstatus = 2 " +
+                "where os = @os;";
 
             OleDbCommand cmd = new OleDbCommand(SQL, conexao.GetConexao());
-
             cmd.Parameters.AddWithValue("@resposta", resposta);
-            cmd.Parameters.AddWithValue("@OS", mdlChamados.Chamado.OS);
+            cmd.Parameters.AddWithValue("@os", mdlChamados.Chamado.OS);
 
             cmd.ExecuteNonQuery();
 
-            SQL = "Update tb_chamados set fk_idstatus = 2 where OS = @os";
+           // SQL = "Update tb_chamados set fk_idstatus = 2 where os = @os";
 
             if (cmd.ExecuteNonQuery() > 0)
             {

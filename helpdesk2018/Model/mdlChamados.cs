@@ -10,6 +10,7 @@
         public string Empresa { get; set; }
         public string Motivo { get; set; }
         public string Descricao { get; set; }
+        public string Status { get; set; }
 
         /*public mdlChamados(int os = 0, int idusuarios = 0, string nomeusuario = "", int idempresa = 0, string motivo = "", string descricao = "")
         {
