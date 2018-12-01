@@ -13,6 +13,35 @@ namespace helpdesk2018.Controller
     public static class ctlManutencaoEmpresas
     {
 
+        public static bool VerificarDuplicidade(global::helpdesk2018.Model.mdlManutencaoEmpresas _mdlManutencaoEmpresas)
+        {
+            Conexao conexao = new Conexao();
+            conexao.abrir();
+            string qexiste = "select count(1) from tb_empresas where nome = @nome";
+            OleDbCommand cmdver = new OleDbCommand(qexiste, conexao.GetConexao());
+
+            cmdver.CommandType = CommandType.Text;
+            var pmtnome = cmdver.CreateParameter();
+            pmtnome.ParameterName = "@nome";
+            pmtnome.DbType = DbType.String;
+            pmtnome.Value = _mdlManutencaoEmpresas.Nome;
+            cmdver.Parameters.Add(pmtnome);
+
+            int verif = (int)cmdver.ExecuteScalar();
+           // int existeok = 0;
+
+            if (verif > 0)
+            {
+                // found = true;
+                return true;
+            }
+            else
+            {
+                //  found = false;   
+                return false;
+            }
+        }
+
         public static bool InserirEmpresasMDL(global::helpdesk2018.Model.mdlManutencaoEmpresas _mdlManutencaoEmpresas)
         {
             Conexao conexao = new Conexao();

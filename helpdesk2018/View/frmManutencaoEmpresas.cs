@@ -84,6 +84,16 @@ namespace helpdesk2018.View
                     txtEndereco.Focus();
                 }
             }
+            mdlManutencaoEmpresas _mdlManutencaoEmpresasVer = new mdlManutencaoEmpresas();
+            _mdlManutencaoEmpresasVer.Nome = txtNome.Text;
+            bool duplicado = ctlManutencaoEmpresas.VerificarDuplicidade(_mdlManutencaoEmpresasVer);
+            if (duplicado)
+            {
+                MessageBox.Show(" Essa Empresa já está cadastrada ", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                txtNome.Focus();
+                return;
+            }
+
             if (branco == "0")
             {
                 mdlManutencaoEmpresas _mdlManutencaoEmpresas = new mdlManutencaoEmpresas();
@@ -182,6 +192,16 @@ namespace helpdesk2018.View
                 txtVermAltEndereco.Visible = true;
                 MessageBox.Show(" Endereço não pode ficar em branco ");
                 txtAlteraEndereco.Focus();
+                return;
+            }
+
+            mdlManutencaoEmpresas _mdlManutencaoEmpresasVer = new mdlManutencaoEmpresas();
+            _mdlManutencaoEmpresasVer.Nome = txtAlteraNome.Text;
+            bool duplicado = ctlManutencaoEmpresas.VerificarDuplicidade(_mdlManutencaoEmpresasVer);
+            if (duplicado)
+            {
+                MessageBox.Show(" Esse Nome de empresa já está cadastrada ", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                txtAlteraNome.Focus();
                 return;
             }
 
