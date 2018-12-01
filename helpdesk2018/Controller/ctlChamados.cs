@@ -81,6 +81,8 @@ namespace helpdesk2018.Controller
                 select
                     tb_chamados.os,
                     tb_usuarios.nome as nome_usuario,
+                    tb_chamados.resposta as chamado_resposta,
+                    tb_chamados.fk_idstatus as chamado_status,
                     tb_empresas.nome as nome_empresa,
                     tb_motivos.descricao as descricao_motivo,
                     tb_status.descricao as descricao_status,
@@ -109,6 +111,9 @@ namespace helpdesk2018.Controller
 
             while (reader.Read())
             {
+
+                mdlChamados.Chamado.Resposta = reader["chamado_resposta"].ToString();
+                mdlChamados.Chamado.Status = reader["chamado_status"].ToString();
                 mdlChamados.Chamado.Descricao = reader["descricao"].ToString();
                 mdlChamados.Chamado.Motivo = reader["descricao_motivo"].ToString();
                 mdlChamados.Chamado.Empresa = reader["nome_empresa"].ToString();

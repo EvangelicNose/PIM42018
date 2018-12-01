@@ -40,6 +40,8 @@
             this.label5 = new System.Windows.Forms.Label();
             this.btnFecharChamado = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
+            this.label6 = new System.Windows.Forms.Label();
+            this.txtOS = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // txtNome
@@ -148,11 +150,30 @@
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(327, 22);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(31, 13);
+            this.label6.TabIndex = 12;
+            this.label6.Text = "O.S.:";
+            // 
+            // txtOS
+            // 
+            this.txtOS.Enabled = false;
+            this.txtOS.Location = new System.Drawing.Point(358, 20);
+            this.txtOS.Name = "txtOS";
+            this.txtOS.Size = new System.Drawing.Size(62, 20);
+            this.txtOS.TabIndex = 13;
+            // 
             // frmDetalharChamado
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(455, 367);
+            this.Controls.Add(this.txtOS);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.btnFecharChamado);
             this.Controls.Add(this.label5);
@@ -187,5 +208,7 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button btnFecharChamado;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox txtOS;
     }
 }

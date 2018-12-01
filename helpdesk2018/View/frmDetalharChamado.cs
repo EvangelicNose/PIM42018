@@ -20,10 +20,18 @@ namespace helpdesk2018.View
 
         private void frmDetalharChamado_Load(object sender, EventArgs e)
         {
+            txtOS.Text = mdlChamados.Chamado.OS.ToString();
             txtDescricao.Text = mdlChamados.Chamado.Descricao;
             txtEmpresa.Text = mdlChamados.Chamado.Empresa;
             txtNome.Text = mdlChamados.Chamado.NomeUsuario;
             txtMotivo.Text = mdlChamados.Chamado.Motivo;
+
+            if (mdlChamados.Chamado.Status == "2")
+            {
+                txtResposta.Text = mdlChamados.Chamado.Resposta;
+                txtResposta.Enabled = false;
+                btnFecharChamado.Enabled = false;
+            } 
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -49,6 +57,5 @@ namespace helpdesk2018.View
         {
             Close();
         }
-
     }
 }
