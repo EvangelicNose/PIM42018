@@ -117,15 +117,4 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="label1.Text" xml:space="preserve">
-    <value>Sistema de HelpDesk  - PIM2018
-
-Nome                                | RA
-Camila Oliveira de Almeida          : D24GDB-8 
-Lucas Campos de Moraes              : N157AJ-8
-Samuel Fachetti de Amorim           : N21545-3
-Thiago de Carvalho Mazette          : D33BCA-0
-Nicola Tadeu de Almeida             : D500FC-0
-Cledson Carlos Ferreira Nascimento  : D44534-0</value>
-  </data>
 </root>
