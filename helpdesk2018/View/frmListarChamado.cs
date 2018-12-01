@@ -18,9 +18,10 @@ namespace helpdesk2018
         {
             InitializeComponent();
         }
-
+        
         private void frmListarChamado_Load(object sender, EventArgs e)
         {
+          
             dtgListaChamado.DataSource = Controller.ctlManutencaoOS.ListarOS();
         }
 
@@ -29,17 +30,13 @@ namespace helpdesk2018
             Close();
         }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
         private void dtgListaChamado_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             mdlChamados.Chamado.OS = Convert.ToInt16(dtgListaChamado.CurrentRow.Cells["OS"].Value.ToString());
             ctlChamados.getChamado();
             frmDetalharChamado _frmDetalharChamado = new frmDetalharChamado();
             _frmDetalharChamado.ShowDialog();
+            dtgListaChamado.DataSource = Controller.ctlManutencaoOS.ListarOS();
         }
     }
 }

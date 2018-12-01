@@ -24,11 +24,16 @@ namespace helpdesk2018.View
             txtEmpresa.Text = mdlChamados.Chamado.Empresa;
             txtNome.Text = mdlChamados.Chamado.NomeUsuario;
             txtMotivo.Text = mdlChamados.Chamado.Motivo;
-
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
+            if (txtResposta.Text == "")
+            {
+                MessageBox.Show(" Resposta não pode ficar em branco ");
+                txtResposta.Focus();
+                return;
+            }
             if(ctlChamados.FecharChamado(txtResposta.Text) == true)
             {
                 MessageBox.Show("Chamado fechado com sucesso!");
@@ -42,10 +47,8 @@ namespace helpdesk2018.View
 
         private void button2_Click(object sender, EventArgs e)
         {
-            //frmListarChamado.ActiveForm.Update();
-           
-          //  a1.dtgListaChamado.Update();
             Close();
         }
+
     }
 }

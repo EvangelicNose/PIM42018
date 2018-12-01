@@ -166,7 +166,7 @@
             this.Controls.Add(this.txtEmpresa);
             this.Controls.Add(this.txtNome);
             this.Name = "frmDetalharChamado";
-            this.Text = "Form1";
+            this.Text = "Detalhes do Chamado";
             this.Load += new System.EventHandler(this.frmDetalharChamado_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
