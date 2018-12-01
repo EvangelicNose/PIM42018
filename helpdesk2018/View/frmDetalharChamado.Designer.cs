@@ -37,7 +37,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
+            this.lblResposta = new System.Windows.Forms.Label();
             this.btnFecharChamado = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
@@ -121,18 +121,18 @@
             this.label4.TabIndex = 8;
             this.label4.Text = "Descrição:";
             // 
-            // label5
+            // lblResposta
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(11, 211);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(55, 13);
-            this.label5.TabIndex = 9;
-            this.label5.Text = "Resposta:";
+            this.lblResposta.AutoSize = true;
+            this.lblResposta.Location = new System.Drawing.Point(11, 211);
+            this.lblResposta.Name = "lblResposta";
+            this.lblResposta.Size = new System.Drawing.Size(55, 13);
+            this.lblResposta.TabIndex = 9;
+            this.lblResposta.Text = "Resposta:";
             // 
             // btnFecharChamado
             // 
-            this.btnFecharChamado.Location = new System.Drawing.Point(114, 321);
+            this.btnFecharChamado.Location = new System.Drawing.Point(72, 321);
             this.btnFecharChamado.Name = "btnFecharChamado";
             this.btnFecharChamado.Size = new System.Drawing.Size(105, 23);
             this.btnFecharChamado.TabIndex = 10;
@@ -142,7 +142,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(265, 321);
+            this.button2.Location = new System.Drawing.Point(345, 321);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
             this.button2.TabIndex = 11;
@@ -176,7 +176,7 @@
             this.Controls.Add(this.label6);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.btnFecharChamado);
-            this.Controls.Add(this.label5);
+            this.Controls.Add(this.lblResposta);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -205,7 +205,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label lblResposta;
         private System.Windows.Forms.Button btnFecharChamado;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Label label6;

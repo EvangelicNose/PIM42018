@@ -74,7 +74,6 @@ namespace helpdesk2018.Controller
 
         public static void getChamado()
         {
-            string retorno = "";
             Conexao conexao = new Conexao();
             conexao.abrir();
             OleDbCommand cmd = conexao.Comando(@"

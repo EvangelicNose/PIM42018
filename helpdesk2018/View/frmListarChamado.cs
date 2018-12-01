@@ -21,7 +21,6 @@ namespace helpdesk2018
         
         private void frmListarChamado_Load(object sender, EventArgs e)
         {
-          
             dtgListaChamado.DataSource = Controller.ctlManutencaoOS.ListarOS();
         }
 

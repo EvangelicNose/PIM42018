@@ -20,6 +20,13 @@ namespace helpdesk2018.View
 
         private void frmDetalharChamado_Load(object sender, EventArgs e)
         {
+            if (mdlUsuario.Logado.Nivel == "0")
+            {
+                btnFecharChamado.Visible = false;
+                txtResposta.Visible = false;
+                lblResposta.Visible = false;
+            }
+
             txtOS.Text = mdlChamados.Chamado.OS.ToString();
             txtDescricao.Text = mdlChamados.Chamado.Descricao;
             txtEmpresa.Text = mdlChamados.Chamado.Empresa;

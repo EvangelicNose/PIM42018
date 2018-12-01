@@ -129,16 +129,6 @@ namespace helpdesk2018.View
 
         }
 
-        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
-        {
-
-        }
-
-        private void manutençãoToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void finalizarSistemaToolStripMenuItem1_Click(object sender, EventArgs e)
         {
 
@@ -152,8 +142,6 @@ namespace helpdesk2018.View
 
         }
 
-        
-
         private void sobreToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frmSobre _frmSobre = new frmSobre();
@@ -162,7 +150,6 @@ namespace helpdesk2018.View
 
         int msgFechar()
         {
-
             if (MessageBox.Show("Deseja realmente sair ?", "CONFIRMAR", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
             {
 
@@ -173,8 +160,5 @@ namespace helpdesk2018.View
                 return 0;
             }
         }
-
     }
-
-
 }
