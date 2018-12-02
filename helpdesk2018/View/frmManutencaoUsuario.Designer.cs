@@ -319,6 +319,7 @@
             // dtgAlteraResultado
             // 
             this.dtgAlteraResultado.AllowUserToAddRows = false;
+            this.dtgAlteraResultado.AllowUserToDeleteRows = false;
             this.dtgAlteraResultado.AllowUserToResizeRows = false;
             this.dtgAlteraResultado.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgAlteraResultado.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -333,7 +334,9 @@
             this.dtgAlteraResultado.Location = new System.Drawing.Point(17, 59);
             this.dtgAlteraResultado.MultiSelect = false;
             this.dtgAlteraResultado.Name = "dtgAlteraResultado";
+            this.dtgAlteraResultado.ReadOnly = true;
             this.dtgAlteraResultado.RowHeadersVisible = false;
+            this.dtgAlteraResultado.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dtgAlteraResultado.Size = new System.Drawing.Size(396, 150);
             this.dtgAlteraResultado.TabIndex = 27;
             this.dtgAlteraResultado.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgAlteraResultado_CellClick);
@@ -343,6 +346,7 @@
             this.idusuario.DataPropertyName = "idusuario";
             this.idusuario.HeaderText = "idusuario";
             this.idusuario.Name = "idusuario";
+            this.idusuario.ReadOnly = true;
             this.idusuario.Visible = false;
             // 
             // fk_idempresa
@@ -350,6 +354,7 @@
             this.fk_idempresa.DataPropertyName = "fk_idempresa";
             this.fk_idempresa.HeaderText = "fk_idempresa";
             this.fk_idempresa.Name = "fk_idempresa";
+            this.fk_idempresa.ReadOnly = true;
             this.fk_idempresa.Visible = false;
             // 
             // usuario
@@ -358,6 +363,7 @@
             this.usuario.DataPropertyName = "usuario";
             this.usuario.HeaderText = "Usuário";
             this.usuario.Name = "usuario";
+            this.usuario.ReadOnly = true;
             // 
             // nome
             // 
@@ -365,6 +371,7 @@
             this.nome.DataPropertyName = "nome";
             this.nome.HeaderText = "Nome";
             this.nome.Name = "nome";
+            this.nome.ReadOnly = true;
             // 
             // telefone
             // 
@@ -372,6 +379,7 @@
             this.telefone.DataPropertyName = "telefone";
             this.telefone.HeaderText = "Telefone";
             this.telefone.Name = "telefone";
+            this.telefone.ReadOnly = true;
             // 
             // senha
             // 
@@ -379,12 +387,14 @@
             this.senha.DataPropertyName = "senha";
             this.senha.HeaderText = "Senha";
             this.senha.Name = "senha";
+            this.senha.ReadOnly = true;
             // 
             // nivelAcesso
             // 
             this.nivelAcesso.DataPropertyName = "nivelAcesso";
             this.nivelAcesso.HeaderText = "Nível de Acesso";
             this.nivelAcesso.Name = "nivelAcesso";
+            this.nivelAcesso.ReadOnly = true;
             this.nivelAcesso.Visible = false;
             // 
             // ativo
@@ -393,6 +403,7 @@
             this.ativo.DataPropertyName = "ativo";
             this.ativo.HeaderText = "Ativo ?";
             this.ativo.Name = "ativo";
+            this.ativo.ReadOnly = true;
             this.ativo.Width = 46;
             // 
             // btnAlteraPesquisa
@@ -486,6 +497,7 @@
             // 
             // btnAlteraOK
             // 
+            this.btnAlteraOK.Enabled = false;
             this.btnAlteraOK.Location = new System.Drawing.Point(226, 323);
             this.btnAlteraOK.Name = "btnAlteraOK";
             this.btnAlteraOK.Size = new System.Drawing.Size(75, 23);

@@ -235,6 +235,7 @@
             // dtgAlteraResultado
             // 
             this.dtgAlteraResultado.AllowUserToAddRows = false;
+            this.dtgAlteraResultado.AllowUserToDeleteRows = false;
             this.dtgAlteraResultado.AllowUserToResizeRows = false;
             this.dtgAlteraResultado.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgAlteraResultado.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -244,7 +245,9 @@
             this.dtgAlteraResultado.Location = new System.Drawing.Point(6, 76);
             this.dtgAlteraResultado.MultiSelect = false;
             this.dtgAlteraResultado.Name = "dtgAlteraResultado";
+            this.dtgAlteraResultado.ReadOnly = true;
             this.dtgAlteraResultado.RowHeadersVisible = false;
+            this.dtgAlteraResultado.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dtgAlteraResultado.Size = new System.Drawing.Size(373, 177);
             this.dtgAlteraResultado.TabIndex = 3;
             this.dtgAlteraResultado.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgAlteraResultado_CellClick);
@@ -255,6 +258,7 @@
             this.idmotivo.DataPropertyName = "idmotivo";
             this.idmotivo.HeaderText = "idmotivo";
             this.idmotivo.Name = "idmotivo";
+            this.idmotivo.ReadOnly = true;
             this.idmotivo.Visible = false;
             // 
             // descricao
@@ -263,6 +267,7 @@
             this.descricao.DataPropertyName = "descricao";
             this.descricao.HeaderText = "Descrição";
             this.descricao.Name = "descricao";
+            this.descricao.ReadOnly = true;
             // 
             // ativo
             // 
@@ -270,6 +275,7 @@
             this.ativo.DataPropertyName = "ativo";
             this.ativo.HeaderText = "Ativo ?";
             this.ativo.Name = "ativo";
+            this.ativo.ReadOnly = true;
             this.ativo.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.ativo.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.ativo.Width = 65;

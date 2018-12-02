@@ -167,7 +167,7 @@
             this.tabControl1.Location = new System.Drawing.Point(12, 12);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(362, 326);
+            this.tabControl1.Size = new System.Drawing.Size(362, 374);
             this.tabControl1.TabIndex = 12;
             // 
             // tbpIncluirEmpresa
@@ -190,7 +190,7 @@
             this.tbpIncluirEmpresa.Location = new System.Drawing.Point(4, 25);
             this.tbpIncluirEmpresa.Name = "tbpIncluirEmpresa";
             this.tbpIncluirEmpresa.Padding = new System.Windows.Forms.Padding(3);
-            this.tbpIncluirEmpresa.Size = new System.Drawing.Size(354, 297);
+            this.tbpIncluirEmpresa.Size = new System.Drawing.Size(354, 345);
             this.tbpIncluirEmpresa.TabIndex = 0;
             this.tbpIncluirEmpresa.Text = "Incluir Empresa";
             this.tbpIncluirEmpresa.UseVisualStyleBackColor = true;
@@ -285,7 +285,7 @@
             this.tbpAlterarEmpresa.Location = new System.Drawing.Point(4, 25);
             this.tbpAlterarEmpresa.Name = "tbpAlterarEmpresa";
             this.tbpAlterarEmpresa.Padding = new System.Windows.Forms.Padding(3);
-            this.tbpAlterarEmpresa.Size = new System.Drawing.Size(354, 297);
+            this.tbpAlterarEmpresa.Size = new System.Drawing.Size(354, 345);
             this.tbpAlterarEmpresa.TabIndex = 1;
             this.tbpAlterarEmpresa.Text = "Alterar Empresa";
             this.tbpAlterarEmpresa.UseVisualStyleBackColor = true;
@@ -307,7 +307,8 @@
             this.dtgAlteraResultado.Name = "dtgAlteraResultado";
             this.dtgAlteraResultado.ReadOnly = true;
             this.dtgAlteraResultado.RowHeadersVisible = false;
-            this.dtgAlteraResultado.Size = new System.Drawing.Size(339, 129);
+            this.dtgAlteraResultado.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dtgAlteraResultado.Size = new System.Drawing.Size(339, 176);
             this.dtgAlteraResultado.TabIndex = 3;
             this.dtgAlteraResultado.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgAlterarResultado_CellClick);
             // 
@@ -359,7 +360,7 @@
             this.ckbAlteraAtiva.Checked = true;
             this.ckbAlteraAtiva.CheckState = System.Windows.Forms.CheckState.Checked;
             this.ckbAlteraAtiva.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.ckbAlteraAtiva.Location = new System.Drawing.Point(273, 207);
+            this.ckbAlteraAtiva.Location = new System.Drawing.Point(273, 255);
             this.ckbAlteraAtiva.Name = "ckbAlteraAtiva";
             this.ckbAlteraAtiva.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.ckbAlteraAtiva.Size = new System.Drawing.Size(68, 17);
@@ -395,7 +396,7 @@
             // 
             // txtAlteraNome
             // 
-            this.txtAlteraNome.Location = new System.Drawing.Point(64, 173);
+            this.txtAlteraNome.Location = new System.Drawing.Point(64, 221);
             this.txtAlteraNome.Name = "txtAlteraNome";
             this.txtAlteraNome.Size = new System.Drawing.Size(284, 20);
             this.txtAlteraNome.TabIndex = 4;
@@ -404,7 +405,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(8, 241);
+            this.label6.Location = new System.Drawing.Point(8, 289);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(56, 13);
             this.label6.TabIndex = 7;
@@ -412,7 +413,7 @@
             // 
             // btnAlterarCancelar
             // 
-            this.btnAlterarCancelar.Location = new System.Drawing.Point(273, 268);
+            this.btnAlterarCancelar.Location = new System.Drawing.Point(273, 316);
             this.btnAlterarCancelar.Name = "btnAlterarCancelar";
             this.btnAlterarCancelar.Size = new System.Drawing.Size(75, 23);
             this.btnAlterarCancelar.TabIndex = 9;
@@ -422,7 +423,7 @@
             // 
             // txtAlteraTelefone
             // 
-            this.txtAlteraTelefone.Location = new System.Drawing.Point(64, 205);
+            this.txtAlteraTelefone.Location = new System.Drawing.Point(64, 253);
             this.txtAlteraTelefone.Name = "txtAlteraTelefone";
             this.txtAlteraTelefone.Size = new System.Drawing.Size(129, 20);
             this.txtAlteraTelefone.TabIndex = 5;
@@ -431,7 +432,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(9, 176);
+            this.label4.Location = new System.Drawing.Point(9, 224);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(41, 13);
             this.label4.TabIndex = 5;
@@ -440,7 +441,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(8, 208);
+            this.label5.Location = new System.Drawing.Point(8, 256);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(55, 13);
             this.label5.TabIndex = 6;
@@ -449,7 +450,7 @@
             // btnAlterarOK
             // 
             this.btnAlterarOK.Enabled = false;
-            this.btnAlterarOK.Location = new System.Drawing.Point(6, 268);
+            this.btnAlterarOK.Location = new System.Drawing.Point(6, 316);
             this.btnAlterarOK.Name = "btnAlterarOK";
             this.btnAlterarOK.Size = new System.Drawing.Size(75, 23);
             this.btnAlterarOK.TabIndex = 8;
@@ -459,7 +460,7 @@
             // 
             // txtAlteraEndereco
             // 
-            this.txtAlteraEndereco.Location = new System.Drawing.Point(66, 238);
+            this.txtAlteraEndereco.Location = new System.Drawing.Point(66, 286);
             this.txtAlteraEndereco.Name = "txtAlteraEndereco";
             this.txtAlteraEndereco.Size = new System.Drawing.Size(281, 20);
             this.txtAlteraEndereco.TabIndex = 6;
@@ -469,7 +470,7 @@
             // 
             this.txtVermAltNome.BackColor = System.Drawing.Color.Red;
             this.txtVermAltNome.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtVermAltNome.Location = new System.Drawing.Point(63, 172);
+            this.txtVermAltNome.Location = new System.Drawing.Point(63, 220);
             this.txtVermAltNome.Multiline = true;
             this.txtVermAltNome.Name = "txtVermAltNome";
             this.txtVermAltNome.Size = new System.Drawing.Size(286, 22);
@@ -481,7 +482,7 @@
             // 
             this.txtVermAltTelefone.BackColor = System.Drawing.Color.Red;
             this.txtVermAltTelefone.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtVermAltTelefone.Location = new System.Drawing.Point(63, 204);
+            this.txtVermAltTelefone.Location = new System.Drawing.Point(63, 252);
             this.txtVermAltTelefone.Multiline = true;
             this.txtVermAltTelefone.Name = "txtVermAltTelefone";
             this.txtVermAltTelefone.Size = new System.Drawing.Size(131, 22);
@@ -493,7 +494,7 @@
             // 
             this.txtVermAltEndereco.BackColor = System.Drawing.Color.Red;
             this.txtVermAltEndereco.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtVermAltEndereco.Location = new System.Drawing.Point(65, 237);
+            this.txtVermAltEndereco.Location = new System.Drawing.Point(65, 285);
             this.txtVermAltEndereco.Multiline = true;
             this.txtVermAltEndereco.Name = "txtVermAltEndereco";
             this.txtVermAltEndereco.Size = new System.Drawing.Size(283, 22);

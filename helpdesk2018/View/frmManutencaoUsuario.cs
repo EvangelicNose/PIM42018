@@ -110,26 +110,40 @@ namespace helpdesk2018
 
             if (branco == "0")
             {
-                mdlManutencaoUsuario _mdlManutencaoUsuario = new mdlManutencaoUsuario();
-                _mdlManutencaoUsuario.Usuario = txtUsuario.Text;
-                _mdlManutencaoUsuario.Nome = txtNome.Text;
-                _mdlManutencaoUsuario.Senha = txtSenha.Text;
-                _mdlManutencaoUsuario.Telefone = txtTelefone.Text;
-                _mdlManutencaoUsuario.Nivel = nivel;
-                _mdlManutencaoUsuario.Empresa = Convert.ToInt16(cbEmpresas.SelectedValue.ToString());
-                _mdlManutencaoUsuario.Ativo = ckbAtivo.Checked;
-                
-                bool retorno1 = ctlManutencaoUsuario.InserirUsuarioMDL(_mdlManutencaoUsuario);
-                if (retorno1)
+
+                mdlManutencaoUsuario _mdlManutencaoUsuarioVer = new mdlManutencaoUsuario();
+                _mdlManutencaoUsuarioVer.Usuario = txtUsuario.Text;
+                bool duplicado = ctlManutencaoUsuario.VerificarDuplicidade(_mdlManutencaoUsuarioVer);
+                if (duplicado)
                 {
-                    MessageBox.Show("Usuário gravado com sucesso");
-                    limpar();
-                    gbEscolha.Enabled = true;
-                    gbDados.Visible = false;
+                    MessageBox.Show(" Esse Usuário já está cadastrado ", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    txtUsuario.Focus();
+                    return;
                 }
-                else
+
+                if (branco == "0")
                 {
-                    MessageBox.Show("Erro ao Gravar !!!");
+                    mdlManutencaoUsuario _mdlManutencaoUsuario = new mdlManutencaoUsuario();
+                    _mdlManutencaoUsuario.Usuario = txtUsuario.Text;
+                    _mdlManutencaoUsuario.Nome = txtNome.Text;
+                    _mdlManutencaoUsuario.Senha = txtSenha.Text;
+                    _mdlManutencaoUsuario.Telefone = txtTelefone.Text;
+                    _mdlManutencaoUsuario.Nivel = nivel;
+                    _mdlManutencaoUsuario.Empresa = Convert.ToInt16(cbEmpresas.SelectedValue.ToString());
+                    _mdlManutencaoUsuario.Ativo = ckbAtivo.Checked;
+
+                    bool retorno1 = ctlManutencaoUsuario.InserirUsuarioMDL(_mdlManutencaoUsuario);
+                    if (retorno1)
+                    {
+                        MessageBox.Show("Usuário gravado com sucesso");
+                        limpar();
+                        gbEscolha.Enabled = true;
+                        gbDados.Visible = false;
+                    }
+                    else
+                    {
+                        MessageBox.Show("Erro ao Gravar !!!");
+                    }
                 }
             }
         }
@@ -183,6 +197,23 @@ namespace helpdesk2018
             mdlManutencaoUsuario _mdlmanutencaousuario = new mdlManutencaoUsuario();
             _mdlmanutencaousuario.Nome = txtPesquisaNome.Text;
             dtgAlteraResultado.DataSource = ctlManutencaoUsuario.PesquisaNomeMDL(_mdlmanutencaousuario);
+
+            dtgAlteraResultado.Columns[0].HeaderText = "idusuario";
+            dtgAlteraResultado.Columns[0].Visible = false;
+            dtgAlteraResultado.Columns[1].HeaderText = "fk_idempresa";
+            dtgAlteraResultado.Columns[1].Visible = false;
+            dtgAlteraResultado.Columns[2].HeaderText = "Usuário";
+            dtgAlteraResultado.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dtgAlteraResultado.Columns[3].HeaderText = "Nome";
+            dtgAlteraResultado.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dtgAlteraResultado.Columns[4].HeaderText = "Telefone";
+            dtgAlteraResultado.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dtgAlteraResultado.Columns[5].HeaderText = "Senha";
+            dtgAlteraResultado.Columns[5].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dtgAlteraResultado.Columns[6].HeaderText = "Nível Acesso";
+            dtgAlteraResultado.Columns[6].Visible = false;
+            dtgAlteraResultado.Columns[7].HeaderText = "Ativo ?";
+            dtgAlteraResultado.Columns[7].AutoSizeMode = DataGridViewAutoSizeColumnMode.ColumnHeader;
         }
 
         private void btnAlteraPesquisa_Click(object sender, EventArgs e)
@@ -207,10 +238,55 @@ namespace helpdesk2018
             cbbAlteraNivel.SelectedIndex = Convert.ToInt16(dtgAlteraResultado.CurrentRow.Cells["nivelAcesso"].Value.ToString());
             cbbAlteraEmpresa.SelectedValue = Convert.ToInt16(dtgAlteraResultado.CurrentRow.Cells["fk_idempresa"].Value.ToString());
             ckbAlteraAtivo.Checked = Convert.ToBoolean(dtgAlteraResultado.CurrentRow.Cells["ativo"].Value.ToString());
+            btnAlteraOK.Enabled = true;
         }
 
         private void btnAlteraOK_Click(object sender, EventArgs e)
         {
+
+            if (txtAlteraUsuario.Text == "")
+            {
+               // txtVermAltUsuario.Visible = true;
+                MessageBox.Show(" Usuário não pode ficar em Branco ");
+                txtAlteraUsuario.Focus();
+                return;
+            }
+            if (txtAlteraNome.Text == "")
+            {
+                //txtVermAltNome.Visible = true;
+                MessageBox.Show(" Nome não pode ficar em Branco ");
+                txtAlteraNome.Focus();
+                return;
+            }
+            if (txtAlteraSenha.Text == "")
+            {
+               // txtVermAltNome.Visible = true;
+                MessageBox.Show(" Senha não pode ficar em Branco ");
+                txtAlteraSenha.Focus();
+                return;
+            }
+            if (txtAlteraTelefone.Text == "")
+            {
+                //txtVermAltNome.Visible = true;
+                MessageBox.Show(" Telefone não pode ficar em Branco ");
+                txtAlteraTelefone.Focus();
+                return;
+            }
+            if (cbbAlteraNivel.SelectedIndex == -1)
+            {
+                //txtVermAltNome.Visible = true;
+                MessageBox.Show(" Selecione um Nível ");
+                cbbAlteraNivel.Focus();
+                return;
+            }
+            if (cbbAlteraEmpresa.SelectedIndex == -1)
+            {
+                //txtVermAltNome.Visible = true;
+                MessageBox.Show(" Selecione uma Empresa ");
+                cbbAlteraEmpresa.Focus();
+                return;
+            }
+
             string Anivel = "0";
             if (cbbAlteraNivel.Text == "Usuário")
             {
@@ -225,6 +301,16 @@ namespace helpdesk2018
                 Anivel = "2";
             }
 
+            mdlManutencaoUsuario _mdlManutencaoUsuarioVer = new mdlManutencaoUsuario();
+            _mdlManutencaoUsuarioVer.Usuario = txtAlteraUsuario.Text;
+            _mdlManutencaoUsuarioVer.IDUsuario = Convert.ToInt16(dtgAlteraResultado.CurrentRow.Cells["idusuario"].Value.ToString());
+            bool duplicado = ctlManutencaoUsuario.VerificarDuplicidade(_mdlManutencaoUsuarioVer);
+            if (duplicado)
+            {
+                MessageBox.Show(" Esse Usuário já está cadastrado ", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                txtAlteraUsuario.Focus();
+                return;
+            }
 
             mdlManutencaoUsuario _mdlmanutencaousuario = new mdlManutencaoUsuario();
             _mdlmanutencaousuario.Usuario = txtAlteraUsuario.Text;
@@ -237,6 +323,7 @@ namespace helpdesk2018
             _mdlmanutencaousuario.Ativo = ckbAlteraAtivo.Checked;
             _mdlmanutencaousuario.IDUsuario = Convert.ToInt16(dtgAlteraResultado.CurrentRow.Cells["idusuario"].Value.ToString());
             dtgAlteraResultado.DataSource = ctlManutencaoUsuario.AlteraUsuarioMDL(_mdlmanutencaousuario);
+            btnAlteraOK.Enabled = false;
 
             bool retorno1 = ctlManutencaoUsuario.AlteraUsuarioMDL(_mdlmanutencaousuario);
             if (retorno1)

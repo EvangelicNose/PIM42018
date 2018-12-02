@@ -18,15 +18,8 @@ namespace helpdesk2018.View
         {
             InitializeComponent();
         }
-        private void button1_Click(object sender, EventArgs e)
-        {
-            txtNome.Focus();
-        }
-        private void btVoltar_Click(object sender, EventArgs e)
-        {
-            Close();
-        }
-        public void limpar()
+
+         public void limpar()
         {
             txtPesquisarEmpresa.Text = "";
             txtNome.Text = "";
@@ -85,8 +78,9 @@ namespace helpdesk2018.View
                 }
             }
             mdlManutencaoEmpresas _mdlManutencaoEmpresasVer = new mdlManutencaoEmpresas();
-            _mdlManutencaoEmpresasVer.Nome = txtNome.Text;
-            bool duplicado = ctlManutencaoEmpresas.VerificarDuplicidade(_mdlManutencaoEmpresasVer);
+            string nome = txtNome.Text;
+            _mdlManutencaoEmpresasVer.Nome = nome;
+            bool duplicado = ctlManutencaoEmpresas.VerificarDuplicidade(nome);
             if (duplicado)
             {
                 MessageBox.Show(" Essa Empresa já está cadastrada ", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
@@ -97,11 +91,10 @@ namespace helpdesk2018.View
             if (branco == "0")
             {
                 mdlManutencaoEmpresas _mdlManutencaoEmpresas = new mdlManutencaoEmpresas();
-                _mdlManutencaoEmpresas.Nome = txtNome.Text;
+                _mdlManutencaoEmpresas.Nome = nome;
                 _mdlManutencaoEmpresas.Telefone = txtTelefone.Text;
                 _mdlManutencaoEmpresas.Endereco = txtEndereco.Text;
                 _mdlManutencaoEmpresas.Ativa = ckbIncluirAtiva.Checked;
-
 
                 bool retorno1 = ctlManutencaoEmpresas.InserirEmpresasMDL(_mdlManutencaoEmpresas);
                 if (retorno1)
@@ -114,16 +107,8 @@ namespace helpdesk2018.View
                 {
                     MessageBox.Show("Erro ao Gravar !!!");
                 }
-
-
             }
-
-
-
         }
-
-
-
         private void btOK_Click(object sender, EventArgs e)
         {
             CadastrarEmpresa();
@@ -194,10 +179,9 @@ namespace helpdesk2018.View
                 txtAlteraEndereco.Focus();
                 return;
             }
-
-            mdlManutencaoEmpresas _mdlManutencaoEmpresasVer = new mdlManutencaoEmpresas();
-            _mdlManutencaoEmpresasVer.Nome = txtAlteraNome.Text;
-            bool duplicado = ctlManutencaoEmpresas.VerificarDuplicidade(_mdlManutencaoEmpresasVer);
+            string nome = txtAlteraNome.Text;
+            int id = Convert.ToInt16(dtgAlteraResultado.CurrentRow.Cells["idempresa"].Value.ToString());
+            bool duplicado = ctlManutencaoEmpresas.VerificarDuplicidade(nome, id);
             if (duplicado)
             {
                 MessageBox.Show(" Esse Nome de empresa já está cadastrada ", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
@@ -206,11 +190,11 @@ namespace helpdesk2018.View
             }
 
             mdlManutencaoEmpresas _mdlmanutencaoempresa = new mdlManutencaoEmpresas();
-            _mdlmanutencaoempresa.Nome = txtAlteraNome.Text;
+            _mdlmanutencaoempresa.Nome = nome;
             _mdlmanutencaoempresa.Endereco = txtAlteraEndereco.Text;
             _mdlmanutencaoempresa.Telefone = txtAlteraTelefone.Text;
             _mdlmanutencaoempresa.Ativa = ckbAlteraAtiva.Checked;
-            _mdlmanutencaoempresa.ID = Convert.ToInt16(dtgAlteraResultado.CurrentRow.Cells["idempresa"].Value.ToString());
+            _mdlmanutencaoempresa.ID = id;
             dtgAlteraResultado.DataSource = ctlManutencaoEmpresas.AlteraEmpresaMDL(_mdlmanutencaoempresa);
             btnAlterarOK.Enabled = false;
 

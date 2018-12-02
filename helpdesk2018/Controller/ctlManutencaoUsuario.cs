@@ -13,6 +13,42 @@ namespace helpdesk2018.Controller
     public static class ctlManutencaoUsuario
     {
 
+        public static bool VerificarDuplicidade(global::helpdesk2018.Model.mdlManutencaoUsuario _mdlManutencaoUsuario)
+        {
+            Conexao conexao = new Conexao();
+            conexao.abrir();
+            string qexiste = "select count(1) from tb_usuarios where usuario = @usuario AND idusuario <> @idusuario";
+            OleDbCommand cmdver = new OleDbCommand(qexiste, conexao.GetConexao());
+
+            cmdver.CommandType = CommandType.Text;
+            var pmtusuario = cmdver.CreateParameter();
+            pmtusuario.ParameterName = "@usuario";
+            pmtusuario.DbType = DbType.String;
+            pmtusuario.Value = _mdlManutencaoUsuario.Usuario;
+            cmdver.Parameters.Add(pmtusuario);
+
+            cmdver.CommandType = CommandType.Text;
+            var pmtidusuario = cmdver.CreateParameter();
+            pmtidusuario.ParameterName = "@idusuario";
+            pmtidusuario.DbType = DbType.Int16;
+            pmtidusuario.Value = _mdlManutencaoUsuario.IDUsuario;
+            cmdver.Parameters.Add(pmtidusuario);
+
+            int verif = (int)cmdver.ExecuteScalar();
+            // int existeok = 0;
+
+            if (verif > 0)
+            {
+                // found = true;
+                return true;
+            }
+            else
+            {
+                //  found = false;   
+                return false;
+            }
+        }
+
         public static bool InserirUsuarioMDL(global::helpdesk2018.Model.mdlManutencaoUsuario _mdlManutencaoUsuario)
         {
             Conexao conexao = new Conexao();

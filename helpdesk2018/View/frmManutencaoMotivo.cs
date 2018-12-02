@@ -191,7 +191,7 @@ namespace helpdesk2018.View
 
         int tamInc = 8;
         int tamAlt = 8;
-        string Font = "'Microsoft Sans Serif'";
+        // string Font = "'Microsoft Sans Serif'";
 
         private void btnAMenor_Click(object sender, EventArgs e)
         {
@@ -251,6 +251,7 @@ namespace helpdesk2018.View
                 tamAlt += 2;
                 tamanhoAtual += 2.0F;
 
+                dtgAlteraResultado.Font = new Font(dtgAlteraResultado.Font.Name, tamanhoAtual);
                 lblAlteraPesquisarMotivo.Font = new Font(lblAlteraPesquisarMotivo.Font.Name, tamanhoAtual);
                 txtPesquisaMotivo.Font = new Font(txtPesquisaMotivo.Font.Name, tamanhoAtual);
                 btnPesquisar.Font = new Font(btnPesquisar.Font.Name, tamanhoAtual);
@@ -293,7 +294,6 @@ namespace helpdesk2018.View
             {
                 btnAlterarAMenor.Enabled = false;
             }
-
         }
 
         private void txtAlteraMotivo_KeyPress(object sender, KeyPressEventArgs e)

@@ -12,8 +12,7 @@ namespace helpdesk2018.Controller
 {
     public static class ctlManutencaoEmpresas
     {
-
-        public static bool VerificarDuplicidade(global::helpdesk2018.Model.mdlManutencaoEmpresas _mdlManutencaoEmpresas)
+        public static bool VerificarDuplicidade(string nome)
         {
             Conexao conexao = new Conexao();
             conexao.abrir();
@@ -24,11 +23,47 @@ namespace helpdesk2018.Controller
             var pmtnome = cmdver.CreateParameter();
             pmtnome.ParameterName = "@nome";
             pmtnome.DbType = DbType.String;
-            pmtnome.Value = _mdlManutencaoEmpresas.Nome;
+            pmtnome.Value = nome;
+            cmdver.Parameters.Add(pmtnome);
+            
+            int verif = (int)cmdver.ExecuteScalar();
+            // int existeok = 0;
+
+            if (verif > 0)
+            {
+                // found = true;
+                return true;
+            }
+            else
+            {
+                //  found = false;   
+                return false;
+            }
+        }
+
+        public static bool VerificarDuplicidade(string nome, int id)
+        {
+            Conexao conexao = new Conexao();
+            conexao.abrir();
+            string qexiste = "select count(1) from tb_empresas where nome = @nome and idempresa <> @id";
+            OleDbCommand cmdver = new OleDbCommand(qexiste, conexao.GetConexao());
+
+            cmdver.CommandType = CommandType.Text;
+            var pmtnome = cmdver.CreateParameter();
+            pmtnome.ParameterName = "@nome";
+            pmtnome.DbType = DbType.String;
+            pmtnome.Value = nome;
             cmdver.Parameters.Add(pmtnome);
 
+            cmdver.CommandType = CommandType.Text;
+            var pmtid = cmdver.CreateParameter();
+            pmtid.ParameterName = "@id";
+            pmtid.DbType = DbType.Int16;
+            pmtid.Value = id;
+            cmdver.Parameters.Add(pmtid);
+
             int verif = (int)cmdver.ExecuteScalar();
-           // int existeok = 0;
+            // int existeok = 0;
 
             if (verif > 0)
             {

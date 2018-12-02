@@ -113,15 +113,27 @@ namespace helpdesk2018.Controller
             Conexao conexao = new Conexao();
             conexao.abrir();
 
-            string qexiste = "select count(1) from tb_motivos where descricao = @descricao";
+            string qexiste = @"
+                select count(1)
+                from tb_motivos
+                where
+                    descricao = @descricao
+                    and idmotivo <> @idmotivo
+            ";
             OleDbCommand cmdver = new OleDbCommand(qexiste, conexao.GetConexao());
 
             cmdver.CommandType = CommandType.Text;
-            var pmtmotivo = cmdver.CreateParameter();
+            OleDbParameter pmtmotivo = cmdver.CreateParameter();
             pmtmotivo.ParameterName = "@descricao";
             pmtmotivo.DbType = DbType.String;
             pmtmotivo.Value = _mdlmanutencaomotivo.Descricao;
             cmdver.Parameters.Add(pmtmotivo);
+
+            OleDbParameter pmtidmotivover = cmdver.CreateParameter();
+            pmtidmotivover.ParameterName = "@idmotivo";
+            pmtidmotivover.DbType = DbType.Int16;
+            pmtidmotivover.Value = _mdlmanutencaomotivo.IDMotivo;
+            cmdver.Parameters.Add(pmtidmotivover);
 
             int verif = (int)cmdver.ExecuteScalar();
             int existeok = 0;
