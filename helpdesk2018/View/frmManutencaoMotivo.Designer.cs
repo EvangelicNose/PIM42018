@@ -234,6 +234,7 @@
             // 
             // dtgAlteraResultado
             // 
+            this.dtgAlteraResultado.AllowDrop = true;
             this.dtgAlteraResultado.AllowUserToAddRows = false;
             this.dtgAlteraResultado.AllowUserToDeleteRows = false;
             this.dtgAlteraResultado.AllowUserToResizeRows = false;
@@ -251,7 +252,6 @@
             this.dtgAlteraResultado.Size = new System.Drawing.Size(373, 177);
             this.dtgAlteraResultado.TabIndex = 3;
             this.dtgAlteraResultado.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgAlteraResultado_CellClick);
-            this.dtgAlteraResultado.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgAlteraResultado_CellContentClick);
             // 
             // idmotivo
             // 

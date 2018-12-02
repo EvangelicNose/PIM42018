@@ -138,8 +138,7 @@ namespace helpdesk2018.View
             {
                 limpar();
                 MessageBox.Show("Dados alterados com sucesso");
-
-
+                btnAlteraMotivo.Enabled = false;
             }
             else
             {
@@ -152,9 +151,6 @@ namespace helpdesk2018.View
         }
         void PesquisarMotivo()
         {
-           
-
-
             mdlManutencaoMotivo _mdlmanutencaomotivo = new mdlManutencaoMotivo();
             _mdlmanutencaomotivo.Descricao = txtPesquisaMotivo.Text;
             dtgAlteraResultado.DataSource = ctlManutencaoMotivo.PesquisaMotivoMDL(_mdlmanutencaomotivo);
@@ -165,6 +161,9 @@ namespace helpdesk2018.View
             dtgAlteraResultado.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             dtgAlteraResultado.Columns[2].HeaderText = "Ativo ?";
             dtgAlteraResultado.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.ColumnHeader;
+            dtgAlteraResultado.ClearSelection();
+            btnAlteraMotivo.Enabled = false;
+            txtAlteraMotivo.Text = "";
         }
         private void btnPesquisar_Click(object sender, EventArgs e)
         {
@@ -279,6 +278,7 @@ namespace helpdesk2018.View
                 tamAlt -= 2;
                 tamanhoAtual -= 2.0F;
 
+                dtgAlteraResultado.Font = new Font(dtgAlteraResultado.Font.Name, tamanhoAtual);
                 lblAlteraPesquisarMotivo.Font = new Font(lblAlteraPesquisarMotivo.Font.Name, tamanhoAtual);
                 txtPesquisaMotivo.Font = new Font(txtPesquisaMotivo.Font.Name, tamanhoAtual);
                 btnPesquisar.Font = new Font(btnPesquisar.Font.Name, tamanhoAtual);
@@ -312,11 +312,6 @@ namespace helpdesk2018.View
             {
                 PesquisarMotivo();
             }
-        }
-
-        private void dtgAlteraResultado_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-          
         }
     }
 }
