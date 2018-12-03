@@ -154,6 +154,11 @@ namespace helpdesk2018.View
             mdlManutencaoMotivo _mdlmanutencaomotivo = new mdlManutencaoMotivo();
             _mdlmanutencaomotivo.Descricao = txtPesquisaMotivo.Text;
             dtgAlteraResultado.DataSource = ctlManutencaoMotivo.PesquisaMotivoMDL(_mdlmanutencaomotivo);
+            if (dtgAlteraResultado.Rows.Count == 0)
+            {
+                MessageBox.Show(" Pesquisa não teve resultado ", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                txtPesquisaMotivo.Focus();
+            }
 
             dtgAlteraResultado.Columns[0].HeaderText = "idmotivo";
             dtgAlteraResultado.Columns[0].Visible = false;

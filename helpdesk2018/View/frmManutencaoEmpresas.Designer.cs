@@ -169,6 +169,7 @@
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(362, 374);
             this.tabControl1.TabIndex = 12;
+            this.tabControl1.MouseClick += new System.Windows.Forms.MouseEventHandler(this.tabControl1_MouseClick);
             // 
             // tbpIncluirEmpresa
             // 
@@ -393,6 +394,7 @@
             this.txtPesquisarEmpresa.Name = "txtPesquisarEmpresa";
             this.txtPesquisarEmpresa.Size = new System.Drawing.Size(168, 20);
             this.txtPesquisarEmpresa.TabIndex = 1;
+            this.txtPesquisarEmpresa.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPesquisarEmpresa_KeyPress);
             // 
             // txtAlteraNome
             // 

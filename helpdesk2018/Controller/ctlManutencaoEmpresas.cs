@@ -138,6 +138,7 @@ namespace helpdesk2018.Controller
             DataTable empresas = new DataTable();
             da.Fill(empresas);
             return empresas;
+
         }
 
         public static bool AlteraEmpresaMDL(global::helpdesk2018.Model.mdlManutencaoEmpresas _mdlmanutencaoempresa)

@@ -124,11 +124,20 @@ namespace helpdesk2018.View
              txtNome.Select();
         }
 
-        private void btnPesquisarEmpresa_Click(object sender, EventArgs e)
+
+        public void PesquisarEmpresa()
         {
             mdlManutencaoEmpresas _mdlmanutencaoempresas = new mdlManutencaoEmpresas();
             _mdlmanutencaoempresas.Nome = txtPesquisarEmpresa.Text;
-            dtgAlteraResultado.DataSource = ctlManutencaoEmpresas.PesquisaEmpresaMDL(_mdlmanutencaoempresas);
+
+          //  DataTable empresas = ctlManutencaoEmpresas.PesquisaEmpresaMDL(_mdlmanutencaoempresas);
+           // dtgAlteraResultado.DataSource = empresas;
+             dtgAlteraResultado.DataSource = ctlManutencaoEmpresas.PesquisaEmpresaMDL(_mdlmanutencaoempresas);
+            if (dtgAlteraResultado.Rows.Count == 0)
+            {
+                MessageBox.Show(" Pesquisa não teve resultado ", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                txtPesquisarEmpresa.Focus();
+            }
 
             dtgAlteraResultado.Columns[0].HeaderText = "idempresa";
             dtgAlteraResultado.Columns[0].Visible = false;
@@ -140,6 +149,16 @@ namespace helpdesk2018.View
             dtgAlteraResultado.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             dtgAlteraResultado.Columns[4].HeaderText = "Ativa ?";
             dtgAlteraResultado.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.ColumnHeader;
+            dtgAlteraResultado.ClearSelection();
+            btnAlterarOK.Enabled = false;
+            txtAlteraNome.Text = "";
+            txtAlteraEndereco.Text = "";
+            txtAlteraTelefone.Text = "";
+        }
+
+        private void btnPesquisarEmpresa_Click(object sender, EventArgs e)
+        {
+            PesquisarEmpresa();
         }
 
         private void btnAlterarCancelar_Click(object sender, EventArgs e)
@@ -202,6 +221,7 @@ namespace helpdesk2018.View
             if (retorno1)
             {
                 MessageBox.Show("Dados alterados com sucesso");
+                txtPesquisarEmpresa.Focus();
                 limpar();
             }
             else
@@ -253,6 +273,21 @@ namespace helpdesk2018.View
         private void txtAlteraEndereco_KeyPress(object sender, KeyPressEventArgs e)
         {
             txtVermAltEndereco.Visible = false;
+        }
+
+        private void tabControl1_MouseClick(object sender, MouseEventArgs e)
+        {
+            txtNome.Focus();
+            txtPesquisarEmpresa.Focus();
+        }
+
+        private void txtPesquisarEmpresa_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 13)
+            {
+                PesquisarEmpresa();
+            }
+
         }
     }
 }
