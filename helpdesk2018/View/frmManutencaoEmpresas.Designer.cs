@@ -34,7 +34,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.txtNome = new System.Windows.Forms.TextBox();
-            this.txtTelefone = new System.Windows.Forms.TextBox();
             this.txtEndereco = new System.Windows.Forms.TextBox();
             this.ckbIncluirAtiva = new System.Windows.Forms.CheckBox();
             this.tabControl1 = new System.Windows.Forms.TabControl();
@@ -59,7 +58,6 @@
             this.txtAlteraNome = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.btnAlterarCancelar = new System.Windows.Forms.Button();
-            this.txtAlteraTelefone = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.btnAlterarOK = new System.Windows.Forms.Button();
@@ -67,6 +65,8 @@
             this.txtVermAltNome = new System.Windows.Forms.TextBox();
             this.txtVermAltTelefone = new System.Windows.Forms.TextBox();
             this.txtVermAltEndereco = new System.Windows.Forms.TextBox();
+            this.mskTelefone = new System.Windows.Forms.MaskedTextBox();
+            this.mskAlteraTelefone = new System.Windows.Forms.MaskedTextBox();
             this.tabControl1.SuspendLayout();
             this.tbpIncluirEmpresa.SuspendLayout();
             this.tbpAlterarEmpresa.SuspendLayout();
@@ -128,14 +128,6 @@
             this.txtNome.TabIndex = 1;
             this.txtNome.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNome_KeyPress);
             // 
-            // txtTelefone
-            // 
-            this.txtTelefone.Location = new System.Drawing.Point(102, 113);
-            this.txtTelefone.Name = "txtTelefone";
-            this.txtTelefone.Size = new System.Drawing.Size(100, 20);
-            this.txtTelefone.TabIndex = 2;
-            this.txtTelefone.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTelefone_KeyPress);
-            // 
             // txtEndereco
             // 
             this.txtEndereco.Location = new System.Drawing.Point(102, 146);
@@ -173,6 +165,7 @@
             // 
             // tbpIncluirEmpresa
             // 
+            this.tbpIncluirEmpresa.Controls.Add(this.mskTelefone);
             this.tbpIncluirEmpresa.Controls.Add(this.ckbIncluirAtiva);
             this.tbpIncluirEmpresa.Controls.Add(this.btnCancelar);
             this.tbpIncluirEmpresa.Controls.Add(this.label1);
@@ -180,7 +173,6 @@
             this.tbpIncluirEmpresa.Controls.Add(this.btnOK);
             this.tbpIncluirEmpresa.Controls.Add(this.label3);
             this.tbpIncluirEmpresa.Controls.Add(this.txtEndereco);
-            this.tbpIncluirEmpresa.Controls.Add(this.txtTelefone);
             this.tbpIncluirEmpresa.Controls.Add(this.label2);
             this.tbpIncluirEmpresa.Controls.Add(this.txtVermIncNome);
             this.tbpIncluirEmpresa.Controls.Add(this.txtVermIncTelefone);
@@ -267,6 +259,7 @@
             // 
             // tbpAlterarEmpresa
             // 
+            this.tbpAlterarEmpresa.Controls.Add(this.mskAlteraTelefone);
             this.tbpAlterarEmpresa.Controls.Add(this.dtgAlteraResultado);
             this.tbpAlterarEmpresa.Controls.Add(this.ckbAlteraAtiva);
             this.tbpAlterarEmpresa.Controls.Add(this.btnPesquisarEmpresa);
@@ -275,7 +268,6 @@
             this.tbpAlterarEmpresa.Controls.Add(this.txtAlteraNome);
             this.tbpAlterarEmpresa.Controls.Add(this.label6);
             this.tbpAlterarEmpresa.Controls.Add(this.btnAlterarCancelar);
-            this.tbpAlterarEmpresa.Controls.Add(this.txtAlteraTelefone);
             this.tbpAlterarEmpresa.Controls.Add(this.label4);
             this.tbpAlterarEmpresa.Controls.Add(this.label5);
             this.tbpAlterarEmpresa.Controls.Add(this.btnAlterarOK);
@@ -384,9 +376,9 @@
             this.label7.AutoSize = true;
             this.label7.Location = new System.Drawing.Point(6, 15);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(103, 13);
+            this.label7.Size = new System.Drawing.Size(100, 13);
             this.label7.TabIndex = 8;
-            this.label7.Text = "Pesquisar Empresa: ";
+            this.label7.Text = "Pesquisar Empresa:";
             // 
             // txtPesquisarEmpresa
             // 
@@ -423,31 +415,23 @@
             this.btnAlterarCancelar.UseVisualStyleBackColor = true;
             this.btnAlterarCancelar.Click += new System.EventHandler(this.btnAlterarCancelar_Click);
             // 
-            // txtAlteraTelefone
-            // 
-            this.txtAlteraTelefone.Location = new System.Drawing.Point(64, 253);
-            this.txtAlteraTelefone.Name = "txtAlteraTelefone";
-            this.txtAlteraTelefone.Size = new System.Drawing.Size(129, 20);
-            this.txtAlteraTelefone.TabIndex = 5;
-            this.txtAlteraTelefone.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtAlteraTelefone_KeyPress);
-            // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(9, 224);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(41, 13);
+            this.label4.Size = new System.Drawing.Size(38, 13);
             this.label4.TabIndex = 5;
-            this.label4.Text = "Nome: ";
+            this.label4.Text = "Nome:";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(8, 256);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(55, 13);
+            this.label5.Size = new System.Drawing.Size(52, 13);
             this.label5.TabIndex = 6;
-            this.label5.Text = "Telefone: ";
+            this.label5.Text = "Telefone:";
             // 
             // btnAlterarOK
             // 
@@ -487,7 +471,7 @@
             this.txtVermAltTelefone.Location = new System.Drawing.Point(63, 252);
             this.txtVermAltTelefone.Multiline = true;
             this.txtVermAltTelefone.Name = "txtVermAltTelefone";
-            this.txtVermAltTelefone.Size = new System.Drawing.Size(131, 22);
+            this.txtVermAltTelefone.Size = new System.Drawing.Size(99, 22);
             this.txtVermAltTelefone.TabIndex = 11;
             this.txtVermAltTelefone.TabStop = false;
             this.txtVermAltTelefone.Visible = false;
@@ -502,6 +486,26 @@
             this.txtVermAltEndereco.Size = new System.Drawing.Size(283, 22);
             this.txtVermAltEndereco.TabIndex = 12;
             this.txtVermAltEndereco.Visible = false;
+            // 
+            // mskTelefone
+            // 
+            this.mskTelefone.Location = new System.Drawing.Point(102, 113);
+            this.mskTelefone.Mask = "(99) 00000-0000";
+            this.mskTelefone.Name = "mskTelefone";
+            this.mskTelefone.Size = new System.Drawing.Size(100, 20);
+            this.mskTelefone.TabIndex = 19;
+            this.mskTelefone.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
+            this.mskTelefone.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.mskTelefone_KeyPress);
+            // 
+            // mskAlteraTelefone
+            // 
+            this.mskAlteraTelefone.Location = new System.Drawing.Point(64, 253);
+            this.mskAlteraTelefone.Mask = "(99) 00000-0000";
+            this.mskAlteraTelefone.Name = "mskAlteraTelefone";
+            this.mskAlteraTelefone.Size = new System.Drawing.Size(97, 20);
+            this.mskAlteraTelefone.TabIndex = 13;
+            this.mskAlteraTelefone.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
+            this.mskAlteraTelefone.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.mskAlteraTelefone_KeyPress);
             // 
             // frmManutencaoEmpresas
             // 
@@ -531,7 +535,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtNome;
-        private System.Windows.Forms.TextBox txtTelefone;
         private System.Windows.Forms.TextBox txtEndereco;
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tbpIncluirEmpresa;
@@ -541,7 +544,6 @@
         private System.Windows.Forms.Button btnAlterarOK;
         private System.Windows.Forms.TextBox txtAlteraEndereco;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox txtAlteraTelefone;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox txtAlteraNome;
         private System.Windows.Forms.Label label7;
@@ -564,5 +566,7 @@
         private System.Windows.Forms.Label lblVermErro;
         private System.Windows.Forms.Label lblVermErroTelefone;
         private System.Windows.Forms.Label lblVermEndereco;
+        private System.Windows.Forms.MaskedTextBox mskTelefone;
+        private System.Windows.Forms.MaskedTextBox mskAlteraTelefone;
     }
 }

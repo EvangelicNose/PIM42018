@@ -296,9 +296,9 @@
             this.lblAlteraPesquisarMotivo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAlteraPesquisarMotivo.Location = new System.Drawing.Point(5, 47);
             this.lblAlteraPesquisarMotivo.Name = "lblAlteraPesquisarMotivo";
-            this.lblAlteraPesquisarMotivo.Size = new System.Drawing.Size(88, 13);
+            this.lblAlteraPesquisarMotivo.Size = new System.Drawing.Size(91, 13);
             this.lblAlteraPesquisarMotivo.TabIndex = 10;
-            this.lblAlteraPesquisarMotivo.Text = "Pesquisar Motivo";
+            this.lblAlteraPesquisarMotivo.Text = "Pesquisar Motivo:";
             // 
             // btnPesquisar
             // 

@@ -24,11 +24,11 @@ namespace helpdesk2018.View
             txtPesquisarEmpresa.Text = "";
             txtNome.Text = "";
             txtEndereco.Text = "";
-            txtTelefone.Text = "";
+            mskTelefone.Text = "";
 
             txtAlteraEndereco.Text = "";
             txtAlteraNome.Text = "";
-            txtAlteraTelefone.Text = "";
+            mskAlteraTelefone.Text = "";
         }
         void CadastrarEmpresa()
         {
@@ -42,7 +42,7 @@ namespace helpdesk2018.View
                 txtNome.Focus();
             }
             //else
-            if (txtTelefone.Text == "")
+            if (mskTelefone.Text == "")
             {
                 lblVermErroTelefone.Visible = true;
                 txtVermIncTelefone.Visible = true;
@@ -54,7 +54,7 @@ namespace helpdesk2018.View
                 }
                 else
                 {
-                    txtTelefone.Focus();
+                    mskTelefone.Focus();
                 }
             }
            // else 
@@ -68,9 +68,9 @@ namespace helpdesk2018.View
                 {
                     txtNome.Focus();
                 }
-                else if (txtTelefone.Text=="")
+                else if (mskTelefone.Text=="")
                 {
-                    txtTelefone.Focus();
+                    mskTelefone.Focus();
                 }
                 else
                 {
@@ -92,7 +92,7 @@ namespace helpdesk2018.View
             {
                 mdlManutencaoEmpresas _mdlManutencaoEmpresas = new mdlManutencaoEmpresas();
                 _mdlManutencaoEmpresas.Nome = nome;
-                _mdlManutencaoEmpresas.Telefone = txtTelefone.Text;
+                _mdlManutencaoEmpresas.Telefone = mskTelefone.Text;
                 _mdlManutencaoEmpresas.Endereco = txtEndereco.Text;
                 _mdlManutencaoEmpresas.Ativa = ckbIncluirAtiva.Checked;
 
@@ -130,10 +130,10 @@ namespace helpdesk2018.View
             mdlManutencaoEmpresas _mdlmanutencaoempresas = new mdlManutencaoEmpresas();
             _mdlmanutencaoempresas.Nome = txtPesquisarEmpresa.Text;
 
-          //  DataTable empresas = ctlManutencaoEmpresas.PesquisaEmpresaMDL(_mdlmanutencaoempresas);
-           // dtgAlteraResultado.DataSource = empresas;
-             dtgAlteraResultado.DataSource = ctlManutencaoEmpresas.PesquisaEmpresaMDL(_mdlmanutencaoempresas);
-            if (dtgAlteraResultado.Rows.Count == 0)
+            DataTable empresas = ctlManutencaoEmpresas.PesquisaEmpresaMDL(_mdlmanutencaoempresas);
+            dtgAlteraResultado.DataSource = empresas;
+            // empresas dtgAlteraResultado.DataSource = ctlManutencaoEmpresas.PesquisaEmpresaMDL(_mdlmanutencaoempresas);
+            if (empresas.Rows.Count == 0)
             {
                 MessageBox.Show(" Pesquisa não teve resultado ", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 txtPesquisarEmpresa.Focus();
@@ -153,7 +153,7 @@ namespace helpdesk2018.View
             btnAlterarOK.Enabled = false;
             txtAlteraNome.Text = "";
             txtAlteraEndereco.Text = "";
-            txtAlteraTelefone.Text = "";
+            mskAlteraTelefone.Text = "";
         }
 
         private void btnPesquisarEmpresa_Click(object sender, EventArgs e)
@@ -169,7 +169,7 @@ namespace helpdesk2018.View
         private void dtgAlterarResultado_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             txtAlteraNome.Text = dtgAlteraResultado.CurrentRow.Cells["nome"].Value.ToString();
-            txtAlteraTelefone.Text = dtgAlteraResultado.CurrentRow.Cells["telefone"].Value.ToString();
+            mskAlteraTelefone.Text = dtgAlteraResultado.CurrentRow.Cells["telefone"].Value.ToString();
             txtAlteraEndereco.Text = dtgAlteraResultado.CurrentRow.Cells["endereco"].Value.ToString();
             ckbAlteraAtiva.Checked = Convert.ToBoolean(dtgAlteraResultado.CurrentRow.Cells["ativa"].Value.ToString());
             btnAlterarOK.Enabled = true;
@@ -184,11 +184,11 @@ namespace helpdesk2018.View
                 txtAlteraNome.Focus();
                 return;
             }
-            if(txtAlteraTelefone.Text=="")
+            if(mskAlteraTelefone.Text=="")
             {
                 txtVermAltTelefone.Visible = true;
                 MessageBox.Show(" Telefone não pode ficar em branco ");
-                txtAlteraTelefone.Focus();
+                mskAlteraTelefone.Focus();
                 return;
             }
             if (txtAlteraEndereco.Text == "")
@@ -211,7 +211,7 @@ namespace helpdesk2018.View
             mdlManutencaoEmpresas _mdlmanutencaoempresa = new mdlManutencaoEmpresas();
             _mdlmanutencaoempresa.Nome = nome;
             _mdlmanutencaoempresa.Endereco = txtAlteraEndereco.Text;
-            _mdlmanutencaoempresa.Telefone = txtAlteraTelefone.Text;
+            _mdlmanutencaoempresa.Telefone = mskAlteraTelefone.Text;
             _mdlmanutencaoempresa.Ativa = ckbAlteraAtiva.Checked;
             _mdlmanutencaoempresa.ID = id;
             dtgAlteraResultado.DataSource = ctlManutencaoEmpresas.AlteraEmpresaMDL(_mdlmanutencaoempresa);
@@ -236,7 +236,7 @@ namespace helpdesk2018.View
             txtVermIncNome.Visible = false;
                 if (e.KeyChar == 13)
                 {
-                txtTelefone.Focus();
+                mskTelefone.Focus();
                 }
         }
 
@@ -288,6 +288,21 @@ namespace helpdesk2018.View
                 PesquisarEmpresa();
             }
 
+        }
+
+        private void mskTelefone_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            lblVermErroTelefone.Visible = false;
+            txtVermIncTelefone.Visible = false;
+            if (e.KeyChar == 13)
+            {
+                mskTelefone.Focus();
+            }
+        }
+
+        private void mskAlteraTelefone_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            txtVermAltTelefone.Visible = false;
         }
     }
 }
