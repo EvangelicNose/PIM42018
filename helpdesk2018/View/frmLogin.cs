@@ -3,21 +3,27 @@ using System.Windows.Forms;
 using System.Data.OleDb;
 using helpdesk2018.Controller;
 using helpdesk2018.Model;
+using System.Drawing;
 
 namespace helpdesk2018.View
 {
     public partial class frmLogin : Form
     {
+        bool dragging = false;
+        int xOffset = 0;
+        int yOffset = 0;
+
         public frmLogin()
         {
             InitializeComponent();
+
         }
 
         void label1_Click(object sender, EventArgs e)
         {
 
         }
-
+       
         void btnLogin_Click(object sender, EventArgs e)
         {
                          
@@ -142,6 +148,33 @@ namespace helpdesk2018.View
         private void txtSenha_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void label1_Click_1(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void frmLogin_MouseDown(object sender, MouseEventArgs e)
+        {
+            dragging = true;
+
+            xOffset = Cursor.Position.X - this.Location.X;
+            yOffset = Cursor.Position.Y - this.Location.Y;
+        }
+
+        private void frmLogin_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (dragging)
+            {
+                this.Location = new Point(Cursor.Position.X - xOffset, Cursor.Position.Y - yOffset);
+                this.Update();
+            }
+        }
+
+        private void frmLogin_MouseUp(object sender, MouseEventArgs e)
+        {
+            dragging = false;
         }
     }
 }

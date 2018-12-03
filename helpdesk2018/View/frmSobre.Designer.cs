@@ -45,7 +45,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::helpdesk2018.Properties.Resources.Frm_Sobre;
+            this.BackgroundImage = global::helpdesk2018.Properties.Resources.Frm_Sobre_PIM1;
             this.ClientSize = new System.Drawing.Size(509, 368);
             this.Controls.Add(this.btnOk);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
