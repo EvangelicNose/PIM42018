@@ -162,6 +162,7 @@
     <EmbeddedResource Include="View\frmSobre.resx">
       <DependentUpon>frmSobre.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="ClassDiagram\PIM4Diagram.cd" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -182,6 +183,8 @@
     <Content Include="helpdesk.mdb">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <None Include="Resources\Frm_Sobre_PIM1.png" />
+    <None Include="Resources\Frm_Menus.png" />
     <None Include="Resources\Frm_Sobre_PIM.png" />
     <None Include="Resources\Frm_Login_PIM.png" />
   </ItemGroup>

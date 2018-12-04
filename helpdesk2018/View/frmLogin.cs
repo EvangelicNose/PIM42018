@@ -16,6 +16,7 @@ namespace helpdesk2018.View
         public frmLogin()
         {
             InitializeComponent();
+            
 
         }
 
