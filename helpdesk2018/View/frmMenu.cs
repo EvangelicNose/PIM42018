@@ -27,6 +27,7 @@ namespace helpdesk2018.View
         public frmMenu()
         {
             InitializeComponent();
+            this.Refresh();
         }
 
         private void abrirChamadosToolStripMenuItem_Click(object sender, EventArgs e)

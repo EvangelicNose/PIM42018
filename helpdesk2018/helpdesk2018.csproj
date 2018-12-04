@@ -153,6 +153,7 @@
     <EmbeddedResource Include="View\frmSobre.resx">
       <DependentUpon>frmSobre.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="ClassDiagram\PIM4Diagram.cd" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
