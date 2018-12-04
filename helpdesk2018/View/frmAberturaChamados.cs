@@ -94,8 +94,17 @@ namespace helpdesk2018.View
 
             if (mdlChamados.Chamado.Anexo != null || mdlChamados.Chamado.Anexo != "")
             {
-                File.Copy(mdlChamados.Chamado.Anexo, Application.StartupPath + @"\Anexo\OS" + retorno + ".jpg");
-                mdlChamados.Chamado.Anexo = null;
+                if (File.Exists(Application.StartupPath + @"\Anexo\OS" + retorno + ".jpg"))
+                {
+                    File.Delete(Application.StartupPath + @"\Anexo\OS" + retorno + ".jpg");
+                    File.Copy(mdlChamados.Chamado.Anexo, Application.StartupPath + @"\Anexo\OS" + retorno + ".jpg");
+                    mdlChamados.Chamado.Anexo = null;
+                }
+                else
+                {
+                    File.Copy(mdlChamados.Chamado.Anexo, Application.StartupPath + @"\Anexo\OS" + retorno + ".jpg");
+                    mdlChamados.Chamado.Anexo = null;
+                }
             }
 
             txtDescricao.Text = "";

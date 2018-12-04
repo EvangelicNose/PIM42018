@@ -22,5 +22,10 @@ namespace helpdesk2018.View
         {
             ptbAnexo.Image = Image.FromFile(Application.StartupPath + @"\Anexo\OS" + mdlChamados.Chamado.OS.ToString() + ".jpg");
         }
+
+        private void btnVoltar_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
 }
