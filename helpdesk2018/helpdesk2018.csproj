@@ -67,6 +67,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="View\frmAnexo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\frmAnexo.Designer.cs">
+      <DependentUpon>frmAnexo.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\frmDetalharChamado.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -128,6 +134,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\frmAberturaChamados.resx">
       <DependentUpon>frmAberturaChamados.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\frmAnexo.resx">
+      <DependentUpon>frmAnexo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\frmDetalharChamado.resx">
       <DependentUpon>frmDetalharChamado.cs</DependentUpon>

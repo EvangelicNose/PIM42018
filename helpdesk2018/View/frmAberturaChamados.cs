@@ -4,11 +4,14 @@ using System.Windows.Forms;
 using helpdesk2018.Controller;
 using helpdesk2018.Model;
 using System.Data;
+using System.IO;
 
 namespace helpdesk2018.View
 {
     public partial class frmAberturaChamados : Form
     {
+        OpenFileDialog anexo = new OpenFileDialog();
+
         public frmAberturaChamados()
         {
             InitializeComponent();
@@ -84,7 +87,17 @@ namespace helpdesk2018.View
                 return;
             }
 
+
+            
+
             MessageBox.Show("Seu chamado foi cadastrado com sucesso!" + "\n" + "Sua ordem de serviço é : " + retorno);
+
+            if (mdlChamados.Chamado.Anexo != null || mdlChamados.Chamado.Anexo != "")
+            {
+                File.Copy(mdlChamados.Chamado.Anexo, Application.StartupPath + @"\Anexo\OS" + retorno + ".jpg");
+                mdlChamados.Chamado.Anexo = null;
+            }
+
             txtDescricao.Text = "";
             cbbMotivo.SelectedValue = -1;
         }
@@ -105,6 +118,18 @@ namespace helpdesk2018.View
 
         private void txtDescricao_TextChanged(object sender, EventArgs e)
         {
+        }
+
+        private void btnAnexo_Click(object sender, EventArgs e)
+        {
+            anexo.Filter = "Jpeg Files|*.jpg";
+            if(anexo.ShowDialog() == DialogResult.OK)
+            {
+                MessageBox.Show("Imagem carregada com sucesso!");
+                mdlChamados.Chamado.Anexo = anexo.FileName;
+            }
+
+
         }
     }
 }

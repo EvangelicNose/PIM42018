@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using helpdesk2018.Controller;
+using System.IO;
 
 namespace helpdesk2018.View
 {
@@ -20,10 +21,16 @@ namespace helpdesk2018.View
 
         private void frmDetalharChamado_Load(object sender, EventArgs e)
         {
+            if (File.Exists(Application.StartupPath + @"\Anexo\OS" + mdlChamados.Chamado.OS.ToString() + ".jpg"))
+            {
+                btnAnexo.Enabled = true;
+            }
+
             if (mdlUsuario.Logado.Nivel == "0")
             {
                 btnFecharChamado.Visible = false;
                 txtResposta.Enabled = false;
+                btnAnexo.Enabled = false;
             }
 
             txtOS.Text = mdlChamados.Chamado.OS.ToString();
@@ -37,6 +44,7 @@ namespace helpdesk2018.View
                 txtResposta.Text = mdlChamados.Chamado.Resposta;
                 txtResposta.Enabled = false;
                 btnFecharChamado.Enabled = false;
+
             } 
         }
 
@@ -62,6 +70,16 @@ namespace helpdesk2018.View
         private void button2_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void btnAnexo_Click(object sender, EventArgs e)
+        {
+        }
+
+        private void btnAnexo_Click_1(object sender, EventArgs e)
+        {
+            frmAnexo _frmAnexo = new frmAnexo();
+            _frmAnexo.ShowDialog();
         }
     }
 }

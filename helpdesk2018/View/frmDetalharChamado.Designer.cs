@@ -42,6 +42,7 @@
             this.button2 = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.txtOS = new System.Windows.Forms.TextBox();
+            this.btnAnexo = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // txtNome
@@ -82,7 +83,7 @@
             this.txtDescricao.Location = new System.Drawing.Point(72, 98);
             this.txtDescricao.Multiline = true;
             this.txtDescricao.Name = "txtDescricao";
-            this.txtDescricao.Size = new System.Drawing.Size(348, 104);
+            this.txtDescricao.Size = new System.Drawing.Size(249, 104);
             this.txtDescricao.TabIndex = 4;
             // 
             // label1
@@ -167,11 +168,23 @@
             this.txtOS.Size = new System.Drawing.Size(62, 20);
             this.txtOS.TabIndex = 13;
             // 
+            // btnAnexo
+            // 
+            this.btnAnexo.Enabled = false;
+            this.btnAnexo.Image = global::helpdesk2018.Properties.Resources.Anexo;
+            this.btnAnexo.Location = new System.Drawing.Point(330, 121);
+            this.btnAnexo.Name = "btnAnexo";
+            this.btnAnexo.Size = new System.Drawing.Size(93, 81);
+            this.btnAnexo.TabIndex = 14;
+            this.btnAnexo.UseVisualStyleBackColor = true;
+            this.btnAnexo.Click += new System.EventHandler(this.btnAnexo_Click_1);
+            // 
             // frmDetalharChamado
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(455, 367);
+            this.Controls.Add(this.btnAnexo);
             this.Controls.Add(this.txtOS);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.button2);
@@ -210,5 +223,6 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox txtOS;
+        private System.Windows.Forms.Button btnAnexo;
     }
 }

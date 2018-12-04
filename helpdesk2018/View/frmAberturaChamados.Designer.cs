@@ -141,6 +141,7 @@
             // 
             // cbbMotivo
             // 
+            this.cbbMotivo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbbMotivo.FormattingEnabled = true;
             this.cbbMotivo.Location = new System.Drawing.Point(80, 165);
             this.cbbMotivo.Name = "cbbMotivo";
@@ -156,6 +157,7 @@
             this.btnAnexo.Size = new System.Drawing.Size(93, 81);
             this.btnAnexo.TabIndex = 5;
             this.btnAnexo.UseVisualStyleBackColor = true;
+            this.btnAnexo.Click += new System.EventHandler(this.btnAnexo_Click);
             // 
             // btnEnviar
             // 
