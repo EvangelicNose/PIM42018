@@ -160,5 +160,11 @@ namespace helpdesk2018.View
                 return 0;
             }
         }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+            if (msgFechar() == 0) { Application.Exit(); }
+
+        }
     }
 }
