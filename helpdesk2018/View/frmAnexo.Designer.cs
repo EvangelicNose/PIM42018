@@ -60,7 +60,7 @@
             this.Controls.Add(this.btnVoltar);
             this.Controls.Add(this.ptbAnexo);
             this.Name = "frmAnexo";
-            this.Text = "frmAnexo";
+            this.Text = "Visualizar Imagem";
             this.Load += new System.EventHandler(this.frmAnexo_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ptbAnexo)).EndInit();
             this.ResumeLayout(false);

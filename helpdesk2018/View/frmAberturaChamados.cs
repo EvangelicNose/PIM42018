@@ -104,7 +104,7 @@ namespace helpdesk2018.View
                 {
                     File.Copy(mdlChamados.Chamado.Anexo, Application.StartupPath + @"\Anexo\OS" + retorno + ".jpg");
                     mdlChamados.Chamado.Anexo = null;
-                }
+                } 
             }
 
             txtDescricao.Text = "";

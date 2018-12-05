@@ -28,7 +28,7 @@ namespace helpdesk2018.Controller
                     " (tb_motivos INNER JOIN tb_chamados ON tb_motivos.idmotivo =" +
                     " tb_chamados.fk_idmotivo) ON tb_status.idstatus = tb_chamados.fk_idstatus) " +
                     "ON tb_usuarios.idusuario = tb_chamados.fk_idusuario " +
-                    "WHERE fk_idusuario = @idusuario;";
+                    "WHERE fk_idusuario = @idusuario order by OS desc;";
             }
             else
             {
@@ -38,7 +38,7 @@ namespace helpdesk2018.Controller
                     "tb_usuarios.fk_idempresa) INNER JOIN(tb_status INNER JOIN" +
                     " (tb_motivos INNER JOIN tb_chamados ON tb_motivos.idmotivo =" +
                     " tb_chamados.fk_idmotivo) ON tb_status.idstatus = tb_chamados.fk_idstatus) " +
-                    "ON tb_usuarios.idusuario = tb_chamados.fk_idusuario;";
+                    "ON tb_usuarios.idusuario = tb_chamados.fk_idusuario order by OS desc;";
             }
             OleDbCommand cmd = new OleDbCommand(SQL, conexao.GetConexao());
 
