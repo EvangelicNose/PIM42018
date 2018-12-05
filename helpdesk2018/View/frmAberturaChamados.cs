@@ -92,7 +92,7 @@ namespace helpdesk2018.View
 
             MessageBox.Show("Seu chamado foi cadastrado com sucesso!" + "\n" + "Sua ordem de serviço é : " + retorno);
 
-            if (mdlChamados.Chamado.Anexo != null || mdlChamados.Chamado.Anexo != "")
+            if (mdlChamados.Chamado.Anexo != null)
             {
                 if (File.Exists(Application.StartupPath + @"\Anexo\OS" + retorno + ".jpg"))
                 {
