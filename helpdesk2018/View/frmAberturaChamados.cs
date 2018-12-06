@@ -57,11 +57,8 @@ namespace helpdesk2018.View
         private void timer1_Tick(object sender, EventArgs e)
         {
             timer1.Start();
-           // timer1.Stop();
             DateTime HoraAgora = DateTime.Now;
             lblHora.Text = HoraAgora.ToString("HH:mm:ss");
-            // timer1.Start();
-            timer1.Stop();
 
         }
 
@@ -109,6 +106,7 @@ namespace helpdesk2018.View
 
             txtDescricao.Text = "";
             cbbMotivo.SelectedValue = -1;
+            btnCancelar.Focus();
         }
 
         private void txtUsuario_TextChanged(object sender, EventArgs e)

@@ -30,7 +30,6 @@ namespace helpdesk2018.View
             {
                 btnFecharChamado.Visible = false;
                 txtResposta.Enabled = false;
-                btnAnexo.Enabled = false;
             }
 
             txtOS.Text = mdlChamados.Chamado.OS.ToString();

@@ -38,6 +38,7 @@
             this.ckbIncluirAtiva = new System.Windows.Forms.CheckBox();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tbpIncluirEmpresa = new System.Windows.Forms.TabPage();
+            this.mskTelefone = new System.Windows.Forms.MaskedTextBox();
             this.txtVermIncNome = new System.Windows.Forms.TextBox();
             this.txtVermIncTelefone = new System.Windows.Forms.TextBox();
             this.txtVermIncEndereco = new System.Windows.Forms.TextBox();
@@ -45,6 +46,7 @@
             this.lblVermErro = new System.Windows.Forms.Label();
             this.lblVermEndereco = new System.Windows.Forms.Label();
             this.tbpAlterarEmpresa = new System.Windows.Forms.TabPage();
+            this.mskAlteraTelefone = new System.Windows.Forms.MaskedTextBox();
             this.dtgAlteraResultado = new System.Windows.Forms.DataGridView();
             this.idempresa = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -65,8 +67,6 @@
             this.txtVermAltNome = new System.Windows.Forms.TextBox();
             this.txtVermAltTelefone = new System.Windows.Forms.TextBox();
             this.txtVermAltEndereco = new System.Windows.Forms.TextBox();
-            this.mskTelefone = new System.Windows.Forms.MaskedTextBox();
-            this.mskAlteraTelefone = new System.Windows.Forms.MaskedTextBox();
             this.tabControl1.SuspendLayout();
             this.tbpIncluirEmpresa.SuspendLayout();
             this.tbpAlterarEmpresa.SuspendLayout();
@@ -79,7 +79,7 @@
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(75, 23);
             this.btnCancelar.TabIndex = 5;
-            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.Text = "Sair";
             this.btnCancelar.UseVisualStyleBackColor = true;
             this.btnCancelar.Click += new System.EventHandler(this.btCancelar_Click);
             // 
@@ -89,7 +89,7 @@
             this.btnOK.Name = "btnOK";
             this.btnOK.Size = new System.Drawing.Size(75, 23);
             this.btnOK.TabIndex = 4;
-            this.btnOK.Text = "OK";
+            this.btnOK.Text = "Cadastrar";
             this.btnOK.UseVisualStyleBackColor = true;
             this.btnOK.Click += new System.EventHandler(this.btOK_Click);
             // 
@@ -188,6 +188,16 @@
             this.tbpIncluirEmpresa.Text = "Incluir Empresa";
             this.tbpIncluirEmpresa.UseVisualStyleBackColor = true;
             // 
+            // mskTelefone
+            // 
+            this.mskTelefone.Location = new System.Drawing.Point(102, 113);
+            this.mskTelefone.Mask = "(99) 00000-0000";
+            this.mskTelefone.Name = "mskTelefone";
+            this.mskTelefone.Size = new System.Drawing.Size(100, 20);
+            this.mskTelefone.TabIndex = 19;
+            this.mskTelefone.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
+            this.mskTelefone.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.mskTelefone_KeyPress);
+            // 
             // txtVermIncNome
             // 
             this.txtVermIncNome.BackColor = System.Drawing.Color.Red;
@@ -282,6 +292,16 @@
             this.tbpAlterarEmpresa.TabIndex = 1;
             this.tbpAlterarEmpresa.Text = "Alterar Empresa";
             this.tbpAlterarEmpresa.UseVisualStyleBackColor = true;
+            // 
+            // mskAlteraTelefone
+            // 
+            this.mskAlteraTelefone.Location = new System.Drawing.Point(64, 253);
+            this.mskAlteraTelefone.Mask = "(99) 00000-0000";
+            this.mskAlteraTelefone.Name = "mskAlteraTelefone";
+            this.mskAlteraTelefone.Size = new System.Drawing.Size(97, 20);
+            this.mskAlteraTelefone.TabIndex = 13;
+            this.mskAlteraTelefone.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
+            this.mskAlteraTelefone.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.mskAlteraTelefone_KeyPress);
             // 
             // dtgAlteraResultado
             // 
@@ -411,7 +431,7 @@
             this.btnAlterarCancelar.Name = "btnAlterarCancelar";
             this.btnAlterarCancelar.Size = new System.Drawing.Size(75, 23);
             this.btnAlterarCancelar.TabIndex = 9;
-            this.btnAlterarCancelar.Text = "Cancelar";
+            this.btnAlterarCancelar.Text = "Sair";
             this.btnAlterarCancelar.UseVisualStyleBackColor = true;
             this.btnAlterarCancelar.Click += new System.EventHandler(this.btnAlterarCancelar_Click);
             // 
@@ -440,7 +460,7 @@
             this.btnAlterarOK.Name = "btnAlterarOK";
             this.btnAlterarOK.Size = new System.Drawing.Size(75, 23);
             this.btnAlterarOK.TabIndex = 8;
-            this.btnAlterarOK.Text = "OK";
+            this.btnAlterarOK.Text = "Alterar";
             this.btnAlterarOK.UseVisualStyleBackColor = true;
             this.btnAlterarOK.Click += new System.EventHandler(this.btnAlterarOK_Click);
             // 
@@ -486,26 +506,6 @@
             this.txtVermAltEndereco.Size = new System.Drawing.Size(283, 22);
             this.txtVermAltEndereco.TabIndex = 12;
             this.txtVermAltEndereco.Visible = false;
-            // 
-            // mskTelefone
-            // 
-            this.mskTelefone.Location = new System.Drawing.Point(102, 113);
-            this.mskTelefone.Mask = "(99) 00000-0000";
-            this.mskTelefone.Name = "mskTelefone";
-            this.mskTelefone.Size = new System.Drawing.Size(100, 20);
-            this.mskTelefone.TabIndex = 19;
-            this.mskTelefone.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
-            this.mskTelefone.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.mskTelefone_KeyPress);
-            // 
-            // mskAlteraTelefone
-            // 
-            this.mskAlteraTelefone.Location = new System.Drawing.Point(64, 253);
-            this.mskAlteraTelefone.Mask = "(99) 00000-0000";
-            this.mskAlteraTelefone.Name = "mskAlteraTelefone";
-            this.mskAlteraTelefone.Size = new System.Drawing.Size(97, 20);
-            this.mskAlteraTelefone.TabIndex = 13;
-            this.mskAlteraTelefone.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
-            this.mskAlteraTelefone.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.mskAlteraTelefone_KeyPress);
             // 
             // frmManutencaoEmpresas
             // 

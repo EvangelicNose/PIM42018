@@ -153,6 +153,7 @@ namespace helpdesk2018
             gbDados.Visible = false;
             gbEscolha.Visible = true;
             gbEscolha.Enabled = true;
+            btnVoltar.Focus();
             limpar();
         }
 
@@ -227,6 +228,7 @@ namespace helpdesk2018
             gbEscolha.Enabled = true;
             gbEscolha.Visible = true;
             limpar();
+            btnVoltar.Focus();
         }
 
         private void dtgAlteraResultado_CellClick(object sender, DataGridViewCellEventArgs e)

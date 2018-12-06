@@ -130,7 +130,7 @@
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(75, 23);
             this.btnCancelar.TabIndex = 8;
-            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.Text = "Sair";
             this.btnCancelar.UseVisualStyleBackColor = true;
             this.btnCancelar.Click += new System.EventHandler(this.btCancelar_Click);
             // 
@@ -140,7 +140,7 @@
             this.btnOK.Name = "btnOK";
             this.btnOK.Size = new System.Drawing.Size(75, 23);
             this.btnOK.TabIndex = 7;
-            this.btnOK.Text = "OK";
+            this.btnOK.Text = "Cadastrar";
             this.btnOK.UseVisualStyleBackColor = true;
             this.btnOK.Click += new System.EventHandler(this.button5_Click);
             // 
@@ -412,7 +412,7 @@
             this.btnAlteraPesquisa.Name = "btnAlteraPesquisa";
             this.btnAlteraPesquisa.Size = new System.Drawing.Size(75, 23);
             this.btnAlteraPesquisa.TabIndex = 1;
-            this.btnAlteraPesquisa.Text = "Pesquisar";
+            this.btnAlteraPesquisa.Text = "&Pesquisar";
             this.btnAlteraPesquisa.UseVisualStyleBackColor = true;
             this.btnAlteraPesquisa.Click += new System.EventHandler(this.btnAlteraPesquisa_Click);
             // 
@@ -484,7 +484,7 @@
             this.btnAlteraCancelar.Name = "btnAlteraCancelar";
             this.btnAlteraCancelar.Size = new System.Drawing.Size(75, 23);
             this.btnAlteraCancelar.TabIndex = 10;
-            this.btnAlteraCancelar.Text = "Cancelar";
+            this.btnAlteraCancelar.Text = "&Sair";
             this.btnAlteraCancelar.UseVisualStyleBackColor = true;
             this.btnAlteraCancelar.Click += new System.EventHandler(this.btnAlteraCancelar_Click);
             // 
@@ -502,7 +502,7 @@
             this.btnAlteraOK.Name = "btnAlteraOK";
             this.btnAlteraOK.Size = new System.Drawing.Size(75, 23);
             this.btnAlteraOK.TabIndex = 9;
-            this.btnAlteraOK.Text = "OK";
+            this.btnAlteraOK.Text = "&Alterar";
             this.btnAlteraOK.UseVisualStyleBackColor = true;
             this.btnAlteraOK.Click += new System.EventHandler(this.btnAlteraOK_Click);
             // 
