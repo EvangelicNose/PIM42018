@@ -83,9 +83,9 @@ namespace helpdesk2018.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Frm_Menus {
+        internal static System.Drawing.Bitmap Frm_Sobre_PIM {
             get {
-                object obj = ResourceManager.GetObject("Frm_Menus", resourceCulture);
+                object obj = ResourceManager.GetObject("Frm_Sobre_PIM", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -93,9 +93,19 @@ namespace helpdesk2018.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Frm_Sobre_PIM {
+        internal static System.Drawing.Bitmap HeadSet {
             get {
-                object obj = ResourceManager.GetObject("Frm_Sobre_PIM", resourceCulture);
+                object obj = ResourceManager.GetObject("HeadSet", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Untitled_e1468611844859 {
+            get {
+                object obj = ResourceManager.GetObject("Untitled-e1468611844859", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

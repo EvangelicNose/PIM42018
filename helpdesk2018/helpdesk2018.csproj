@@ -183,6 +183,8 @@
     <Content Include="helpdesk.mdb">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <None Include="Resources\Untitled-e1468611844859.png" />
+    <None Include="Resources\HeadSet.png" />
     <None Include="Resources\Frm_Sobre_PIM1.png" />
     <None Include="Resources\Frm_Menus.png" />
     <None Include="Resources\Frm_Sobre_PIM.png" />

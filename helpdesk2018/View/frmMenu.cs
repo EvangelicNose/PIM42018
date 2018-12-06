@@ -62,7 +62,7 @@ namespace helpdesk2018.View
                 NivelUser = "Administrador";
             }
 
-            this.Text = "Menus Principal - Usuário: " + frmLogin.UsuarioConectado + " | Nivel: " + NivelUser;
+            lblHTCaption.Text = "Menus Principal - Usuário: " + frmLogin.UsuarioConectado + " | Nivel: " + NivelUser;
 
 
             if (mdlUsuario.Logado.Nivel== "0" || mdlUsuario.Logado.Nivel == "1")

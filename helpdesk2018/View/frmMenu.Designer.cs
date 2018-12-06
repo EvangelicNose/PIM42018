@@ -41,7 +41,12 @@
             this.fazerLogoffToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.finalizarSistemaToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.label1 = new System.Windows.Forms.Label();
+            this.lblHTCaption = new System.Windows.Forms.Label();
+            this.ptbBackground = new System.Windows.Forms.PictureBox();
+            this.ptbIcon = new System.Windows.Forms.PictureBox();
             this.menuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbBackground)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbIcon)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -155,13 +160,50 @@
             this.label1.Text = "X";
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
+            // lblHTCaption
+            // 
+            this.lblHTCaption.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblHTCaption.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Bold);
+            this.lblHTCaption.Location = new System.Drawing.Point(65, 17);
+            this.lblHTCaption.Name = "lblHTCaption";
+            this.lblHTCaption.Size = new System.Drawing.Size(755, 37);
+            this.lblHTCaption.TabIndex = 10;
+            this.lblHTCaption.Text = "label2";
+            this.lblHTCaption.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // ptbBackground
+            // 
+            this.ptbBackground.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.ptbBackground.BackgroundImage = global::helpdesk2018.Properties.Resources.Untitled_e1468611844859;
+            this.ptbBackground.Location = new System.Drawing.Point(0, 97);
+            this.ptbBackground.Name = "ptbBackground";
+            this.ptbBackground.Size = new System.Drawing.Size(884, 471);
+            this.ptbBackground.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.ptbBackground.TabIndex = 12;
+            this.ptbBackground.TabStop = false;
+            // 
+            // ptbIcon
+            // 
+            this.ptbIcon.Image = global::helpdesk2018.Properties.Resources.HeadSet;
+            this.ptbIcon.Location = new System.Drawing.Point(13, 10);
+            this.ptbIcon.Name = "ptbIcon";
+            this.ptbIcon.Size = new System.Drawing.Size(50, 50);
+            this.ptbIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.ptbIcon.TabIndex = 11;
+            this.ptbIcon.TabStop = false;
+            // 
             // frmMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::helpdesk2018.Properties.Resources.Frm_Menus;
+            this.BackColor = System.Drawing.Color.White;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(884, 461);
+            this.ClientSize = new System.Drawing.Size(884, 568);
+            this.Controls.Add(this.ptbBackground);
+            this.Controls.Add(this.ptbIcon);
+            this.Controls.Add(this.lblHTCaption);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.menuStrip1);
             this.DoubleBuffered = true;
@@ -175,6 +217,8 @@
             this.Load += new System.EventHandler(this.frmMenu_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbBackground)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbIcon)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -195,5 +239,8 @@
         private System.Windows.Forms.ToolStripMenuItem finalizarSistemaToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem motivosToolStripMenuItem;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblHTCaption;
+        private System.Windows.Forms.PictureBox ptbIcon;
+        private System.Windows.Forms.PictureBox ptbBackground;
     }
 }
