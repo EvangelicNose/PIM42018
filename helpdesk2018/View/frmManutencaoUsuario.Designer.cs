@@ -100,7 +100,7 @@
             this.btnVoltar.Name = "btnVoltar";
             this.btnVoltar.Size = new System.Drawing.Size(75, 23);
             this.btnVoltar.TabIndex = 3;
-            this.btnVoltar.Text = "Sair";
+            this.btnVoltar.Text = "&Sair";
             this.btnVoltar.UseVisualStyleBackColor = true;
             this.btnVoltar.Click += new System.EventHandler(this.button4_Click);
             // 
@@ -110,7 +110,7 @@
             this.btnAlterar.Name = "btnAlterar";
             this.btnAlterar.Size = new System.Drawing.Size(75, 23);
             this.btnAlterar.TabIndex = 1;
-            this.btnAlterar.Text = "Alterar";
+            this.btnAlterar.Text = "&Alterar";
             this.btnAlterar.UseVisualStyleBackColor = true;
             this.btnAlterar.Click += new System.EventHandler(this.btnAlterar_Click);
             // 
@@ -120,7 +120,7 @@
             this.btnIncluir.Name = "btnIncluir";
             this.btnIncluir.Size = new System.Drawing.Size(75, 23);
             this.btnIncluir.TabIndex = 0;
-            this.btnIncluir.Text = "Incluir";
+            this.btnIncluir.Text = "&Incluir";
             this.btnIncluir.UseVisualStyleBackColor = true;
             this.btnIncluir.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -130,7 +130,7 @@
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(75, 23);
             this.btnCancelar.TabIndex = 8;
-            this.btnCancelar.Text = "Sair";
+            this.btnCancelar.Text = "&Voltar";
             this.btnCancelar.UseVisualStyleBackColor = true;
             this.btnCancelar.Click += new System.EventHandler(this.btCancelar_Click);
             // 
@@ -140,7 +140,7 @@
             this.btnOK.Name = "btnOK";
             this.btnOK.Size = new System.Drawing.Size(75, 23);
             this.btnOK.TabIndex = 7;
-            this.btnOK.Text = "Cadastrar";
+            this.btnOK.Text = "&Cadastrar";
             this.btnOK.UseVisualStyleBackColor = true;
             this.btnOK.Click += new System.EventHandler(this.button5_Click);
             // 
@@ -431,7 +431,7 @@
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(87, 13);
             this.label13.TabIndex = 5;
-            this.label13.Text = "Pesquisa Nome: ";
+            this.label13.Text = "Pesquisar Nome:";
             // 
             // ckbAlteraAtivo
             // 
@@ -484,7 +484,7 @@
             this.btnAlteraCancelar.Name = "btnAlteraCancelar";
             this.btnAlteraCancelar.Size = new System.Drawing.Size(75, 23);
             this.btnAlteraCancelar.TabIndex = 10;
-            this.btnAlteraCancelar.Text = "&Sair";
+            this.btnAlteraCancelar.Text = "&Voltar";
             this.btnAlteraCancelar.UseVisualStyleBackColor = true;
             this.btnAlteraCancelar.Click += new System.EventHandler(this.btnAlteraCancelar_Click);
             // 

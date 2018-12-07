@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnOK = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
@@ -67,6 +68,7 @@
             this.txtVermAltNome = new System.Windows.Forms.TextBox();
             this.txtVermAltTelefone = new System.Windows.Forms.TextBox();
             this.txtVermAltEndereco = new System.Windows.Forms.TextBox();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.tabControl1.SuspendLayout();
             this.tbpIncluirEmpresa.SuspendLayout();
             this.tbpAlterarEmpresa.SuspendLayout();
@@ -80,6 +82,7 @@
             this.btnCancelar.Size = new System.Drawing.Size(75, 23);
             this.btnCancelar.TabIndex = 5;
             this.btnCancelar.Text = "Sair";
+            this.toolTip1.SetToolTip(this.btnCancelar, "Sair da manutenção empresa");
             this.btnCancelar.UseVisualStyleBackColor = true;
             this.btnCancelar.Click += new System.EventHandler(this.btCancelar_Click);
             // 
@@ -90,6 +93,7 @@
             this.btnOK.Size = new System.Drawing.Size(75, 23);
             this.btnOK.TabIndex = 4;
             this.btnOK.Text = "Cadastrar";
+            this.toolTip1.SetToolTip(this.btnOK, "Cadastrar a empresa");
             this.btnOK.UseVisualStyleBackColor = true;
             this.btnOK.Click += new System.EventHandler(this.btOK_Click);
             // 
@@ -126,6 +130,7 @@
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new System.Drawing.Size(212, 20);
             this.txtNome.TabIndex = 1;
+            this.toolTip1.SetToolTip(this.txtNome, "Incluir nome da empresa");
             this.txtNome.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNome_KeyPress);
             // 
             // txtEndereco
@@ -134,6 +139,7 @@
             this.txtEndereco.Name = "txtEndereco";
             this.txtEndereco.Size = new System.Drawing.Size(212, 20);
             this.txtEndereco.TabIndex = 3;
+            this.toolTip1.SetToolTip(this.txtEndereco, "Incluir endereço da empresa");
             this.txtEndereco.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtEndereco_KeyPress);
             // 
             // ckbIncluirAtiva
@@ -161,6 +167,7 @@
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(362, 374);
             this.tabControl1.TabIndex = 12;
+            this.toolTip1.SetToolTip(this.tabControl1, "Selecione");
             this.tabControl1.MouseClick += new System.Windows.Forms.MouseEventHandler(this.tabControl1_MouseClick);
             // 
             // tbpIncluirEmpresa
@@ -196,6 +203,7 @@
             this.mskTelefone.Size = new System.Drawing.Size(100, 20);
             this.mskTelefone.TabIndex = 19;
             this.mskTelefone.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
+            this.toolTip1.SetToolTip(this.mskTelefone, "Incluir telefone da empresa");
             this.mskTelefone.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.mskTelefone_KeyPress);
             // 
             // txtVermIncNome
@@ -301,6 +309,7 @@
             this.mskAlteraTelefone.Size = new System.Drawing.Size(97, 20);
             this.mskAlteraTelefone.TabIndex = 13;
             this.mskAlteraTelefone.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
+            this.toolTip1.SetToolTip(this.mskAlteraTelefone, "Telefone da empresa que pode ser mudada");
             this.mskAlteraTelefone.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.mskAlteraTelefone_KeyPress);
             // 
             // dtgAlteraResultado
@@ -379,6 +388,7 @@
             this.ckbAlteraAtiva.Size = new System.Drawing.Size(68, 17);
             this.ckbAlteraAtiva.TabIndex = 7;
             this.ckbAlteraAtiva.Text = "    : Ativa";
+            this.toolTip1.SetToolTip(this.ckbAlteraAtiva, "Selecione se está ativa ou não");
             this.ckbAlteraAtiva.UseVisualStyleBackColor = true;
             // 
             // btnPesquisarEmpresa
@@ -388,6 +398,7 @@
             this.btnPesquisarEmpresa.Size = new System.Drawing.Size(66, 23);
             this.btnPesquisarEmpresa.TabIndex = 2;
             this.btnPesquisarEmpresa.Text = "Pesquisar";
+            this.toolTip1.SetToolTip(this.btnPesquisarEmpresa, "Pesquisar empresa");
             this.btnPesquisarEmpresa.UseVisualStyleBackColor = true;
             this.btnPesquisarEmpresa.Click += new System.EventHandler(this.btnPesquisarEmpresa_Click);
             // 
@@ -406,6 +417,7 @@
             this.txtPesquisarEmpresa.Name = "txtPesquisarEmpresa";
             this.txtPesquisarEmpresa.Size = new System.Drawing.Size(168, 20);
             this.txtPesquisarEmpresa.TabIndex = 1;
+            this.toolTip1.SetToolTip(this.txtPesquisarEmpresa, "Nome da empresa a pesquisar");
             this.txtPesquisarEmpresa.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPesquisarEmpresa_KeyPress);
             // 
             // txtAlteraNome
@@ -414,6 +426,7 @@
             this.txtAlteraNome.Name = "txtAlteraNome";
             this.txtAlteraNome.Size = new System.Drawing.Size(284, 20);
             this.txtAlteraNome.TabIndex = 4;
+            this.toolTip1.SetToolTip(this.txtAlteraNome, "Nome da empresa que pode ser alterada");
             this.txtAlteraNome.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtAlteraNome_KeyPress);
             // 
             // label6
@@ -432,6 +445,7 @@
             this.btnAlterarCancelar.Size = new System.Drawing.Size(75, 23);
             this.btnAlterarCancelar.TabIndex = 9;
             this.btnAlterarCancelar.Text = "Sair";
+            this.toolTip1.SetToolTip(this.btnAlterarCancelar, "Sair da manutenção empresas");
             this.btnAlterarCancelar.UseVisualStyleBackColor = true;
             this.btnAlterarCancelar.Click += new System.EventHandler(this.btnAlterarCancelar_Click);
             // 
@@ -461,6 +475,7 @@
             this.btnAlterarOK.Size = new System.Drawing.Size(75, 23);
             this.btnAlterarOK.TabIndex = 8;
             this.btnAlterarOK.Text = "Alterar";
+            this.toolTip1.SetToolTip(this.btnAlterarOK, "Salvar as alterações");
             this.btnAlterarOK.UseVisualStyleBackColor = true;
             this.btnAlterarOK.Click += new System.EventHandler(this.btnAlterarOK_Click);
             // 
@@ -470,6 +485,7 @@
             this.txtAlteraEndereco.Name = "txtAlteraEndereco";
             this.txtAlteraEndereco.Size = new System.Drawing.Size(281, 20);
             this.txtAlteraEndereco.TabIndex = 6;
+            this.toolTip1.SetToolTip(this.txtAlteraEndereco, "Endereço da empresa que pode ser mudada");
             this.txtAlteraEndereco.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtAlteraEndereco_KeyPress);
             // 
             // txtVermAltNome
@@ -568,5 +584,6 @@
         private System.Windows.Forms.Label lblVermEndereco;
         private System.Windows.Forms.MaskedTextBox mskTelefone;
         private System.Windows.Forms.MaskedTextBox mskAlteraTelefone;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }

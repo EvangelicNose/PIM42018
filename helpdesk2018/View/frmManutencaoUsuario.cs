@@ -197,7 +197,14 @@ namespace helpdesk2018
         {
             mdlManutencaoUsuario _mdlmanutencaousuario = new mdlManutencaoUsuario();
             _mdlmanutencaousuario.Nome = txtPesquisaNome.Text;
-            dtgAlteraResultado.DataSource = ctlManutencaoUsuario.PesquisaNomeMDL(_mdlmanutencaousuario);
+            DataTable usuario = ctlManutencaoUsuario.PesquisaNomeMDL(_mdlmanutencaousuario);
+            dtgAlteraResultado.DataSource = usuario;
+            //dtgAlteraResultado.DataSource = ctlManutencaoUsuario.PesquisaNomeMDL(_mdlmanutencaousuario);
+            if (dtgAlteraResultado.Rows.Count == 0)
+            {
+                MessageBox.Show(" Pesquisa não teve resultado ", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                txtPesquisaNome.Focus();
+            }
 
             dtgAlteraResultado.Columns[0].HeaderText = "idusuario";
             dtgAlteraResultado.Columns[0].Visible = false;

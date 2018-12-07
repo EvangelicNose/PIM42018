@@ -46,7 +46,7 @@ namespace helpdesk2018.View
             if (txtIncluirMotivo.Text == "")
             {
                 VermelhoIncluir.Visible = true;
-                MessageBox.Show("Motivo não pode ficar em branco !");
+                MessageBox.Show("Motivo não pode ficar em branco !", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 branco = "1";
                 txtIncluirMotivo.Focus();
             }
@@ -77,7 +77,7 @@ namespace helpdesk2018.View
                 
                 else
                 {
-                    MessageBox.Show("  Erro ao Gravar !!! ");
+                    MessageBox.Show("  Erro ao Gravar !!! ", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
 
             }
@@ -112,7 +112,7 @@ namespace helpdesk2018.View
             if (txtAlteraMotivo.Text == "")
             {
                 VermelhoAlterar.Visible = true;
-                MessageBox.Show(" Motivo não pode ficar em branco ");
+                MessageBox.Show(" Motivo não pode ficar em branco ", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 txtAlteraMotivo.Focus();
                 return;
             }
@@ -142,7 +142,7 @@ namespace helpdesk2018.View
             }
             else
             {
-                MessageBox.Show("Erro ao alterar");
+                MessageBox.Show("Erro ao alterar", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
         }
         private void btnAlteraMotivo_Click(object sender, EventArgs e)

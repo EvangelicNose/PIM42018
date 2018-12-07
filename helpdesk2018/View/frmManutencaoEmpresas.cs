@@ -105,7 +105,7 @@ namespace helpdesk2018.View
                 }
                 else
                 {
-                    MessageBox.Show("Erro ao Gravar !!!");
+                    MessageBox.Show("Erro ao Gravar !!!", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
             }
         }
@@ -180,21 +180,21 @@ namespace helpdesk2018.View
             if (txtAlteraNome.Text=="")
             {
                 txtVermAltNome.Visible = true;
-                MessageBox.Show(" Nome não pode ficar em Branco ");
+                MessageBox.Show(" Nome não pode ficar em Branco ", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 txtAlteraNome.Focus();
                 return;
             }
             if(mskAlteraTelefone.Text=="")
             {
                 txtVermAltTelefone.Visible = true;
-                MessageBox.Show(" Telefone não pode ficar em branco ");
+                MessageBox.Show(" Telefone não pode ficar em branco ", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 mskAlteraTelefone.Focus();
                 return;
             }
             if (txtAlteraEndereco.Text == "")
             {
                 txtVermAltEndereco.Visible = true;
-                MessageBox.Show(" Endereço não pode ficar em branco ");
+                MessageBox.Show(" Endereço não pode ficar em branco ", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 txtAlteraEndereco.Focus();
                 return;
             }
@@ -221,8 +221,9 @@ namespace helpdesk2018.View
             if (retorno1)
             {
                 MessageBox.Show("Dados alterados com sucesso");
-                txtPesquisarEmpresa.Focus();
                 limpar();
+                txtPesquisarEmpresa.Focus();
+
             }
             else
             {
@@ -296,7 +297,7 @@ namespace helpdesk2018.View
             txtVermIncTelefone.Visible = false;
             if (e.KeyChar == 13)
             {
-                mskTelefone.Focus();
+                txtEndereco.Focus();
             }
         }
 
