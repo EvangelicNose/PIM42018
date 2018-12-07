@@ -100,7 +100,7 @@
             this.btnVoltar.Name = "btnVoltar";
             this.btnVoltar.Size = new System.Drawing.Size(75, 23);
             this.btnVoltar.TabIndex = 3;
-            this.btnVoltar.Text = "Voltar";
+            this.btnVoltar.Text = "Sair";
             this.btnVoltar.UseVisualStyleBackColor = true;
             this.btnVoltar.Click += new System.EventHandler(this.button4_Click);
             // 

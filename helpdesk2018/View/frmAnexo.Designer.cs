@@ -59,6 +59,9 @@
             this.ClientSize = new System.Drawing.Size(641, 352);
             this.Controls.Add(this.btnVoltar);
             this.Controls.Add(this.ptbAnexo);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "frmAnexo";
             this.Text = "Visualizar Imagem";
             this.Load += new System.EventHandler(this.frmAnexo_Load);

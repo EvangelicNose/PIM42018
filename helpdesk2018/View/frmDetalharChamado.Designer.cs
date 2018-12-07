@@ -199,6 +199,9 @@
             this.Controls.Add(this.txtMotivo);
             this.Controls.Add(this.txtEmpresa);
             this.Controls.Add(this.txtNome);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "frmDetalharChamado";
             this.Text = "Detalhes do Chamado";
             this.Load += new System.EventHandler(this.frmDetalharChamado_Load);

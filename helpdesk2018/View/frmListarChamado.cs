@@ -22,6 +22,12 @@ namespace helpdesk2018
         private void frmListarChamado_Load(object sender, EventArgs e)
         {
             dtgListaChamado.DataSource = Controller.ctlManutencaoOS.ListarOS();
+            dtgListaChamado.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.ColumnHeader; ;
+            dtgListaChamado.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dtgListaChamado.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dtgListaChamado.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.ColumnHeader;
+            dtgListaChamado.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.ColumnHeader;
+            dtgListaChamado.ClearSelection();
         }
 
         private void btnVoltar_Click(object sender, EventArgs e)

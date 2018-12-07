@@ -45,11 +45,16 @@
             // 
             // dtgListaChamado
             // 
+            this.dtgListaChamado.AllowDrop = true;
+            this.dtgListaChamado.AllowUserToAddRows = false;
+            this.dtgListaChamado.AllowUserToDeleteRows = false;
+            this.dtgListaChamado.AllowUserToResizeRows = false;
             this.dtgListaChamado.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgListaChamado.Location = new System.Drawing.Point(15, 46);
             this.dtgListaChamado.MultiSelect = false;
             this.dtgListaChamado.Name = "dtgListaChamado";
             this.dtgListaChamado.ReadOnly = true;
+            this.dtgListaChamado.RowHeadersVisible = false;
             this.dtgListaChamado.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dtgListaChamado.Size = new System.Drawing.Size(563, 183);
             this.dtgListaChamado.TabIndex = 2;
@@ -73,8 +78,12 @@
             this.Controls.Add(this.btnVoltar);
             this.Controls.Add(this.dtgListaChamado);
             this.Controls.Add(this.label2);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "frmListarChamado";
-            this.Text = "Lista dos Chamados";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Lista de Chamados";
             this.Load += new System.EventHandler(this.frmListarChamado_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dtgListaChamado)).EndInit();
             this.ResumeLayout(false);
