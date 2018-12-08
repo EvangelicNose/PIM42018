@@ -21,26 +21,26 @@ namespace helpdesk2018.Controller
             int status = 1; // pode tirar essa linha e alterar para linha 36
 
 
-            var pmtIdUsuario = cmdAbrir.CreateParameter();
+            OleDbParameter pmtIdUsuario = cmdAbrir.CreateParameter();
             pmtIdUsuario.Value = mdlUsuario.Logado.ID;
             pmtIdUsuario.ParameterName = "@fk_idusuario";
             pmtIdUsuario.DbType = DbType.Int16;
             cmdAbrir.Parameters.Add(pmtIdUsuario);
 
-            var pmtidmotivo = cmdAbrir.CreateParameter();
+            OleDbParameter pmtidmotivo = cmdAbrir.CreateParameter();
             pmtidmotivo.Value = fk_motivo;
             pmtidmotivo.ParameterName = "@fk_idmotivo";
             pmtidmotivo.DbType = DbType.Int16;
             cmdAbrir.Parameters.Add(pmtidmotivo);
 
-            var pmtidstatus= cmdAbrir.CreateParameter();
+            OleDbParameter pmtidstatus= cmdAbrir.CreateParameter();
             // pmtidstatus.Value = 1; se fizer assim tbem resolve, nao precisa de variavel
             pmtidstatus.Value = status;
             pmtidstatus.ParameterName = "@fk_idstatus";
             pmtidstatus.DbType = DbType.Int16;
             cmdAbrir.Parameters.Add(pmtidstatus);
 
-            var pmtdescricao = cmdAbrir.CreateParameter();
+            OleDbParameter pmtdescricao = cmdAbrir.CreateParameter();
             pmtdescricao.Value = descricao;
             pmtdescricao.ParameterName = "@descricao";
             pmtdescricao.DbType = DbType.String;

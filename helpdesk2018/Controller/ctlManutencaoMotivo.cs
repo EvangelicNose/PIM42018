@@ -24,7 +24,7 @@ namespace helpdesk2018.Controller
             OleDbCommand cmdver = new OleDbCommand(qexiste, conexao.GetConexao());
            
             cmdver.CommandType = CommandType.Text;
-            var pmtmotivo = cmdver.CreateParameter();
+            OleDbParameter pmtmotivo = cmdver.CreateParameter();
             pmtmotivo.ParameterName = "@descricao";
             pmtmotivo.DbType = DbType.String;
             pmtmotivo.Value = _mdlmanutencaomotivo.Descricao;
@@ -51,13 +51,13 @@ namespace helpdesk2018.Controller
                 string query = "insert into tb_motivos(descricao, ativo) values(@descricao, @ativo)";
                 OleDbCommand cmd = new OleDbCommand(query, conexao.GetConexao());
 
-                var pmtdescricao = cmd.CreateParameter();
+                OleDbParameter pmtdescricao = cmd.CreateParameter();
                 pmtdescricao.ParameterName = "@descricao";
                 pmtdescricao.DbType = DbType.String;
                 pmtdescricao.Value = _mdlmanutencaomotivo.Descricao;
                 cmd.Parameters.Add(pmtdescricao);
 
-                var pmtativo = cmd.CreateParameter();
+                OleDbParameter pmtativo = cmd.CreateParameter();
                 pmtativo.ParameterName = "@ativo";
                 pmtativo.DbType = DbType.Boolean;
                 pmtativo.Value = _mdlmanutencaomotivo.Ativo;
@@ -94,7 +94,7 @@ namespace helpdesk2018.Controller
             string Query = "select * from tb_motivos where descricao LIKE \"%\" + @descricao + \"%\"";
             OleDbCommand cmd = new OleDbCommand(Query, conexao.GetConexao());
             cmd.CommandType = CommandType.Text;
-            var pmtmotivo = cmd.CreateParameter();
+            OleDbParameter pmtmotivo = cmd.CreateParameter();
             pmtmotivo.ParameterName = "@descricao";
             pmtmotivo.DbType = DbType.String;
             pmtmotivo.Value = _mdlmanutencaomotivo.Descricao;

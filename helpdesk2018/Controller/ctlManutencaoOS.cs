@@ -42,7 +42,7 @@ namespace helpdesk2018.Controller
             }
             OleDbCommand cmd = new OleDbCommand(SQL, conexao.GetConexao());
 
-            var pmtIDUsuario = cmd.CreateParameter();
+            OleDbParameter pmtIDUsuario = cmd.CreateParameter();
             pmtIDUsuario.ParameterName = "@idusuario";
             pmtIDUsuario.DbType = DbType.Int16;
             pmtIDUsuario.Value = mdlUsuario.Logado.ID;

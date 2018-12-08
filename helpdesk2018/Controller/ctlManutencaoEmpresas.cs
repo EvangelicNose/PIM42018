@@ -20,7 +20,7 @@ namespace helpdesk2018.Controller
             OleDbCommand cmdver = new OleDbCommand(qexiste, conexao.GetConexao());
 
             cmdver.CommandType = CommandType.Text;
-            var pmtnome = cmdver.CreateParameter();
+            OleDbParameter pmtnome = cmdver.CreateParameter();
             pmtnome.ParameterName = "@nome";
             pmtnome.DbType = DbType.String;
             pmtnome.Value = nome;
@@ -49,14 +49,14 @@ namespace helpdesk2018.Controller
             OleDbCommand cmdver = new OleDbCommand(qexiste, conexao.GetConexao());
 
             cmdver.CommandType = CommandType.Text;
-            var pmtnome = cmdver.CreateParameter();
+            OleDbParameter pmtnome = cmdver.CreateParameter();
             pmtnome.ParameterName = "@nome";
             pmtnome.DbType = DbType.String;
             pmtnome.Value = nome;
             cmdver.Parameters.Add(pmtnome);
 
             cmdver.CommandType = CommandType.Text;
-            var pmtid = cmdver.CreateParameter();
+            OleDbParameter pmtid = cmdver.CreateParameter();
             pmtid.ParameterName = "@id";
             pmtid.DbType = DbType.Int16;
             pmtid.Value = id;
@@ -84,25 +84,25 @@ namespace helpdesk2018.Controller
             string query = "insert into tb_empresas(nome, telefone, endereco, ativa) values(@nome, @telefone, @endereco, @ativa)";
             OleDbCommand cmd = new OleDbCommand(query, conexao.GetConexao());
 
-            var pmtnome = cmd.CreateParameter();
+            OleDbParameter pmtnome = cmd.CreateParameter();
             pmtnome.ParameterName = "@nome";
             pmtnome.DbType = DbType.String;
             pmtnome.Value = _mdlManutencaoEmpresas.Nome;
             cmd.Parameters.Add(pmtnome);
 
-            var pmttelefone = cmd.CreateParameter();
+            OleDbParameter pmttelefone = cmd.CreateParameter();
             pmttelefone.ParameterName = "@telefone";
             pmttelefone.DbType = DbType.String;
             pmttelefone.Value = _mdlManutencaoEmpresas.Telefone;
             cmd.Parameters.Add(pmttelefone);
 
-            var pmtendereco = cmd.CreateParameter();
+            OleDbParameter pmtendereco = cmd.CreateParameter();
             pmtendereco.ParameterName = "@endereco";
             pmtendereco.DbType = DbType.String;
             pmtendereco.Value = _mdlManutencaoEmpresas.Endereco;
             cmd.Parameters.Add(pmtendereco);
 
-            var pmtativa = cmd.CreateParameter();
+            OleDbParameter pmtativa = cmd.CreateParameter();
             pmtativa.ParameterName = "@ativa";
             pmtativa.DbType = DbType.Boolean;
             pmtativa.Value = _mdlManutencaoEmpresas.Ativa;
@@ -128,7 +128,7 @@ namespace helpdesk2018.Controller
             string Query = "select * from tb_empresas where nome LIKE \"%\" + @nome + \"%\"";
             OleDbCommand cmd = new OleDbCommand(Query, conexao.GetConexao());
             cmd.CommandType = CommandType.Text;
-            var pmtnome = cmd.CreateParameter();
+            OleDbParameter pmtnome = cmd.CreateParameter();
             pmtnome.ParameterName = "@nome";
             pmtnome.DbType = DbType.String;
             pmtnome.Value = _mdlmanutencaoempresas.Nome;

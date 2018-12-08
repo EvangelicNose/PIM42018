@@ -21,14 +21,14 @@ namespace helpdesk2018.Controller
             OleDbCommand cmdver = new OleDbCommand(qexiste, conexao.GetConexao());
 
             cmdver.CommandType = CommandType.Text;
-            var pmtusuario = cmdver.CreateParameter();
+            OleDbParameter pmtusuario = cmdver.CreateParameter();
             pmtusuario.ParameterName = "@usuario";
             pmtusuario.DbType = DbType.String;
             pmtusuario.Value = _mdlManutencaoUsuario.Usuario;
             cmdver.Parameters.Add(pmtusuario);
 
             cmdver.CommandType = CommandType.Text;
-            var pmtidusuario = cmdver.CreateParameter();
+            OleDbParameter pmtidusuario = cmdver.CreateParameter();
             pmtidusuario.ParameterName = "@idusuario";
             pmtidusuario.DbType = DbType.Int16;
             pmtidusuario.Value = _mdlManutencaoUsuario.IDUsuario;
@@ -56,43 +56,43 @@ namespace helpdesk2018.Controller
             string query = "insert into tb_usuarios(usuario, nome, senha, telefone, nivelAcesso, fk_idempresa, ativo) values(@usuario, @nome, @senha, @telefone, @nivelAcesso, @fk_idempresa, @ativo)";
             OleDbCommand cmd = new OleDbCommand(query, conexao.GetConexao());
             
-            var pmtusuarios = cmd.CreateParameter();
+            OleDbParameter pmtusuarios = cmd.CreateParameter();
             pmtusuarios.ParameterName = "@usuario";
             pmtusuarios.DbType = DbType.String;
             pmtusuarios.Value = _mdlManutencaoUsuario.Usuario;
             cmd.Parameters.Add(pmtusuarios);
 
-            var pmtnomes = cmd.CreateParameter();
+            OleDbParameter pmtnomes = cmd.CreateParameter();
             pmtnomes.ParameterName = "@nome";
             pmtnomes.DbType = DbType.String;
             pmtnomes.Value = _mdlManutencaoUsuario.Nome;
             cmd.Parameters.Add(pmtnomes);
 
-            var pmtsenhas = cmd.CreateParameter();
+            OleDbParameter pmtsenhas = cmd.CreateParameter();
             pmtsenhas.ParameterName = "@senha";
             pmtsenhas.DbType = DbType.String;
             pmtsenhas.Value = _mdlManutencaoUsuario.Senha;
             cmd.Parameters.Add(pmtsenhas);
 
-            var pmttelefones = cmd.CreateParameter();
+            OleDbParameter pmttelefones = cmd.CreateParameter();
             pmttelefones.ParameterName = "@telefone";
             pmttelefones.DbType = DbType.String;
             pmttelefones.Value = _mdlManutencaoUsuario.Telefone;
             cmd.Parameters.Add(pmttelefones);
 
-            var pmtnivelAcesso = cmd.CreateParameter();
+            OleDbParameter pmtnivelAcesso = cmd.CreateParameter();
             pmtnivelAcesso.ParameterName = "@nivelAcesso";
             pmtnivelAcesso.DbType = DbType.String;
             pmtnivelAcesso.Value = _mdlManutencaoUsuario.Nivel;
             cmd.Parameters.Add(pmtnivelAcesso);
 
-            var pmtidempresas = cmd.CreateParameter();
+            OleDbParameter pmtidempresas = cmd.CreateParameter();
             pmtidempresas.ParameterName = "@fk_idempresa";
             pmtidempresas.DbType = DbType.String;
             pmtidempresas.Value = _mdlManutencaoUsuario.Empresa;
             cmd.Parameters.Add(pmtidempresas);
 
-            var pmtativo = cmd.CreateParameter();
+            OleDbParameter pmtativo = cmd.CreateParameter();
             pmtativo.ParameterName = "@ativo";
             pmtativo.DbType = DbType.Boolean;
             pmtativo.Value = _mdlManutencaoUsuario.Ativo;
@@ -124,7 +124,7 @@ namespace helpdesk2018.Controller
             string Query = "select * from tb_usuarios where nome LIKE \"%\" + @nome + \"%\"";
             OleDbCommand cmd = new OleDbCommand(Query, conexao.GetConexao());
             cmd.CommandType = CommandType.Text;
-            var pmtnome = cmd.CreateParameter();
+            OleDbParameter pmtnome = cmd.CreateParameter();
             pmtnome.ParameterName = "@nome";
             pmtnome.DbType = DbType.String;
             pmtnome.Value = _mdlmanutencaousuario.Nome;
