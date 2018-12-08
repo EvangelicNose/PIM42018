@@ -6,12 +6,6 @@ namespace helpdesk2018.Controller
 {
     public static class ctlLogin
     {
-        public static bool Login(string Nome, string Senha, bool ativo)
-        {
-            bool RetornoLogin = false;
-            return RetornoLogin;
-        }
-        
         public static void GuardarDados(string Usuario)
         {
             Conexao conexao = new Conexao();
