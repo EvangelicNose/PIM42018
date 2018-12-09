@@ -43,6 +43,7 @@
             this.label6 = new System.Windows.Forms.Label();
             this.txtOS = new System.Windows.Forms.TextBox();
             this.btnAnexo = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // txtNome
@@ -179,11 +180,22 @@
             this.btnAnexo.UseVisualStyleBackColor = true;
             this.btnAnexo.Click += new System.EventHandler(this.btnAnexo_Click_1);
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(183, 321);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(105, 23);
+            this.button1.TabIndex = 15;
+            this.button1.Text = "Imprimir chamado";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            // 
             // frmDetalharChamado
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(455, 367);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.btnAnexo);
             this.Controls.Add(this.txtOS);
             this.Controls.Add(this.label6);
@@ -227,5 +239,6 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox txtOS;
         private System.Windows.Forms.Button btnAnexo;
+        private System.Windows.Forms.Button button1;
     }
 }

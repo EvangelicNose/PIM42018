@@ -80,5 +80,11 @@ namespace helpdesk2018.View
             frmAnexo _frmAnexo = new frmAnexo();
             _frmAnexo.ShowDialog();
         }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            FrmPrintChamados printChamados = new FrmPrintChamados(txtOS.Text, txtNome.Text, txtEmpresa.Text, txtMotivo.Text, txtDescricao.Text, txtResposta.Text);
+            printChamados.ShowDialog();
+        }
     }
 }
