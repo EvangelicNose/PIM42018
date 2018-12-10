@@ -26,13 +26,13 @@ namespace helpdesk2018
             txtUsuario.Text = "";
             txtNome.Text = "";
             txtSenha.Text = "";
-            txtTelefone.Text = "";
+            mskTelefone.Text = "";
             cbNivel.SelectedIndex = -1;
             cbEmpresas.SelectedIndex = -1;
 
             txtAlteraNome.Text = "";
             txtAlteraSenha.Text = "";
-            txtAlteraTelefone.Text = "";
+            mskAlteraTelefone.Text = "";
             txtAlteraUsuario.Text = "";
             cbbAlteraEmpresa.SelectedIndex = -1;
             cbbAlteraNivel.SelectedIndex = -1;
@@ -43,7 +43,6 @@ namespace helpdesk2018
             gbDados.Visible = true;
             gbEscolha.Enabled = false;
             txtUsuario.Focus();
-
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -51,48 +50,46 @@ namespace helpdesk2018
             Close();
         }
 
-        private void button5_Click(object sender, EventArgs e)
+        public void CadastrarUsusario()
         {
-
             string branco = "0";
 
             if (txtUsuario.Text == "")
             {
-                MessageBox.Show("Usuário não pode ficar em branco !");
+                MessageBox.Show("Usuário não pode ficar em branco !", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 branco = "1";
                 txtUsuario.Focus();
             }
             else if (txtNome.Text == "")
             {
-                MessageBox.Show("Nome não pode ficar em branco !");
+                MessageBox.Show("Nome não pode ficar em branco !", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 branco = "1";
                 txtNome.Focus();
             }
             else if (txtSenha.Text == "")
             {
-                MessageBox.Show("Senha não pode ficar em branco !");
+                MessageBox.Show("Senha não pode ficar em branco !", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 branco = "1";
                 txtSenha.Focus();
             }
-            else if (txtTelefone.Text == "")
+            else if (mskTelefone.Text == "")
             {
-                MessageBox.Show("Telfone não pode ficar em branco !");
+                MessageBox.Show("Telefone não pode ficar em branco !", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 branco = "1";
-                txtTelefone.Focus();
+                mskTelefone.Focus();
             }
             else if (cbNivel.Text == "")
             {
-                MessageBox.Show("Nivel não pode ficar em branco !");
+                MessageBox.Show("Nivel não pode ficar em branco !", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 branco = "1";
                 cbNivel.Focus();
             }
             else if (cbEmpresas.Text == "")
             {
-                MessageBox.Show("Empresa não pode ficar em branco !");
+                MessageBox.Show("Empresa não pode ficar em branco !", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 branco = "1";
                 cbEmpresas.Focus();
             }
-
 
             string nivel = "0";
             if (cbNivel.Text == "Usuário" && branco == "0")
@@ -110,13 +107,12 @@ namespace helpdesk2018
 
             if (branco == "0")
             {
-
                 mdlManutencaoUsuario _mdlManutencaoUsuarioVer = new mdlManutencaoUsuario();
                 _mdlManutencaoUsuarioVer.Usuario = txtUsuario.Text;
                 bool duplicado = ctlManutencaoUsuario.VerificarDuplicidade(_mdlManutencaoUsuarioVer);
                 if (duplicado)
                 {
-                    MessageBox.Show(" Esse Usuário já está cadastrado ", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    MessageBox.Show(" Esse Usuário já está cadastrado ", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     txtUsuario.Focus();
                     return;
                 }
@@ -127,7 +123,7 @@ namespace helpdesk2018
                     _mdlManutencaoUsuario.Usuario = txtUsuario.Text;
                     _mdlManutencaoUsuario.Nome = txtNome.Text;
                     _mdlManutencaoUsuario.Senha = txtSenha.Text;
-                    _mdlManutencaoUsuario.Telefone = txtTelefone.Text;
+                    _mdlManutencaoUsuario.Telefone = mskTelefone.Text;
                     _mdlManutencaoUsuario.Nivel = nivel;
                     _mdlManutencaoUsuario.Empresa = Convert.ToInt16(cbEmpresas.SelectedValue.ToString());
                     _mdlManutencaoUsuario.Ativo = ckbAtivo.Checked;
@@ -135,17 +131,21 @@ namespace helpdesk2018
                     bool retorno1 = ctlManutencaoUsuario.InserirUsuarioMDL(_mdlManutencaoUsuario);
                     if (retorno1)
                     {
-                        MessageBox.Show("Usuário gravado com sucesso");
+                        MessageBox.Show("Usuário gravado com sucesso", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         limpar();
                         gbEscolha.Enabled = true;
                         gbDados.Visible = false;
                     }
                     else
                     {
-                        MessageBox.Show("Erro ao Gravar !!!");
+                        MessageBox.Show("Erro ao Gravar !!!", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
             }
+        }
+        private void button5_Click(object sender, EventArgs e)
+        {
+            CadastrarUsusario();
         }
 
         private void btCancelar_Click(object sender, EventArgs e)
@@ -202,7 +202,7 @@ namespace helpdesk2018
             //dtgAlteraResultado.DataSource = ctlManutencaoUsuario.PesquisaNomeMDL(_mdlmanutencaousuario);
             if (dtgAlteraResultado.Rows.Count == 0)
             {
-                MessageBox.Show(" Pesquisa não teve resultado ", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show(" Pesquisa não teve resultado ", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 txtPesquisaNome.Focus();
             }
 
@@ -234,6 +234,7 @@ namespace helpdesk2018
             gpbAltera.Visible = false;
             gbEscolha.Enabled = true;
             gbEscolha.Visible = true;
+            gpbConfirmaAlteracao.Enabled = false;
             limpar();
             btnVoltar.Focus();
         }
@@ -243,55 +244,54 @@ namespace helpdesk2018
             txtAlteraUsuario.Text = dtgAlteraResultado.CurrentRow.Cells["usuario"].Value.ToString();
             txtAlteraNome.Text = dtgAlteraResultado.CurrentRow.Cells["nome"].Value.ToString();
             txtAlteraSenha.Text = dtgAlteraResultado.CurrentRow.Cells["senha"].Value.ToString();
-            txtAlteraTelefone.Text = dtgAlteraResultado.CurrentRow.Cells["telefone"].Value.ToString();
+            mskAlteraTelefone.Text = dtgAlteraResultado.CurrentRow.Cells["telefone"].Value.ToString();
             cbbAlteraNivel.SelectedIndex = Convert.ToInt16(dtgAlteraResultado.CurrentRow.Cells["nivelAcesso"].Value.ToString());
             cbbAlteraEmpresa.SelectedValue = Convert.ToInt16(dtgAlteraResultado.CurrentRow.Cells["fk_idempresa"].Value.ToString());
             ckbAlteraAtivo.Checked = Convert.ToBoolean(dtgAlteraResultado.CurrentRow.Cells["ativo"].Value.ToString());
-            btnAlteraOK.Enabled = true;
+            gpbConfirmaAlteracao.Enabled = true;
         }
 
-        private void btnAlteraOK_Click(object sender, EventArgs e)
+        public void AlteraUsuario()
         {
-
             if (txtAlteraUsuario.Text == "")
             {
-               // txtVermAltUsuario.Visible = true;
-                MessageBox.Show(" Usuário não pode ficar em Branco ");
+                // txtVermAltUsuario.Visible = true;
+                MessageBox.Show(" Usuário não pode ficar em Branco ", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 txtAlteraUsuario.Focus();
                 return;
             }
             if (txtAlteraNome.Text == "")
             {
                 //txtVermAltNome.Visible = true;
-                MessageBox.Show(" Nome não pode ficar em Branco ");
+                MessageBox.Show(" Nome não pode ficar em Branco ", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 txtAlteraNome.Focus();
                 return;
             }
             if (txtAlteraSenha.Text == "")
             {
-               // txtVermAltNome.Visible = true;
-                MessageBox.Show(" Senha não pode ficar em Branco ");
+                // txtVermAltNome.Visible = true;
+                MessageBox.Show(" Senha não pode ficar em Branco ", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 txtAlteraSenha.Focus();
                 return;
             }
-            if (txtAlteraTelefone.Text == "")
+            if (mskAlteraTelefone.Text == "")
             {
                 //txtVermAltNome.Visible = true;
-                MessageBox.Show(" Telefone não pode ficar em Branco ");
-                txtAlteraTelefone.Focus();
+                MessageBox.Show(" Telefone não pode ficar em Branco ", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                mskAlteraTelefone.Focus();
                 return;
             }
             if (cbbAlteraNivel.SelectedIndex == -1)
             {
                 //txtVermAltNome.Visible = true;
-                MessageBox.Show(" Selecione um Nível ");
+                MessageBox.Show(" Selecione um Nível ", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 cbbAlteraNivel.Focus();
                 return;
             }
             if (cbbAlteraEmpresa.SelectedIndex == -1)
             {
                 //txtVermAltNome.Visible = true;
-                MessageBox.Show(" Selecione uma Empresa ");
+                MessageBox.Show(" Selecione uma Empresa ", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 cbbAlteraEmpresa.Focus();
                 return;
             }
@@ -316,7 +316,7 @@ namespace helpdesk2018
             bool duplicado = ctlManutencaoUsuario.VerificarDuplicidade(_mdlManutencaoUsuarioVer);
             if (duplicado)
             {
-                MessageBox.Show(" Esse Usuário já está cadastrado ", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show(" Esse Usuário já está cadastrado ", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 txtAlteraUsuario.Focus();
                 return;
             }
@@ -325,30 +325,141 @@ namespace helpdesk2018
             _mdlmanutencaousuario.Usuario = txtAlteraUsuario.Text;
             _mdlmanutencaousuario.Nome = txtAlteraNome.Text;
             _mdlmanutencaousuario.Senha = txtAlteraSenha.Text;
-            _mdlmanutencaousuario.Telefone = txtAlteraTelefone.Text;
+            _mdlmanutencaousuario.Telefone = mskAlteraTelefone.Text;
             _mdlmanutencaousuario.Nivel = Anivel;
             _mdlmanutencaousuario.Empresa = Convert.ToInt16(cbbAlteraEmpresa.SelectedValue.ToString());
             //_mdlmanutencaousuario.Empresa = cbbAlteraEmpresa.SelectedIndex;
             _mdlmanutencaousuario.Ativo = ckbAlteraAtivo.Checked;
             _mdlmanutencaousuario.IDUsuario = Convert.ToInt16(dtgAlteraResultado.CurrentRow.Cells["idusuario"].Value.ToString());
             dtgAlteraResultado.DataSource = ctlManutencaoUsuario.AlteraUsuarioMDL(_mdlmanutencaousuario);
-            btnAlteraOK.Enabled = false;
+            gpbConfirmaAlteracao.Enabled = false;
 
             bool retorno1 = ctlManutencaoUsuario.AlteraUsuarioMDL(_mdlmanutencaousuario);
             if (retorno1)
             {
-                MessageBox.Show("Dados alterados com sucesso");
+                MessageBox.Show("Dados alterados com sucesso", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 limpar();
             }
             else
             {
-                MessageBox.Show("Erro ao alterar");
+                MessageBox.Show("Erro ao alterar", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+        private void btnAlteraOK_Click(object sender, EventArgs e)
+        {
+            AlteraUsuario();   
+        }
+
+        private void txtPesquisaNome_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar== 13)
+            {
+                Pesquisar();
             }
         }
 
-        private void txtPesquisaNome_TextChanged(object sender, EventArgs e)
+        private void txtAlteraUsuario_KeyPress(object sender, KeyPressEventArgs e)
         {
+            if (e.KeyChar == 13)
+            {
+                txtAlteraNome.Focus();
+            }
+        }
 
+        private void txtAlteraNome_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar== 13)
+            {
+                txtAlteraSenha.Focus();
+            }
+        }
+
+        private void txtAlteraSenha_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 13)
+            {
+                mskAlteraTelefone.Focus();
+            }
+        }
+
+        private void cbbAlteraNivel_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 13)
+            {
+                cbbAlteraEmpresa.Focus();
+            }
+        }
+
+        private void mskAlteraTelefone_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 13)
+            {
+                cbbAlteraNivel.Focus();
+            }
+        }
+
+        private void cbbAlteraEmpresa_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 13)
+            {
+                ckbAlteraAtivo.Focus();
+            }
+        }
+
+        private void ckbAlteraAtivo_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 13)
+            {
+                AlteraUsuario();
+            }
+        }
+
+        private void txtUsuario_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 13)
+            {
+                txtNome.Focus();
+            }
+        }
+
+        private void txtNome_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 13)
+            {
+                txtSenha.Focus();
+            }
+        }
+
+        private void txtSenha_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 13)
+            {
+                mskTelefone.Focus();
+            }
+        }
+
+        private void mskTelefone_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 13)
+            {
+                cbNivel.Focus();
+            }
+        }
+
+        private void cbNivel_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 13)
+            {
+                cbEmpresas.Focus();
+            }
+        }
+
+        private void cbEmpresas_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 13)
+            {
+                CadastrarUsusario();
+            }
         }
     }
 }

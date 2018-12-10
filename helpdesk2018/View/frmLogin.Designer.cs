@@ -74,7 +74,6 @@
             this.txtSenha.PasswordChar = '*';
             this.txtSenha.Size = new System.Drawing.Size(100, 20);
             this.txtSenha.TabIndex = 2;
-            this.txtSenha.TextChanged += new System.EventHandler(this.txtSenha_TextChanged);
             this.txtSenha.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSenha_KeyPress);
             // 
             // lblERRO
@@ -88,18 +87,16 @@
             this.lblERRO.TabIndex = 6;
             this.lblERRO.Text = "Usuário e/ou Senha Incorreta!";
             this.lblERRO.Visible = false;
-            this.lblERRO.Click += new System.EventHandler(this.lblERRO_Click);
             // 
             // btnEntrar2
             // 
             this.btnEntrar2.Location = new System.Drawing.Point(388, 208);
             this.btnEntrar2.Name = "btnEntrar2";
             this.btnEntrar2.Size = new System.Drawing.Size(75, 23);
-            this.btnEntrar2.TabIndex = 7;
+            this.btnEntrar2.TabIndex = 3;
             this.btnEntrar2.Text = "Entrar";
             this.btnEntrar2.UseVisualStyleBackColor = true;
             this.btnEntrar2.Click += new System.EventHandler(this.btnEntrar2_Click);
-            this.btnEntrar2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.btnEntrar2_KeyPress);
             // 
             // timer1
             // 
@@ -137,7 +134,6 @@
             this.Name = "frmLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Help Desk (2018) - Controle de Acesso";
-            this.Load += new System.EventHandler(this.frmLogin_Load);
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.frmLogin_MouseDown);
             this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.frmLogin_MouseMove);
             this.MouseUp += new System.Windows.Forms.MouseEventHandler(this.frmLogin_MouseUp);

@@ -38,20 +38,9 @@ namespace helpdesk2018.View
             cbbMotivo.DataSource = dadosmotivo;
         }
 
-        private void lblHora_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lblData_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             Close();
-
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -59,7 +48,6 @@ namespace helpdesk2018.View
             timer1.Start();
             DateTime HoraAgora = DateTime.Now;
             lblHora.Text = HoraAgora.ToString("HH:mm:ss");
-
         }
 
         private void btnEnviar_Click(object sender, EventArgs e)
@@ -67,27 +55,24 @@ namespace helpdesk2018.View
             int motivo = Convert.ToInt16(cbbMotivo.SelectedValue);
             if (motivo == -1)
             {
-                MessageBox.Show("Selecione um motivo.");
+                MessageBox.Show("Selecione um motivo.", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 return;
             }
             string descricao = txtDescricao.Text;
             if (descricao == "")
             {
-                MessageBox.Show("Informe a descrição.");
+                MessageBox.Show("Informe a descrição.", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 return;
             }
             string retorno = ctlChamados.Abrirchamado(motivo, descricao);
 
             if (retorno == "")
             {
-                MessageBox.Show("Ocorreu um erro ao abrir seu chamado. Por favor, tente novamente mais tarde");
+                MessageBox.Show("Ocorreu um erro ao abrir seu chamado. Por favor, tente novamente mais tarde", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
-
-            
-
-            MessageBox.Show("Seu chamado foi cadastrado com sucesso!" + "\n" + "Sua ordem de serviço é : " + retorno);
+            MessageBox.Show("Seu chamado foi cadastrado com sucesso!" + "\n" + "Sua ordem de serviço é : " + retorno, "Informação", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
             if (mdlChamados.Chamado.Anexo != null)
             {
@@ -109,34 +94,14 @@ namespace helpdesk2018.View
             btnCancelar.Focus();
         }
 
-        private void txtUsuario_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label7_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void cbbMotivo_SelectedIndexChanged(object sender, EventArgs e)
-        {
-        }
-
-        private void txtDescricao_TextChanged(object sender, EventArgs e)
-        {
-        }
-
         private void btnAnexo_Click(object sender, EventArgs e)
         {
             anexo.Filter = "Jpeg Files|*.jpg";
             if(anexo.ShowDialog() == DialogResult.OK)
             {
-                MessageBox.Show("Imagem carregada com sucesso!");
+                MessageBox.Show("Imagem carregada com sucesso!", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 mdlChamados.Chamado.Anexo = anexo.FileName;
             }
-
-
         }
     }
 }

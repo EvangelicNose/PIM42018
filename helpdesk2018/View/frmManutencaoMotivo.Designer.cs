@@ -133,7 +133,7 @@
             this.btnSair.Location = new System.Drawing.Point(218, 167);
             this.btnSair.Name = "btnSair";
             this.btnSair.Size = new System.Drawing.Size(75, 28);
-            this.btnSair.TabIndex = 3;
+            this.btnSair.TabIndex = 2;
             this.btnSair.Text = "Sair";
             this.toolTip1.SetToolTip(this.btnSair, "Saor da tela de Mantenção Motivo");
             this.btnSair.UseVisualStyleBackColor = true;
@@ -155,7 +155,7 @@
             this.btnCadastrar.Location = new System.Drawing.Point(82, 167);
             this.btnCadastrar.Name = "btnCadastrar";
             this.btnCadastrar.Size = new System.Drawing.Size(87, 28);
-            this.btnCadastrar.TabIndex = 2;
+            this.btnCadastrar.TabIndex = 1;
             this.btnCadastrar.Text = "Cadastrar";
             this.toolTip1.SetToolTip(this.btnCadastrar, "Cadastrar Motivo");
             this.btnCadastrar.UseVisualStyleBackColor = true;
@@ -167,7 +167,7 @@
             this.txtIncluirMotivo.Location = new System.Drawing.Point(82, 83);
             this.txtIncluirMotivo.Name = "txtIncluirMotivo";
             this.txtIncluirMotivo.Size = new System.Drawing.Size(211, 20);
-            this.txtIncluirMotivo.TabIndex = 1;
+            this.txtIncluirMotivo.TabIndex = 0;
             this.toolTip1.SetToolTip(this.txtIncluirMotivo, "Digitar o nome do motivo");
             this.txtIncluirMotivo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtIncluirMotivo_KeyPress);
             // 
@@ -250,7 +250,7 @@
             this.dtgAlteraResultado.RowHeadersVisible = false;
             this.dtgAlteraResultado.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dtgAlteraResultado.Size = new System.Drawing.Size(373, 177);
-            this.dtgAlteraResultado.TabIndex = 3;
+            this.dtgAlteraResultado.TabIndex = 2;
             this.dtgAlteraResultado.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgAlteraResultado_CellClick);
             // 
             // idmotivo
@@ -286,7 +286,7 @@
             this.txtPesquisaMotivo.Location = new System.Drawing.Point(138, 46);
             this.txtPesquisaMotivo.Name = "txtPesquisaMotivo";
             this.txtPesquisaMotivo.Size = new System.Drawing.Size(144, 20);
-            this.txtPesquisaMotivo.TabIndex = 1;
+            this.txtPesquisaMotivo.TabIndex = 0;
             this.toolTip1.SetToolTip(this.txtPesquisaMotivo, "Digitar o nome do morivo para pesquisar");
             this.txtPesquisaMotivo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPesquisaMotivo_KeyPress);
             // 
@@ -306,7 +306,7 @@
             this.btnPesquisar.Location = new System.Drawing.Point(288, 44);
             this.btnPesquisar.Name = "btnPesquisar";
             this.btnPesquisar.Size = new System.Drawing.Size(91, 28);
-            this.btnPesquisar.TabIndex = 2;
+            this.btnPesquisar.TabIndex = 1;
             this.btnPesquisar.Text = "Pesquisar";
             this.toolTip1.SetToolTip(this.btnPesquisar, "Pesquisar motivo");
             this.btnPesquisar.UseVisualStyleBackColor = true;
@@ -315,11 +315,12 @@
             // ckbAlteraAtivo
             // 
             this.ckbAlteraAtivo.AutoSize = true;
+            this.ckbAlteraAtivo.Enabled = false;
             this.ckbAlteraAtivo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ckbAlteraAtivo.Location = new System.Drawing.Point(162, 294);
             this.ckbAlteraAtivo.Name = "ckbAlteraAtivo";
             this.ckbAlteraAtivo.Size = new System.Drawing.Size(50, 17);
-            this.ckbAlteraAtivo.TabIndex = 5;
+            this.ckbAlteraAtivo.TabIndex = 4;
             this.ckbAlteraAtivo.Text = "Ativo";
             this.toolTip1.SetToolTip(this.ckbAlteraAtivo, "Selecionar se est[a ativo o motivo");
             this.ckbAlteraAtivo.UseVisualStyleBackColor = true;
@@ -330,7 +331,7 @@
             this.btnAlterarSair.Location = new System.Drawing.Point(304, 291);
             this.btnAlterarSair.Name = "btnAlterarSair";
             this.btnAlterarSair.Size = new System.Drawing.Size(75, 28);
-            this.btnAlterarSair.TabIndex = 7;
+            this.btnAlterarSair.TabIndex = 6;
             this.btnAlterarSair.Text = "Sair";
             this.toolTip1.SetToolTip(this.btnAlterarSair, "Sair da tela de Manutenção Motivo");
             this.btnAlterarSair.UseVisualStyleBackColor = true;
@@ -353,7 +354,7 @@
             this.btnAlteraMotivo.Location = new System.Drawing.Point(7, 292);
             this.btnAlteraMotivo.Name = "btnAlteraMotivo";
             this.btnAlteraMotivo.Size = new System.Drawing.Size(75, 27);
-            this.btnAlteraMotivo.TabIndex = 6;
+            this.btnAlteraMotivo.TabIndex = 5;
             this.btnAlteraMotivo.Text = "Alterar";
             this.toolTip1.SetToolTip(this.btnAlteraMotivo, "Confirmar alteração");
             this.btnAlteraMotivo.UseVisualStyleBackColor = true;
@@ -361,11 +362,12 @@
             // 
             // txtAlteraMotivo
             // 
+            this.txtAlteraMotivo.Enabled = false;
             this.txtAlteraMotivo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtAlteraMotivo.Location = new System.Drawing.Point(62, 256);
             this.txtAlteraMotivo.Name = "txtAlteraMotivo";
             this.txtAlteraMotivo.Size = new System.Drawing.Size(317, 20);
-            this.txtAlteraMotivo.TabIndex = 4;
+            this.txtAlteraMotivo.TabIndex = 3;
             this.toolTip1.SetToolTip(this.txtAlteraMotivo, "Digitar a alterção do motivo");
             this.txtAlteraMotivo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtAlteraMotivo_KeyPress);
             // 

@@ -30,14 +30,13 @@ namespace helpdesk2018.View
             CadastrarMotivo();
         }
 
-        public void limpar()
+        public void Limpar()
         {
             txtPesquisaMotivo.Text = "";
             txtAlteraMotivo.Text = "";
             txtIncluirMotivo.Text = "";
             txtPesquisaMotivo.Text = "";
         }
-
     
         void CadastrarMotivo()
         {
@@ -46,7 +45,7 @@ namespace helpdesk2018.View
             if (txtIncluirMotivo.Text == "")
             {
                 VermelhoIncluir.Visible = true;
-                MessageBox.Show("Motivo não pode ficar em branco !", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show("Motivo não pode ficar em branco !", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 branco = "1";
                 txtIncluirMotivo.Focus();
             }
@@ -58,31 +57,27 @@ namespace helpdesk2018.View
                 _mdlmanutencaomotivo.Descricao = txtIncluirMotivo.Text;
                 _mdlmanutencaomotivo.Ativo = ckbAtivo.Checked;
                 
-
                 bool retorno1 = ctlManutencaoMotivo.InserirMotivoMDL(_mdlmanutencaomotivo);
                 if (ctlManutencaoMotivo.retorno == 1)
                 {
                     txtIncluirMotivo.Focus();
-                    MessageBox.Show(" Esse Motivo já está cadastrado ", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    MessageBox.Show(" Esse Motivo já está cadastrado ", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     ctlManutencaoMotivo.retorno = 0;
                     return;
                 }
                 if (retorno1)
                 {
-                    MessageBox.Show(" Motivo gravado com sucesso ");
+                    MessageBox.Show(" Motivo gravado com sucesso ", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     ctlManutencaoMotivo.retorno = 0;
-                    limpar();
+                    Limpar();
                     txtIncluirMotivo.Focus();
                 }
                 
                 else
                 {
-                    MessageBox.Show("  Erro ao Gravar !!! ", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    MessageBox.Show("  Erro ao Gravar !!! ", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-
             }
-
-
         }
 
         private void txtIncluirMotivo_KeyPress(object sender, KeyPressEventArgs e)
@@ -96,14 +91,16 @@ namespace helpdesk2018.View
 
         private void btnAlterarSair_Click(object sender, EventArgs e)
         {
-            limpar();
+            btnAlteraMotivo.Enabled = false;
+            txtAlteraMotivo.Enabled = false;
+            ckbAlteraAtivo.Enabled = false;
+            Limpar();
             Close();
-
         }
 
         private void btnSair_Click(object sender, EventArgs e)
         {
-            limpar();
+            Limpar();
             Close();
         }
 
@@ -112,7 +109,7 @@ namespace helpdesk2018.View
             if (txtAlteraMotivo.Text == "")
             {
                 VermelhoAlterar.Visible = true;
-                MessageBox.Show(" Motivo não pode ficar em branco ", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show(" Motivo não pode ficar em branco ", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 txtAlteraMotivo.Focus();
                 return;
             }
@@ -126,23 +123,25 @@ namespace helpdesk2018.View
             if (ctlManutencaoMotivo.retornoA == 1)
             {
                 txtIncluirMotivo.Focus();
-                MessageBox.Show("  Dado Duplicado  ");
+                MessageBox.Show("  Dado Duplicado  ", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 ctlManutencaoMotivo.retornoA = 0;
                 return;
             }
-
 
             bool retorno1 = ctlManutencaoMotivo.AlteraMotivoMDL(_mdlmanutencaomotivo);
             
             if (retorno1 || ctlManutencaoMotivo.ja == 1)
             {
-                limpar();
-                MessageBox.Show("Dados alterados com sucesso");
+                Limpar();
+                MessageBox.Show("Dados alterados com sucesso", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 btnAlteraMotivo.Enabled = false;
+                txtAlteraMotivo.Enabled = false;
+                ckbAlteraAtivo.Enabled = false;
+
             }
             else
             {
-                MessageBox.Show("Erro ao alterar", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show("Erro ao alterar", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
         private void btnAlteraMotivo_Click(object sender, EventArgs e)
@@ -156,7 +155,7 @@ namespace helpdesk2018.View
             dtgAlteraResultado.DataSource = ctlManutencaoMotivo.PesquisaMotivoMDL(_mdlmanutencaomotivo);
             if (dtgAlteraResultado.Rows.Count == 0)
             {
-                MessageBox.Show(" Pesquisa não teve resultado ", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show(" Pesquisa não teve resultado ", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 txtPesquisaMotivo.Focus();
             }
 
@@ -180,6 +179,8 @@ namespace helpdesk2018.View
             txtAlteraMotivo.Text = dtgAlteraResultado.CurrentRow.Cells["descricao"].Value.ToString();
             ckbAlteraAtivo.Checked = Convert.ToBoolean(dtgAlteraResultado.CurrentRow.Cells["ativo"].Value.ToString());
             btnAlteraMotivo.Enabled = true;
+            txtAlteraMotivo.Enabled = true;
+            ckbAlteraAtivo.Enabled = true;
         }
 
         private void frmManutencaoMotivo_Load_1(object sender, EventArgs e)
@@ -217,12 +218,10 @@ namespace helpdesk2018.View
             {
                 btnAMenor.Enabled = false;
             }
-
         }
         
         private void btnAMaior_Click(object sender, EventArgs e)
         {
-
             float tamanhoAtual;
             if (tamInc < 12)
             {
@@ -241,12 +240,10 @@ namespace helpdesk2018.View
             {
                 btnAMaior.Enabled = false;
             }
-           
         }
 
         private void btnAlterarAMaior_Click(object sender, EventArgs e)
         {
-            
             float tamanhoAtual;
             if (tamAlt < 12)
             {

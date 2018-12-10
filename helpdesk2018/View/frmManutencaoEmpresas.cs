@@ -19,7 +19,7 @@ namespace helpdesk2018.View
             InitializeComponent();
         }
 
-         public void limpar()
+        public void limpar()
         {
             txtPesquisarEmpresa.Text = "";
             txtNome.Text = "";
@@ -30,7 +30,7 @@ namespace helpdesk2018.View
             txtAlteraNome.Text = "";
             mskAlteraTelefone.Text = "";
         }
-        void CadastrarEmpresa()
+        public void CadastrarEmpresa()
         {
             string branco = "0";
             if (txtNome.Text == "")
@@ -83,7 +83,7 @@ namespace helpdesk2018.View
             bool duplicado = ctlManutencaoEmpresas.VerificarDuplicidade(nome);
             if (duplicado)
             {
-                MessageBox.Show(" Essa Empresa já está cadastrada ", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show(" Essa Empresa já está cadastrada ", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 txtNome.Focus();
                 return;
             }
@@ -99,13 +99,13 @@ namespace helpdesk2018.View
                 bool retorno1 = ctlManutencaoEmpresas.InserirEmpresasMDL(_mdlManutencaoEmpresas);
                 if (retorno1)
                 {
-                    MessageBox.Show("Empresa gravada com sucesso");
+                    MessageBox.Show("Empresa gravada com sucesso", "Confirmação", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     limpar();
                     txtNome.Focus();
                 }
                 else
                 {
-                    MessageBox.Show("Erro ao Gravar !!!", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    MessageBox.Show("Erro ao Gravar !!!", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }
@@ -123,7 +123,6 @@ namespace helpdesk2018.View
         {
              txtNome.Select();
         }
-
 
         public void PesquisarEmpresa()
         {
@@ -150,7 +149,7 @@ namespace helpdesk2018.View
             dtgAlteraResultado.Columns[4].HeaderText = "Ativa ?";
             dtgAlteraResultado.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.ColumnHeader;
             dtgAlteraResultado.ClearSelection();
-            btnAlterarOK.Enabled = false;
+            gpbConfirmaAlteracao.Enabled = false;
             txtAlteraNome.Text = "";
             txtAlteraEndereco.Text = "";
             mskAlteraTelefone.Text = "";
@@ -172,29 +171,29 @@ namespace helpdesk2018.View
             mskAlteraTelefone.Text = dtgAlteraResultado.CurrentRow.Cells["telefone"].Value.ToString();
             txtAlteraEndereco.Text = dtgAlteraResultado.CurrentRow.Cells["endereco"].Value.ToString();
             ckbAlteraAtiva.Checked = Convert.ToBoolean(dtgAlteraResultado.CurrentRow.Cells["ativa"].Value.ToString());
-            btnAlterarOK.Enabled = true;
+            gpbConfirmaAlteracao.Enabled = true;
         }
 
-        private void btnAlterarOK_Click(object sender, EventArgs e)
+        public void AlterarEmpresa()
         {
-            if (txtAlteraNome.Text=="")
+            if (txtAlteraNome.Text == "")
             {
                 txtVermAltNome.Visible = true;
-                MessageBox.Show(" Nome não pode ficar em Branco ", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show(" Nome não pode ficar em Branco ", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 txtAlteraNome.Focus();
                 return;
             }
-            if(mskAlteraTelefone.Text=="")
+            if (mskAlteraTelefone.Text == "")
             {
                 txtVermAltTelefone.Visible = true;
-                MessageBox.Show(" Telefone não pode ficar em branco ", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show(" Telefone não pode ficar em branco ", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 mskAlteraTelefone.Focus();
                 return;
             }
             if (txtAlteraEndereco.Text == "")
             {
                 txtVermAltEndereco.Visible = true;
-                MessageBox.Show(" Endereço não pode ficar em branco ", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show(" Endereço não pode ficar em branco ", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 txtAlteraEndereco.Focus();
                 return;
             }
@@ -203,7 +202,7 @@ namespace helpdesk2018.View
             bool duplicado = ctlManutencaoEmpresas.VerificarDuplicidade(nome, id);
             if (duplicado)
             {
-                MessageBox.Show(" Esse Nome de empresa já está cadastrada ", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show(" Esse Nome de empresa já está cadastrada ", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 txtAlteraNome.Focus();
                 return;
             }
@@ -215,30 +214,34 @@ namespace helpdesk2018.View
             _mdlmanutencaoempresa.Ativa = ckbAlteraAtiva.Checked;
             _mdlmanutencaoempresa.ID = id;
             dtgAlteraResultado.DataSource = ctlManutencaoEmpresas.AlteraEmpresaMDL(_mdlmanutencaoempresa);
-            btnAlterarOK.Enabled = false;
+            gpbConfirmaAlteracao.Enabled = false;
 
             bool retorno1 = ctlManutencaoEmpresas.AlteraEmpresaMDL(_mdlmanutencaoempresa);
             if (retorno1)
             {
-                MessageBox.Show("Dados alterados com sucesso");
+                MessageBox.Show("Dados alterados com sucesso", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 limpar();
                 txtPesquisarEmpresa.Focus();
-
             }
             else
             {
-                MessageBox.Show("Erro ao alterar");
+                MessageBox.Show("Erro ao alterar", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void btnAlterarOK_Click(object sender, EventArgs e)
+        {
+            AlterarEmpresa();
         }
 
         private void txtNome_KeyPress(object sender, KeyPressEventArgs e)
         {
             lblVermErro.Visible = false;
             txtVermIncNome.Visible = false;
-                if (e.KeyChar == 13)
-                {
+            if (e.KeyChar == 13)
+            {
                 mskTelefone.Focus();
-                }
+            }
         }
 
         private void txtTelefone_KeyPress(object sender, KeyPressEventArgs e)
@@ -264,6 +267,10 @@ namespace helpdesk2018.View
         private void txtAlteraNome_KeyPress(object sender, KeyPressEventArgs e)
         { 
             txtVermAltNome.Visible = false;
+            if (e.KeyChar == 13)
+            {
+                mskAlteraTelefone.Focus();
+            }
         }
 
         private void txtAlteraTelefone_KeyPress(object sender, KeyPressEventArgs e)
@@ -274,6 +281,10 @@ namespace helpdesk2018.View
         private void txtAlteraEndereco_KeyPress(object sender, KeyPressEventArgs e)
         {
             txtVermAltEndereco.Visible = false;
+            if (e.KeyChar == 13)
+            {
+                ckbAlteraAtiva.Focus();
+            }
         }
 
         private void tabControl1_MouseClick(object sender, MouseEventArgs e)
@@ -288,7 +299,6 @@ namespace helpdesk2018.View
             {
                 PesquisarEmpresa();
             }
-
         }
 
         private void mskTelefone_KeyPress(object sender, KeyPressEventArgs e)
@@ -304,6 +314,18 @@ namespace helpdesk2018.View
         private void mskAlteraTelefone_KeyPress(object sender, KeyPressEventArgs e)
         {
             txtVermAltTelefone.Visible = false;
+            if (e.KeyChar == 13)
+            {
+                txtAlteraEndereco.Focus();
+            }
+        }
+
+        private void ckbAlteraAtiva_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 13)
+            {
+                AlterarEmpresa();
+            }
         }
     }
 }

@@ -108,7 +108,6 @@
             this.label7.Size = new System.Drawing.Size(58, 13);
             this.label7.TabIndex = 6;
             this.label7.Text = "Descrição:";
-            this.label7.Click += new System.EventHandler(this.label7_Click);
             // 
             // lblData
             // 
@@ -118,7 +117,6 @@
             this.lblData.TabIndex = 7;
             this.lblData.Text = "Data";
             this.lblData.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.lblData.Click += new System.EventHandler(this.lblData_Click);
             // 
             // lblHora
             // 
@@ -128,7 +126,6 @@
             this.lblHora.TabIndex = 8;
             this.lblHora.Text = "Hora";
             this.lblHora.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.lblHora.Click += new System.EventHandler(this.lblHora_Click);
             // 
             // txtDescricao
             // 
@@ -137,7 +134,6 @@
             this.txtDescricao.Name = "txtDescricao";
             this.txtDescricao.Size = new System.Drawing.Size(373, 154);
             this.txtDescricao.TabIndex = 2;
-            this.txtDescricao.TextChanged += new System.EventHandler(this.txtDescricao_TextChanged);
             // 
             // cbbMotivo
             // 
@@ -147,7 +143,6 @@
             this.cbbMotivo.Name = "cbbMotivo";
             this.cbbMotivo.Size = new System.Drawing.Size(372, 21);
             this.cbbMotivo.TabIndex = 1;
-            this.cbbMotivo.SelectedIndexChanged += new System.EventHandler(this.cbbMotivo_SelectedIndexChanged);
             // 
             // btnAnexo
             // 

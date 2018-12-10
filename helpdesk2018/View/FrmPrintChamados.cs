@@ -29,7 +29,5 @@ namespace helpdesk2018.View
             this.reportViewer1.LocalReport.Refresh();
             this.reportViewer1.RefreshReport();
         }
-
-
     }
 }

@@ -51,28 +51,24 @@ namespace helpdesk2018.View
         {
             if (txtResposta.Text == "")
             {
-                MessageBox.Show(" Resposta não pode ficar em branco ");
+                MessageBox.Show(" Resposta não pode ficar em branco ", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 txtResposta.Focus();
                 return;
             }
             if(ctlChamados.FecharChamado(txtResposta.Text) == true)
             {
-                MessageBox.Show("Chamado fechado com sucesso!");
+                MessageBox.Show("Chamado fechado com sucesso!", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 txtResposta.Enabled = false;
                 btnFecharChamado.Enabled = false;
             }else
             {
-                MessageBox.Show("Ocorreu um erro, tente novamente");
+                MessageBox.Show("Ocorreu um erro, tente novamente", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
             Close();
-        }
-
-        private void btnAnexo_Click(object sender, EventArgs e)
-        {
         }
 
         private void btnAnexo_Click_1(object sender, EventArgs e)

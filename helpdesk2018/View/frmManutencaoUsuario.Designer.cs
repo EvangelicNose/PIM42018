@@ -43,12 +43,13 @@
             this.txtSenha = new System.Windows.Forms.TextBox();
             this.cbNivel = new System.Windows.Forms.ComboBox();
             this.gbDados = new System.Windows.Forms.GroupBox();
+            this.mskTelefone = new System.Windows.Forms.MaskedTextBox();
             this.ckbAtivo = new System.Windows.Forms.CheckBox();
-            this.txtTelefone = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.cbEmpresas = new System.Windows.Forms.ComboBox();
             this.gpbAltera = new System.Windows.Forms.GroupBox();
+            this.btnAlteraCancelar = new System.Windows.Forms.Button();
             this.dtgAlteraResultado = new System.Windows.Forms.DataGridView();
             this.idusuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fk_idempresa = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -61,25 +62,26 @@
             this.btnAlteraPesquisa = new System.Windows.Forms.Button();
             this.txtPesquisaNome = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
-            this.ckbAlteraAtivo = new System.Windows.Forms.CheckBox();
-            this.txtAlteraTelefone = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.cbbAlteraEmpresa = new System.Windows.Forms.ComboBox();
-            this.btnAlteraCancelar = new System.Windows.Forms.Button();
+            this.gpbConfirmaAlteracao = new System.Windows.Forms.GroupBox();
             this.txtAlteraUsuario = new System.Windows.Forms.TextBox();
-            this.btnAlteraOK = new System.Windows.Forms.Button();
-            this.cbbAlteraNivel = new System.Windows.Forms.ComboBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.txtAlteraSenha = new System.Windows.Forms.TextBox();
-            this.label10 = new System.Windows.Forms.Label();
-            this.txtAlteraNome = new System.Windows.Forms.TextBox();
-            this.label11 = new System.Windows.Forms.Label();
+            this.mskAlteraTelefone = new System.Windows.Forms.MaskedTextBox();
             this.label12 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.txtAlteraNome = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.txtAlteraSenha = new System.Windows.Forms.TextBox();
+            this.ckbAlteraAtivo = new System.Windows.Forms.CheckBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.cbbAlteraNivel = new System.Windows.Forms.ComboBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.btnAlteraOK = new System.Windows.Forms.Button();
+            this.cbbAlteraEmpresa = new System.Windows.Forms.ComboBox();
             this.gbEscolha.SuspendLayout();
             this.gbDados.SuspendLayout();
             this.gpbAltera.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgAlteraResultado)).BeginInit();
+            this.gpbConfirmaAlteracao.SuspendLayout();
             this.SuspendLayout();
             // 
             // gbEscolha
@@ -99,7 +101,7 @@
             this.btnVoltar.Location = new System.Drawing.Point(6, 328);
             this.btnVoltar.Name = "btnVoltar";
             this.btnVoltar.Size = new System.Drawing.Size(75, 23);
-            this.btnVoltar.TabIndex = 3;
+            this.btnVoltar.TabIndex = 2;
             this.btnVoltar.Text = "&Sair";
             this.btnVoltar.UseVisualStyleBackColor = true;
             this.btnVoltar.Click += new System.EventHandler(this.button4_Click);
@@ -186,6 +188,7 @@
             this.txtUsuario.Name = "txtUsuario";
             this.txtUsuario.Size = new System.Drawing.Size(133, 20);
             this.txtUsuario.TabIndex = 0;
+            this.txtUsuario.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtUsuario_KeyPress);
             // 
             // txtNome
             // 
@@ -193,6 +196,7 @@
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new System.Drawing.Size(133, 20);
             this.txtNome.TabIndex = 1;
+            this.txtNome.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNome_KeyPress);
             // 
             // txtSenha
             // 
@@ -200,6 +204,7 @@
             this.txtSenha.Name = "txtSenha";
             this.txtSenha.Size = new System.Drawing.Size(133, 20);
             this.txtSenha.TabIndex = 2;
+            this.txtSenha.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSenha_KeyPress);
             // 
             // cbNivel
             // 
@@ -213,11 +218,12 @@
             this.cbNivel.Name = "cbNivel";
             this.cbNivel.Size = new System.Drawing.Size(133, 21);
             this.cbNivel.TabIndex = 4;
+            this.cbNivel.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cbNivel_KeyPress);
             // 
             // gbDados
             // 
+            this.gbDados.Controls.Add(this.mskTelefone);
             this.gbDados.Controls.Add(this.ckbAtivo);
-            this.gbDados.Controls.Add(this.txtTelefone);
             this.gbDados.Controls.Add(this.label6);
             this.gbDados.Controls.Add(this.label5);
             this.gbDados.Controls.Add(this.cbEmpresas);
@@ -239,6 +245,16 @@
             this.gbDados.Text = "Incluir:";
             this.gbDados.Visible = false;
             // 
+            // mskTelefone
+            // 
+            this.mskTelefone.Location = new System.Drawing.Point(96, 149);
+            this.mskTelefone.Mask = "(99) 00000-0000";
+            this.mskTelefone.Name = "mskTelefone";
+            this.mskTelefone.Size = new System.Drawing.Size(133, 20);
+            this.mskTelefone.TabIndex = 3;
+            this.mskTelefone.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
+            this.mskTelefone.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.mskTelefone_KeyPress);
+            // 
             // ckbAtivo
             // 
             this.ckbAtivo.AutoSize = true;
@@ -252,13 +268,6 @@
             this.ckbAtivo.Text = "  : Ativo  ";
             this.ckbAtivo.UseVisualStyleBackColor = true;
             this.ckbAtivo.Visible = false;
-            // 
-            // txtTelefone
-            // 
-            this.txtTelefone.Location = new System.Drawing.Point(96, 149);
-            this.txtTelefone.Name = "txtTelefone";
-            this.txtTelefone.Size = new System.Drawing.Size(133, 20);
-            this.txtTelefone.TabIndex = 3;
             // 
             // label6
             // 
@@ -286,35 +295,33 @@
             this.cbEmpresas.Name = "cbEmpresas";
             this.cbEmpresas.Size = new System.Drawing.Size(133, 21);
             this.cbEmpresas.TabIndex = 5;
+            this.cbEmpresas.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cbEmpresas_KeyPress);
             // 
             // gpbAltera
             // 
+            this.gpbAltera.Controls.Add(this.btnAlteraCancelar);
             this.gpbAltera.Controls.Add(this.dtgAlteraResultado);
             this.gpbAltera.Controls.Add(this.btnAlteraPesquisa);
             this.gpbAltera.Controls.Add(this.txtPesquisaNome);
             this.gpbAltera.Controls.Add(this.label13);
-            this.gpbAltera.Controls.Add(this.ckbAlteraAtivo);
-            this.gpbAltera.Controls.Add(this.txtAlteraTelefone);
-            this.gpbAltera.Controls.Add(this.label7);
-            this.gpbAltera.Controls.Add(this.label8);
-            this.gpbAltera.Controls.Add(this.cbbAlteraEmpresa);
-            this.gpbAltera.Controls.Add(this.btnAlteraCancelar);
-            this.gpbAltera.Controls.Add(this.txtAlteraUsuario);
-            this.gpbAltera.Controls.Add(this.btnAlteraOK);
-            this.gpbAltera.Controls.Add(this.cbbAlteraNivel);
-            this.gpbAltera.Controls.Add(this.label9);
-            this.gpbAltera.Controls.Add(this.txtAlteraSenha);
-            this.gpbAltera.Controls.Add(this.label10);
-            this.gpbAltera.Controls.Add(this.txtAlteraNome);
-            this.gpbAltera.Controls.Add(this.label11);
-            this.gpbAltera.Controls.Add(this.label12);
+            this.gpbAltera.Controls.Add(this.gpbConfirmaAlteracao);
             this.gpbAltera.Location = new System.Drawing.Point(12, 11);
             this.gpbAltera.Name = "gpbAltera";
-            this.gpbAltera.Size = new System.Drawing.Size(428, 357);
+            this.gpbAltera.Size = new System.Drawing.Size(428, 363);
             this.gpbAltera.TabIndex = 0;
             this.gpbAltera.TabStop = false;
             this.gpbAltera.Text = "Alterar dados: ";
             this.gpbAltera.Visible = false;
+            // 
+            // btnAlteraCancelar
+            // 
+            this.btnAlteraCancelar.Location = new System.Drawing.Point(336, 322);
+            this.btnAlteraCancelar.Name = "btnAlteraCancelar";
+            this.btnAlteraCancelar.Size = new System.Drawing.Size(75, 23);
+            this.btnAlteraCancelar.TabIndex = 11;
+            this.btnAlteraCancelar.Text = "&Voltar";
+            this.btnAlteraCancelar.UseVisualStyleBackColor = true;
+            this.btnAlteraCancelar.Click += new System.EventHandler(this.btnAlteraCancelar_Click);
             // 
             // dtgAlteraResultado
             // 
@@ -338,7 +345,7 @@
             this.dtgAlteraResultado.RowHeadersVisible = false;
             this.dtgAlteraResultado.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dtgAlteraResultado.Size = new System.Drawing.Size(396, 150);
-            this.dtgAlteraResultado.TabIndex = 27;
+            this.dtgAlteraResultado.TabIndex = 2;
             this.dtgAlteraResultado.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgAlteraResultado_CellClick);
             // 
             // idusuario
@@ -422,7 +429,7 @@
             this.txtPesquisaNome.Name = "txtPesquisaNome";
             this.txtPesquisaNome.Size = new System.Drawing.Size(215, 20);
             this.txtPesquisaNome.TabIndex = 0;
-            this.txtPesquisaNome.TextChanged += new System.EventHandler(this.txtPesquisaNome_TextChanged);
+            this.txtPesquisaNome.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPesquisaNome_KeyPress);
             // 
             // label13
             // 
@@ -430,81 +437,122 @@
             this.label13.Location = new System.Drawing.Point(11, 29);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(87, 13);
-            this.label13.TabIndex = 5;
+            this.label13.TabIndex = 15;
             this.label13.Text = "Pesquisar Nome:";
+            // 
+            // gpbConfirmaAlteracao
+            // 
+            this.gpbConfirmaAlteracao.Controls.Add(this.txtAlteraUsuario);
+            this.gpbConfirmaAlteracao.Controls.Add(this.mskAlteraTelefone);
+            this.gpbConfirmaAlteracao.Controls.Add(this.label12);
+            this.gpbConfirmaAlteracao.Controls.Add(this.label11);
+            this.gpbConfirmaAlteracao.Controls.Add(this.txtAlteraNome);
+            this.gpbConfirmaAlteracao.Controls.Add(this.label10);
+            this.gpbConfirmaAlteracao.Controls.Add(this.txtAlteraSenha);
+            this.gpbConfirmaAlteracao.Controls.Add(this.ckbAlteraAtivo);
+            this.gpbConfirmaAlteracao.Controls.Add(this.label9);
+            this.gpbConfirmaAlteracao.Controls.Add(this.label7);
+            this.gpbConfirmaAlteracao.Controls.Add(this.cbbAlteraNivel);
+            this.gpbConfirmaAlteracao.Controls.Add(this.label8);
+            this.gpbConfirmaAlteracao.Controls.Add(this.btnAlteraOK);
+            this.gpbConfirmaAlteracao.Controls.Add(this.cbbAlteraEmpresa);
+            this.gpbConfirmaAlteracao.Enabled = false;
+            this.gpbConfirmaAlteracao.Location = new System.Drawing.Point(7, 220);
+            this.gpbConfirmaAlteracao.Name = "gpbConfirmaAlteracao";
+            this.gpbConfirmaAlteracao.Size = new System.Drawing.Size(415, 132);
+            this.gpbConfirmaAlteracao.TabIndex = 6;
+            this.gpbConfirmaAlteracao.TabStop = false;
+            // 
+            // txtAlteraUsuario
+            // 
+            this.txtAlteraUsuario.Location = new System.Drawing.Point(65, 15);
+            this.txtAlteraUsuario.Name = "txtAlteraUsuario";
+            this.txtAlteraUsuario.Size = new System.Drawing.Size(133, 20);
+            this.txtAlteraUsuario.TabIndex = 3;
+            this.txtAlteraUsuario.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtAlteraUsuario_KeyPress);
+            // 
+            // mskAlteraTelefone
+            // 
+            this.mskAlteraTelefone.Location = new System.Drawing.Point(274, 41);
+            this.mskAlteraTelefone.Mask = "(99) 00000-0000";
+            this.mskAlteraTelefone.Name = "mskAlteraTelefone";
+            this.mskAlteraTelefone.Size = new System.Drawing.Size(133, 20);
+            this.mskAlteraTelefone.TabIndex = 6;
+            this.mskAlteraTelefone.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
+            this.mskAlteraTelefone.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.mskAlteraTelefone_KeyPress);
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(8, 70);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(36, 13);
+            this.label12.TabIndex = 20;
+            this.label12.Text = "Nível:";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(8, 44);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(41, 13);
+            this.label11.TabIndex = 17;
+            this.label11.Text = "Senha:";
+            // 
+            // txtAlteraNome
+            // 
+            this.txtAlteraNome.Location = new System.Drawing.Point(274, 15);
+            this.txtAlteraNome.Name = "txtAlteraNome";
+            this.txtAlteraNome.Size = new System.Drawing.Size(133, 20);
+            this.txtAlteraNome.TabIndex = 4;
+            this.txtAlteraNome.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtAlteraNome_KeyPress);
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(217, 18);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(38, 13);
+            this.label10.TabIndex = 15;
+            this.label10.Text = "Nome:";
+            // 
+            // txtAlteraSenha
+            // 
+            this.txtAlteraSenha.Location = new System.Drawing.Point(65, 41);
+            this.txtAlteraSenha.Name = "txtAlteraSenha";
+            this.txtAlteraSenha.Size = new System.Drawing.Size(133, 20);
+            this.txtAlteraSenha.TabIndex = 5;
+            this.txtAlteraSenha.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtAlteraSenha_KeyPress);
             // 
             // ckbAlteraAtivo
             // 
             this.ckbAlteraAtivo.AutoSize = true;
-            this.ckbAlteraAtivo.Location = new System.Drawing.Point(14, 325);
+            this.ckbAlteraAtivo.Location = new System.Drawing.Point(8, 106);
             this.ckbAlteraAtivo.Name = "ckbAlteraAtivo";
             this.ckbAlteraAtivo.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.ckbAlteraAtivo.Size = new System.Drawing.Size(68, 17);
-            this.ckbAlteraAtivo.TabIndex = 8;
+            this.ckbAlteraAtivo.TabIndex = 9;
             this.ckbAlteraAtivo.Text = "  : Ativo  ";
             this.ckbAlteraAtivo.UseVisualStyleBackColor = true;
+            this.ckbAlteraAtivo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ckbAlteraAtivo_KeyPress);
             // 
-            // txtAlteraTelefone
+            // label9
             // 
-            this.txtAlteraTelefone.Location = new System.Drawing.Point(280, 260);
-            this.txtAlteraTelefone.Name = "txtAlteraTelefone";
-            this.txtAlteraTelefone.Size = new System.Drawing.Size(133, 20);
-            this.txtAlteraTelefone.TabIndex = 5;
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(8, 18);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(46, 13);
+            this.label9.TabIndex = 12;
+            this.label9.Text = "Usuário:";
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(223, 263);
+            this.label7.Location = new System.Drawing.Point(217, 44);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(52, 13);
             this.label7.TabIndex = 22;
             this.label7.Text = "Telefone:";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(223, 288);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(54, 13);
-            this.label8.TabIndex = 18;
-            this.label8.Text = "Empresa: ";
-            // 
-            // cbbAlteraEmpresa
-            // 
-            this.cbbAlteraEmpresa.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbbAlteraEmpresa.FormattingEnabled = true;
-            this.cbbAlteraEmpresa.Location = new System.Drawing.Point(280, 286);
-            this.cbbAlteraEmpresa.Name = "cbbAlteraEmpresa";
-            this.cbbAlteraEmpresa.Size = new System.Drawing.Size(133, 21);
-            this.cbbAlteraEmpresa.TabIndex = 7;
-            // 
-            // btnAlteraCancelar
-            // 
-            this.btnAlteraCancelar.Location = new System.Drawing.Point(344, 323);
-            this.btnAlteraCancelar.Name = "btnAlteraCancelar";
-            this.btnAlteraCancelar.Size = new System.Drawing.Size(75, 23);
-            this.btnAlteraCancelar.TabIndex = 10;
-            this.btnAlteraCancelar.Text = "&Voltar";
-            this.btnAlteraCancelar.UseVisualStyleBackColor = true;
-            this.btnAlteraCancelar.Click += new System.EventHandler(this.btnAlteraCancelar_Click);
-            // 
-            // txtAlteraUsuario
-            // 
-            this.txtAlteraUsuario.Location = new System.Drawing.Point(71, 234);
-            this.txtAlteraUsuario.Name = "txtAlteraUsuario";
-            this.txtAlteraUsuario.Size = new System.Drawing.Size(133, 20);
-            this.txtAlteraUsuario.TabIndex = 2;
-            // 
-            // btnAlteraOK
-            // 
-            this.btnAlteraOK.Enabled = false;
-            this.btnAlteraOK.Location = new System.Drawing.Point(226, 323);
-            this.btnAlteraOK.Name = "btnAlteraOK";
-            this.btnAlteraOK.Size = new System.Drawing.Size(75, 23);
-            this.btnAlteraOK.TabIndex = 9;
-            this.btnAlteraOK.Text = "&Alterar";
-            this.btnAlteraOK.UseVisualStyleBackColor = true;
-            this.btnAlteraOK.Click += new System.EventHandler(this.btnAlteraOK_Click);
             // 
             // cbbAlteraNivel
             // 
@@ -514,60 +562,40 @@
             "Usuário",
             "Técnico",
             "Administrador"});
-            this.cbbAlteraNivel.Location = new System.Drawing.Point(71, 286);
+            this.cbbAlteraNivel.Location = new System.Drawing.Point(65, 67);
             this.cbbAlteraNivel.Name = "cbbAlteraNivel";
             this.cbbAlteraNivel.Size = new System.Drawing.Size(133, 21);
-            this.cbbAlteraNivel.TabIndex = 6;
+            this.cbbAlteraNivel.TabIndex = 7;
+            this.cbbAlteraNivel.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cbbAlteraNivel_KeyPress);
             // 
-            // label9
+            // label8
             // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(14, 237);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(46, 13);
-            this.label9.TabIndex = 12;
-            this.label9.Text = "Usuário:";
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(217, 69);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(54, 13);
+            this.label8.TabIndex = 18;
+            this.label8.Text = "Empresa: ";
             // 
-            // txtAlteraSenha
+            // btnAlteraOK
             // 
-            this.txtAlteraSenha.Location = new System.Drawing.Point(71, 260);
-            this.txtAlteraSenha.Name = "txtAlteraSenha";
-            this.txtAlteraSenha.Size = new System.Drawing.Size(133, 20);
-            this.txtAlteraSenha.TabIndex = 4;
+            this.btnAlteraOK.Location = new System.Drawing.Point(220, 102);
+            this.btnAlteraOK.Name = "btnAlteraOK";
+            this.btnAlteraOK.Size = new System.Drawing.Size(75, 23);
+            this.btnAlteraOK.TabIndex = 10;
+            this.btnAlteraOK.Text = "&Alterar";
+            this.btnAlteraOK.UseVisualStyleBackColor = true;
+            this.btnAlteraOK.Click += new System.EventHandler(this.btnAlteraOK_Click);
             // 
-            // label10
+            // cbbAlteraEmpresa
             // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(223, 237);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(38, 13);
-            this.label10.TabIndex = 15;
-            this.label10.Text = "Nome:";
-            // 
-            // txtAlteraNome
-            // 
-            this.txtAlteraNome.Location = new System.Drawing.Point(280, 234);
-            this.txtAlteraNome.Name = "txtAlteraNome";
-            this.txtAlteraNome.Size = new System.Drawing.Size(133, 20);
-            this.txtAlteraNome.TabIndex = 3;
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(14, 263);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(41, 13);
-            this.label11.TabIndex = 17;
-            this.label11.Text = "Senha:";
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(14, 289);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(36, 13);
-            this.label12.TabIndex = 20;
-            this.label12.Text = "Nível:";
+            this.cbbAlteraEmpresa.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbbAlteraEmpresa.FormattingEnabled = true;
+            this.cbbAlteraEmpresa.Location = new System.Drawing.Point(274, 67);
+            this.cbbAlteraEmpresa.Name = "cbbAlteraEmpresa";
+            this.cbbAlteraEmpresa.Size = new System.Drawing.Size(133, 21);
+            this.cbbAlteraEmpresa.TabIndex = 8;
+            this.cbbAlteraEmpresa.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cbbAlteraEmpresa_KeyPress);
             // 
             // frmManutencaoUsuario
             // 
@@ -588,6 +616,8 @@
             this.gpbAltera.ResumeLayout(false);
             this.gpbAltera.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgAlteraResultado)).EndInit();
+            this.gpbConfirmaAlteracao.ResumeLayout(false);
+            this.gpbConfirmaAlteracao.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -611,11 +641,9 @@
         private System.Windows.Forms.ComboBox cbEmpresas;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.ComboBox cbNivel;
-        private System.Windows.Forms.TextBox txtTelefone;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.CheckBox ckbAtivo;
         private System.Windows.Forms.CheckBox ckbAlteraAtivo;
-        private System.Windows.Forms.TextBox txtAlteraTelefone;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.ComboBox cbbAlteraEmpresa;
@@ -642,5 +670,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn senha;
         private System.Windows.Forms.DataGridViewTextBoxColumn nivelAcesso;
         private System.Windows.Forms.DataGridViewCheckBoxColumn ativo;
+        private System.Windows.Forms.MaskedTextBox mskAlteraTelefone;
+        private System.Windows.Forms.MaskedTextBox mskTelefone;
+        private System.Windows.Forms.GroupBox gpbConfirmaAlteracao;
     }
 }

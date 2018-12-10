@@ -16,23 +16,6 @@ namespace helpdesk2018.View
         public frmLogin()
         {
             InitializeComponent();
-            
-
-        }
-
-        void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-       
-        void btnLogin_Click(object sender, EventArgs e)
-        {
-                         
-        }
-
-        void frmLogin_Load(object sender, EventArgs e)
-        {
-            
         }
 
         public static string UsuarioConectado;
@@ -54,13 +37,13 @@ namespace helpdesk2018.View
 
             if (txtUsuario.Text == "")
             {
-                MessageBox.Show("Usuário não pode ficar em branco !");
+                MessageBox.Show("Usuário não pode ficar em branco !", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 branco = 1;
                 txtUsuario.Focus();
             }
             else if (txtSenha.Text == "")
             {
-                MessageBox.Show("Senha não pode ficar em branco !");
+                MessageBox.Show("Senha não pode ficar em branco !", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 branco = 1;
                 txtSenha.Focus();
             }
@@ -118,18 +101,6 @@ namespace helpdesk2018.View
             timer1.Stop();
         }
 
-        void lblERRO_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnEntrar2_KeyPress(object sender, KeyPressEventArgs e)
-        {
-
-        }
-
-
-
         private void txtUsuario_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (e.KeyChar == 13)
@@ -144,11 +115,6 @@ namespace helpdesk2018.View
             {
                 Entrar();
             }
-        }
-
-        private void txtSenha_TextChanged(object sender, EventArgs e)
-        {
-
         }
 
         private void label1_Click_1(object sender, EventArgs e)

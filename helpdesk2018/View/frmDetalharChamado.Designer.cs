@@ -53,6 +53,7 @@
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new System.Drawing.Size(208, 20);
             this.txtNome.TabIndex = 0;
+            this.txtNome.TabStop = false;
             // 
             // txtEmpresa
             // 
@@ -61,6 +62,7 @@
             this.txtEmpresa.Name = "txtEmpresa";
             this.txtEmpresa.Size = new System.Drawing.Size(208, 20);
             this.txtEmpresa.TabIndex = 1;
+            this.txtEmpresa.TabStop = false;
             // 
             // txtMotivo
             // 
@@ -69,6 +71,7 @@
             this.txtMotivo.Name = "txtMotivo";
             this.txtMotivo.Size = new System.Drawing.Size(249, 20);
             this.txtMotivo.TabIndex = 2;
+            this.txtMotivo.TabStop = false;
             // 
             // txtResposta
             // 
@@ -76,7 +79,7 @@
             this.txtResposta.Multiline = true;
             this.txtResposta.Name = "txtResposta";
             this.txtResposta.Size = new System.Drawing.Size(348, 107);
-            this.txtResposta.TabIndex = 3;
+            this.txtResposta.TabIndex = 0;
             // 
             // txtDescricao
             // 
@@ -85,7 +88,8 @@
             this.txtDescricao.Multiline = true;
             this.txtDescricao.Name = "txtDescricao";
             this.txtDescricao.Size = new System.Drawing.Size(249, 104);
-            this.txtDescricao.TabIndex = 4;
+            this.txtDescricao.TabIndex = 3;
+            this.txtDescricao.TabStop = false;
             // 
             // label1
             // 
@@ -137,7 +141,7 @@
             this.btnFecharChamado.Location = new System.Drawing.Point(72, 321);
             this.btnFecharChamado.Name = "btnFecharChamado";
             this.btnFecharChamado.Size = new System.Drawing.Size(105, 23);
-            this.btnFecharChamado.TabIndex = 10;
+            this.btnFecharChamado.TabIndex = 1;
             this.btnFecharChamado.Text = "Fechar chamado";
             this.btnFecharChamado.UseVisualStyleBackColor = true;
             this.btnFecharChamado.Click += new System.EventHandler(this.button1_Click);
@@ -147,7 +151,7 @@
             this.button2.Location = new System.Drawing.Point(345, 321);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 11;
+            this.button2.TabIndex = 3;
             this.button2.Text = "Voltar";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
@@ -176,7 +180,7 @@
             this.btnAnexo.Location = new System.Drawing.Point(330, 121);
             this.btnAnexo.Name = "btnAnexo";
             this.btnAnexo.Size = new System.Drawing.Size(93, 81);
-            this.btnAnexo.TabIndex = 14;
+            this.btnAnexo.TabIndex = 4;
             this.btnAnexo.UseVisualStyleBackColor = true;
             this.btnAnexo.Click += new System.EventHandler(this.btnAnexo_Click_1);
             // 
@@ -185,7 +189,7 @@
             this.button1.Location = new System.Drawing.Point(183, 321);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(105, 23);
-            this.button1.TabIndex = 15;
+            this.button1.TabIndex = 2;
             this.button1.Text = "Imprimir chamado";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click_1);

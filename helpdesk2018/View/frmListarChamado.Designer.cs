@@ -57,7 +57,7 @@
             this.dtgListaChamado.RowHeadersVisible = false;
             this.dtgListaChamado.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dtgListaChamado.Size = new System.Drawing.Size(563, 183);
-            this.dtgListaChamado.TabIndex = 2;
+            this.dtgListaChamado.TabIndex = 0;
             this.dtgListaChamado.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgListaChamado_CellClick);
             // 
             // btnVoltar
@@ -65,7 +65,7 @@
             this.btnVoltar.Location = new System.Drawing.Point(503, 271);
             this.btnVoltar.Name = "btnVoltar";
             this.btnVoltar.Size = new System.Drawing.Size(75, 23);
-            this.btnVoltar.TabIndex = 3;
+            this.btnVoltar.TabIndex = 1;
             this.btnVoltar.Text = "Sair";
             this.btnVoltar.UseVisualStyleBackColor = true;
             this.btnVoltar.Click += new System.EventHandler(this.btnVoltar_Click);

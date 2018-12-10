@@ -69,10 +69,12 @@
             this.txtVermAltTelefone = new System.Windows.Forms.TextBox();
             this.txtVermAltEndereco = new System.Windows.Forms.TextBox();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.gpbConfirmaAlteracao = new System.Windows.Forms.GroupBox();
             this.tabControl1.SuspendLayout();
             this.tbpIncluirEmpresa.SuspendLayout();
             this.tbpAlterarEmpresa.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgAlteraResultado)).BeginInit();
+            this.gpbConfirmaAlteracao.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnCancelar
@@ -165,7 +167,7 @@
             this.tabControl1.Location = new System.Drawing.Point(12, 12);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(362, 374);
+            this.tabControl1.Size = new System.Drawing.Size(362, 401);
             this.tabControl1.TabIndex = 12;
             this.toolTip1.SetToolTip(this.tabControl1, "Selecione");
             this.tabControl1.MouseClick += new System.Windows.Forms.MouseEventHandler(this.tabControl1_MouseClick);
@@ -190,7 +192,7 @@
             this.tbpIncluirEmpresa.Location = new System.Drawing.Point(4, 25);
             this.tbpIncluirEmpresa.Name = "tbpIncluirEmpresa";
             this.tbpIncluirEmpresa.Padding = new System.Windows.Forms.Padding(3);
-            this.tbpIncluirEmpresa.Size = new System.Drawing.Size(354, 345);
+            this.tbpIncluirEmpresa.Size = new System.Drawing.Size(354, 372);
             this.tbpIncluirEmpresa.TabIndex = 0;
             this.tbpIncluirEmpresa.Text = "Incluir Empresa";
             this.tbpIncluirEmpresa.UseVisualStyleBackColor = true;
@@ -201,7 +203,7 @@
             this.mskTelefone.Mask = "(99) 00000-0000";
             this.mskTelefone.Name = "mskTelefone";
             this.mskTelefone.Size = new System.Drawing.Size(100, 20);
-            this.mskTelefone.TabIndex = 19;
+            this.mskTelefone.TabIndex = 2;
             this.mskTelefone.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
             this.toolTip1.SetToolTip(this.mskTelefone, "Incluir telefone da empresa");
             this.mskTelefone.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.mskTelefone_KeyPress);
@@ -277,37 +279,27 @@
             // 
             // tbpAlterarEmpresa
             // 
-            this.tbpAlterarEmpresa.Controls.Add(this.mskAlteraTelefone);
+            this.tbpAlterarEmpresa.Controls.Add(this.btnAlterarCancelar);
+            this.tbpAlterarEmpresa.Controls.Add(this.gpbConfirmaAlteracao);
             this.tbpAlterarEmpresa.Controls.Add(this.dtgAlteraResultado);
-            this.tbpAlterarEmpresa.Controls.Add(this.ckbAlteraAtiva);
             this.tbpAlterarEmpresa.Controls.Add(this.btnPesquisarEmpresa);
             this.tbpAlterarEmpresa.Controls.Add(this.label7);
             this.tbpAlterarEmpresa.Controls.Add(this.txtPesquisarEmpresa);
-            this.tbpAlterarEmpresa.Controls.Add(this.txtAlteraNome);
-            this.tbpAlterarEmpresa.Controls.Add(this.label6);
-            this.tbpAlterarEmpresa.Controls.Add(this.btnAlterarCancelar);
-            this.tbpAlterarEmpresa.Controls.Add(this.label4);
-            this.tbpAlterarEmpresa.Controls.Add(this.label5);
-            this.tbpAlterarEmpresa.Controls.Add(this.btnAlterarOK);
-            this.tbpAlterarEmpresa.Controls.Add(this.txtAlteraEndereco);
-            this.tbpAlterarEmpresa.Controls.Add(this.txtVermAltNome);
-            this.tbpAlterarEmpresa.Controls.Add(this.txtVermAltTelefone);
-            this.tbpAlterarEmpresa.Controls.Add(this.txtVermAltEndereco);
             this.tbpAlterarEmpresa.Location = new System.Drawing.Point(4, 25);
             this.tbpAlterarEmpresa.Name = "tbpAlterarEmpresa";
             this.tbpAlterarEmpresa.Padding = new System.Windows.Forms.Padding(3);
-            this.tbpAlterarEmpresa.Size = new System.Drawing.Size(354, 345);
+            this.tbpAlterarEmpresa.Size = new System.Drawing.Size(354, 372);
             this.tbpAlterarEmpresa.TabIndex = 1;
             this.tbpAlterarEmpresa.Text = "Alterar Empresa";
             this.tbpAlterarEmpresa.UseVisualStyleBackColor = true;
             // 
             // mskAlteraTelefone
             // 
-            this.mskAlteraTelefone.Location = new System.Drawing.Point(64, 253);
+            this.mskAlteraTelefone.Location = new System.Drawing.Point(64, 47);
             this.mskAlteraTelefone.Mask = "(99) 00000-0000";
             this.mskAlteraTelefone.Name = "mskAlteraTelefone";
             this.mskAlteraTelefone.Size = new System.Drawing.Size(97, 20);
-            this.mskAlteraTelefone.TabIndex = 13;
+            this.mskAlteraTelefone.TabIndex = 5;
             this.mskAlteraTelefone.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
             this.toolTip1.SetToolTip(this.mskAlteraTelefone, "Telefone da empresa que pode ser mudada");
             this.mskAlteraTelefone.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.mskAlteraTelefone_KeyPress);
@@ -382,7 +374,7 @@
             this.ckbAlteraAtiva.Checked = true;
             this.ckbAlteraAtiva.CheckState = System.Windows.Forms.CheckState.Checked;
             this.ckbAlteraAtiva.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.ckbAlteraAtiva.Location = new System.Drawing.Point(273, 255);
+            this.ckbAlteraAtiva.Location = new System.Drawing.Point(273, 49);
             this.ckbAlteraAtiva.Name = "ckbAlteraAtiva";
             this.ckbAlteraAtiva.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.ckbAlteraAtiva.Size = new System.Drawing.Size(68, 17);
@@ -390,6 +382,7 @@
             this.ckbAlteraAtiva.Text = "    : Ativa";
             this.toolTip1.SetToolTip(this.ckbAlteraAtiva, "Selecione se está ativa ou não");
             this.ckbAlteraAtiva.UseVisualStyleBackColor = true;
+            this.ckbAlteraAtiva.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ckbAlteraAtiva_KeyPress);
             // 
             // btnPesquisarEmpresa
             // 
@@ -422,9 +415,9 @@
             // 
             // txtAlteraNome
             // 
-            this.txtAlteraNome.Location = new System.Drawing.Point(64, 221);
+            this.txtAlteraNome.Location = new System.Drawing.Point(64, 15);
             this.txtAlteraNome.Name = "txtAlteraNome";
-            this.txtAlteraNome.Size = new System.Drawing.Size(284, 20);
+            this.txtAlteraNome.Size = new System.Drawing.Size(279, 20);
             this.txtAlteraNome.TabIndex = 4;
             this.toolTip1.SetToolTip(this.txtAlteraNome, "Nome da empresa que pode ser alterada");
             this.txtAlteraNome.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtAlteraNome_KeyPress);
@@ -432,7 +425,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(8, 289);
+            this.label6.Location = new System.Drawing.Point(8, 83);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(56, 13);
             this.label6.TabIndex = 7;
@@ -440,10 +433,10 @@
             // 
             // btnAlterarCancelar
             // 
-            this.btnAlterarCancelar.Location = new System.Drawing.Point(273, 316);
+            this.btnAlterarCancelar.Location = new System.Drawing.Point(271, 326);
             this.btnAlterarCancelar.Name = "btnAlterarCancelar";
             this.btnAlterarCancelar.Size = new System.Drawing.Size(75, 23);
-            this.btnAlterarCancelar.TabIndex = 9;
+            this.btnAlterarCancelar.TabIndex = 8;
             this.btnAlterarCancelar.Text = "Sair";
             this.toolTip1.SetToolTip(this.btnAlterarCancelar, "Sair da manutenção empresas");
             this.btnAlterarCancelar.UseVisualStyleBackColor = true;
@@ -452,7 +445,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(9, 224);
+            this.label4.Location = new System.Drawing.Point(9, 18);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(38, 13);
             this.label4.TabIndex = 5;
@@ -461,7 +454,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(8, 256);
+            this.label5.Location = new System.Drawing.Point(8, 50);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(52, 13);
             this.label5.TabIndex = 6;
@@ -469,8 +462,7 @@
             // 
             // btnAlterarOK
             // 
-            this.btnAlterarOK.Enabled = false;
-            this.btnAlterarOK.Location = new System.Drawing.Point(6, 316);
+            this.btnAlterarOK.Location = new System.Drawing.Point(12, 110);
             this.btnAlterarOK.Name = "btnAlterarOK";
             this.btnAlterarOK.Size = new System.Drawing.Size(75, 23);
             this.btnAlterarOK.TabIndex = 8;
@@ -481,9 +473,9 @@
             // 
             // txtAlteraEndereco
             // 
-            this.txtAlteraEndereco.Location = new System.Drawing.Point(66, 286);
+            this.txtAlteraEndereco.Location = new System.Drawing.Point(66, 80);
             this.txtAlteraEndereco.Name = "txtAlteraEndereco";
-            this.txtAlteraEndereco.Size = new System.Drawing.Size(281, 20);
+            this.txtAlteraEndereco.Size = new System.Drawing.Size(276, 20);
             this.txtAlteraEndereco.TabIndex = 6;
             this.toolTip1.SetToolTip(this.txtAlteraEndereco, "Endereço da empresa que pode ser mudada");
             this.txtAlteraEndereco.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtAlteraEndereco_KeyPress);
@@ -492,10 +484,10 @@
             // 
             this.txtVermAltNome.BackColor = System.Drawing.Color.Red;
             this.txtVermAltNome.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtVermAltNome.Location = new System.Drawing.Point(63, 220);
+            this.txtVermAltNome.Location = new System.Drawing.Point(63, 14);
             this.txtVermAltNome.Multiline = true;
             this.txtVermAltNome.Name = "txtVermAltNome";
-            this.txtVermAltNome.Size = new System.Drawing.Size(286, 22);
+            this.txtVermAltNome.Size = new System.Drawing.Size(281, 22);
             this.txtVermAltNome.TabIndex = 10;
             this.txtVermAltNome.TabStop = false;
             this.txtVermAltNome.Visible = false;
@@ -504,7 +496,7 @@
             // 
             this.txtVermAltTelefone.BackColor = System.Drawing.Color.Red;
             this.txtVermAltTelefone.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtVermAltTelefone.Location = new System.Drawing.Point(63, 252);
+            this.txtVermAltTelefone.Location = new System.Drawing.Point(63, 46);
             this.txtVermAltTelefone.Multiline = true;
             this.txtVermAltTelefone.Name = "txtVermAltTelefone";
             this.txtVermAltTelefone.Size = new System.Drawing.Size(99, 22);
@@ -516,18 +508,39 @@
             // 
             this.txtVermAltEndereco.BackColor = System.Drawing.Color.Red;
             this.txtVermAltEndereco.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtVermAltEndereco.Location = new System.Drawing.Point(65, 285);
+            this.txtVermAltEndereco.Location = new System.Drawing.Point(65, 79);
             this.txtVermAltEndereco.Multiline = true;
             this.txtVermAltEndereco.Name = "txtVermAltEndereco";
-            this.txtVermAltEndereco.Size = new System.Drawing.Size(283, 22);
+            this.txtVermAltEndereco.Size = new System.Drawing.Size(278, 22);
             this.txtVermAltEndereco.TabIndex = 12;
             this.txtVermAltEndereco.Visible = false;
+            // 
+            // gpbConfirmaAlteracao
+            // 
+            this.gpbConfirmaAlteracao.Controls.Add(this.txtAlteraNome);
+            this.gpbConfirmaAlteracao.Controls.Add(this.mskAlteraTelefone);
+            this.gpbConfirmaAlteracao.Controls.Add(this.txtVermAltTelefone);
+            this.gpbConfirmaAlteracao.Controls.Add(this.ckbAlteraAtiva);
+            this.gpbConfirmaAlteracao.Controls.Add(this.txtVermAltNome);
+            this.gpbConfirmaAlteracao.Controls.Add(this.txtAlteraEndereco);
+            this.gpbConfirmaAlteracao.Controls.Add(this.btnAlterarOK);
+            this.gpbConfirmaAlteracao.Controls.Add(this.label5);
+            this.gpbConfirmaAlteracao.Controls.Add(this.label4);
+            this.gpbConfirmaAlteracao.Controls.Add(this.label6);
+            this.gpbConfirmaAlteracao.Controls.Add(this.txtVermAltEndereco);
+            this.gpbConfirmaAlteracao.Enabled = false;
+            this.gpbConfirmaAlteracao.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.gpbConfirmaAlteracao.Location = new System.Drawing.Point(3, 216);
+            this.gpbConfirmaAlteracao.Name = "gpbConfirmaAlteracao";
+            this.gpbConfirmaAlteracao.Size = new System.Drawing.Size(348, 148);
+            this.gpbConfirmaAlteracao.TabIndex = 4;
+            this.gpbConfirmaAlteracao.TabStop = false;
             // 
             // frmManutencaoEmpresas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(386, 398);
+            this.ClientSize = new System.Drawing.Size(386, 425);
             this.Controls.Add(this.tabControl1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "frmManutencaoEmpresas";
@@ -540,6 +553,8 @@
             this.tbpAlterarEmpresa.ResumeLayout(false);
             this.tbpAlterarEmpresa.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgAlteraResultado)).EndInit();
+            this.gpbConfirmaAlteracao.ResumeLayout(false);
+            this.gpbConfirmaAlteracao.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -585,5 +600,6 @@
         private System.Windows.Forms.MaskedTextBox mskTelefone;
         private System.Windows.Forms.MaskedTextBox mskAlteraTelefone;
         private System.Windows.Forms.ToolTip toolTip1;
+        private System.Windows.Forms.GroupBox gpbConfirmaAlteracao;
     }
 }
