@@ -36,8 +36,9 @@ namespace helpdesk2018
             dtgListaChamado.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.ColumnHeader; ;
             dtgListaChamado.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             dtgListaChamado.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            dtgListaChamado.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.ColumnHeader;
-            dtgListaChamado.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.ColumnHeader;
+            dtgListaChamado.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dtgListaChamado.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dtgListaChamado.Columns[5].AutoSizeMode = DataGridViewAutoSizeColumnMode.ColumnHeader;
             dtgListaChamado.ClearSelection();
             btnSair.Select();
         }
