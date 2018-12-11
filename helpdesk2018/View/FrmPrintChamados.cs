@@ -13,7 +13,7 @@ namespace helpdesk2018.View
     public partial class FrmPrintChamados : Form
     {
         public FrmPrintChamados(string OS, string Nome, string Empresa, string Motivo,
-            string Descricao, string Resposta)
+            string Descricao, string Aberto, string Resposta)
         {
             InitializeComponent();
             this.reportViewer1.LocalReport.DataSources.Clear();
@@ -24,6 +24,7 @@ namespace helpdesk2018.View
             p[2] = new Microsoft.Reporting.WinForms.ReportParameter("Motivo", Motivo);
             p[3] = new Microsoft.Reporting.WinForms.ReportParameter("Descricao", Descricao);
             p[4] = new Microsoft.Reporting.WinForms.ReportParameter("OS", OS);
+          //  p[5] = new Microsoft.Reporting.WinForms.ReportParameter("Aberto", Aberto);
             p[5] = new Microsoft.Reporting.WinForms.ReportParameter("Resposta", Resposta);
             this.reportViewer1.LocalReport.SetParameters(p);
             this.reportViewer1.LocalReport.Refresh();

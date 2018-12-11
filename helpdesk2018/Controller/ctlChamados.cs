@@ -1,6 +1,7 @@
 ﻿using System.Data.OleDb;
 using System.Data;
 using helpdesk2018.Model;
+using System;
 
 namespace helpdesk2018.Controller
 {
@@ -79,6 +80,8 @@ namespace helpdesk2018.Controller
             OleDbCommand cmd = conexao.Comando(@"
                 select
                     tb_chamados.os,
+                    tb_chamados.criado_em as Aberto,
+                    tb_chamados.fechado_em as Fechado,
                     tb_usuarios.nome as nome_usuario,
                     tb_chamados.resposta as chamado_resposta,
                     tb_chamados.fk_idstatus as chamado_status,
@@ -110,14 +113,14 @@ namespace helpdesk2018.Controller
 
             while (reader.Read())
             {
-
                 mdlChamados.Chamado.Resposta = reader["chamado_resposta"].ToString();
                 mdlChamados.Chamado.Status = reader["chamado_status"].ToString();
                 mdlChamados.Chamado.Descricao = reader["descricao"].ToString();
                 mdlChamados.Chamado.Motivo = reader["descricao_motivo"].ToString();
                 mdlChamados.Chamado.Empresa = reader["nome_empresa"].ToString();
                 mdlChamados.Chamado.NomeUsuario = reader["nome_usuario"].ToString();
-
+                mdlChamados.Chamado.Aberto = reader["Aberto"].ToString();
+                mdlChamados.Chamado.Fechado = reader["Fechado"].ToString();
             }
             reader.Close();
             conexao.Fechar();
@@ -125,16 +128,19 @@ namespace helpdesk2018.Controller
 
         public static bool FecharChamado(string resposta)
         {
-            Conexao conexao = new Conexao();
+            string fechado_em = DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss");
 
+            Conexao conexao = new Conexao();
             conexao.abrir();
             string SQL = "update tb_chamados " +
                 "set resposta = @resposta, " +
+                "fechado_em = @fechado, " +
                 "fk_idstatus = 2 " +
                 "where os = @os;";
 
             OleDbCommand cmd = new OleDbCommand(SQL, conexao.GetConexao());
             cmd.Parameters.AddWithValue("@resposta", resposta);
+            cmd.Parameters.AddWithValue("@fechado", fechado_em);
             cmd.Parameters.AddWithValue("@os", mdlChamados.Chamado.OS);
 
             cmd.ExecuteNonQuery();

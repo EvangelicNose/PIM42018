@@ -51,6 +51,7 @@
             this.Name = "FrmPrintChamados";
             this.Text = "Relatório de chamados...";
             this.ResumeLayout(false);
+
         }
 
         #endregion

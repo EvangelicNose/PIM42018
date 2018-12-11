@@ -46,6 +46,10 @@
             this.btnImprimir = new System.Windows.Forms.Button();
             this.btnAMaior = new System.Windows.Forms.Button();
             this.btnAMenor = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtAberto = new System.Windows.Forms.TextBox();
+            this.lblFechado = new System.Windows.Forms.Label();
+            this.txtFechado = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // txtNome
@@ -54,7 +58,7 @@
             this.txtNome.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNome.Location = new System.Drawing.Point(98, 33);
             this.txtNome.Name = "txtNome";
-            this.txtNome.Size = new System.Drawing.Size(210, 20);
+            this.txtNome.Size = new System.Drawing.Size(165, 20);
             this.txtNome.TabIndex = 0;
             this.txtNome.TabStop = false;
             // 
@@ -64,7 +68,7 @@
             this.txtEmpresa.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtEmpresa.Location = new System.Drawing.Point(98, 59);
             this.txtEmpresa.Name = "txtEmpresa";
-            this.txtEmpresa.Size = new System.Drawing.Size(210, 20);
+            this.txtEmpresa.Size = new System.Drawing.Size(165, 20);
             this.txtEmpresa.TabIndex = 1;
             this.txtEmpresa.TabStop = false;
             // 
@@ -74,7 +78,7 @@
             this.txtMotivo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtMotivo.Location = new System.Drawing.Point(98, 85);
             this.txtMotivo.Name = "txtMotivo";
-            this.txtMotivo.Size = new System.Drawing.Size(251, 20);
+            this.txtMotivo.Size = new System.Drawing.Size(262, 20);
             this.txtMotivo.TabIndex = 2;
             this.txtMotivo.TabStop = false;
             // 
@@ -84,7 +88,7 @@
             this.txtResposta.Location = new System.Drawing.Point(98, 233);
             this.txtResposta.Multiline = true;
             this.txtResposta.Name = "txtResposta";
-            this.txtResposta.Size = new System.Drawing.Size(350, 104);
+            this.txtResposta.Size = new System.Drawing.Size(374, 104);
             this.txtResposta.TabIndex = 0;
             // 
             // txtDescricao
@@ -94,7 +98,7 @@
             this.txtDescricao.Location = new System.Drawing.Point(98, 118);
             this.txtDescricao.Multiline = true;
             this.txtDescricao.Name = "txtDescricao";
-            this.txtDescricao.Size = new System.Drawing.Size(251, 104);
+            this.txtDescricao.Size = new System.Drawing.Size(262, 104);
             this.txtDescricao.TabIndex = 3;
             this.txtDescricao.TabStop = false;
             // 
@@ -167,7 +171,7 @@
             // btnVoltar
             // 
             this.btnVoltar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnVoltar.Location = new System.Drawing.Point(371, 346);
+            this.btnVoltar.Location = new System.Drawing.Point(395, 346);
             this.btnVoltar.Name = "btnVoltar";
             this.btnVoltar.Size = new System.Drawing.Size(77, 28);
             this.btnVoltar.TabIndex = 3;
@@ -179,7 +183,7 @@
             // 
             this.lblOS.AutoSize = true;
             this.lblOS.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblOS.Location = new System.Drawing.Point(339, 35);
+            this.lblOS.Location = new System.Drawing.Point(363, 87);
             this.lblOS.Name = "lblOS";
             this.lblOS.Size = new System.Drawing.Size(31, 13);
             this.lblOS.TabIndex = 12;
@@ -189,7 +193,7 @@
             // 
             this.txtOS.Enabled = false;
             this.txtOS.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtOS.Location = new System.Drawing.Point(384, 33);
+            this.txtOS.Location = new System.Drawing.Point(408, 85);
             this.txtOS.Name = "txtOS";
             this.txtOS.Size = new System.Drawing.Size(64, 20);
             this.txtOS.TabIndex = 13;
@@ -198,7 +202,7 @@
             // 
             this.btnAnexo.Enabled = false;
             this.btnAnexo.Image = global::helpdesk2018.Properties.Resources.Anexo;
-            this.btnAnexo.Location = new System.Drawing.Point(355, 141);
+            this.btnAnexo.Location = new System.Drawing.Point(379, 141);
             this.btnAnexo.Name = "btnAnexo";
             this.btnAnexo.Size = new System.Drawing.Size(93, 81);
             this.btnAnexo.TabIndex = 4;
@@ -218,7 +222,7 @@
             // 
             // btnAMaior
             // 
-            this.btnAMaior.Location = new System.Drawing.Point(420, 2);
+            this.btnAMaior.Location = new System.Drawing.Point(444, 2);
             this.btnAMaior.Name = "btnAMaior";
             this.btnAMaior.Size = new System.Drawing.Size(28, 23);
             this.btnAMaior.TabIndex = 24;
@@ -229,7 +233,7 @@
             // btnAMenor
             // 
             this.btnAMenor.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAMenor.Location = new System.Drawing.Point(397, 2);
+            this.btnAMenor.Location = new System.Drawing.Point(421, 2);
             this.btnAMenor.Name = "btnAMenor";
             this.btnAMenor.Size = new System.Drawing.Size(24, 23);
             this.btnAMenor.TabIndex = 23;
@@ -237,11 +241,51 @@
             this.btnAMenor.UseVisualStyleBackColor = true;
             this.btnAMenor.Click += new System.EventHandler(this.btnAMenor_Click);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(312, 36);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(41, 13);
+            this.label1.TabIndex = 25;
+            this.label1.Text = "Aberto:";
+            // 
+            // txtAberto
+            // 
+            this.txtAberto.Enabled = false;
+            this.txtAberto.Location = new System.Drawing.Point(359, 33);
+            this.txtAberto.Name = "txtAberto";
+            this.txtAberto.Size = new System.Drawing.Size(113, 20);
+            this.txtAberto.TabIndex = 26;
+            // 
+            // lblFechado
+            // 
+            this.lblFechado.AutoSize = true;
+            this.lblFechado.Location = new System.Drawing.Point(300, 62);
+            this.lblFechado.Name = "lblFechado";
+            this.lblFechado.Size = new System.Drawing.Size(52, 13);
+            this.lblFechado.TabIndex = 27;
+            this.lblFechado.Text = "Fechado:";
+            this.lblFechado.Visible = false;
+            // 
+            // txtFechado
+            // 
+            this.txtFechado.Enabled = false;
+            this.txtFechado.Location = new System.Drawing.Point(359, 59);
+            this.txtFechado.Name = "txtFechado";
+            this.txtFechado.Size = new System.Drawing.Size(113, 20);
+            this.txtFechado.TabIndex = 28;
+            this.txtFechado.Visible = false;
+            // 
             // frmDetalharChamado
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(464, 402);
+            this.ClientSize = new System.Drawing.Size(485, 402);
+            this.Controls.Add(this.txtFechado);
+            this.Controls.Add(this.lblFechado);
+            this.Controls.Add(this.txtAberto);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.btnAMaior);
             this.Controls.Add(this.btnAMenor);
             this.Controls.Add(this.btnImprimir);
@@ -291,5 +335,9 @@
         private System.Windows.Forms.Button btnImprimir;
         private System.Windows.Forms.Button btnAMaior;
         private System.Windows.Forms.Button btnAMenor;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox txtAberto;
+        private System.Windows.Forms.Label lblFechado;
+        private System.Windows.Forms.TextBox txtFechado;
     }
 }

@@ -13,6 +13,8 @@
         public string Status { get; set; }
         public string Resposta { get; set; }
         public string Anexo { get; set; }
+        public string Aberto { get; set; }
+        public string Fechado { get; set; }
 
         /*public mdlChamados(int os = 0, int idusuarios = 0, string nomeusuario = "", int idempresa = 0, string motivo = "", string descricao = "")
         {

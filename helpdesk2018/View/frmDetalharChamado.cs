@@ -48,13 +48,16 @@ namespace helpdesk2018.View
             txtEmpresa.Text = mdlChamados.Chamado.Empresa;
             txtNome.Text = mdlChamados.Chamado.NomeUsuario;
             txtMotivo.Text = mdlChamados.Chamado.Motivo;
-
+            txtAberto.Text = mdlChamados.Chamado.Aberto;
+            
             if (mdlChamados.Chamado.Status == "2")
             {
                 txtResposta.Text = mdlChamados.Chamado.Resposta;
                 txtResposta.Enabled = false;
                 btnFecharChamado.Enabled = false;
-
+                txtFechado.Visible = true;
+                lblFechado.Visible = true;
+                txtFechado.Text = mdlChamados.Chamado.Fechado;
             } 
         }
 
@@ -71,6 +74,7 @@ namespace helpdesk2018.View
                 MessageBox.Show("Chamado fechado com sucesso!", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 txtResposta.Enabled = false;
                 btnFecharChamado.Enabled = false;
+                btnVoltar.Select();
             }else
             {
                 MessageBox.Show("Ocorreu um erro, tente novamente", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -90,7 +94,7 @@ namespace helpdesk2018.View
 
         private void button1_Click_1(object sender, EventArgs e)
         {
-            FrmPrintChamados printChamados = new FrmPrintChamados(txtOS.Text, txtNome.Text, txtEmpresa.Text, txtMotivo.Text, txtDescricao.Text, txtResposta.Text);
+            FrmPrintChamados printChamados = new FrmPrintChamados(txtOS.Text, txtNome.Text, txtEmpresa.Text, txtMotivo.Text, txtDescricao.Text, txtAberto.Text, txtResposta.Text);
             printChamados.ShowDialog();
         }
 
