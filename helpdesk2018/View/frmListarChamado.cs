@@ -21,6 +21,17 @@ namespace helpdesk2018
         
         private void frmListarChamado_Load(object sender, EventArgs e)
         {
+            if (frmMenu.PCD == true)
+            {
+                btnAMaior.Visible = true;
+                btnAMenor.Visible = true;
+            }
+            else
+            {
+                btnAMaior.Visible = false;
+                btnAMenor.Visible = false;
+            }
+
             dtgListaChamado.DataSource = Controller.ctlManutencaoOS.ListarOS();
             dtgListaChamado.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.ColumnHeader; ;
             dtgListaChamado.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
@@ -28,6 +39,7 @@ namespace helpdesk2018
             dtgListaChamado.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.ColumnHeader;
             dtgListaChamado.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.ColumnHeader;
             dtgListaChamado.ClearSelection();
+            btnSair.Select();
         }
 
         private void btnVoltar_Click(object sender, EventArgs e)
@@ -42,6 +54,43 @@ namespace helpdesk2018
             frmDetalharChamado _frmDetalharChamado = new frmDetalharChamado();
             _frmDetalharChamado.ShowDialog();
             dtgListaChamado.DataSource = Controller.ctlManutencaoOS.ListarOS();
+        }
+
+        public float tamanhoAtual = 8.25F;
+        public void ItensPCD()
+        {
+            lblLista.Font = new Font(lblLista.Font.Name, tamanhoAtual);
+            dtgListaChamado.Font = new Font(dtgListaChamado.Font.Name, tamanhoAtual);
+            btnSair.Font = new Font(btnSair.Font.Name, tamanhoAtual);
+        }
+        private void btnIncluiAMaior_Click(object sender, EventArgs e)
+        {
+            if (tamanhoAtual > 6)
+            {
+                btnAMenor.Enabled = true;
+                tamanhoAtual += 2.0F;
+                ItensPCD();
+                btnSair.Select();
+            }
+            if (tamanhoAtual > 12)
+            {
+                btnAMaior.Enabled = false;
+            }
+        }
+
+        private void btnAMenor_Click(object sender, EventArgs e)
+        {
+            if (tamanhoAtual < 14)
+            {
+                btnAMaior.Enabled = true;
+                tamanhoAtual -= 2.0F;
+                ItensPCD();
+                btnSair.Select();
+            }
+            if (tamanhoAtual < 8)
+            {
+                btnAMenor.Enabled = false;
+            }
         }
     }
 }
