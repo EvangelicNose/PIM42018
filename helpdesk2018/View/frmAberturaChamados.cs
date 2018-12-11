@@ -5,6 +5,7 @@ using helpdesk2018.Controller;
 using helpdesk2018.Model;
 using System.Data;
 using System.IO;
+using System.Drawing;
 
 namespace helpdesk2018.View
 {
@@ -21,6 +22,18 @@ namespace helpdesk2018.View
 
         private void AberturaChamados_Load(object sender, EventArgs e)
         {
+            if (frmMenu.PCD == true)
+            {
+                btnAMaior.Visible = true;
+                btnAMenor.Visible = true;
+            }
+
+            else
+            {
+                btnAMaior.Visible = false;
+                btnAMenor.Visible = false;
+            }
+
             DateTime DataHoje = DateTime.Today;
             lblData.Text = DataHoje.ToString("dd/MM/yyyy");
             lbNome.Text = mdlUsuario.Logado.Nome;
@@ -91,7 +104,7 @@ namespace helpdesk2018.View
 
             txtDescricao.Text = "";
             cbbMotivo.SelectedValue = -1;
-            btnCancelar.Focus();
+            btnSair.Focus();
         }
 
         private void btnAnexo_Click(object sender, EventArgs e)
@@ -101,6 +114,56 @@ namespace helpdesk2018.View
             {
                 MessageBox.Show("Imagem carregada com sucesso!", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 mdlChamados.Chamado.Anexo = anexo.FileName;
+            }
+        }
+
+        public float tamanhoAtual = 8.25F;
+        public void ItensPCD()
+        {
+            lblAberturaChamados.Font = new Font(lblAberturaChamados.Font.Name, tamanhoAtual + 8);
+            lblUsuario.Font = new Font(lblAberturaChamados.Font.Name, tamanhoAtual);
+            lblNome.Font = new Font(lblNome.Font.Name, tamanhoAtual);
+            lblEmpresa.Font = new Font(lblEmpresa.Font.Name, tamanhoAtual);
+            lblMotivo.Font = new Font(lblMotivo.Font.Name, tamanhoAtual);
+            lblDescricao.Font = new Font(lblAberturaChamados.Font.Name, tamanhoAtual);
+            lbUsuario.Font = new Font(lbUsuario.Font.Name, tamanhoAtual + 2);
+            lbNome.Font = new Font(lbNome.Font.Name, tamanhoAtual + 2);
+            lbEmpresa.Font = new Font(lbEmpresa.Font.Name, tamanhoAtual + 2);
+            cbbMotivo.Font = new Font(cbbMotivo.Font.Name, tamanhoAtual);
+            txtDescricao.Font = new Font(txtDescricao.Font.Name, tamanhoAtual);
+            btnEnviar.Font = new Font(btnEnviar.Font.Name, tamanhoAtual);
+            btnSair.Font = new Font(btnSair.Font.Name, tamanhoAtual);
+            lblData.Font = new Font(lblData.Font.Name, tamanhoAtual);
+            lblHora.Font = new Font(lblHora.Font.Name, tamanhoAtual);
+
+        }
+        private void btnIncluiAMaior_Click(object sender, EventArgs e)
+        {
+            if (tamanhoAtual > 6)
+            {
+                btnAMenor.Enabled = true;
+                tamanhoAtual += 2.0F;
+                ItensPCD();
+                txtDescricao.Focus();
+            }
+            if (tamanhoAtual > 12)
+            {
+                btnAMaior.Enabled = false;
+            }
+        }
+
+        private void btnAMenor_Click(object sender, EventArgs e)
+        {
+            if (tamanhoAtual < 14)
+            {
+                btnAMaior.Enabled = true;
+                tamanhoAtual -= 2.0F;
+                ItensPCD();
+                txtDescricao.Focus();
+            }
+            if (tamanhoAtual < 8)
+            {
+                btnAMenor.Enabled = false;
             }
         }
     }
