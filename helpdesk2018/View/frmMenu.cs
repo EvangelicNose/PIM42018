@@ -167,5 +167,21 @@ namespace helpdesk2018.View
             if (msgFechar() == 0) { Application.Exit(); }
 
         }
+
+        public static bool PCD = false;
+        int Click=0;
+        private void botãoPCDToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (Click == 0)
+            {
+                PCD = true;
+                Click = 1;
+            }
+            else
+            {
+                PCD = false;
+                Click = 0;
+            }
+        }
     }
 }

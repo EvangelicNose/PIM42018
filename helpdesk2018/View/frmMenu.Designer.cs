@@ -44,6 +44,8 @@
             this.lblHTCaption = new System.Windows.Forms.Label();
             this.ptbBackground = new System.Windows.Forms.PictureBox();
             this.ptbIcon = new System.Windows.Forms.PictureBox();
+            this.acessibilidadeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.botãoPCDToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ptbBackground)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptbIcon)).BeginInit();
@@ -54,6 +56,7 @@
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.chamadosToolStripMenuItem,
             this.manutençãoToolStripMenuItem,
+            this.acessibilidadeToolStripMenuItem,
             this.sobreToolStripMenuItem,
             this.sairToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 70);
@@ -93,34 +96,34 @@
             this.motivosToolStripMenuItem});
             this.manutençãoToolStripMenuItem.Name = "manutençãoToolStripMenuItem";
             this.manutençãoToolStripMenuItem.Size = new System.Drawing.Size(86, 20);
-            this.manutençãoToolStripMenuItem.Text = "Manutenção";
+            this.manutençãoToolStripMenuItem.Text = "&Manutenção";
             // 
             // usuáriosToolStripMenuItem
             // 
             this.usuáriosToolStripMenuItem.Name = "usuáriosToolStripMenuItem";
-            this.usuáriosToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
-            this.usuáriosToolStripMenuItem.Text = "Usuários";
+            this.usuáriosToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.usuáriosToolStripMenuItem.Text = "&Usuários";
             this.usuáriosToolStripMenuItem.Click += new System.EventHandler(this.usuáriosToolStripMenuItem_Click);
             // 
             // empresasToolStripMenuItem
             // 
             this.empresasToolStripMenuItem.Name = "empresasToolStripMenuItem";
-            this.empresasToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
-            this.empresasToolStripMenuItem.Text = "Empresas";
+            this.empresasToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.empresasToolStripMenuItem.Text = "&Empresas";
             this.empresasToolStripMenuItem.Click += new System.EventHandler(this.empresasToolStripMenuItem_Click);
             // 
             // motivosToolStripMenuItem
             // 
             this.motivosToolStripMenuItem.Name = "motivosToolStripMenuItem";
-            this.motivosToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
-            this.motivosToolStripMenuItem.Text = "Motivos";
+            this.motivosToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.motivosToolStripMenuItem.Text = "&Motivos";
             this.motivosToolStripMenuItem.Click += new System.EventHandler(this.motivosToolStripMenuItem_Click);
             // 
             // sobreToolStripMenuItem
             // 
             this.sobreToolStripMenuItem.Name = "sobreToolStripMenuItem";
             this.sobreToolStripMenuItem.Size = new System.Drawing.Size(49, 20);
-            this.sobreToolStripMenuItem.Text = "Sobre";
+            this.sobreToolStripMenuItem.Text = "&Sobre";
             this.sobreToolStripMenuItem.Click += new System.EventHandler(this.sobreToolStripMenuItem_Click);
             // 
             // sairToolStripMenuItem
@@ -130,20 +133,20 @@
             this.finalizarSistemaToolStripMenuItem1});
             this.sairToolStripMenuItem.Name = "sairToolStripMenuItem";
             this.sairToolStripMenuItem.Size = new System.Drawing.Size(38, 20);
-            this.sairToolStripMenuItem.Text = "&Sair";
+            this.sairToolStripMenuItem.Text = "Sai&r";
             // 
             // fazerLogoffToolStripMenuItem1
             // 
             this.fazerLogoffToolStripMenuItem1.Name = "fazerLogoffToolStripMenuItem1";
             this.fazerLogoffToolStripMenuItem1.Size = new System.Drawing.Size(161, 22);
-            this.fazerLogoffToolStripMenuItem1.Text = "Fazer Logoff";
+            this.fazerLogoffToolStripMenuItem1.Text = "Fazer &Logoff";
             this.fazerLogoffToolStripMenuItem1.Click += new System.EventHandler(this.fazerLogoffToolStripMenuItem1_Click);
             // 
             // finalizarSistemaToolStripMenuItem1
             // 
             this.finalizarSistemaToolStripMenuItem1.Name = "finalizarSistemaToolStripMenuItem1";
             this.finalizarSistemaToolStripMenuItem1.Size = new System.Drawing.Size(161, 22);
-            this.finalizarSistemaToolStripMenuItem1.Text = "Finalizar Sistema";
+            this.finalizarSistemaToolStripMenuItem1.Text = "&Finalizar Sistema";
             this.finalizarSistemaToolStripMenuItem1.Click += new System.EventHandler(this.finalizarSistemaToolStripMenuItem1_Click);
             // 
             // label1
@@ -194,6 +197,23 @@
             this.ptbIcon.TabIndex = 11;
             this.ptbIcon.TabStop = false;
             // 
+            // acessibilidadeToolStripMenuItem
+            // 
+            this.acessibilidadeToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.botãoPCDToolStripMenuItem});
+            this.acessibilidadeToolStripMenuItem.Name = "acessibilidadeToolStripMenuItem";
+            this.acessibilidadeToolStripMenuItem.Size = new System.Drawing.Size(94, 20);
+            this.acessibilidadeToolStripMenuItem.Text = "&Acessibilidade";
+            // 
+            // botãoPCDToolStripMenuItem
+            // 
+            this.botãoPCDToolStripMenuItem.AutoToolTip = true;
+            this.botãoPCDToolStripMenuItem.CheckOnClick = true;
+            this.botãoPCDToolStripMenuItem.Name = "botãoPCDToolStripMenuItem";
+            this.botãoPCDToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
+            this.botãoPCDToolStripMenuItem.Text = "Aumentar &Fonte";
+            this.botãoPCDToolStripMenuItem.Click += new System.EventHandler(this.botãoPCDToolStripMenuItem_Click);
+            // 
             // frmMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -242,5 +262,7 @@
         private System.Windows.Forms.Label lblHTCaption;
         private System.Windows.Forms.PictureBox ptbIcon;
         private System.Windows.Forms.PictureBox ptbBackground;
+        private System.Windows.Forms.ToolStripMenuItem acessibilidadeToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem botãoPCDToolStripMenuItem;
     }
 }

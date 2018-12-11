@@ -1,4 +1,4 @@
-﻿namespace helpdesk2018
+﻿namespace helpdesk2018.View
 {
     partial class frmManutencaoUsuario
     {
@@ -32,23 +32,27 @@
             this.btnVoltar = new System.Windows.Forms.Button();
             this.btnAlterar = new System.Windows.Forms.Button();
             this.btnIncluir = new System.Windows.Forms.Button();
-            this.btnCancelar = new System.Windows.Forms.Button();
-            this.btnOK = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
+            this.btnIncluirVoltar = new System.Windows.Forms.Button();
+            this.btnCadastrar = new System.Windows.Forms.Button();
+            this.lblIncluirUsuario = new System.Windows.Forms.Label();
+            this.lblIncluirNome = new System.Windows.Forms.Label();
+            this.lblIncluirSenha = new System.Windows.Forms.Label();
+            this.lblIncluirNivel = new System.Windows.Forms.Label();
             this.txtUsuario = new System.Windows.Forms.TextBox();
             this.txtNome = new System.Windows.Forms.TextBox();
             this.txtSenha = new System.Windows.Forms.TextBox();
             this.cbNivel = new System.Windows.Forms.ComboBox();
             this.gbDados = new System.Windows.Forms.GroupBox();
+            this.btnIncluirAMaior = new System.Windows.Forms.Button();
+            this.btnIncluirAMenor = new System.Windows.Forms.Button();
             this.mskTelefone = new System.Windows.Forms.MaskedTextBox();
             this.ckbAtivo = new System.Windows.Forms.CheckBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
+            this.lblIncluirTelefone = new System.Windows.Forms.Label();
+            this.lblIncluirEmpresa = new System.Windows.Forms.Label();
             this.cbEmpresas = new System.Windows.Forms.ComboBox();
             this.gpbAltera = new System.Windows.Forms.GroupBox();
+            this.btnAlteraAMaior = new System.Windows.Forms.Button();
+            this.btnAlteraAMenor = new System.Windows.Forms.Button();
             this.btnAlteraCancelar = new System.Windows.Forms.Button();
             this.dtgAlteraResultado = new System.Windows.Forms.DataGridView();
             this.idusuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -61,20 +65,20 @@
             this.ativo = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.btnAlteraPesquisa = new System.Windows.Forms.Button();
             this.txtPesquisaNome = new System.Windows.Forms.TextBox();
-            this.label13 = new System.Windows.Forms.Label();
+            this.lblPesquisaNome = new System.Windows.Forms.Label();
             this.gpbConfirmaAlteracao = new System.Windows.Forms.GroupBox();
             this.txtAlteraUsuario = new System.Windows.Forms.TextBox();
             this.mskAlteraTelefone = new System.Windows.Forms.MaskedTextBox();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
+            this.lblAlteraNivel = new System.Windows.Forms.Label();
+            this.lblAlteraSenha = new System.Windows.Forms.Label();
             this.txtAlteraNome = new System.Windows.Forms.TextBox();
-            this.label10 = new System.Windows.Forms.Label();
+            this.lblAlteraNome = new System.Windows.Forms.Label();
             this.txtAlteraSenha = new System.Windows.Forms.TextBox();
             this.ckbAlteraAtivo = new System.Windows.Forms.CheckBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
+            this.lblAlteraUsuario = new System.Windows.Forms.Label();
+            this.lblAlteraTelefone = new System.Windows.Forms.Label();
             this.cbbAlteraNivel = new System.Windows.Forms.ComboBox();
-            this.label8 = new System.Windows.Forms.Label();
+            this.lblAlteraEmpresa = new System.Windows.Forms.Label();
             this.btnAlteraOK = new System.Windows.Forms.Button();
             this.cbbAlteraEmpresa = new System.Windows.Forms.ComboBox();
             this.gbEscolha.SuspendLayout();
@@ -89,18 +93,20 @@
             this.gbEscolha.Controls.Add(this.btnVoltar);
             this.gbEscolha.Controls.Add(this.btnAlterar);
             this.gbEscolha.Controls.Add(this.btnIncluir);
-            this.gbEscolha.Location = new System.Drawing.Point(350, 12);
+            this.gbEscolha.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gbEscolha.Location = new System.Drawing.Point(421, 12);
             this.gbEscolha.Name = "gbEscolha";
-            this.gbEscolha.Size = new System.Drawing.Size(90, 362);
+            this.gbEscolha.Size = new System.Drawing.Size(110, 437);
             this.gbEscolha.TabIndex = 5;
             this.gbEscolha.TabStop = false;
             this.gbEscolha.Text = "Escolha: ";
             // 
             // btnVoltar
             // 
-            this.btnVoltar.Location = new System.Drawing.Point(6, 328);
+            this.btnVoltar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnVoltar.Location = new System.Drawing.Point(18, 387);
             this.btnVoltar.Name = "btnVoltar";
-            this.btnVoltar.Size = new System.Drawing.Size(75, 23);
+            this.btnVoltar.Size = new System.Drawing.Size(75, 28);
             this.btnVoltar.TabIndex = 2;
             this.btnVoltar.Text = "&Sair";
             this.btnVoltar.UseVisualStyleBackColor = true;
@@ -108,9 +114,10 @@
             // 
             // btnAlterar
             // 
-            this.btnAlterar.Location = new System.Drawing.Point(6, 72);
+            this.btnAlterar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAlterar.Location = new System.Drawing.Point(18, 99);
             this.btnAlterar.Name = "btnAlterar";
-            this.btnAlterar.Size = new System.Drawing.Size(75, 23);
+            this.btnAlterar.Size = new System.Drawing.Size(75, 28);
             this.btnAlterar.TabIndex = 1;
             this.btnAlterar.Text = "&Alterar";
             this.btnAlterar.UseVisualStyleBackColor = true;
@@ -118,139 +125,174 @@
             // 
             // btnIncluir
             // 
-            this.btnIncluir.Location = new System.Drawing.Point(6, 28);
+            this.btnIncluir.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnIncluir.Location = new System.Drawing.Point(18, 38);
             this.btnIncluir.Name = "btnIncluir";
-            this.btnIncluir.Size = new System.Drawing.Size(75, 23);
+            this.btnIncluir.Size = new System.Drawing.Size(75, 28);
             this.btnIncluir.TabIndex = 0;
             this.btnIncluir.Text = "&Incluir";
             this.btnIncluir.UseVisualStyleBackColor = true;
             this.btnIncluir.Click += new System.EventHandler(this.button1_Click);
             // 
-            // btnCancelar
+            // btnIncluirVoltar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(155, 318);
-            this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(75, 23);
-            this.btnCancelar.TabIndex = 8;
-            this.btnCancelar.Text = "&Voltar";
-            this.btnCancelar.UseVisualStyleBackColor = true;
-            this.btnCancelar.Click += new System.EventHandler(this.btCancelar_Click);
+            this.btnIncluirVoltar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnIncluirVoltar.Location = new System.Drawing.Point(268, 387);
+            this.btnIncluirVoltar.Name = "btnIncluirVoltar";
+            this.btnIncluirVoltar.Size = new System.Drawing.Size(90, 28);
+            this.btnIncluirVoltar.TabIndex = 8;
+            this.btnIncluirVoltar.Text = "&Voltar";
+            this.btnIncluirVoltar.UseVisualStyleBackColor = true;
+            this.btnIncluirVoltar.Click += new System.EventHandler(this.btCancelar_Click);
             // 
-            // btnOK
+            // btnCadastrar
             // 
-            this.btnOK.Location = new System.Drawing.Point(51, 318);
-            this.btnOK.Name = "btnOK";
-            this.btnOK.Size = new System.Drawing.Size(75, 23);
-            this.btnOK.TabIndex = 7;
-            this.btnOK.Text = "&Cadastrar";
-            this.btnOK.UseVisualStyleBackColor = true;
-            this.btnOK.Click += new System.EventHandler(this.button5_Click);
+            this.btnCadastrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCadastrar.Location = new System.Drawing.Point(38, 387);
+            this.btnCadastrar.Name = "btnCadastrar";
+            this.btnCadastrar.Size = new System.Drawing.Size(90, 28);
+            this.btnCadastrar.TabIndex = 7;
+            this.btnCadastrar.Text = "&Cadastrar";
+            this.btnCadastrar.UseVisualStyleBackColor = true;
+            this.btnCadastrar.Click += new System.EventHandler(this.button5_Click);
             // 
-            // label1
+            // lblIncluirUsuario
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(39, 38);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(46, 13);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Usuário:";
+            this.lblIncluirUsuario.AutoSize = true;
+            this.lblIncluirUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblIncluirUsuario.Location = new System.Drawing.Point(24, 65);
+            this.lblIncluirUsuario.Name = "lblIncluirUsuario";
+            this.lblIncluirUsuario.Size = new System.Drawing.Size(46, 13);
+            this.lblIncluirUsuario.TabIndex = 2;
+            this.lblIncluirUsuario.Text = "Usuário:";
             // 
-            // label2
+            // lblIncluirNome
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(39, 76);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(38, 13);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "Nome:";
+            this.lblIncluirNome.AutoSize = true;
+            this.lblIncluirNome.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblIncluirNome.Location = new System.Drawing.Point(24, 103);
+            this.lblIncluirNome.Name = "lblIncluirNome";
+            this.lblIncluirNome.Size = new System.Drawing.Size(38, 13);
+            this.lblIncluirNome.TabIndex = 3;
+            this.lblIncluirNome.Text = "Nome:";
             // 
-            // label3
+            // lblIncluirSenha
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(39, 114);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(41, 13);
-            this.label3.TabIndex = 4;
-            this.label3.Text = "Senha:";
+            this.lblIncluirSenha.AutoSize = true;
+            this.lblIncluirSenha.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblIncluirSenha.Location = new System.Drawing.Point(24, 141);
+            this.lblIncluirSenha.Name = "lblIncluirSenha";
+            this.lblIncluirSenha.Size = new System.Drawing.Size(41, 13);
+            this.lblIncluirSenha.TabIndex = 4;
+            this.lblIncluirSenha.Text = "Senha:";
             // 
-            // label4
+            // lblIncluirNivel
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(39, 190);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(36, 13);
-            this.label4.TabIndex = 5;
-            this.label4.Text = "Nível:";
+            this.lblIncluirNivel.AutoSize = true;
+            this.lblIncluirNivel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblIncluirNivel.Location = new System.Drawing.Point(24, 217);
+            this.lblIncluirNivel.Name = "lblIncluirNivel";
+            this.lblIncluirNivel.Size = new System.Drawing.Size(36, 13);
+            this.lblIncluirNivel.TabIndex = 5;
+            this.lblIncluirNivel.Text = "Nível:";
             // 
             // txtUsuario
             // 
-            this.txtUsuario.Location = new System.Drawing.Point(96, 35);
+            this.txtUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtUsuario.Location = new System.Drawing.Point(108, 62);
             this.txtUsuario.Name = "txtUsuario";
-            this.txtUsuario.Size = new System.Drawing.Size(133, 20);
+            this.txtUsuario.Size = new System.Drawing.Size(251, 20);
             this.txtUsuario.TabIndex = 0;
             this.txtUsuario.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtUsuario_KeyPress);
             // 
             // txtNome
             // 
-            this.txtNome.Location = new System.Drawing.Point(96, 73);
+            this.txtNome.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNome.Location = new System.Drawing.Point(108, 100);
             this.txtNome.Name = "txtNome";
-            this.txtNome.Size = new System.Drawing.Size(133, 20);
+            this.txtNome.Size = new System.Drawing.Size(251, 20);
             this.txtNome.TabIndex = 1;
             this.txtNome.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNome_KeyPress);
             // 
             // txtSenha
             // 
-            this.txtSenha.Location = new System.Drawing.Point(96, 111);
+            this.txtSenha.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSenha.Location = new System.Drawing.Point(108, 138);
             this.txtSenha.Name = "txtSenha";
-            this.txtSenha.Size = new System.Drawing.Size(133, 20);
+            this.txtSenha.Size = new System.Drawing.Size(251, 20);
             this.txtSenha.TabIndex = 2;
             this.txtSenha.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSenha_KeyPress);
             // 
             // cbNivel
             // 
             this.cbNivel.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbNivel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbNivel.FormattingEnabled = true;
             this.cbNivel.Items.AddRange(new object[] {
             "Usuário",
             "Técnico",
             "Administrador"});
-            this.cbNivel.Location = new System.Drawing.Point(96, 187);
+            this.cbNivel.Location = new System.Drawing.Point(108, 214);
             this.cbNivel.Name = "cbNivel";
-            this.cbNivel.Size = new System.Drawing.Size(133, 21);
+            this.cbNivel.Size = new System.Drawing.Size(135, 21);
             this.cbNivel.TabIndex = 4;
             this.cbNivel.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cbNivel_KeyPress);
             // 
             // gbDados
             // 
+            this.gbDados.Controls.Add(this.btnIncluirAMaior);
+            this.gbDados.Controls.Add(this.btnIncluirAMenor);
             this.gbDados.Controls.Add(this.mskTelefone);
             this.gbDados.Controls.Add(this.ckbAtivo);
-            this.gbDados.Controls.Add(this.label6);
-            this.gbDados.Controls.Add(this.label5);
+            this.gbDados.Controls.Add(this.lblIncluirTelefone);
+            this.gbDados.Controls.Add(this.lblIncluirEmpresa);
             this.gbDados.Controls.Add(this.cbEmpresas);
-            this.gbDados.Controls.Add(this.btnCancelar);
+            this.gbDados.Controls.Add(this.btnIncluirVoltar);
             this.gbDados.Controls.Add(this.txtUsuario);
-            this.gbDados.Controls.Add(this.btnOK);
+            this.gbDados.Controls.Add(this.btnCadastrar);
             this.gbDados.Controls.Add(this.cbNivel);
-            this.gbDados.Controls.Add(this.label1);
+            this.gbDados.Controls.Add(this.lblIncluirUsuario);
             this.gbDados.Controls.Add(this.txtSenha);
-            this.gbDados.Controls.Add(this.label2);
+            this.gbDados.Controls.Add(this.lblIncluirNome);
             this.gbDados.Controls.Add(this.txtNome);
-            this.gbDados.Controls.Add(this.label3);
-            this.gbDados.Controls.Add(this.label4);
-            this.gbDados.Location = new System.Drawing.Point(19, 12);
+            this.gbDados.Controls.Add(this.lblIncluirSenha);
+            this.gbDados.Controls.Add(this.lblIncluirNivel);
+            this.gbDados.Location = new System.Drawing.Point(12, 12);
             this.gbDados.Name = "gbDados";
-            this.gbDados.Size = new System.Drawing.Size(307, 362);
+            this.gbDados.Size = new System.Drawing.Size(393, 437);
             this.gbDados.TabIndex = 4;
             this.gbDados.TabStop = false;
             this.gbDados.Text = "Incluir:";
             this.gbDados.Visible = false;
             // 
+            // btnIncluirAMaior
+            // 
+            this.btnIncluirAMaior.Location = new System.Drawing.Point(359, 11);
+            this.btnIncluirAMaior.Name = "btnIncluirAMaior";
+            this.btnIncluirAMaior.Size = new System.Drawing.Size(28, 23);
+            this.btnIncluirAMaior.TabIndex = 22;
+            this.btnIncluirAMaior.Text = "A+";
+            this.btnIncluirAMaior.UseVisualStyleBackColor = true;
+            this.btnIncluirAMaior.Click += new System.EventHandler(this.btnIncluirAMaior_Click);
+            // 
+            // btnIncluirAMenor
+            // 
+            this.btnIncluirAMenor.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnIncluirAMenor.Location = new System.Drawing.Point(336, 11);
+            this.btnIncluirAMenor.Name = "btnIncluirAMenor";
+            this.btnIncluirAMenor.Size = new System.Drawing.Size(24, 23);
+            this.btnIncluirAMenor.TabIndex = 21;
+            this.btnIncluirAMenor.Text = "A-";
+            this.btnIncluirAMenor.UseVisualStyleBackColor = true;
+            this.btnIncluirAMenor.Click += new System.EventHandler(this.btnIncluirAMenor_Click);
+            // 
             // mskTelefone
             // 
-            this.mskTelefone.Location = new System.Drawing.Point(96, 149);
+            this.mskTelefone.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.mskTelefone.Location = new System.Drawing.Point(108, 176);
             this.mskTelefone.Mask = "(99) 00000-0000";
             this.mskTelefone.Name = "mskTelefone";
-            this.mskTelefone.Size = new System.Drawing.Size(133, 20);
+            this.mskTelefone.Size = new System.Drawing.Size(135, 20);
             this.mskTelefone.TabIndex = 3;
             this.mskTelefone.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
             this.mskTelefone.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.mskTelefone_KeyPress);
@@ -260,7 +302,8 @@
             this.ckbAtivo.AutoSize = true;
             this.ckbAtivo.Checked = true;
             this.ckbAtivo.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.ckbAtivo.Location = new System.Drawing.Point(42, 274);
+            this.ckbAtivo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ckbAtivo.Location = new System.Drawing.Point(24, 306);
             this.ckbAtivo.Name = "ckbAtivo";
             this.ckbAtivo.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.ckbAtivo.Size = new System.Drawing.Size(68, 17);
@@ -269,55 +312,83 @@
             this.ckbAtivo.UseVisualStyleBackColor = true;
             this.ckbAtivo.Visible = false;
             // 
-            // label6
+            // lblIncluirTelefone
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(39, 152);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(52, 13);
-            this.label6.TabIndex = 7;
-            this.label6.Text = "Telefone:";
+            this.lblIncluirTelefone.AutoSize = true;
+            this.lblIncluirTelefone.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblIncluirTelefone.Location = new System.Drawing.Point(24, 179);
+            this.lblIncluirTelefone.Name = "lblIncluirTelefone";
+            this.lblIncluirTelefone.Size = new System.Drawing.Size(52, 13);
+            this.lblIncluirTelefone.TabIndex = 7;
+            this.lblIncluirTelefone.Text = "Telefone:";
             // 
-            // label5
+            // lblIncluirEmpresa
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(39, 228);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(54, 13);
-            this.label5.TabIndex = 5;
-            this.label5.Text = "Empresa: ";
+            this.lblIncluirEmpresa.AutoSize = true;
+            this.lblIncluirEmpresa.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblIncluirEmpresa.Location = new System.Drawing.Point(24, 257);
+            this.lblIncluirEmpresa.Name = "lblIncluirEmpresa";
+            this.lblIncluirEmpresa.Size = new System.Drawing.Size(51, 13);
+            this.lblIncluirEmpresa.TabIndex = 5;
+            this.lblIncluirEmpresa.Text = "Empresa:";
             // 
             // cbEmpresas
             // 
             this.cbEmpresas.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbEmpresas.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbEmpresas.FormattingEnabled = true;
-            this.cbEmpresas.Location = new System.Drawing.Point(96, 226);
+            this.cbEmpresas.Location = new System.Drawing.Point(108, 254);
             this.cbEmpresas.Name = "cbEmpresas";
-            this.cbEmpresas.Size = new System.Drawing.Size(133, 21);
+            this.cbEmpresas.Size = new System.Drawing.Size(251, 21);
             this.cbEmpresas.TabIndex = 5;
             this.cbEmpresas.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cbEmpresas_KeyPress);
             // 
             // gpbAltera
             // 
+            this.gpbAltera.Controls.Add(this.btnAlteraAMaior);
+            this.gpbAltera.Controls.Add(this.btnAlteraAMenor);
             this.gpbAltera.Controls.Add(this.btnAlteraCancelar);
             this.gpbAltera.Controls.Add(this.dtgAlteraResultado);
             this.gpbAltera.Controls.Add(this.btnAlteraPesquisa);
             this.gpbAltera.Controls.Add(this.txtPesquisaNome);
-            this.gpbAltera.Controls.Add(this.label13);
+            this.gpbAltera.Controls.Add(this.lblPesquisaNome);
             this.gpbAltera.Controls.Add(this.gpbConfirmaAlteracao);
+            this.gpbAltera.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gpbAltera.Location = new System.Drawing.Point(12, 11);
             this.gpbAltera.Name = "gpbAltera";
-            this.gpbAltera.Size = new System.Drawing.Size(428, 363);
+            this.gpbAltera.Size = new System.Drawing.Size(519, 438);
             this.gpbAltera.TabIndex = 0;
             this.gpbAltera.TabStop = false;
             this.gpbAltera.Text = "Alterar dados: ";
             this.gpbAltera.Visible = false;
             // 
+            // btnAlteraAMaior
+            // 
+            this.btnAlteraAMaior.Location = new System.Drawing.Point(487, 12);
+            this.btnAlteraAMaior.Name = "btnAlteraAMaior";
+            this.btnAlteraAMaior.Size = new System.Drawing.Size(28, 23);
+            this.btnAlteraAMaior.TabIndex = 22;
+            this.btnAlteraAMaior.Text = "A+";
+            this.btnAlteraAMaior.UseVisualStyleBackColor = true;
+            this.btnAlteraAMaior.Click += new System.EventHandler(this.btnAlteraAMaior_Click);
+            // 
+            // btnAlteraAMenor
+            // 
+            this.btnAlteraAMenor.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAlteraAMenor.Location = new System.Drawing.Point(464, 12);
+            this.btnAlteraAMenor.Name = "btnAlteraAMenor";
+            this.btnAlteraAMenor.Size = new System.Drawing.Size(24, 23);
+            this.btnAlteraAMenor.TabIndex = 21;
+            this.btnAlteraAMenor.Text = "A-";
+            this.btnAlteraAMenor.UseVisualStyleBackColor = true;
+            this.btnAlteraAMenor.Click += new System.EventHandler(this.btnAlteraAMenor_Click);
+            // 
             // btnAlteraCancelar
             // 
-            this.btnAlteraCancelar.Location = new System.Drawing.Point(336, 322);
+            this.btnAlteraCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAlteraCancelar.Location = new System.Drawing.Point(428, 393);
             this.btnAlteraCancelar.Name = "btnAlteraCancelar";
-            this.btnAlteraCancelar.Size = new System.Drawing.Size(75, 23);
+            this.btnAlteraCancelar.Size = new System.Drawing.Size(80, 30);
             this.btnAlteraCancelar.TabIndex = 11;
             this.btnAlteraCancelar.Text = "&Voltar";
             this.btnAlteraCancelar.UseVisualStyleBackColor = true;
@@ -338,13 +409,13 @@
             this.senha,
             this.nivelAcesso,
             this.ativo});
-            this.dtgAlteraResultado.Location = new System.Drawing.Point(17, 59);
+            this.dtgAlteraResultado.Location = new System.Drawing.Point(14, 87);
             this.dtgAlteraResultado.MultiSelect = false;
             this.dtgAlteraResultado.Name = "dtgAlteraResultado";
             this.dtgAlteraResultado.ReadOnly = true;
             this.dtgAlteraResultado.RowHeadersVisible = false;
             this.dtgAlteraResultado.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dtgAlteraResultado.Size = new System.Drawing.Size(396, 150);
+            this.dtgAlteraResultado.Size = new System.Drawing.Size(488, 193);
             this.dtgAlteraResultado.TabIndex = 2;
             this.dtgAlteraResultado.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgAlteraResultado_CellClick);
             // 
@@ -415,9 +486,10 @@
             // 
             // btnAlteraPesquisa
             // 
-            this.btnAlteraPesquisa.Location = new System.Drawing.Point(338, 24);
+            this.btnAlteraPesquisa.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAlteraPesquisa.Location = new System.Drawing.Point(409, 54);
             this.btnAlteraPesquisa.Name = "btnAlteraPesquisa";
-            this.btnAlteraPesquisa.Size = new System.Drawing.Size(75, 23);
+            this.btnAlteraPesquisa.Size = new System.Drawing.Size(93, 27);
             this.btnAlteraPesquisa.TabIndex = 1;
             this.btnAlteraPesquisa.Text = "&Pesquisar";
             this.btnAlteraPesquisa.UseVisualStyleBackColor = true;
@@ -425,109 +497,113 @@
             // 
             // txtPesquisaNome
             // 
-            this.txtPesquisaNome.Location = new System.Drawing.Point(99, 26);
+            this.txtPesquisaNome.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPesquisaNome.Location = new System.Drawing.Point(14, 54);
             this.txtPesquisaNome.Name = "txtPesquisaNome";
-            this.txtPesquisaNome.Size = new System.Drawing.Size(215, 20);
+            this.txtPesquisaNome.Size = new System.Drawing.Size(376, 20);
             this.txtPesquisaNome.TabIndex = 0;
             this.txtPesquisaNome.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPesquisaNome_KeyPress);
             // 
-            // label13
+            // lblPesquisaNome
             // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(11, 29);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(87, 13);
-            this.label13.TabIndex = 15;
-            this.label13.Text = "Pesquisar Nome:";
+            this.lblPesquisaNome.AutoSize = true;
+            this.lblPesquisaNome.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPesquisaNome.Location = new System.Drawing.Point(9, 27);
+            this.lblPesquisaNome.Name = "lblPesquisaNome";
+            this.lblPesquisaNome.Size = new System.Drawing.Size(87, 13);
+            this.lblPesquisaNome.TabIndex = 15;
+            this.lblPesquisaNome.Text = "Pesquisar Nome:";
             // 
             // gpbConfirmaAlteracao
             // 
             this.gpbConfirmaAlteracao.Controls.Add(this.txtAlteraUsuario);
             this.gpbConfirmaAlteracao.Controls.Add(this.mskAlteraTelefone);
-            this.gpbConfirmaAlteracao.Controls.Add(this.label12);
-            this.gpbConfirmaAlteracao.Controls.Add(this.label11);
+            this.gpbConfirmaAlteracao.Controls.Add(this.lblAlteraNivel);
+            this.gpbConfirmaAlteracao.Controls.Add(this.lblAlteraSenha);
             this.gpbConfirmaAlteracao.Controls.Add(this.txtAlteraNome);
-            this.gpbConfirmaAlteracao.Controls.Add(this.label10);
+            this.gpbConfirmaAlteracao.Controls.Add(this.lblAlteraNome);
             this.gpbConfirmaAlteracao.Controls.Add(this.txtAlteraSenha);
             this.gpbConfirmaAlteracao.Controls.Add(this.ckbAlteraAtivo);
-            this.gpbConfirmaAlteracao.Controls.Add(this.label9);
-            this.gpbConfirmaAlteracao.Controls.Add(this.label7);
+            this.gpbConfirmaAlteracao.Controls.Add(this.lblAlteraUsuario);
+            this.gpbConfirmaAlteracao.Controls.Add(this.lblAlteraTelefone);
             this.gpbConfirmaAlteracao.Controls.Add(this.cbbAlteraNivel);
-            this.gpbConfirmaAlteracao.Controls.Add(this.label8);
+            this.gpbConfirmaAlteracao.Controls.Add(this.lblAlteraEmpresa);
             this.gpbConfirmaAlteracao.Controls.Add(this.btnAlteraOK);
             this.gpbConfirmaAlteracao.Controls.Add(this.cbbAlteraEmpresa);
             this.gpbConfirmaAlteracao.Enabled = false;
-            this.gpbConfirmaAlteracao.Location = new System.Drawing.Point(7, 220);
+            this.gpbConfirmaAlteracao.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gpbConfirmaAlteracao.Location = new System.Drawing.Point(6, 277);
             this.gpbConfirmaAlteracao.Name = "gpbConfirmaAlteracao";
-            this.gpbConfirmaAlteracao.Size = new System.Drawing.Size(415, 132);
+            this.gpbConfirmaAlteracao.Size = new System.Drawing.Size(507, 152);
             this.gpbConfirmaAlteracao.TabIndex = 6;
             this.gpbConfirmaAlteracao.TabStop = false;
             // 
             // txtAlteraUsuario
             // 
-            this.txtAlteraUsuario.Location = new System.Drawing.Point(65, 15);
+            this.txtAlteraUsuario.Location = new System.Drawing.Point(72, 15);
             this.txtAlteraUsuario.Name = "txtAlteraUsuario";
-            this.txtAlteraUsuario.Size = new System.Drawing.Size(133, 20);
+            this.txtAlteraUsuario.Size = new System.Drawing.Size(169, 20);
             this.txtAlteraUsuario.TabIndex = 3;
             this.txtAlteraUsuario.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtAlteraUsuario_KeyPress);
             // 
             // mskAlteraTelefone
             // 
-            this.mskAlteraTelefone.Location = new System.Drawing.Point(274, 41);
+            this.mskAlteraTelefone.Location = new System.Drawing.Point(335, 44);
             this.mskAlteraTelefone.Mask = "(99) 00000-0000";
             this.mskAlteraTelefone.Name = "mskAlteraTelefone";
-            this.mskAlteraTelefone.Size = new System.Drawing.Size(133, 20);
+            this.mskAlteraTelefone.Size = new System.Drawing.Size(166, 20);
             this.mskAlteraTelefone.TabIndex = 6;
             this.mskAlteraTelefone.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
             this.mskAlteraTelefone.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.mskAlteraTelefone_KeyPress);
             // 
-            // label12
+            // lblAlteraNivel
             // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(8, 70);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(36, 13);
-            this.label12.TabIndex = 20;
-            this.label12.Text = "Nível:";
+            this.lblAlteraNivel.AutoSize = true;
+            this.lblAlteraNivel.Location = new System.Drawing.Point(8, 76);
+            this.lblAlteraNivel.Name = "lblAlteraNivel";
+            this.lblAlteraNivel.Size = new System.Drawing.Size(36, 13);
+            this.lblAlteraNivel.TabIndex = 20;
+            this.lblAlteraNivel.Text = "Nível:";
             // 
-            // label11
+            // lblAlteraSenha
             // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(8, 44);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(41, 13);
-            this.label11.TabIndex = 17;
-            this.label11.Text = "Senha:";
+            this.lblAlteraSenha.AutoSize = true;
+            this.lblAlteraSenha.Location = new System.Drawing.Point(8, 47);
+            this.lblAlteraSenha.Name = "lblAlteraSenha";
+            this.lblAlteraSenha.Size = new System.Drawing.Size(41, 13);
+            this.lblAlteraSenha.TabIndex = 17;
+            this.lblAlteraSenha.Text = "Senha:";
             // 
             // txtAlteraNome
             // 
-            this.txtAlteraNome.Location = new System.Drawing.Point(274, 15);
+            this.txtAlteraNome.Location = new System.Drawing.Point(335, 15);
             this.txtAlteraNome.Name = "txtAlteraNome";
-            this.txtAlteraNome.Size = new System.Drawing.Size(133, 20);
+            this.txtAlteraNome.Size = new System.Drawing.Size(166, 20);
             this.txtAlteraNome.TabIndex = 4;
             this.txtAlteraNome.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtAlteraNome_KeyPress);
             // 
-            // label10
+            // lblAlteraNome
             // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(217, 18);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(38, 13);
-            this.label10.TabIndex = 15;
-            this.label10.Text = "Nome:";
+            this.lblAlteraNome.AutoSize = true;
+            this.lblAlteraNome.Location = new System.Drawing.Point(246, 18);
+            this.lblAlteraNome.Name = "lblAlteraNome";
+            this.lblAlteraNome.Size = new System.Drawing.Size(38, 13);
+            this.lblAlteraNome.TabIndex = 15;
+            this.lblAlteraNome.Text = "Nome:";
             // 
             // txtAlteraSenha
             // 
-            this.txtAlteraSenha.Location = new System.Drawing.Point(65, 41);
+            this.txtAlteraSenha.Location = new System.Drawing.Point(72, 44);
             this.txtAlteraSenha.Name = "txtAlteraSenha";
-            this.txtAlteraSenha.Size = new System.Drawing.Size(133, 20);
+            this.txtAlteraSenha.Size = new System.Drawing.Size(169, 20);
             this.txtAlteraSenha.TabIndex = 5;
             this.txtAlteraSenha.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtAlteraSenha_KeyPress);
             // 
             // ckbAlteraAtivo
             // 
             this.ckbAlteraAtivo.AutoSize = true;
-            this.ckbAlteraAtivo.Location = new System.Drawing.Point(8, 106);
+            this.ckbAlteraAtivo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ckbAlteraAtivo.Location = new System.Drawing.Point(8, 120);
             this.ckbAlteraAtivo.Name = "ckbAlteraAtivo";
             this.ckbAlteraAtivo.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.ckbAlteraAtivo.Size = new System.Drawing.Size(68, 17);
@@ -536,23 +612,23 @@
             this.ckbAlteraAtivo.UseVisualStyleBackColor = true;
             this.ckbAlteraAtivo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ckbAlteraAtivo_KeyPress);
             // 
-            // label9
+            // lblAlteraUsuario
             // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(8, 18);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(46, 13);
-            this.label9.TabIndex = 12;
-            this.label9.Text = "Usuário:";
+            this.lblAlteraUsuario.AutoSize = true;
+            this.lblAlteraUsuario.Location = new System.Drawing.Point(8, 18);
+            this.lblAlteraUsuario.Name = "lblAlteraUsuario";
+            this.lblAlteraUsuario.Size = new System.Drawing.Size(46, 13);
+            this.lblAlteraUsuario.TabIndex = 12;
+            this.lblAlteraUsuario.Text = "Usuário:";
             // 
-            // label7
+            // lblAlteraTelefone
             // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(217, 44);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(52, 13);
-            this.label7.TabIndex = 22;
-            this.label7.Text = "Telefone:";
+            this.lblAlteraTelefone.AutoSize = true;
+            this.lblAlteraTelefone.Location = new System.Drawing.Point(246, 47);
+            this.lblAlteraTelefone.Name = "lblAlteraTelefone";
+            this.lblAlteraTelefone.Size = new System.Drawing.Size(52, 13);
+            this.lblAlteraTelefone.TabIndex = 22;
+            this.lblAlteraTelefone.Text = "Telefone:";
             // 
             // cbbAlteraNivel
             // 
@@ -562,26 +638,26 @@
             "Usuário",
             "Técnico",
             "Administrador"});
-            this.cbbAlteraNivel.Location = new System.Drawing.Point(65, 67);
+            this.cbbAlteraNivel.Location = new System.Drawing.Point(72, 73);
             this.cbbAlteraNivel.Name = "cbbAlteraNivel";
-            this.cbbAlteraNivel.Size = new System.Drawing.Size(133, 21);
+            this.cbbAlteraNivel.Size = new System.Drawing.Size(169, 21);
             this.cbbAlteraNivel.TabIndex = 7;
             this.cbbAlteraNivel.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cbbAlteraNivel_KeyPress);
             // 
-            // label8
+            // lblAlteraEmpresa
             // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(217, 69);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(54, 13);
-            this.label8.TabIndex = 18;
-            this.label8.Text = "Empresa: ";
+            this.lblAlteraEmpresa.AutoSize = true;
+            this.lblAlteraEmpresa.Location = new System.Drawing.Point(246, 75);
+            this.lblAlteraEmpresa.Name = "lblAlteraEmpresa";
+            this.lblAlteraEmpresa.Size = new System.Drawing.Size(51, 13);
+            this.lblAlteraEmpresa.TabIndex = 18;
+            this.lblAlteraEmpresa.Text = "Empresa:";
             // 
             // btnAlteraOK
             // 
-            this.btnAlteraOK.Location = new System.Drawing.Point(220, 102);
+            this.btnAlteraOK.Location = new System.Drawing.Point(250, 116);
             this.btnAlteraOK.Name = "btnAlteraOK";
-            this.btnAlteraOK.Size = new System.Drawing.Size(75, 23);
+            this.btnAlteraOK.Size = new System.Drawing.Size(80, 30);
             this.btnAlteraOK.TabIndex = 10;
             this.btnAlteraOK.Text = "&Alterar";
             this.btnAlteraOK.UseVisualStyleBackColor = true;
@@ -591,9 +667,9 @@
             // 
             this.cbbAlteraEmpresa.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbbAlteraEmpresa.FormattingEnabled = true;
-            this.cbbAlteraEmpresa.Location = new System.Drawing.Point(274, 67);
+            this.cbbAlteraEmpresa.Location = new System.Drawing.Point(335, 73);
             this.cbbAlteraEmpresa.Name = "cbbAlteraEmpresa";
-            this.cbbAlteraEmpresa.Size = new System.Drawing.Size(133, 21);
+            this.cbbAlteraEmpresa.Size = new System.Drawing.Size(166, 21);
             this.cbbAlteraEmpresa.TabIndex = 8;
             this.cbbAlteraEmpresa.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cbbAlteraEmpresa_KeyPress);
             // 
@@ -601,7 +677,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(452, 386);
+            this.ClientSize = new System.Drawing.Size(543, 461);
             this.Controls.Add(this.gpbAltera);
             this.Controls.Add(this.gbEscolha);
             this.Controls.Add(this.gbDados);
@@ -628,37 +704,37 @@
         private System.Windows.Forms.Button btnVoltar;
         private System.Windows.Forms.Button btnAlterar;
         private System.Windows.Forms.Button btnIncluir;
-        private System.Windows.Forms.Button btnCancelar;
-        private System.Windows.Forms.Button btnOK;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Button btnIncluirVoltar;
+        private System.Windows.Forms.Button btnCadastrar;
+        private System.Windows.Forms.Label lblIncluirUsuario;
+        private System.Windows.Forms.Label lblIncluirNome;
+        private System.Windows.Forms.Label lblIncluirSenha;
+        private System.Windows.Forms.Label lblIncluirNivel;
         private System.Windows.Forms.TextBox txtUsuario;
         private System.Windows.Forms.TextBox txtNome;
         private System.Windows.Forms.TextBox txtSenha;
         private System.Windows.Forms.GroupBox gbDados;
         private System.Windows.Forms.ComboBox cbEmpresas;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label lblIncluirEmpresa;
         private System.Windows.Forms.ComboBox cbNivel;
-        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label lblIncluirTelefone;
         private System.Windows.Forms.CheckBox ckbAtivo;
         private System.Windows.Forms.CheckBox ckbAlteraAtivo;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label lblAlteraTelefone;
+        private System.Windows.Forms.Label lblAlteraEmpresa;
         private System.Windows.Forms.ComboBox cbbAlteraEmpresa;
         private System.Windows.Forms.Button btnAlteraCancelar;
         private System.Windows.Forms.TextBox txtAlteraUsuario;
         private System.Windows.Forms.Button btnAlteraOK;
         private System.Windows.Forms.ComboBox cbbAlteraNivel;
-        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label lblAlteraUsuario;
         private System.Windows.Forms.TextBox txtAlteraSenha;
-        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label lblAlteraNome;
         private System.Windows.Forms.TextBox txtAlteraNome;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label lblAlteraSenha;
+        private System.Windows.Forms.Label lblAlteraNivel;
         private System.Windows.Forms.GroupBox gpbAltera;
-        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label lblPesquisaNome;
         private System.Windows.Forms.DataGridView dtgAlteraResultado;
         private System.Windows.Forms.Button btnAlteraPesquisa;
         private System.Windows.Forms.TextBox txtPesquisaNome;
@@ -673,5 +749,9 @@
         private System.Windows.Forms.MaskedTextBox mskAlteraTelefone;
         private System.Windows.Forms.MaskedTextBox mskTelefone;
         private System.Windows.Forms.GroupBox gpbConfirmaAlteracao;
+        private System.Windows.Forms.Button btnAlteraAMaior;
+        private System.Windows.Forms.Button btnAlteraAMenor;
+        private System.Windows.Forms.Button btnIncluirAMaior;
+        private System.Windows.Forms.Button btnIncluirAMenor;
     }
 }

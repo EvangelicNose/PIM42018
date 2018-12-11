@@ -11,7 +11,7 @@ using System.Data.OleDb;
 using helpdesk2018.Controller;
 using helpdesk2018.Model;
 
-namespace helpdesk2018
+namespace helpdesk2018.View
 {
     public partial class frmManutencaoUsuario : Form
     {
@@ -159,6 +159,21 @@ namespace helpdesk2018
 
         private void frmManutencaoUsuario_Load(object sender, EventArgs e)
         {
+            if (frmMenu.PCD == true)
+            {
+                btnIncluirAMaior.Visible = true;
+                btnIncluirAMenor.Visible = true;
+                btnAlteraAMaior.Visible = true;
+                btnAlteraAMenor.Visible = true;
+            }
+            else
+            {
+                btnIncluirAMaior.Visible = false;
+                btnIncluirAMenor.Visible = false;
+                btnAlteraAMaior.Visible = false;
+                btnAlteraAMenor.Visible = false;
+            }
+
             Conexao conexao = new Conexao();
             conexao.abrir();
             string Query = "select * from tb_empresas where ativa=true";
@@ -459,6 +474,111 @@ namespace helpdesk2018
             if (e.KeyChar == 13)
             {
                 CadastrarUsusario();
+            }
+        }
+
+        public float tamanhoAtual = 8.25F;
+        public void ItensPCD()
+        {
+            gbEscolha.Font = new Font(gbEscolha.Font.Name, tamanhoAtual);
+            btnIncluir.Font = new Font(btnIncluir.Font.Name, tamanhoAtual);
+            btnAlterar.Font = new Font(btnAlterar.Font.Name, tamanhoAtual);
+            btnVoltar.Font = new Font(btnVoltar.Font.Name, tamanhoAtual);
+
+            gbDados.Font = new Font(gbDados.Font.Name, tamanhoAtual);
+            lblIncluirUsuario.Font = new Font(lblIncluirUsuario.Font.Name, tamanhoAtual);
+            lblIncluirNome.Font = new Font(lblIncluirNome.Font.Name, tamanhoAtual);
+            lblIncluirSenha.Font = new Font(lblIncluirSenha.Font.Name, tamanhoAtual);
+            lblIncluirTelefone.Font = new Font(lblIncluirTelefone.Font.Name, tamanhoAtual);
+            lblIncluirNivel.Font = new Font(lblIncluirNivel.Font.Name, tamanhoAtual);
+            lblIncluirEmpresa.Font = new Font(lblIncluirEmpresa.Font.Name, tamanhoAtual);
+            txtUsuario.Font = new Font(txtUsuario.Font.Name, tamanhoAtual);
+            txtNome.Font = new Font(txtNome.Font.Name, tamanhoAtual);
+            txtSenha.Font = new Font(txtSenha.Font.Name, tamanhoAtual);
+            mskTelefone.Font = new Font(mskTelefone.Font.Name, tamanhoAtual);
+            cbNivel.Font = new Font(cbNivel.Font.Name, tamanhoAtual);
+            cbEmpresas.Font = new Font(cbEmpresas.Font.Name, tamanhoAtual);
+            btnCadastrar.Font = new Font(btnCadastrar.Font.Name, tamanhoAtual);
+            btnIncluirVoltar.Font = new Font(btnIncluirVoltar.Font.Name, tamanhoAtual);
+
+            gpbAltera.Font = new Font(gpbAltera.Font.Name, tamanhoAtual);
+            lblPesquisaNome.Font = new Font(lblPesquisaNome.Font.Name, tamanhoAtual);
+            txtPesquisaNome.Font = new Font(txtPesquisaNome.Font.Name, tamanhoAtual);
+            btnAlteraPesquisa.Font = new Font(btnAlteraPesquisa.Font.Name, tamanhoAtual);
+            dtgAlteraResultado.Font = new Font(dtgAlteraResultado.Font.Name, tamanhoAtual);
+            lblAlteraUsuario.Font = new Font(lblAlteraUsuario.Font.Name, tamanhoAtual);
+            txtAlteraUsuario.Font = new Font(txtAlteraUsuario.Font.Name, tamanhoAtual);
+            lblAlteraNome.Font = new Font(lblAlteraNome.Font.Name, tamanhoAtual);
+            txtAlteraNome.Font = new Font(txtAlteraNome.Font.Name, tamanhoAtual);
+            lblAlteraSenha.Font = new Font(lblAlteraSenha.Font.Name, tamanhoAtual);
+            txtAlteraSenha.Font = new Font(txtAlteraSenha.Font.Name, tamanhoAtual);
+            lblAlteraTelefone.Font = new Font(lblAlteraTelefone.Font.Name, tamanhoAtual);
+            mskAlteraTelefone.Font = new Font(mskAlteraTelefone.Font.Name, tamanhoAtual);
+            lblAlteraNivel.Font = new Font(lblAlteraNivel.Font.Name, tamanhoAtual);
+            cbbAlteraNivel.Font = new Font(cbbAlteraNivel.Font.Name, tamanhoAtual);
+            lblAlteraEmpresa.Font = new Font(lblAlteraEmpresa.Font.Name, tamanhoAtual);
+            cbbAlteraEmpresa.Font = new Font(cbbAlteraEmpresa.Font.Name, tamanhoAtual);
+            ckbAtivo.Font = new Font(ckbAtivo.Font.Name, tamanhoAtual);
+            btnAlteraOK.Font = new Font(btnAlteraOK.Font.Name, tamanhoAtual);
+            btnAlteraCancelar.Font = new Font(btnAlteraCancelar.Font.Name, tamanhoAtual);
+        }
+        private void btnAlteraAMaior_Click(object sender, EventArgs e)
+        {
+            if (tamanhoAtual > 6)
+            {
+                btnAlteraAMenor.Enabled = true;
+                tamanhoAtual += 2.0F;
+                ItensPCD();
+                txtPesquisaNome.Focus();
+            }
+            if (tamanhoAtual > 12)
+            {
+                btnAlteraAMaior.Enabled = false;
+            }
+        }
+
+        private void btnIncluirAMaior_Click(object sender, EventArgs e)
+        {
+            if (tamanhoAtual > 6)
+            {
+                btnIncluirAMenor.Enabled = true;
+                tamanhoAtual += 2.0F;
+                ItensPCD();
+                txtUsuario.Focus();
+            }
+            if (tamanhoAtual > 12)
+            {
+                btnIncluirAMaior.Enabled = false;
+            }
+        }
+
+        private void btnIncluirAMenor_Click(object sender, EventArgs e)
+        {
+            if (tamanhoAtual < 14)
+            {
+                btnIncluirAMaior.Enabled = true;
+                tamanhoAtual -= 2.0F;
+                ItensPCD();
+                txtUsuario.Focus();
+            }
+            if (tamanhoAtual < 8)
+            {
+                btnIncluirAMenor.Enabled = false;
+            }
+        }
+
+        private void btnAlteraAMenor_Click(object sender, EventArgs e)
+        {
+            if (tamanhoAtual < 14)
+            {
+                btnAlteraAMaior.Enabled = true;
+                tamanhoAtual -= 2.0F;
+                ItensPCD();
+                txtPesquisaNome.Focus();
+            }
+            if (tamanhoAtual < 8)
+            {
+                btnAlteraAMenor.Enabled = false;
             }
         }
     }

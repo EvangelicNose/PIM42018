@@ -186,6 +186,20 @@ namespace helpdesk2018.View
         private void frmManutencaoMotivo_Load_1(object sender, EventArgs e)
         {
             txtIncluirMotivo.Select();
+            if (frmMenu.PCD == true)
+            {
+                btnAMaior.Visible = true;
+                btnAMenor.Visible = true;
+                btnAlterarAMenor.Visible = true;
+                btnAlterarAMaior.Visible = true;
+            }
+            else
+            {
+                btnAMaior.Visible = false;
+                btnAMenor.Visible = false;
+                btnAlterarAMenor.Visible = false;
+                btnAlterarAMaior.Visible = false;
+            }
         }
 
         private void tbpManutencaoMotivo_MouseClick(object sender, MouseEventArgs e)

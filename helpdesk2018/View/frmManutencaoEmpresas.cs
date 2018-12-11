@@ -121,7 +121,21 @@ namespace helpdesk2018.View
 
         private void frmManutencaoEmpresas_Load(object sender, EventArgs e)
         {
-             txtNome.Select();
+            txtNome.Select();
+            if (frmMenu.PCD == true)
+            {
+                btnAlteraAMaior.Visible = true;
+                btnAlteraAMenor.Visible = true;
+                btnIncluiAMaior.Visible = true;
+                btnIncluiAMenor.Visible = true;
+            }
+            else
+            {
+                btnAlteraAMaior.Visible = false;
+                btnAlteraAMenor.Visible = false;
+                btnIncluiAMaior.Visible = false;
+                btnIncluiAMenor.Visible = false;
+            }
         }
 
         public void PesquisarEmpresa()
