@@ -218,6 +218,7 @@ namespace helpdesk2018.View
             if (tamInc > 6)
             {
                 btnAMaior.Enabled = true;
+                btnAlterarAMaior.Enabled = true;
                 tamanhoAtual = txtIncluirMotivo.Font.Size;
                 tamInc -= 2;
                 tamanhoAtual -= 2.0F;
@@ -231,6 +232,7 @@ namespace helpdesk2018.View
             if (tamInc == 6)
             {
                 btnAMenor.Enabled = false;
+                btnAlterarAMenor.Enabled = false;
             }
         }
         
@@ -240,6 +242,7 @@ namespace helpdesk2018.View
             if (tamInc < 12)
             {
                 btnAMenor.Enabled = true;
+                btnAlterarAMenor.Enabled = true;
                 tamanhoAtual = txtIncluirMotivo.Font.Size;
                 tamInc += 2;
                 tamanhoAtual += 2.0F;
@@ -253,6 +256,7 @@ namespace helpdesk2018.View
             if (tamInc == 12)
             {
                 btnAMaior.Enabled = false;
+                btnAlterarAMaior.Enabled = false;
             }
         }
 
@@ -262,6 +266,7 @@ namespace helpdesk2018.View
             if (tamAlt < 12)
             {
                 btnAlterarAMenor.Enabled = true;
+                btnAMenor.Enabled = true;
                 tamanhoAtual = txtPesquisaMotivo.Font.Size;
                 tamAlt += 2;
                 tamanhoAtual += 2.0F;
@@ -281,6 +286,7 @@ namespace helpdesk2018.View
             if (tamAlt == 12)
             {
                 btnAlterarAMaior.Enabled = false;
+                btnAMaior.Enabled = false;
             }
         }
 
@@ -290,6 +296,7 @@ namespace helpdesk2018.View
             if (tamAlt > 6)
             {
                 btnAlterarAMaior.Enabled = true;
+                btnAMaior.Enabled = true;
                 tamanhoAtual = txtPesquisaMotivo.Font.Size;
                 tamAlt -= 2;
                 tamanhoAtual -= 2.0F;
@@ -309,6 +316,7 @@ namespace helpdesk2018.View
             if (tamAlt == 6)
             {
                 btnAlterarAMenor.Enabled = false;
+                btnAMenor.Enabled = false;
             }
         }
 

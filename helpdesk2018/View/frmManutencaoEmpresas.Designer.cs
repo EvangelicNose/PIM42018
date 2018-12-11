@@ -84,7 +84,7 @@
             // btnSair
             // 
             this.btnSair.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSair.Location = new System.Drawing.Point(262, 264);
+            this.btnSair.Location = new System.Drawing.Point(255, 264);
             this.btnSair.Name = "btnSair";
             this.btnSair.Size = new System.Drawing.Size(86, 27);
             this.btnSair.TabIndex = 5;
@@ -99,7 +99,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.btnCadastrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCadastrar.Location = new System.Drawing.Point(124, 263);
+            this.btnCadastrar.Location = new System.Drawing.Point(128, 263);
             this.btnCadastrar.Name = "btnCadastrar";
             this.btnCadastrar.Size = new System.Drawing.Size(92, 28);
             this.btnCadastrar.TabIndex = 4;
@@ -115,7 +115,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblIncNome.AutoSize = true;
             this.lblIncNome.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblIncNome.Location = new System.Drawing.Point(44, 125);
+            this.lblIncNome.Location = new System.Drawing.Point(40, 125);
             this.lblIncNome.Name = "lblIncNome";
             this.lblIncNome.Size = new System.Drawing.Size(38, 13);
             this.lblIncNome.TabIndex = 5;
@@ -126,7 +126,7 @@
             // 
             this.lblIncTelefone.AutoSize = true;
             this.lblIncTelefone.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblIncTelefone.Location = new System.Drawing.Point(44, 160);
+            this.lblIncTelefone.Location = new System.Drawing.Point(40, 160);
             this.lblIncTelefone.Name = "lblIncTelefone";
             this.lblIncTelefone.Size = new System.Drawing.Size(52, 13);
             this.lblIncTelefone.TabIndex = 6;
@@ -137,7 +137,7 @@
             // 
             this.lblIncEndereco.AutoSize = true;
             this.lblIncEndereco.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblIncEndereco.Location = new System.Drawing.Point(44, 196);
+            this.lblIncEndereco.Location = new System.Drawing.Point(40, 196);
             this.lblIncEndereco.Name = "lblIncEndereco";
             this.lblIncEndereco.Size = new System.Drawing.Size(56, 13);
             this.lblIncEndereco.TabIndex = 7;
@@ -171,7 +171,7 @@
             this.ckbIncluirAtiva.CheckState = System.Windows.Forms.CheckState.Checked;
             this.ckbIncluirAtiva.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ckbIncluirAtiva.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.ckbIncluirAtiva.Location = new System.Drawing.Point(44, 225);
+            this.ckbIncluirAtiva.Location = new System.Drawing.Point(40, 229);
             this.ckbIncluirAtiva.Name = "ckbIncluirAtiva";
             this.ckbIncluirAtiva.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.ckbIncluirAtiva.Size = new System.Drawing.Size(68, 17);
@@ -381,7 +381,7 @@
             // btnAlterarSair
             // 
             this.btnAlterarSair.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAlterarSair.Location = new System.Drawing.Point(271, 364);
+            this.btnAlterarSair.Location = new System.Drawing.Point(327, 367);
             this.btnAlterarSair.Name = "btnAlterarSair";
             this.btnAlterarSair.Size = new System.Drawing.Size(75, 26);
             this.btnAlterarSair.TabIndex = 8;
@@ -487,7 +487,7 @@
             // btnAlterarOK
             // 
             this.btnAlterarOK.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAlterarOK.Location = new System.Drawing.Point(12, 109);
+            this.btnAlterarOK.Location = new System.Drawing.Point(10, 110);
             this.btnAlterarOK.Name = "btnAlterarOK";
             this.btnAlterarOK.Size = new System.Drawing.Size(75, 27);
             this.btnAlterarOK.TabIndex = 8;
@@ -604,7 +604,7 @@
             // btnPesquisarEmpresa
             // 
             this.btnPesquisarEmpresa.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPesquisarEmpresa.Location = new System.Drawing.Point(320, 36);
+            this.btnPesquisarEmpresa.Location = new System.Drawing.Point(320, 32);
             this.btnPesquisarEmpresa.Name = "btnPesquisarEmpresa";
             this.btnPesquisarEmpresa.Size = new System.Drawing.Size(91, 30);
             this.btnPesquisarEmpresa.TabIndex = 2;

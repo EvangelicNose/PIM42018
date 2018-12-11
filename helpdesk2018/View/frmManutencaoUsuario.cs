@@ -527,6 +527,7 @@ namespace helpdesk2018.View
             if (tamanhoAtual > 6)
             {
                 btnAlteraAMenor.Enabled = true;
+                btnIncluirAMenor.Enabled = true;
                 tamanhoAtual += 2.0F;
                 ItensPCD();
                 txtPesquisaNome.Focus();
@@ -534,6 +535,7 @@ namespace helpdesk2018.View
             if (tamanhoAtual > 12)
             {
                 btnAlteraAMaior.Enabled = false;
+                btnIncluirAMaior.Enabled = false;
             }
         }
 
@@ -542,6 +544,7 @@ namespace helpdesk2018.View
             if (tamanhoAtual > 6)
             {
                 btnIncluirAMenor.Enabled = true;
+                btnAlteraAMenor.Enabled = true;
                 tamanhoAtual += 2.0F;
                 ItensPCD();
                 txtUsuario.Focus();
@@ -549,6 +552,7 @@ namespace helpdesk2018.View
             if (tamanhoAtual > 12)
             {
                 btnIncluirAMaior.Enabled = false;
+                btnAlteraAMaior.Enabled = false;
             }
         }
 
@@ -557,6 +561,7 @@ namespace helpdesk2018.View
             if (tamanhoAtual < 14)
             {
                 btnIncluirAMaior.Enabled = true;
+                btnAlteraAMaior.Enabled = true;
                 tamanhoAtual -= 2.0F;
                 ItensPCD();
                 txtUsuario.Focus();
@@ -564,6 +569,7 @@ namespace helpdesk2018.View
             if (tamanhoAtual < 8)
             {
                 btnIncluirAMenor.Enabled = false;
+                btnAlteraAMenor.Enabled = false;
             }
         }
 
@@ -572,6 +578,7 @@ namespace helpdesk2018.View
             if (tamanhoAtual < 14)
             {
                 btnAlteraAMaior.Enabled = true;
+                btnIncluirAMaior.Enabled = true;
                 tamanhoAtual -= 2.0F;
                 ItensPCD();
                 txtPesquisaNome.Focus();
@@ -579,6 +586,7 @@ namespace helpdesk2018.View
             if (tamanhoAtual < 8)
             {
                 btnAlteraAMenor.Enabled = false;
+                btnIncluirAMenor.Enabled = false;
             }
         }
     }

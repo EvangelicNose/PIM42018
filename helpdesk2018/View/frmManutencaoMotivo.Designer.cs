@@ -328,7 +328,7 @@
             // btnAlterarSair
             // 
             this.btnAlterarSair.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAlterarSair.Location = new System.Drawing.Point(304, 291);
+            this.btnAlterarSair.Location = new System.Drawing.Point(304, 313);
             this.btnAlterarSair.Name = "btnAlterarSair";
             this.btnAlterarSair.Size = new System.Drawing.Size(75, 28);
             this.btnAlterarSair.TabIndex = 6;
@@ -351,7 +351,7 @@
             // 
             this.btnAlteraMotivo.Enabled = false;
             this.btnAlteraMotivo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAlteraMotivo.Location = new System.Drawing.Point(7, 292);
+            this.btnAlteraMotivo.Location = new System.Drawing.Point(7, 314);
             this.btnAlteraMotivo.Name = "btnAlteraMotivo";
             this.btnAlteraMotivo.Size = new System.Drawing.Size(75, 27);
             this.btnAlteraMotivo.TabIndex = 5;

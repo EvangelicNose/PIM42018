@@ -382,6 +382,7 @@ namespace helpdesk2018.View
             if (tamanhoAtual > 6)
             {
                 btnIncluiAMenor.Enabled = true;
+                btnAlteraAMenor.Enabled = true;
                 tamanhoAtual += 2.0F;
                 ItensPCD();
                 txtNome.Focus();
@@ -389,6 +390,7 @@ namespace helpdesk2018.View
             if (tamanhoAtual > 12)
             {
                 btnIncluiAMaior.Enabled = false;
+                btnAlteraAMaior.Enabled = false;
             }
         }
 
@@ -397,6 +399,7 @@ namespace helpdesk2018.View
             if (tamanhoAtual < 14)
             {
                 btnIncluiAMaior.Enabled = true;
+                btnAlteraAMaior.Enabled = true;
                 tamanhoAtual -= 2.0F;
                 ItensPCD();
                 txtNome.Focus();
@@ -404,6 +407,7 @@ namespace helpdesk2018.View
             if (tamanhoAtual < 8)
             {
                 btnIncluiAMenor.Enabled = false;
+                btnAlteraAMenor.Enabled = false;
             }
         }
 
@@ -412,6 +416,7 @@ namespace helpdesk2018.View
             if (tamanhoAtual > 6)
             {
                 btnAlteraAMenor.Enabled = true;
+                btnIncluiAMenor.Enabled = true;
                 tamanhoAtual += 2.0F;
                 ItensPCD();
                 txtPesquisarEmpresa.Focus();
@@ -419,6 +424,7 @@ namespace helpdesk2018.View
             if (tamanhoAtual > 12)
             {
                 btnAlteraAMaior.Enabled = false;
+                btnIncluiAMaior.Enabled = false;
             }
         }
 
@@ -427,6 +433,7 @@ namespace helpdesk2018.View
             if (tamanhoAtual < 14)
             {
                 btnAlteraAMaior.Enabled = true;
+                btnIncluiAMaior.Enabled = true;
                 tamanhoAtual -= 2.0F;
                 ItensPCD();
                 txtPesquisarEmpresa.Focus();
@@ -434,6 +441,7 @@ namespace helpdesk2018.View
             if (tamanhoAtual < 8)
             {
                 btnAlteraAMenor.Enabled = false;
+                btnIncluiAMenor.Enabled = false;
             }
         }
     }
