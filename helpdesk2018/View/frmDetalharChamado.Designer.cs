@@ -33,104 +33,121 @@
             this.txtMotivo = new System.Windows.Forms.TextBox();
             this.txtResposta = new System.Windows.Forms.TextBox();
             this.txtDescricao = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
+            this.lblNome = new System.Windows.Forms.Label();
+            this.lblEmpresa = new System.Windows.Forms.Label();
+            this.lblMotivo = new System.Windows.Forms.Label();
+            this.lblDescricao = new System.Windows.Forms.Label();
             this.lblResposta = new System.Windows.Forms.Label();
             this.btnFecharChamado = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.label6 = new System.Windows.Forms.Label();
+            this.btnVoltar = new System.Windows.Forms.Button();
+            this.lblOS = new System.Windows.Forms.Label();
             this.txtOS = new System.Windows.Forms.TextBox();
             this.btnAnexo = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnImprimir = new System.Windows.Forms.Button();
+            this.btnAMaior = new System.Windows.Forms.Button();
+            this.btnAMenor = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // txtNome
             // 
             this.txtNome.Enabled = false;
-            this.txtNome.Location = new System.Drawing.Point(72, 20);
+            this.txtNome.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNome.Location = new System.Drawing.Point(98, 33);
             this.txtNome.Name = "txtNome";
-            this.txtNome.Size = new System.Drawing.Size(208, 20);
+            this.txtNome.Size = new System.Drawing.Size(210, 20);
             this.txtNome.TabIndex = 0;
             this.txtNome.TabStop = false;
             // 
             // txtEmpresa
             // 
             this.txtEmpresa.Enabled = false;
-            this.txtEmpresa.Location = new System.Drawing.Point(72, 46);
+            this.txtEmpresa.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtEmpresa.Location = new System.Drawing.Point(98, 59);
             this.txtEmpresa.Name = "txtEmpresa";
-            this.txtEmpresa.Size = new System.Drawing.Size(208, 20);
+            this.txtEmpresa.Size = new System.Drawing.Size(210, 20);
             this.txtEmpresa.TabIndex = 1;
             this.txtEmpresa.TabStop = false;
             // 
             // txtMotivo
             // 
             this.txtMotivo.Enabled = false;
-            this.txtMotivo.Location = new System.Drawing.Point(72, 72);
+            this.txtMotivo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMotivo.Location = new System.Drawing.Point(98, 85);
             this.txtMotivo.Name = "txtMotivo";
-            this.txtMotivo.Size = new System.Drawing.Size(249, 20);
+            this.txtMotivo.Size = new System.Drawing.Size(251, 20);
             this.txtMotivo.TabIndex = 2;
             this.txtMotivo.TabStop = false;
             // 
             // txtResposta
             // 
-            this.txtResposta.Location = new System.Drawing.Point(72, 208);
+            this.txtResposta.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtResposta.Location = new System.Drawing.Point(98, 233);
             this.txtResposta.Multiline = true;
             this.txtResposta.Name = "txtResposta";
-            this.txtResposta.Size = new System.Drawing.Size(348, 107);
+            this.txtResposta.Size = new System.Drawing.Size(350, 104);
             this.txtResposta.TabIndex = 0;
             // 
             // txtDescricao
             // 
             this.txtDescricao.Enabled = false;
-            this.txtDescricao.Location = new System.Drawing.Point(72, 98);
+            this.txtDescricao.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDescricao.Location = new System.Drawing.Point(98, 118);
             this.txtDescricao.Multiline = true;
             this.txtDescricao.Name = "txtDescricao";
-            this.txtDescricao.Size = new System.Drawing.Size(249, 104);
+            this.txtDescricao.Size = new System.Drawing.Size(251, 104);
             this.txtDescricao.TabIndex = 3;
             this.txtDescricao.TabStop = false;
             // 
-            // label1
+            // lblNome
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(28, 23);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(38, 13);
-            this.label1.TabIndex = 5;
-            this.label1.Text = "Nome:";
+            this.lblNome.AutoSize = true;
+            this.lblNome.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNome.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lblNome.Location = new System.Drawing.Point(7, 36);
+            this.lblNome.Name = "lblNome";
+            this.lblNome.Size = new System.Drawing.Size(38, 13);
+            this.lblNome.TabIndex = 5;
+            this.lblNome.Text = "Nome:";
             // 
-            // label2
+            // lblEmpresa
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(15, 49);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(51, 13);
-            this.label2.TabIndex = 6;
-            this.label2.Text = "Empresa:";
+            this.lblEmpresa.AutoSize = true;
+            this.lblEmpresa.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEmpresa.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lblEmpresa.Location = new System.Drawing.Point(7, 62);
+            this.lblEmpresa.Name = "lblEmpresa";
+            this.lblEmpresa.Size = new System.Drawing.Size(51, 13);
+            this.lblEmpresa.TabIndex = 6;
+            this.lblEmpresa.Text = "Empresa:";
             // 
-            // label3
+            // lblMotivo
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(24, 75);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(42, 13);
-            this.label3.TabIndex = 7;
-            this.label3.Text = "Motivo:";
+            this.lblMotivo.AutoSize = true;
+            this.lblMotivo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMotivo.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lblMotivo.Location = new System.Drawing.Point(7, 88);
+            this.lblMotivo.Name = "lblMotivo";
+            this.lblMotivo.Size = new System.Drawing.Size(42, 13);
+            this.lblMotivo.TabIndex = 7;
+            this.lblMotivo.Text = "Motivo:";
             // 
-            // label4
+            // lblDescricao
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(8, 101);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(58, 13);
-            this.label4.TabIndex = 8;
-            this.label4.Text = "Descrição:";
+            this.lblDescricao.AutoSize = true;
+            this.lblDescricao.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDescricao.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lblDescricao.Location = new System.Drawing.Point(7, 121);
+            this.lblDescricao.Name = "lblDescricao";
+            this.lblDescricao.Size = new System.Drawing.Size(58, 13);
+            this.lblDescricao.TabIndex = 8;
+            this.lblDescricao.Text = "Descrição:";
             // 
             // lblResposta
             // 
             this.lblResposta.AutoSize = true;
-            this.lblResposta.Location = new System.Drawing.Point(11, 211);
+            this.lblResposta.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblResposta.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lblResposta.Location = new System.Drawing.Point(7, 236);
             this.lblResposta.Name = "lblResposta";
             this.lblResposta.Size = new System.Drawing.Size(55, 13);
             this.lblResposta.TabIndex = 9;
@@ -138,78 +155,106 @@
             // 
             // btnFecharChamado
             // 
-            this.btnFecharChamado.Location = new System.Drawing.Point(72, 321);
+            this.btnFecharChamado.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFecharChamado.Location = new System.Drawing.Point(98, 346);
             this.btnFecharChamado.Name = "btnFecharChamado";
-            this.btnFecharChamado.Size = new System.Drawing.Size(105, 23);
+            this.btnFecharChamado.Size = new System.Drawing.Size(107, 28);
             this.btnFecharChamado.TabIndex = 1;
             this.btnFecharChamado.Text = "Fechar chamado";
             this.btnFecharChamado.UseVisualStyleBackColor = true;
             this.btnFecharChamado.Click += new System.EventHandler(this.button1_Click);
             // 
-            // button2
+            // btnVoltar
             // 
-            this.button2.Location = new System.Drawing.Point(345, 321);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 3;
-            this.button2.Text = "Voltar";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.btnVoltar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnVoltar.Location = new System.Drawing.Point(371, 346);
+            this.btnVoltar.Name = "btnVoltar";
+            this.btnVoltar.Size = new System.Drawing.Size(77, 28);
+            this.btnVoltar.TabIndex = 3;
+            this.btnVoltar.Text = "Voltar";
+            this.btnVoltar.UseVisualStyleBackColor = true;
+            this.btnVoltar.Click += new System.EventHandler(this.button2_Click);
             // 
-            // label6
+            // lblOS
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(327, 22);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(31, 13);
-            this.label6.TabIndex = 12;
-            this.label6.Text = "O.S.:";
+            this.lblOS.AutoSize = true;
+            this.lblOS.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblOS.Location = new System.Drawing.Point(339, 35);
+            this.lblOS.Name = "lblOS";
+            this.lblOS.Size = new System.Drawing.Size(31, 13);
+            this.lblOS.TabIndex = 12;
+            this.lblOS.Text = "O.S.:";
             // 
             // txtOS
             // 
             this.txtOS.Enabled = false;
-            this.txtOS.Location = new System.Drawing.Point(358, 20);
+            this.txtOS.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtOS.Location = new System.Drawing.Point(384, 33);
             this.txtOS.Name = "txtOS";
-            this.txtOS.Size = new System.Drawing.Size(62, 20);
+            this.txtOS.Size = new System.Drawing.Size(64, 20);
             this.txtOS.TabIndex = 13;
             // 
             // btnAnexo
             // 
             this.btnAnexo.Enabled = false;
             this.btnAnexo.Image = global::helpdesk2018.Properties.Resources.Anexo;
-            this.btnAnexo.Location = new System.Drawing.Point(330, 121);
+            this.btnAnexo.Location = new System.Drawing.Point(355, 141);
             this.btnAnexo.Name = "btnAnexo";
             this.btnAnexo.Size = new System.Drawing.Size(93, 81);
             this.btnAnexo.TabIndex = 4;
             this.btnAnexo.UseVisualStyleBackColor = true;
             this.btnAnexo.Click += new System.EventHandler(this.btnAnexo_Click_1);
             // 
-            // button1
+            // btnImprimir
             // 
-            this.button1.Location = new System.Drawing.Point(183, 321);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(105, 23);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "Imprimir chamado";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            this.btnImprimir.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnImprimir.Location = new System.Drawing.Point(209, 346);
+            this.btnImprimir.Name = "btnImprimir";
+            this.btnImprimir.Size = new System.Drawing.Size(107, 28);
+            this.btnImprimir.TabIndex = 2;
+            this.btnImprimir.Text = "Imprimir chamado";
+            this.btnImprimir.UseVisualStyleBackColor = true;
+            this.btnImprimir.Click += new System.EventHandler(this.button1_Click_1);
+            // 
+            // btnAMaior
+            // 
+            this.btnAMaior.Location = new System.Drawing.Point(420, 2);
+            this.btnAMaior.Name = "btnAMaior";
+            this.btnAMaior.Size = new System.Drawing.Size(28, 23);
+            this.btnAMaior.TabIndex = 24;
+            this.btnAMaior.Text = "A+";
+            this.btnAMaior.UseVisualStyleBackColor = true;
+            this.btnAMaior.Click += new System.EventHandler(this.btnAMaior_Click);
+            // 
+            // btnAMenor
+            // 
+            this.btnAMenor.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAMenor.Location = new System.Drawing.Point(397, 2);
+            this.btnAMenor.Name = "btnAMenor";
+            this.btnAMenor.Size = new System.Drawing.Size(24, 23);
+            this.btnAMenor.TabIndex = 23;
+            this.btnAMenor.Text = "A-";
+            this.btnAMenor.UseVisualStyleBackColor = true;
+            this.btnAMenor.Click += new System.EventHandler(this.btnAMenor_Click);
             // 
             // frmDetalharChamado
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(455, 367);
-            this.Controls.Add(this.button1);
+            this.ClientSize = new System.Drawing.Size(464, 402);
+            this.Controls.Add(this.btnAMaior);
+            this.Controls.Add(this.btnAMenor);
+            this.Controls.Add(this.btnImprimir);
             this.Controls.Add(this.btnAnexo);
             this.Controls.Add(this.txtOS);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.lblOS);
+            this.Controls.Add(this.btnVoltar);
             this.Controls.Add(this.btnFecharChamado);
             this.Controls.Add(this.lblResposta);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lblDescricao);
+            this.Controls.Add(this.lblMotivo);
+            this.Controls.Add(this.lblEmpresa);
+            this.Controls.Add(this.lblNome);
             this.Controls.Add(this.txtDescricao);
             this.Controls.Add(this.txtResposta);
             this.Controls.Add(this.txtMotivo);
@@ -233,16 +278,18 @@
         private System.Windows.Forms.TextBox txtMotivo;
         private System.Windows.Forms.TextBox txtResposta;
         private System.Windows.Forms.TextBox txtDescricao;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label lblNome;
+        private System.Windows.Forms.Label lblEmpresa;
+        private System.Windows.Forms.Label lblMotivo;
+        private System.Windows.Forms.Label lblDescricao;
         private System.Windows.Forms.Label lblResposta;
         private System.Windows.Forms.Button btnFecharChamado;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Button btnVoltar;
+        private System.Windows.Forms.Label lblOS;
         private System.Windows.Forms.TextBox txtOS;
         private System.Windows.Forms.Button btnAnexo;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnImprimir;
+        private System.Windows.Forms.Button btnAMaior;
+        private System.Windows.Forms.Button btnAMenor;
     }
 }

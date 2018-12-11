@@ -21,6 +21,17 @@ namespace helpdesk2018.View
 
         private void frmDetalharChamado_Load(object sender, EventArgs e)
         {
+            if (frmMenu.PCD == true)
+            {
+                btnAMaior.Visible = true;
+                btnAMenor.Visible = true;
+            }
+            else
+            {
+                btnAMaior.Visible = false;
+                btnAMenor.Visible = false;
+            }
+
             if (File.Exists(Application.StartupPath + @"\Anexo\OS" + mdlChamados.Chamado.OS.ToString() + ".jpg"))
             {
                 btnAnexo.Enabled = true;
@@ -81,6 +92,56 @@ namespace helpdesk2018.View
         {
             FrmPrintChamados printChamados = new FrmPrintChamados(txtOS.Text, txtNome.Text, txtEmpresa.Text, txtMotivo.Text, txtDescricao.Text, txtResposta.Text);
             printChamados.ShowDialog();
+        }
+
+        public float tamanhoAtual = 8.25F;
+        public void ItensPCD()
+        {
+            lblNome.Font = new Font(lblNome.Font.Name, tamanhoAtual);
+            lblEmpresa.Font = new Font(lblEmpresa.Font.Name, tamanhoAtual);
+            lblMotivo.Font = new Font(lblMotivo.Font.Name, tamanhoAtual);
+            lblDescricao.Font = new Font(lblDescricao.Font.Name, tamanhoAtual);
+            lblResposta.Font = new Font(lblResposta.Font.Name, tamanhoAtual);
+            lblOS.Font = new Font(lblOS.Font.Name, tamanhoAtual);
+            txtNome.Font = new Font(txtNome.Font.Name, tamanhoAtual);
+            txtEmpresa.Font = new Font(txtEmpresa.Font.Name, tamanhoAtual);
+            txtMotivo.Font = new Font(txtMotivo.Font.Name, tamanhoAtual);
+            txtDescricao.Font = new Font(txtDescricao.Font.Name, tamanhoAtual);
+            txtResposta.Font = new Font(txtResposta.Font.Name, tamanhoAtual);
+            txtOS.Font = new Font(txtOS.Font.Name, tamanhoAtual);
+            btnFecharChamado.Font = new Font(btnFecharChamado.Font.Name, tamanhoAtual);
+            btnImprimir.Font = new Font(btnImprimir.Font.Name, tamanhoAtual);
+            btnVoltar.Font = new Font(btnVoltar.Font.Name, tamanhoAtual);
+
+        }
+        private void btnAMaior_Click(object sender, EventArgs e)
+        {
+            if (tamanhoAtual > 6)
+            {
+                btnAMenor.Enabled = true;
+                tamanhoAtual += 2.0F;
+                ItensPCD();
+                txtDescricao.Focus();
+            }
+            if (tamanhoAtual > 12)
+            {
+                btnAMaior.Enabled = false;
+            }
+        }
+
+        private void btnAMenor_Click(object sender, EventArgs e)
+        {
+            if (tamanhoAtual < 14)
+            {
+                btnAMaior.Enabled = true;
+                tamanhoAtual -= 2.0F;
+                ItensPCD();
+                txtDescricao.Focus();
+            }
+            if (tamanhoAtual < 8)
+            {
+                btnAMenor.Enabled = false;
+            }
         }
     }
 }
