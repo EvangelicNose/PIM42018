@@ -1,0 +1,137 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<SequenceDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm5="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/LogicalClassDesigner" xmlns:dm10="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm11="http://schemas.microsoft.com/dsltools/UseCaseModel" dslVersion="1.0.0.0" Id="5d8cac59-fb64-4dc0-8453-086b0d041665" name="SequencePIM(Cadastro" linkedPackageId="9c51d81d-6060-4ee4-9099-0214fa39a01c" xmlns="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner">
+  <profileInstances>
+    <packageHasProfileInstances Id="e0355e89-d76d-464d-9308-369cc0d5521e">
+      <profileInstance Id="ee01b3e6-fec0-46f9-9114-c91c8849bc02" name="StandardProfileL2">
+        <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+      </profileInstance>
+      <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances Id="e31f46d6-2b4d-4f42-ba89-62a6e681f49e">
+      <profileInstance Id="fb9281c9-b55f-4e76-b676-43b7a0b8a3d1" name="StandardProfileL3">
+        <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+      </profileInstance>
+      <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+    </packageHasProfileInstances>
+  </profileInstances>
+  <packagedElements>
+    <packageHasNamedElement>
+      <interaction Id="4b14ba36-6816-4c19-b303-0156572d45dd" name="SequencePIM(Cadastro" collapseFragmentsFlag="false" isActiveClass="false" isAbstract="false" isLeaf="false" isReentrant="false">
+        <elementDefinition Id="8ecbf6d9-b30e-4b38-93fe-226db9918e18" />
+        <fragments>
+          <behaviorExecutionSpecification Id="5135a0f8-d79f-4856-b24d-3f99ffc9c054" name="BehaviorExecutionSpecification1">
+            <elementDefinition Id="4b7a2400-a67c-4db9-b063-4df87da76d91" />
+            <coveredLifelines>
+              <lifelineMoniker Id="8f8def4f-8337-4ead-bc6b-7f22388ccd65" LastKnownName="Tela Cadastro" />
+            </coveredLifelines>
+            <finish>
+              <executionOccurrenceSpecificationMoniker Id="6544d3e7-7bd8-41a7-a0c1-add988f1b511" LastKnownName="ExecutionOccurrenceSpecification2" />
+            </finish>
+            <start>
+              <executionOccurrenceSpecificationMoniker Id="fa6109f2-560e-46a6-bc54-00e7900ef0c8" LastKnownName="ExecutionOccurrenceSpecification1" />
+            </start>
+            <nestedOccurrences>
+              <messageOccurrenceSpecificationMoniker Id="5248b8fb-d40c-4f33-b0d7-04e72f1c8c3b" LastKnownName="MessageOccurrenceSpecification2" />
+              <messageOccurrenceSpecificationMoniker Id="ade9ec81-e842-4bb6-88d9-d42ee5327e3c" LastKnownName="MessageOccurrenceSpecification3" />
+            </nestedOccurrences>
+          </behaviorExecutionSpecification>
+          <executionOccurrenceSpecification Id="fa6109f2-560e-46a6-bc54-00e7900ef0c8" name="ExecutionOccurrenceSpecification1">
+            <elementDefinition Id="8f96a8f5-4704-4c13-8c3a-c7b4f57b2157" />
+            <event>
+              <executionOccurrenceSpecificationReferencesEvent>
+                <executionEventMoniker Id="2e6963d1-73da-4893-bfd5-b2ecf13f94d3" LastKnownName="ExecutionEvent" />
+              </executionOccurrenceSpecificationReferencesEvent>
+            </event>
+            <covered>
+              <lifelineMoniker Id="8f8def4f-8337-4ead-bc6b-7f22388ccd65" LastKnownName="Tela Cadastro" />
+            </covered>
+          </executionOccurrenceSpecification>
+          <messageOccurrenceSpecification Id="fd16337d-7894-4527-8bbf-e26d7590b75f" name="MessageOccurrenceSpecification1">
+            <elementDefinition Id="2d51c2eb-7444-45c8-8f0c-3c6e6f31d6d1" />
+            <covered>
+              <lifelineMoniker Id="00c4ceaf-f76b-4675-8a8d-6942fc46bcf5" LastKnownName="Tela Principal" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification Id="5248b8fb-d40c-4f33-b0d7-04e72f1c8c3b" name="MessageOccurrenceSpecification2">
+            <elementDefinition Id="80287522-fb7d-41ec-830a-23c29368db73" />
+            <covered>
+              <lifelineMoniker Id="8f8def4f-8337-4ead-bc6b-7f22388ccd65" LastKnownName="Tela Cadastro" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification Id="ade9ec81-e842-4bb6-88d9-d42ee5327e3c" name="MessageOccurrenceSpecification3">
+            <elementDefinition Id="d61a618a-634e-4ec3-b2da-578e680df7b6" />
+            <covered>
+              <lifelineMoniker Id="8f8def4f-8337-4ead-bc6b-7f22388ccd65" LastKnownName="Tela Cadastro" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification Id="d94ec2b0-396d-4727-8d05-c8aaab6b5c10" name="MessageOccurrenceSpecification4">
+            <elementDefinition Id="b3d40dea-ea62-49a4-bce4-b1e4a3d12fba" />
+            <covered>
+              <lifelineMoniker Id="00c4ceaf-f76b-4675-8a8d-6942fc46bcf5" LastKnownName="Tela Principal" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <executionOccurrenceSpecification Id="6544d3e7-7bd8-41a7-a0c1-add988f1b511" name="ExecutionOccurrenceSpecification2">
+            <elementDefinition Id="641a4863-96ba-4fa4-b5ff-b7eac87ab111" />
+            <event>
+              <executionOccurrenceSpecificationReferencesEvent>
+                <executionEventMoniker Id="976dd020-57b2-423c-ac25-916ecbbcbce7" LastKnownName="ExecutionEvent" />
+              </executionOccurrenceSpecificationReferencesEvent>
+            </event>
+            <covered>
+              <lifelineMoniker Id="8f8def4f-8337-4ead-bc6b-7f22388ccd65" LastKnownName="Tela Cadastro" />
+            </covered>
+          </executionOccurrenceSpecification>
+        </fragments>
+        <lifelines>
+          <lifeline Id="00c4ceaf-f76b-4675-8a8d-6942fc46bcf5" name="Tela Principal" isActor="false" lifelineDisplayName="Tela Principal">
+            <elementDefinition Id="a2570e19-445f-4d4f-ae89-772c3bdd2d2a" />
+            <topLevelOccurrences>
+              <messageOccurrenceSpecificationMoniker Id="fd16337d-7894-4527-8bbf-e26d7590b75f" LastKnownName="MessageOccurrenceSpecification1" />
+              <messageOccurrenceSpecificationMoniker Id="d94ec2b0-396d-4727-8d05-c8aaab6b5c10" LastKnownName="MessageOccurrenceSpecification4" />
+            </topLevelOccurrences>
+          </lifeline>
+          <lifeline Id="8f8def4f-8337-4ead-bc6b-7f22388ccd65" name="Tela Cadastro" isActor="false" lifelineDisplayName="Tela Cadastro">
+            <elementDefinition Id="690aa5b6-e9a5-4351-847f-8f74280459b7" />
+            <topLevelOccurrences>
+              <executionOccurrenceSpecificationMoniker Id="fa6109f2-560e-46a6-bc54-00e7900ef0c8" LastKnownName="ExecutionOccurrenceSpecification1" />
+              <executionOccurrenceSpecificationMoniker Id="6544d3e7-7bd8-41a7-a0c1-add988f1b511" LastKnownName="ExecutionOccurrenceSpecification2" />
+            </topLevelOccurrences>
+          </lifeline>
+        </lifelines>
+        <messages>
+          <message Id="987c7257-4d40-4cb5-9ab1-7c65332c0ef1" name="Acessa a tela de cadastro" messageKind="Complete" messageSort="SynchCall" createSelfMessage="false">
+            <elementDefinition Id="8fdcb43c-53f6-40f3-bcab-9ce88923d1be" />
+            <sendEvent>
+              <messageOccurrenceSpecificationMoniker Id="fd16337d-7894-4527-8bbf-e26d7590b75f" LastKnownName="MessageOccurrenceSpecification1" />
+            </sendEvent>
+            <receiveEvent>
+              <messageOccurrenceSpecificationMoniker Id="5248b8fb-d40c-4f33-b0d7-04e72f1c8c3b" LastKnownName="MessageOccurrenceSpecification2" />
+            </receiveEvent>
+          </message>
+          <message Id="0be8d44f-1092-4e43-8eb9-e886bed6ec54" name="Cadastro efetuado com sucesso" messageKind="Complete" messageSort="Reply" createSelfMessage="false">
+            <elementDefinition Id="b049dcc5-23a5-46b8-ad77-777ece9d11d8" />
+            <sendEvent>
+              <messageOccurrenceSpecificationMoniker Id="ade9ec81-e842-4bb6-88d9-d42ee5327e3c" LastKnownName="MessageOccurrenceSpecification3" />
+            </sendEvent>
+            <receiveEvent>
+              <messageOccurrenceSpecificationMoniker Id="d94ec2b0-396d-4727-8d05-c8aaab6b5c10" LastKnownName="MessageOccurrenceSpecification4" />
+            </receiveEvent>
+          </message>
+        </messages>
+      </interaction>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <executionEvent Id="2e6963d1-73da-4893-bfd5-b2ecf13f94d3" name="ExecutionEvent">
+        <elementDefinition Id="22516b9d-2280-42d3-8d11-d1e284000585" />
+      </executionEvent>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <executionEvent Id="976dd020-57b2-423c-ac25-916ecbbcbce7" name="ExecutionEvent">
+        <elementDefinition Id="7b43859f-00b4-498f-8b65-9d899c238f3c" />
+      </executionEvent>
+    </packageHasNamedElement>
+  </packagedElements>
+  <package Id="9c51d81d-6060-4ee4-9099-0214fa39a01c" name="ModelandoPIM4">
+    <elementDefinition Id="aaf70c15-7bfb-45e0-a33d-0037130a2ddb" />
+  </package>
+</SequenceDesignerModel>

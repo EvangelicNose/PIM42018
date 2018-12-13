@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<sequenceDesignerDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="UMLSequenceDiagramPIM(Cadastro">
+  <SequenceDesignerModelMoniker Id="5d8cac59-fb64-4dc0-8453-086b0d041665" />
+  <nestedChildShapes>
+    <lifelineShape Id="4c90ac82-f06f-490c-b350-e76d29909f22" absoluteBounds="1.5416666666666665, 1, 0.15, 7" visible="true" visualStyleMode="Modified">
+      <lifelineMoniker Id="00c4ceaf-f76b-4675-8a8d-6942fc46bcf5" LastKnownName="Tela Principal" />
+      <relativeChildShapes>
+        <umlLifelineHeadShape Id="367e864a-f4cf-41eb-aaed-e9f740f9f663" absoluteBounds="1.1045034341017403, 0.6, 1.0243264651298523, 0.4" customColor="White" visualStyleMode="Modified">
+          <lifelineMoniker Id="00c4ceaf-f76b-4675-8a8d-6942fc46bcf5" LastKnownName="Tela Principal" />
+          <relativeChildShapes />
+        </umlLifelineHeadShape>
+        <lifelineHoverShape Id="9356ccff-7390-4685-8194-7deee196facb" absoluteBounds="1.5416666666666665, 1, 0, 7">
+          <lifelineMoniker Id="00c4ceaf-f76b-4675-8a8d-6942fc46bcf5" LastKnownName="Tela Principal" />
+        </lifelineHoverShape>
+      </relativeChildShapes>
+    </lifelineShape>
+    <lifelineShape Id="909647bf-327d-4fee-a468-2066f916bc8b" absoluteBounds="4.2059132325649262, 1, 0.15, 7" visible="true" visualStyleMode="Modified">
+      <lifelineMoniker Id="8f8def4f-8337-4ead-bc6b-7f22388ccd65" LastKnownName="Tela Cadastro" />
+      <relativeChildShapes>
+        <umlLifelineHeadShape Id="1431757e-48f9-46b0-a7bc-884195a47c26" absoluteBounds="3.7639485478401187, 0.6, 1.0339293694496154, 0.4" customColor="White" visualStyleMode="Modified">
+          <lifelineMoniker Id="8f8def4f-8337-4ead-bc6b-7f22388ccd65" LastKnownName="Tela Cadastro" />
+          <relativeChildShapes />
+        </umlLifelineHeadShape>
+        <lifelineHoverShape Id="de410dca-085f-491a-a158-15de29d6008b" absoluteBounds="4.2059132325649262, 1, 0, 7">
+          <lifelineMoniker Id="8f8def4f-8337-4ead-bc6b-7f22388ccd65" LastKnownName="Tela Cadastro" />
+        </lifelineHoverShape>
+        <umlExecutionSpecificationShape Id="36556e26-4a73-4a59-8008-d38cbb9248c9" absoluteBounds="4.2059132325649262, 1.3, 0.15, 0.55" customColor="184, 204, 215" visualStyleMode="Modified">
+          <behaviorExecutionSpecificationMoniker Id="5135a0f8-d79f-4856-b24d-3f99ffc9c054" LastKnownName="BehaviorExecutionSpecification1" />
+        </umlExecutionSpecificationShape>
+      </relativeChildShapes>
+    </lifelineShape>
+    <syncMessageConnector edgePoints="[(1.61666666666667 : 1.3); (4.20591323256493 : 1.3)]" fixedFrom="Caller" fixedTo="Caller" TargetRelationshipDomainClassId="e24617ce-6c7e-4c7d-802a-63014f02e313" customColor="Black" visible="true" visualStyleMode="Modified" messageId="00000000-0000-0000-0000-000000000000">
+      <relativeChildShapes />
+      <nodes>
+        <lifelineShapeMoniker Id="4c90ac82-f06f-490c-b350-e76d29909f22" />
+        <umlExecutionSpecificationShapeMoniker Id="36556e26-4a73-4a59-8008-d38cbb9248c9" />
+      </nodes>
+    </syncMessageConnector>
+    <returnMessageConnector edgePoints="[(4.20591323256493 : 1.85); (1.61666666666667 : 1.85)]" fixedFrom="Caller" fixedTo="Caller" TargetRelationshipDomainClassId="e24617ce-6c7e-4c7d-802a-63014f02e313" customColor="Black" visible="true" visualStyleMode="Modified" messageId="00000000-0000-0000-0000-000000000000">
+      <relativeChildShapes />
+      <nodes>
+        <umlExecutionSpecificationShapeMoniker Id="36556e26-4a73-4a59-8008-d38cbb9248c9" />
+        <lifelineShapeMoniker Id="4c90ac82-f06f-490c-b350-e76d29909f22" />
+      </nodes>
+    </returnMessageConnector>
+  </nestedChildShapes>
+</sequenceDesignerDiagram>

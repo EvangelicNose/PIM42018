@@ -169,7 +169,7 @@ namespace helpdesk2018.View
         }
 
         public static bool PCD = false;
-        int Click=0;
+        new int Click=0;
         private void botãoPCDToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (Click == 0)

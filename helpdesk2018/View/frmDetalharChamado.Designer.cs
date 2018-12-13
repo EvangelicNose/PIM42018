@@ -266,7 +266,6 @@
             this.lblFechado.Size = new System.Drawing.Size(52, 13);
             this.lblFechado.TabIndex = 27;
             this.lblFechado.Text = "Fechado:";
-            this.lblFechado.Visible = false;
             // 
             // txtFechado
             // 
@@ -275,7 +274,6 @@
             this.txtFechado.Name = "txtFechado";
             this.txtFechado.Size = new System.Drawing.Size(113, 20);
             this.txtFechado.TabIndex = 28;
-            this.txtFechado.Visible = false;
             // 
             // frmDetalharChamado
             // 

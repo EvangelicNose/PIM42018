@@ -145,6 +145,7 @@ namespace helpdesk2018.Controller
 
             cmd.ExecuteNonQuery();
 
+
            // SQL = "Update tb_chamados set fk_idstatus = 2 where os = @os";
 
             if (cmd.ExecuteNonQuery() > 0)

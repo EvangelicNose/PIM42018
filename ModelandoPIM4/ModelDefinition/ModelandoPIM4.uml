@@ -1,0 +1,275 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<modelStoreModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm5="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm10="http://schemas.microsoft.com/dsltools/UseCaseModel" xmlns:dm11="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner"
+  dslVersion="1.0.0.0"
+  Id="aaf70c15-7bfb-45e0-a33d-0037130a2ddb"
+  name="ModelandoPIM4" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
+  <profileInstances>
+    <packageHasProfileInstances
+      Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b">
+      <profileInstance
+        Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791"
+        name="StandardProfileL2" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances
+      Id="29349502-908c-4fda-9054-c48619c59ed0">
+      <profileInstance
+        Id="532ea607-fb19-44b8-8502-3351b05452be"
+        name="StandardProfileL3" />
+    </packageHasProfileInstances>
+  </profileInstances>
+  <packagedElements>
+    <packageHasNamedElement>
+      <undefinedType
+        Id="c79e8692-95fa-439d-a4e2-b660d601bf49"
+        name="void" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <undefinedType
+        Id="650fb671-c8d6-43db-81e7-cca5ad92bbe0"
+        name="OleDbConnection();" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="73ebb339-b509-493e-bea8-e0c3a598b6d7"
+        LastKnownName="Model"
+        LastKnownLocation="Package_2314.uml" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="19a37d3e-80f2-4e47-82af-d3e9a6d37d03"
+        LastKnownName="Controller"
+        LastKnownLocation="Package_2323.uml" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="df64aa09-d8a8-49e4-92db-24c94e1359dd"
+        LastKnownName="View"
+        LastKnownLocation="Package_2326.uml" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <interaction
+        Id="8ecbf6d9-b30e-4b38-93fe-226db9918e18"
+        name="SequencePIM(Cadastro"
+        collapseFragmentsFlag="false"
+        isActiveClass="false"
+        isAbstract="false"
+        isLeaf="false"
+        isReentrant="false">
+        <fragments>
+          <behaviorExecutionSpecification
+            Id="4b7a2400-a67c-4db9-b063-4df87da76d91"
+            name="BehaviorExecutionSpecification1">
+            <coveredLifelines>
+              <lifelineMoniker
+                Id="690aa5b6-e9a5-4351-847f-8f74280459b7"
+                LastKnownName="Tela Cadastro"
+                LastKnownLocation="ModelandoPIM4.uml" />
+            </coveredLifelines>
+            <finish>
+              <executionOccurrenceSpecificationMoniker
+                Id="641a4863-96ba-4fa4-b5ff-b7eac87ab111"
+                LastKnownName="ExecutionOccurrenceSpecification2"
+                LastKnownLocation="ModelandoPIM4.uml" />
+            </finish>
+            <start>
+              <executionOccurrenceSpecificationMoniker
+                Id="8f96a8f5-4704-4c13-8c3a-c7b4f57b2157"
+                LastKnownName="ExecutionOccurrenceSpecification1"
+                LastKnownLocation="ModelandoPIM4.uml" />
+            </start>
+            <nestedOccurrences>
+              <messageOccurrenceSpecificationMoniker
+                Id="80287522-fb7d-41ec-830a-23c29368db73"
+                LastKnownName="MessageOccurrenceSpecification2"
+                LastKnownLocation="ModelandoPIM4.uml" />
+              <messageOccurrenceSpecificationMoniker
+                Id="d61a618a-634e-4ec3-b2da-578e680df7b6"
+                LastKnownName="MessageOccurrenceSpecification3"
+                LastKnownLocation="ModelandoPIM4.uml" />
+            </nestedOccurrences>
+          </behaviorExecutionSpecification>
+          <executionOccurrenceSpecification
+            Id="8f96a8f5-4704-4c13-8c3a-c7b4f57b2157"
+            name="ExecutionOccurrenceSpecification1">
+            <event>
+              <executionOccurrenceSpecificationReferencesEvent>
+                <executionEventMoniker
+                  Id="22516b9d-2280-42d3-8d11-d1e284000585"
+                  LastKnownName="ExecutionEvent"
+                  LastKnownLocation="ModelandoPIM4.uml" />
+              </executionOccurrenceSpecificationReferencesEvent>
+            </event>
+            <covered>
+              <lifelineMoniker
+                Id="690aa5b6-e9a5-4351-847f-8f74280459b7"
+                LastKnownName="Tela Cadastro"
+                LastKnownLocation="ModelandoPIM4.uml" />
+            </covered>
+          </executionOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="2d51c2eb-7444-45c8-8f0c-3c6e6f31d6d1"
+            name="MessageOccurrenceSpecification1">
+            <covered>
+              <lifelineMoniker
+                Id="a2570e19-445f-4d4f-ae89-772c3bdd2d2a"
+                LastKnownName="Tela Principal"
+                LastKnownLocation="ModelandoPIM4.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="80287522-fb7d-41ec-830a-23c29368db73"
+            name="MessageOccurrenceSpecification2">
+            <covered>
+              <lifelineMoniker
+                Id="690aa5b6-e9a5-4351-847f-8f74280459b7"
+                LastKnownName="Tela Cadastro"
+                LastKnownLocation="ModelandoPIM4.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="d61a618a-634e-4ec3-b2da-578e680df7b6"
+            name="MessageOccurrenceSpecification3">
+            <covered>
+              <lifelineMoniker
+                Id="690aa5b6-e9a5-4351-847f-8f74280459b7"
+                LastKnownName="Tela Cadastro"
+                LastKnownLocation="ModelandoPIM4.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="b3d40dea-ea62-49a4-bce4-b1e4a3d12fba"
+            name="MessageOccurrenceSpecification4">
+            <covered>
+              <lifelineMoniker
+                Id="a2570e19-445f-4d4f-ae89-772c3bdd2d2a"
+                LastKnownName="Tela Principal"
+                LastKnownLocation="ModelandoPIM4.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <executionOccurrenceSpecification
+            Id="641a4863-96ba-4fa4-b5ff-b7eac87ab111"
+            name="ExecutionOccurrenceSpecification2">
+            <event>
+              <executionOccurrenceSpecificationReferencesEvent>
+                <executionEventMoniker
+                  Id="7b43859f-00b4-498f-8b65-9d899c238f3c"
+                  LastKnownName="ExecutionEvent"
+                  LastKnownLocation="ModelandoPIM4.uml" />
+              </executionOccurrenceSpecificationReferencesEvent>
+            </event>
+            <covered>
+              <lifelineMoniker
+                Id="690aa5b6-e9a5-4351-847f-8f74280459b7"
+                LastKnownName="Tela Cadastro"
+                LastKnownLocation="ModelandoPIM4.uml" />
+            </covered>
+          </executionOccurrenceSpecification>
+        </fragments>
+        <lifelines>
+          <lifeline
+            Id="a2570e19-445f-4d4f-ae89-772c3bdd2d2a"
+            name="Tela Principal"
+            isActor="false"
+            lifelineDisplayName="Tela Principal">
+            <topLevelOccurrences>
+              <messageOccurrenceSpecificationMoniker
+                Id="2d51c2eb-7444-45c8-8f0c-3c6e6f31d6d1"
+                LastKnownName="MessageOccurrenceSpecification1"
+                LastKnownLocation="ModelandoPIM4.uml" />
+              <messageOccurrenceSpecificationMoniker
+                Id="b3d40dea-ea62-49a4-bce4-b1e4a3d12fba"
+                LastKnownName="MessageOccurrenceSpecification4"
+                LastKnownLocation="ModelandoPIM4.uml" />
+            </topLevelOccurrences>
+          </lifeline>
+          <lifeline
+            Id="690aa5b6-e9a5-4351-847f-8f74280459b7"
+            name="Tela Cadastro"
+            isActor="false"
+            lifelineDisplayName="Tela Cadastro">
+            <topLevelOccurrences>
+              <executionOccurrenceSpecificationMoniker
+                Id="8f96a8f5-4704-4c13-8c3a-c7b4f57b2157"
+                LastKnownName="ExecutionOccurrenceSpecification1"
+                LastKnownLocation="ModelandoPIM4.uml" />
+              <executionOccurrenceSpecificationMoniker
+                Id="641a4863-96ba-4fa4-b5ff-b7eac87ab111"
+                LastKnownName="ExecutionOccurrenceSpecification2"
+                LastKnownLocation="ModelandoPIM4.uml" />
+            </topLevelOccurrences>
+          </lifeline>
+        </lifelines>
+        <messages>
+          <message
+            Id="8fdcb43c-53f6-40f3-bcab-9ce88923d1be"
+            name="Acessa a tela de cadastro"
+            messageKind="Complete"
+            messageSort="SynchCall"
+            createSelfMessage="false">
+            <sendEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="2d51c2eb-7444-45c8-8f0c-3c6e6f31d6d1"
+                LastKnownName="MessageOccurrenceSpecification1"
+                LastKnownLocation="ModelandoPIM4.uml" />
+            </sendEvent>
+            <receiveEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="80287522-fb7d-41ec-830a-23c29368db73"
+                LastKnownName="MessageOccurrenceSpecification2"
+                LastKnownLocation="ModelandoPIM4.uml" />
+            </receiveEvent>
+          </message>
+          <message
+            Id="b049dcc5-23a5-46b8-ad77-777ece9d11d8"
+            name="Cadastro efetuado com sucesso"
+            messageKind="Complete"
+            messageSort="Reply"
+            createSelfMessage="false">
+            <sendEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="d61a618a-634e-4ec3-b2da-578e680df7b6"
+                LastKnownName="MessageOccurrenceSpecification3"
+                LastKnownLocation="ModelandoPIM4.uml" />
+            </sendEvent>
+            <receiveEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="b3d40dea-ea62-49a4-bce4-b1e4a3d12fba"
+                LastKnownName="MessageOccurrenceSpecification4"
+                LastKnownLocation="ModelandoPIM4.uml" />
+            </receiveEvent>
+          </message>
+        </messages>
+      </interaction>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <executionEvent
+        Id="22516b9d-2280-42d3-8d11-d1e284000585"
+        name="ExecutionEvent" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <executionEvent
+        Id="7b43859f-00b4-498f-8b65-9d899c238f3c"
+        name="ExecutionEvent" />
+    </packageHasNamedElement>
+  </packagedElements>
+  <primitiveType
+    Id="220a3521-e091-4221-bae9-3ef9018e845c"
+    name="Integer"
+    isAbstract="false"
+    isLeaf="false" />
+  <primitiveType
+    Id="8943dc84-709e-4f62-b15a-a3273aa6f165"
+    name="Boolean"
+    isAbstract="false"
+    isLeaf="false" />
+  <primitiveType
+    Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+    name="String"
+    isAbstract="false"
+    isLeaf="false" />
+  <primitiveType
+    Id="3ab42e7d-4969-445a-b209-471f5cb8209c"
+    name="UnlimitedNatural"
+    isAbstract="false"
+    isLeaf="false" />
+</modelStoreModel>

@@ -49,6 +49,7 @@ namespace helpdesk2018.View
             txtNome.Text = mdlChamados.Chamado.NomeUsuario;
             txtMotivo.Text = mdlChamados.Chamado.Motivo;
             txtAberto.Text = mdlChamados.Chamado.Aberto;
+            txtFechado.Text = mdlChamados.Chamado.Fechado;
             
             if (mdlChamados.Chamado.Status == "2")
             {
@@ -74,6 +75,8 @@ namespace helpdesk2018.View
                 MessageBox.Show("Chamado fechado com sucesso!", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 txtResposta.Enabled = false;
                 btnFecharChamado.Enabled = false;
+                ctlChamados.getChamado();
+                txtFechado.Text = mdlChamados.Chamado.Fechado;
                 btnVoltar.Select();
             }else
             {
@@ -94,7 +97,7 @@ namespace helpdesk2018.View
 
         private void button1_Click_1(object sender, EventArgs e)
         {
-            FrmPrintChamados printChamados = new FrmPrintChamados(txtOS.Text, txtNome.Text, txtEmpresa.Text, txtMotivo.Text, txtDescricao.Text, txtAberto.Text, txtResposta.Text);
+            FrmPrintChamados printChamados = new FrmPrintChamados(txtOS.Text, txtNome.Text, txtEmpresa.Text, txtMotivo.Text, txtDescricao.Text, txtAberto.Text, txtResposta.Text, txtFechado.Text);
             printChamados.ShowDialog();
         }
 

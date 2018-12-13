@@ -1,4 +1,6 @@
-﻿namespace helpdesk2018.View
+﻿using Microsoft.Reporting.WinForms;
+
+namespace helpdesk2018.View
 {
     partial class FrmPrintChamados
     {
@@ -49,6 +51,7 @@
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.reportViewer1);
             this.Name = "FrmPrintChamados";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Relatório de chamados...";
             this.ResumeLayout(false);
 
@@ -56,6 +59,6 @@
 
         #endregion
 
-        private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
+        private ReportViewer reportViewer1;
     }
 }

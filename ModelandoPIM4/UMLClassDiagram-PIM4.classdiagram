@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm5="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" dslVersion="1.0.0.0" Id="fa6ff075-311e-4017-8ea2-a60f58cb875a" name="UMLClassDiagram-PIM4" linkedPackageId="64faad34-8f17-4089-b761-c0ff23d52c0d" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
+  <profileInstances>
+    <packageHasProfileInstances Id="fa9a6cee-acc6-47b5-a517-48ecbf136cf9">
+      <profileInstance Id="12b7c9e6-fd66-483e-bec6-6d2fc6f0875a" name="StandardProfileL2">
+        <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+      </profileInstance>
+      <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances Id="a7c99cb4-70d9-42e9-a1a7-e65aaa0e9b6a">
+      <profileInstance Id="9eda5375-16d8-4f75-a720-310b5e90eba9" name="StandardProfileL3">
+        <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+      </profileInstance>
+      <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+    </packageHasProfileInstances>
+  </profileInstances>
+  <packagedElements>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="42fe41cd-0f15-4240-acac-0a733926d3da" name="Class1" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="fa32b281-dca5-46d1-b0aa-04fa45065caa" />
+      </class>
+    </logicalClassDesignerModelHasTypes>
+  </packagedElements>
+  <package Id="64faad34-8f17-4089-b761-c0ff23d52c0d" name="ModelandoPIM4">
+    <elementDefinition Id="aaf70c15-7bfb-45e0-a33d-0037130a2ddb" />
+  </package>
+</logicalClassDesignerModel>

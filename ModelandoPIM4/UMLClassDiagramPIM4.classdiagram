@@ -1,0 +1,892 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm5="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm10="http://schemas.microsoft.com/dsltools/UseCaseModel" dslVersion="1.0.0.0" Id="ad07d416-588c-46a3-90e7-230a7ebe524a" name="UMLClassDiagramPIM4" linkedPackageId="859de623-80f6-4a24-9a93-d2489e37a9bf" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
+  <profileInstances>
+    <packageHasProfileInstances Id="a4fed00b-32e7-4b2b-890a-a1a7db9f1db7">
+      <profileInstance Id="df4ee69a-83be-4372-b33f-e00e1ea7092f" name="StandardProfileL2">
+        <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+      </profileInstance>
+      <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances Id="3a75ca7f-81a1-4fe6-a7d0-7a833fdb66f1">
+      <profileInstance Id="61ef9625-21c2-4b49-a955-292aeb43efb8" name="StandardProfileL3">
+        <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+      </profileInstance>
+      <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+    </packageHasProfileInstances>
+  </profileInstances>
+  <packagedElements>
+    <packageHasNamedElement>
+      <referencedType Id="9ce71b82-6d86-4af7-8e38-8a0543c939a1" name="void" isAbstract="false" isLeaf="false" cachedFullName="void">
+        <elementDefinition Id="c79e8692-95fa-439d-a4e2-b660d601bf49" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="b0bde78c-aec1-46a6-ae49-24a51041f9dc" name="void" isAbstract="false" isLeaf="false" cachedFullName="void">
+        <elementDefinition Id="c79e8692-95fa-439d-a4e2-b660d601bf49" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="09306c33-4a16-4f0f-9347-2ac78b620784" name="void" isAbstract="false" isLeaf="false" cachedFullName="void">
+        <elementDefinition Id="c79e8692-95fa-439d-a4e2-b660d601bf49" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="9758dfdc-0e82-47de-a521-64c02ba9c032" name="OleDbConnection();" isAbstract="false" isLeaf="false" cachedFullName="OleDbConnection();">
+        <elementDefinition Id="650fb671-c8d6-43db-81e7-cca5ad92bbe0" />
+      </referencedType>
+    </packageHasNamedElement>
+    <logicalClassDesignerModelHasPackages>
+      <package Id="972188c9-a901-43d6-b8d3-5ca4c137d1e9" name="Model">
+        <elementDefinition Id="73ebb339-b509-493e-bea8-e0c3a598b6d7" />
+        <suppliersInternal>
+          <dependency Id="1d6f2b6b-f0ae-47a8-9b84-fcd41b062ef9">
+            <packageMoniker Id="2e1e23ba-ce1f-4572-992f-83fae6344981" LastKnownName="Controller" />
+            <elementDefinition Id="aad7bc1a-f89c-4423-8349-19a96281f608" />
+          </dependency>
+        </suppliersInternal>
+        <packagedElements>
+          <packageHasNamedElement>
+            <class Id="300425eb-14ec-41e9-b5b0-bcd8f59caa58" name="Conexao" isAbstract="false" isLeaf="false" isActiveClass="false">
+              <description>Model</description>
+              <elementDefinition Id="ada08782-907f-4f18-8256-97f1bc9ab046" />
+              <ownedAttributesInternal>
+                <property Id="bf0ee000-07e5-4119-9cca-bbf58364d961" name="connection" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="74abced1-03df-4f57-93f9-4238b35c7113" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="9758dfdc-0e82-47de-a521-64c02ba9c032" LastKnownName="OleDbConnection();" />
+                  </type_NamedElement>
+                </property>
+              </ownedAttributesInternal>
+              <ownedOperationsInternal>
+                <operation Id="155ea229-08da-4028-b148-c3f119bb4926" name="Abrir" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="642866b9-463c-45f3-80c5-90243b75b7a5" />
+                  <ownedParameters>
+                    <operationHasOwnedParameters>
+                      <parameter Id="f5e71c55-f1e2-4036-bec2-1af0107eeb8a" direction="Return" isUnique="false">
+                        <elementDefinition Id="418ffd38-3154-4955-8532-476723b2d46f" />
+                        <type_NamedElement>
+                          <referencedTypeMoniker Id="9ce71b82-6d86-4af7-8e38-8a0543c939a1" LastKnownName="void" />
+                        </type_NamedElement>
+                      </parameter>
+                    </operationHasOwnedParameters>
+                  </ownedParameters>
+                </operation>
+                <operation Id="70ea82b0-975a-4dd2-aa87-13339d21490d" name="GetConexao" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="cdfd963c-c08c-44e7-a44e-4f4809ac15e2" />
+                  <ownedParameters>
+                    <operationHasOwnedParameters>
+                      <parameter Id="067ffcc3-7720-44c0-8c41-5b31d8b848ba" direction="Return" isUnique="false">
+                        <elementDefinition Id="765cb21a-6d40-4e7b-ba55-5fedce6704ad" />
+                        <type_NamedElement>
+                          <referencedTypeMoniker Id="b0bde78c-aec1-46a6-ae49-24a51041f9dc" LastKnownName="void" />
+                        </type_NamedElement>
+                      </parameter>
+                    </operationHasOwnedParameters>
+                  </ownedParameters>
+                </operation>
+                <operation Id="d80f2ee9-5248-40e6-a42a-5d69057103e3" name="Abrir1" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="d3bcf124-9d07-4ffb-bbf8-83582590a751" />
+                  <ownedParameters>
+                    <operationHasOwnedParameters>
+                      <parameter Id="ce4c19e8-6535-463d-b1e4-d6b05ffc6eb4" direction="Return" isUnique="false">
+                        <elementDefinition Id="fed8901c-8710-4e94-b005-1b11c480525b" />
+                        <type_NamedElement>
+                          <referencedTypeMoniker Id="09306c33-4a16-4f0f-9347-2ac78b620784" LastKnownName="void" />
+                        </type_NamedElement>
+                      </parameter>
+                    </operationHasOwnedParameters>
+                  </ownedParameters>
+                </operation>
+              </ownedOperationsInternal>
+            </class>
+          </packageHasNamedElement>
+          <packageHasNamedElement>
+            <class Id="70cea8a3-c613-4d84-873f-bc9c4269a2ec" name="mdlChamados" isAbstract="false" isLeaf="false" isActiveClass="false">
+              <description>Model</description>
+              <elementDefinition Id="8440ae15-3a32-4c8b-871a-4a2d47103ac5" />
+              <ownedAttributesInternal>
+                <property Id="a45161a8-b0ae-4e64-a675-683ba7e615eb" name="connection" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="2a9f4db6-2af3-4429-a92b-d80370d8f39e" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="d6991cf0-9c2e-481d-8619-04bd51ddad2b" LastKnownName="OleDbConnection();" />
+                  </type_NamedElement>
+                </property>
+              </ownedAttributesInternal>
+              <ownedOperationsInternal>
+                <operation Id="345c9325-f337-47e9-8623-36905fd4325d" name="Abrir" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="b16ed596-d7d0-4f44-bc2c-df47b2e42ac5" />
+                  <ownedParameters>
+                    <operationHasOwnedParameters>
+                      <parameter Id="6e97f91f-e1d7-43f4-a7d5-993db1be62df" direction="Return" isUnique="false">
+                        <elementDefinition Id="f2c9c4ed-8416-4bdb-a500-27e7405a40aa" />
+                        <type_NamedElement>
+                          <referencedTypeMoniker Id="70b1e425-e1a1-466a-9dbb-fe7f9e9e8c1d" LastKnownName="void" />
+                        </type_NamedElement>
+                      </parameter>
+                    </operationHasOwnedParameters>
+                  </ownedParameters>
+                </operation>
+                <operation Id="aa8d0049-4d6b-4412-a6e1-763c0d5ea114" name="GetConexao" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="450e42f4-a6ac-4db6-9c47-a791c0f40f91" />
+                  <ownedParameters>
+                    <operationHasOwnedParameters>
+                      <parameter Id="95dea9c1-75cf-4c79-86a3-5bef51041efe" direction="Return" isUnique="false">
+                        <elementDefinition Id="9d42a7ad-d376-4723-a56c-18e99d9a58fe" />
+                        <type_NamedElement>
+                          <referencedTypeMoniker Id="d97bba5b-d9e5-4795-959d-d52c4e72da21" LastKnownName="void" />
+                        </type_NamedElement>
+                      </parameter>
+                    </operationHasOwnedParameters>
+                  </ownedParameters>
+                </operation>
+                <operation Id="f5940e4e-4062-4592-8a3d-f37035c43a2d" name="Abrir1" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="a5861b2e-6514-4654-8440-69047c547e44" />
+                  <ownedParameters>
+                    <operationHasOwnedParameters>
+                      <parameter Id="2b196738-3197-4b5c-a0ff-a89298ba052d" direction="Return" isUnique="false">
+                        <elementDefinition Id="bd46b8ad-747c-4203-a8fe-da13c4c46c6d" />
+                        <type_NamedElement>
+                          <referencedTypeMoniker Id="abc5395a-5231-4a10-9c87-2422d2d8ab2d" LastKnownName="void" />
+                        </type_NamedElement>
+                      </parameter>
+                    </operationHasOwnedParameters>
+                  </ownedParameters>
+                </operation>
+              </ownedOperationsInternal>
+            </class>
+          </packageHasNamedElement>
+          <packageHasNamedElement>
+            <class Id="501b7391-bba2-420e-8672-072c2a30ef58" name="mdlEmpresa" isAbstract="false" isLeaf="false" isActiveClass="false">
+              <description>Model</description>
+              <elementDefinition Id="b003a81c-9d17-43a5-ae33-028831aa98ab" />
+              <ownedAttributesInternal>
+                <property Id="116cef9f-e769-4afc-be86-6a106b75a30d" name="connection" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="8ef43ade-c9d2-4fb7-b610-f74cf5c80f82" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="ec3c80f0-4321-4e98-99aa-49cfc578bb49" LastKnownName="OleDbConnection();" />
+                  </type_NamedElement>
+                </property>
+              </ownedAttributesInternal>
+              <ownedOperationsInternal>
+                <operation Id="8581959e-857e-410c-a629-58471218a096" name="Abrir" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="041d04b9-65ac-439d-bdf1-ce6b043da2b3" />
+                  <ownedParameters>
+                    <operationHasOwnedParameters>
+                      <parameter Id="ecc43e6a-39d1-459c-a0f6-14e8fc3969ce" direction="Return" isUnique="false">
+                        <elementDefinition Id="1fc90d52-9b97-476c-92f8-3100a31edb9e" />
+                        <type_NamedElement>
+                          <referencedTypeMoniker Id="b5766e25-adce-43d2-bfc1-7251ac0a366c" LastKnownName="void" />
+                        </type_NamedElement>
+                      </parameter>
+                    </operationHasOwnedParameters>
+                  </ownedParameters>
+                </operation>
+                <operation Id="a78f6531-cc73-451c-831f-b916c0cdce13" name="GetConexao" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="ba422d2c-966e-46e1-82f2-8584e760d584" />
+                  <ownedParameters>
+                    <operationHasOwnedParameters>
+                      <parameter Id="fe8114f4-a4ed-4604-a705-3440c89f0b40" direction="Return" isUnique="false">
+                        <elementDefinition Id="dcae475c-9a52-4176-8d5c-7ed9eb0e104d" />
+                        <type_NamedElement>
+                          <referencedTypeMoniker Id="71373ea0-6140-4088-9cd6-7d556c142159" LastKnownName="void" />
+                        </type_NamedElement>
+                      </parameter>
+                    </operationHasOwnedParameters>
+                  </ownedParameters>
+                </operation>
+                <operation Id="4437d8ae-e5f3-49f0-9dea-dabdc6a77afd" name="Abrir1" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="93aba3a6-30a0-476e-878b-c3d7d9658b25" />
+                  <ownedParameters>
+                    <operationHasOwnedParameters>
+                      <parameter Id="64990b81-e9ac-4a89-b18f-9b3638697351" direction="Return" isUnique="false">
+                        <elementDefinition Id="7bae8976-ed31-48e9-ab92-e67d58ab2a8a" />
+                        <type_NamedElement>
+                          <referencedTypeMoniker Id="c7322607-0fd1-479f-838e-2c7f3eb2147e" LastKnownName="void" />
+                        </type_NamedElement>
+                      </parameter>
+                    </operationHasOwnedParameters>
+                  </ownedParameters>
+                </operation>
+              </ownedOperationsInternal>
+            </class>
+          </packageHasNamedElement>
+          <packageHasNamedElement>
+            <class Id="54216ce8-622b-497c-b511-fa72908f9f7e" name="mdlManutecaoEmpresas" isAbstract="false" isLeaf="false" isActiveClass="false">
+              <elementDefinition Id="aad71ae6-952c-43e7-8097-0cc48b263073" />
+            </class>
+          </packageHasNamedElement>
+          <packageHasNamedElement>
+            <class Id="a371ba20-6c49-49ee-9f73-6bd6be3c6710" name="mdlManutencaoMotivo" isAbstract="false" isLeaf="false" isActiveClass="false">
+              <elementDefinition Id="68d94db6-40ba-46a2-b558-81952a885b4a" />
+            </class>
+          </packageHasNamedElement>
+          <packageHasNamedElement>
+            <class Id="cc7c0ffe-7de5-45ac-8fdb-b14d35693b14" name="mdlManutencaoUsuario" isAbstract="false" isLeaf="false" isActiveClass="false">
+              <elementDefinition Id="444aa20a-fc66-4073-841b-e57c5611869e" />
+            </class>
+          </packageHasNamedElement>
+          <packageHasNamedElement>
+            <class Id="60bdd5ff-0971-4089-bc8b-e5d13f88751d" name="mdlUsuario" isAbstract="false" isLeaf="false" isActiveClass="false">
+              <elementDefinition Id="6afd5ad3-0761-482b-b721-65f638fce58b" />
+            </class>
+          </packageHasNamedElement>
+        </packagedElements>
+      </package>
+    </logicalClassDesignerModelHasPackages>
+    <packageHasNamedElement>
+      <referencedType Id="d6991cf0-9c2e-481d-8619-04bd51ddad2b" name="OleDbConnection();" isAbstract="false" isLeaf="false" cachedFullName="OleDbConnection();">
+        <elementDefinition Id="650fb671-c8d6-43db-81e7-cca5ad92bbe0" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="70b1e425-e1a1-466a-9dbb-fe7f9e9e8c1d" name="void" isAbstract="false" isLeaf="false" cachedFullName="void">
+        <elementDefinition Id="c79e8692-95fa-439d-a4e2-b660d601bf49" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="d97bba5b-d9e5-4795-959d-d52c4e72da21" name="void" isAbstract="false" isLeaf="false" cachedFullName="void">
+        <elementDefinition Id="c79e8692-95fa-439d-a4e2-b660d601bf49" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="abc5395a-5231-4a10-9c87-2422d2d8ab2d" name="void" isAbstract="false" isLeaf="false" cachedFullName="void">
+        <elementDefinition Id="c79e8692-95fa-439d-a4e2-b660d601bf49" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="ec3c80f0-4321-4e98-99aa-49cfc578bb49" name="OleDbConnection();" isAbstract="false" isLeaf="false" cachedFullName="OleDbConnection();">
+        <elementDefinition Id="650fb671-c8d6-43db-81e7-cca5ad92bbe0" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="b5766e25-adce-43d2-bfc1-7251ac0a366c" name="void" isAbstract="false" isLeaf="false" cachedFullName="void">
+        <elementDefinition Id="c79e8692-95fa-439d-a4e2-b660d601bf49" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="71373ea0-6140-4088-9cd6-7d556c142159" name="void" isAbstract="false" isLeaf="false" cachedFullName="void">
+        <elementDefinition Id="c79e8692-95fa-439d-a4e2-b660d601bf49" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="c7322607-0fd1-479f-838e-2c7f3eb2147e" name="void" isAbstract="false" isLeaf="false" cachedFullName="void">
+        <elementDefinition Id="c79e8692-95fa-439d-a4e2-b660d601bf49" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="4061cadb-5ba9-4eea-b7d0-3e2fd12f376e" name="OleDbConnection();" isAbstract="false" isLeaf="false" cachedFullName="OleDbConnection();">
+        <elementDefinition Id="650fb671-c8d6-43db-81e7-cca5ad92bbe0" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="33b8fcff-e2bb-4106-a8b4-7ddc22cd61c9" name="OleDbConnection();" isAbstract="false" isLeaf="false" cachedFullName="OleDbConnection();">
+        <elementDefinition Id="650fb671-c8d6-43db-81e7-cca5ad92bbe0" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="37eaacdc-3516-4b1d-a3b9-47d4bf79cf09" name="OleDbConnection();" isAbstract="false" isLeaf="false" cachedFullName="OleDbConnection();">
+        <elementDefinition Id="650fb671-c8d6-43db-81e7-cca5ad92bbe0" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="00c3eeaa-6d74-457f-a1c0-be6372da21a3" name="void" isAbstract="false" isLeaf="false" cachedFullName="void">
+        <elementDefinition Id="c79e8692-95fa-439d-a4e2-b660d601bf49" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="e18c1b5a-ccec-49c9-b848-157bfe10b986" name="void" isAbstract="false" isLeaf="false" cachedFullName="void">
+        <elementDefinition Id="c79e8692-95fa-439d-a4e2-b660d601bf49" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="c17ba7ed-339b-4537-8d59-447a37cda281" name="void" isAbstract="false" isLeaf="false" cachedFullName="void">
+        <elementDefinition Id="c79e8692-95fa-439d-a4e2-b660d601bf49" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="dd6dc28b-4eaa-4de3-b54a-4e836a31a86d" name="void" isAbstract="false" isLeaf="false" cachedFullName="void">
+        <elementDefinition Id="c79e8692-95fa-439d-a4e2-b660d601bf49" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="060faa3c-55b2-4248-80fb-0014d56ad534" name="void" isAbstract="false" isLeaf="false" cachedFullName="void">
+        <elementDefinition Id="c79e8692-95fa-439d-a4e2-b660d601bf49" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="bd12d396-d622-4c0d-bed8-f75461c59001" name="void" isAbstract="false" isLeaf="false" cachedFullName="void">
+        <elementDefinition Id="c79e8692-95fa-439d-a4e2-b660d601bf49" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="5311b8c0-a8f1-4c53-9c18-58b4c7c4ac27" name="void" isAbstract="false" isLeaf="false" cachedFullName="void">
+        <elementDefinition Id="c79e8692-95fa-439d-a4e2-b660d601bf49" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="06c4afe0-1b77-482e-8d40-034b12c294b6" name="void" isAbstract="false" isLeaf="false" cachedFullName="void">
+        <elementDefinition Id="c79e8692-95fa-439d-a4e2-b660d601bf49" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="1c91b7ce-c6a2-4c44-b93b-e0ef8448fb80" name="void" isAbstract="false" isLeaf="false" cachedFullName="void">
+        <elementDefinition Id="c79e8692-95fa-439d-a4e2-b660d601bf49" />
+      </referencedType>
+    </packageHasNamedElement>
+    <logicalClassDesignerModelHasPackages>
+      <package Id="2e1e23ba-ce1f-4572-992f-83fae6344981" name="Controller">
+        <elementDefinition Id="19a37d3e-80f2-4e47-82af-d3e9a6d37d03" />
+        <suppliersInternal>
+          <dependency Id="bed2c5ce-f100-46e3-8a2e-f0f29dd5852c">
+            <packageMoniker Id="972188c9-a901-43d6-b8d3-5ca4c137d1e9" LastKnownName="Model" />
+            <elementDefinition Id="1ff21eb4-4d70-4740-8dfe-5d9eb3276693" />
+          </dependency>
+        </suppliersInternal>
+        <packagedElements>
+          <packageHasNamedElement>
+            <class Id="693a500e-dc61-428c-b430-06165ae0a256" name="ctlChamados" isAbstract="false" isLeaf="false" isActiveClass="false">
+              <description>Model</description>
+              <elementDefinition Id="283cff1b-abcd-48cc-83ef-710dce2900b5" />
+              <ownedAttributesInternal>
+                <property Id="54cf7791-dbf9-48f3-8a7e-839dee6aec16" name="connection" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="4589b8c7-7ef2-4a4f-9b82-c69e5411e2f7" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="4061cadb-5ba9-4eea-b7d0-3e2fd12f376e" LastKnownName="OleDbConnection();" />
+                  </type_NamedElement>
+                </property>
+              </ownedAttributesInternal>
+              <ownedOperationsInternal>
+                <operation Id="a88b0bc7-c311-43bd-8d35-26f4914cc19e" name="Abrir" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="d1d5f6a8-d6e2-400c-97ac-607df908a743" />
+                  <ownedParameters>
+                    <operationHasOwnedParameters>
+                      <parameter Id="3e6853f7-126f-45a6-baf5-c54d21f05d4c" direction="Return" isUnique="false">
+                        <elementDefinition Id="97baa76e-2d69-49d0-9020-49b94f2e0e65" />
+                        <type_NamedElement>
+                          <referencedTypeMoniker Id="00c3eeaa-6d74-457f-a1c0-be6372da21a3" LastKnownName="void" />
+                        </type_NamedElement>
+                      </parameter>
+                    </operationHasOwnedParameters>
+                  </ownedParameters>
+                </operation>
+                <operation Id="49e691e0-7861-49f6-8db0-3fe1e1c6b904" name="GetConexao" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="1e2b80a1-fda7-4ca3-b995-609ee9a4be47" />
+                  <ownedParameters>
+                    <operationHasOwnedParameters>
+                      <parameter Id="7f5e3e4b-f49f-4335-a584-8c768776e591" direction="Return" isUnique="false">
+                        <elementDefinition Id="76581dca-80cb-455a-bd94-8932d99718a2" />
+                        <type_NamedElement>
+                          <referencedTypeMoniker Id="e18c1b5a-ccec-49c9-b848-157bfe10b986" LastKnownName="void" />
+                        </type_NamedElement>
+                      </parameter>
+                    </operationHasOwnedParameters>
+                  </ownedParameters>
+                </operation>
+                <operation Id="c7c5b0a3-80fd-4382-9ff4-d4605cf2c108" name="Abrir1" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="254b0ed0-e2b4-4f8b-b6cf-b23ca8e446a9" />
+                  <ownedParameters>
+                    <operationHasOwnedParameters>
+                      <parameter Id="5e574428-52d0-43c7-911e-202ea10421eb" direction="Return" isUnique="false">
+                        <elementDefinition Id="83dae7d8-e34d-4be9-bd0a-f9b0cbec0d10" />
+                        <type_NamedElement>
+                          <referencedTypeMoniker Id="c17ba7ed-339b-4537-8d59-447a37cda281" LastKnownName="void" />
+                        </type_NamedElement>
+                      </parameter>
+                    </operationHasOwnedParameters>
+                  </ownedParameters>
+                </operation>
+              </ownedOperationsInternal>
+            </class>
+          </packageHasNamedElement>
+          <packageHasNamedElement>
+            <class Id="4d4dc8b8-4076-4f7a-a4f7-c47baaa6691c" name="ctlManutencaoOS" isAbstract="false" isLeaf="false" isActiveClass="false">
+              <description>Model</description>
+              <elementDefinition Id="64893898-1797-4c5e-b003-d45b607a7e0a" />
+              <ownedAttributesInternal>
+                <property Id="76c40896-d3f6-43a3-a76e-85fda2613abe" name="connection" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="de1e435f-02af-4149-930e-5ee76a1c0709" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="33b8fcff-e2bb-4106-a8b4-7ddc22cd61c9" LastKnownName="OleDbConnection();" />
+                  </type_NamedElement>
+                </property>
+              </ownedAttributesInternal>
+              <ownedOperationsInternal>
+                <operation Id="ebca6b60-37c0-447a-82ea-1cff20b5e2b0" name="Abrir" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="6cca6a06-0483-42c7-a8fa-164094399d75" />
+                  <ownedParameters>
+                    <operationHasOwnedParameters>
+                      <parameter Id="d8181cc4-9ff6-46f8-9979-95237a922740" direction="Return" isUnique="false">
+                        <elementDefinition Id="a98e4201-adf0-40c7-babc-fddc629146c8" />
+                        <type_NamedElement>
+                          <referencedTypeMoniker Id="dd6dc28b-4eaa-4de3-b54a-4e836a31a86d" LastKnownName="void" />
+                        </type_NamedElement>
+                      </parameter>
+                    </operationHasOwnedParameters>
+                  </ownedParameters>
+                </operation>
+                <operation Id="e5bf8432-ce0f-4f59-b512-27289c8f7264" name="GetConexao" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="32dfc597-278a-492a-8eb2-9fa3b38a7bae" />
+                  <ownedParameters>
+                    <operationHasOwnedParameters>
+                      <parameter Id="42a63f56-184a-423d-b129-23050453455e" direction="Return" isUnique="false">
+                        <elementDefinition Id="444a42dc-6daf-4b9b-b05f-efd381b667c9" />
+                        <type_NamedElement>
+                          <referencedTypeMoniker Id="060faa3c-55b2-4248-80fb-0014d56ad534" LastKnownName="void" />
+                        </type_NamedElement>
+                      </parameter>
+                    </operationHasOwnedParameters>
+                  </ownedParameters>
+                </operation>
+                <operation Id="ccb20d27-be59-4b87-9fb3-170097671e9f" name="Abrir1" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="72cb5bc2-6e23-4b8f-aef1-0327618f1f85" />
+                  <ownedParameters>
+                    <operationHasOwnedParameters>
+                      <parameter Id="1d689c02-0988-4204-819b-a39318a43e83" direction="Return" isUnique="false">
+                        <elementDefinition Id="7f19662c-8345-44ae-8e3f-69a1f869e845" />
+                        <type_NamedElement>
+                          <referencedTypeMoniker Id="bd12d396-d622-4c0d-bed8-f75461c59001" LastKnownName="void" />
+                        </type_NamedElement>
+                      </parameter>
+                    </operationHasOwnedParameters>
+                  </ownedParameters>
+                </operation>
+              </ownedOperationsInternal>
+            </class>
+          </packageHasNamedElement>
+          <packageHasNamedElement>
+            <class Id="87c8fd49-1103-4f78-ad77-e7e6ffa81000" name="ctlLogin" isAbstract="false" isLeaf="false" isActiveClass="false">
+              <description>Model</description>
+              <elementDefinition Id="b30bbcce-33c7-4d35-8ba9-5a9a33abcc3e" />
+              <ownedAttributesInternal>
+                <property Id="aba273d5-ec7f-4cf1-84b7-74b16fc31e1b" name="connection" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="f9b38c39-3320-46f2-ba31-b5b7ff50af77" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="37eaacdc-3516-4b1d-a3b9-47d4bf79cf09" LastKnownName="OleDbConnection();" />
+                  </type_NamedElement>
+                </property>
+              </ownedAttributesInternal>
+              <ownedOperationsInternal>
+                <operation Id="ffaca2e9-74af-4fd3-8c5b-53ffe7ea35dc" name="Abrir" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="92140f04-64e5-4d62-b8c1-9fe4062e7dd9" />
+                  <ownedParameters>
+                    <operationHasOwnedParameters>
+                      <parameter Id="04f18e6f-24df-4f2b-a9cd-00e2be28b131" direction="Return" isUnique="false">
+                        <elementDefinition Id="2137e0bf-5f53-43b6-9dee-7d5ab1f94648" />
+                        <type_NamedElement>
+                          <referencedTypeMoniker Id="5311b8c0-a8f1-4c53-9c18-58b4c7c4ac27" LastKnownName="void" />
+                        </type_NamedElement>
+                      </parameter>
+                    </operationHasOwnedParameters>
+                  </ownedParameters>
+                </operation>
+                <operation Id="0fb01e77-291f-4fb1-b3b2-a6cc62f1f5e0" name="GetConexao" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="8c6abd1a-eb3e-4e5d-9b8d-d13a6f917ca7" />
+                  <ownedParameters>
+                    <operationHasOwnedParameters>
+                      <parameter Id="d31de543-0e9e-4648-a0ca-fa1e5fdc0227" direction="Return" isUnique="false">
+                        <elementDefinition Id="c6cb89b3-1810-42a9-896f-98170b4d3a83" />
+                        <type_NamedElement>
+                          <referencedTypeMoniker Id="06c4afe0-1b77-482e-8d40-034b12c294b6" LastKnownName="void" />
+                        </type_NamedElement>
+                      </parameter>
+                    </operationHasOwnedParameters>
+                  </ownedParameters>
+                </operation>
+                <operation Id="5036c9eb-4f71-4178-8585-0284ba7a96a4" name="Abrir1" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="55980c04-9e86-4aa2-9115-fdb175996aca" />
+                  <ownedParameters>
+                    <operationHasOwnedParameters>
+                      <parameter Id="e008f685-3f7f-4e02-863a-acb81699a4ed" direction="Return" isUnique="false">
+                        <elementDefinition Id="77bc87f9-ea18-49f0-9c12-a2652e01b420" />
+                        <type_NamedElement>
+                          <referencedTypeMoniker Id="1c91b7ce-c6a2-4c44-b93b-e0ef8448fb80" LastKnownName="void" />
+                        </type_NamedElement>
+                      </parameter>
+                    </operationHasOwnedParameters>
+                  </ownedParameters>
+                </operation>
+              </ownedOperationsInternal>
+            </class>
+          </packageHasNamedElement>
+          <packageHasNamedElement>
+            <class Id="e8f4620c-8eef-4215-8799-094e16a86199" name="ctlManutencaoEmpresas" isAbstract="false" isLeaf="false" isActiveClass="false">
+              <elementDefinition Id="69ed18e1-c18c-4add-82ff-bfa8d63568b9" />
+            </class>
+          </packageHasNamedElement>
+          <packageHasNamedElement>
+            <class Id="e71e2717-26b2-42aa-b3b7-bce63df11f81" name="ctlManutencaoMotivo" isAbstract="false" isLeaf="false" isActiveClass="false">
+              <elementDefinition Id="d7344155-fa74-4b4f-bf32-8301ec1efdae" />
+            </class>
+          </packageHasNamedElement>
+          <packageHasNamedElement>
+            <class Id="54763540-d1cf-4206-a6fc-5493ca292b0b" name="ctlManutencaoUsuario" isAbstract="false" isLeaf="false" isActiveClass="false">
+              <elementDefinition Id="375a25db-90c7-46c9-838c-81b55e474b61" />
+              <suppliersInternal>
+                <dependency Id="d512ecb8-9ab4-4a6b-b84e-e887f2288b35">
+                  <packageMoniker Id="3f0ef33d-060e-40b9-9aaf-8c1463da6bc4" LastKnownName="View" />
+                  <elementDefinition Id="1c7ab321-6394-4c22-81fa-9c2eb0f54e4a" />
+                </dependency>
+              </suppliersInternal>
+            </class>
+          </packageHasNamedElement>
+          <packageHasNamedElement>
+            <class Id="d37772d4-ee17-4d2d-a399-4bda4330bdaa" name="ctlMotivo" isAbstract="false" isLeaf="false" isActiveClass="false">
+              <elementDefinition Id="219446ba-4601-41f1-839f-516fe54e1687" />
+            </class>
+          </packageHasNamedElement>
+        </packagedElements>
+      </package>
+    </logicalClassDesignerModelHasPackages>
+    <packageHasNamedElement>
+      <referencedType Id="6435ef6d-4ba1-410c-9cc6-4e8f38020347" name="OleDbConnection();" isAbstract="false" isLeaf="false" cachedFullName="OleDbConnection();">
+        <elementDefinition Id="650fb671-c8d6-43db-81e7-cca5ad92bbe0" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="1895f4a5-5f80-44be-88f8-49a47bba3c28" name="OleDbConnection();" isAbstract="false" isLeaf="false" cachedFullName="OleDbConnection();">
+        <elementDefinition Id="650fb671-c8d6-43db-81e7-cca5ad92bbe0" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="297d1052-2d7b-4420-874c-89d45483c88d" name="OleDbConnection();" isAbstract="false" isLeaf="false" cachedFullName="OleDbConnection();">
+        <elementDefinition Id="650fb671-c8d6-43db-81e7-cca5ad92bbe0" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="ab2b4905-6862-4777-915f-fd090400e89d" name="void" isAbstract="false" isLeaf="false" cachedFullName="void">
+        <elementDefinition Id="c79e8692-95fa-439d-a4e2-b660d601bf49" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="5de2c790-fb18-4f81-8ef2-9acbdde05eaa" name="void" isAbstract="false" isLeaf="false" cachedFullName="void">
+        <elementDefinition Id="c79e8692-95fa-439d-a4e2-b660d601bf49" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="efd08045-5ce4-4608-9e65-5a78f9c490f6" name="void" isAbstract="false" isLeaf="false" cachedFullName="void">
+        <elementDefinition Id="c79e8692-95fa-439d-a4e2-b660d601bf49" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="2bc4dfe7-4cf2-45be-8803-18c379672991" name="void" isAbstract="false" isLeaf="false" cachedFullName="void">
+        <elementDefinition Id="c79e8692-95fa-439d-a4e2-b660d601bf49" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="cd7f2bfe-610d-4163-b7d6-f1213bd14b54" name="void" isAbstract="false" isLeaf="false" cachedFullName="void">
+        <elementDefinition Id="c79e8692-95fa-439d-a4e2-b660d601bf49" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="fb0bc4e8-96ca-46c0-a09e-24211af9513d" name="void" isAbstract="false" isLeaf="false" cachedFullName="void">
+        <elementDefinition Id="c79e8692-95fa-439d-a4e2-b660d601bf49" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="48158e7d-26cd-4031-8735-119fc0d15c1d" name="void" isAbstract="false" isLeaf="false" cachedFullName="void">
+        <elementDefinition Id="c79e8692-95fa-439d-a4e2-b660d601bf49" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="2019ac31-4832-40dc-a3dc-a1486ed071bd" name="void" isAbstract="false" isLeaf="false" cachedFullName="void">
+        <elementDefinition Id="c79e8692-95fa-439d-a4e2-b660d601bf49" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="dd76746e-4124-432f-9fa2-3385f0b320f5" name="void" isAbstract="false" isLeaf="false" cachedFullName="void">
+        <elementDefinition Id="c79e8692-95fa-439d-a4e2-b660d601bf49" />
+      </referencedType>
+    </packageHasNamedElement>
+    <logicalClassDesignerModelHasPackages>
+      <package Id="3f0ef33d-060e-40b9-9aaf-8c1463da6bc4" name="View">
+        <elementDefinition Id="df64aa09-d8a8-49e4-92db-24c94e1359dd" />
+        <suppliersInternal>
+          <dependency Id="85d3fa7b-97dd-45f5-b84b-a0ae3d51965e">
+            <packageMoniker Id="2e1e23ba-ce1f-4572-992f-83fae6344981" LastKnownName="Controller" />
+            <elementDefinition Id="8cbdd7ba-95e4-4cfa-85e2-f0a27ff6ea0e" />
+          </dependency>
+        </suppliersInternal>
+        <packagedElements>
+          <packageHasNamedElement>
+            <class Id="b24a329e-805a-4ea0-9b73-dcd3434f00f0" name="frmLogin" isAbstract="false" isLeaf="false" isActiveClass="false">
+              <description>Model</description>
+              <elementDefinition Id="2fc82607-950b-4b4a-bbd7-52b9d76aca05" />
+              <ownedAttributesInternal>
+                <property Id="04e7f4ff-571e-4b5a-a430-c69b34925802" name="connection" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="1ac53bdb-8a93-4cac-b910-aafe484f28d0" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="6435ef6d-4ba1-410c-9cc6-4e8f38020347" LastKnownName="OleDbConnection();" />
+                  </type_NamedElement>
+                </property>
+              </ownedAttributesInternal>
+              <ownedOperationsInternal>
+                <operation Id="cb190c4f-db4c-4e35-8fe6-b58825de1c53" name="Abrir" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="7b34e465-302d-49ab-b13d-fba0d6c7bcce" />
+                  <ownedParameters>
+                    <operationHasOwnedParameters>
+                      <parameter Id="41223b12-64ed-4bf3-9ed3-1beec47333e4" direction="Return" isUnique="false">
+                        <elementDefinition Id="af1011fa-6989-43c1-adde-f9a8438f9c7e" />
+                        <type_NamedElement>
+                          <referencedTypeMoniker Id="ab2b4905-6862-4777-915f-fd090400e89d" LastKnownName="void" />
+                        </type_NamedElement>
+                      </parameter>
+                    </operationHasOwnedParameters>
+                  </ownedParameters>
+                </operation>
+                <operation Id="7c4e3229-0f98-4a13-8506-eedf68452b19" name="GetConexao" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="36a2db97-6ed8-4c1b-8df3-385c9fcc0d04" />
+                  <ownedParameters>
+                    <operationHasOwnedParameters>
+                      <parameter Id="9d4e9984-9475-4a72-afbd-7bebc76d85ba" direction="Return" isUnique="false">
+                        <elementDefinition Id="a2b2b745-2f6d-4a1b-9780-c0ea396028c3" />
+                        <type_NamedElement>
+                          <referencedTypeMoniker Id="5de2c790-fb18-4f81-8ef2-9acbdde05eaa" LastKnownName="void" />
+                        </type_NamedElement>
+                      </parameter>
+                    </operationHasOwnedParameters>
+                  </ownedParameters>
+                </operation>
+                <operation Id="bf04c08a-667b-4710-b2ff-f3d9ba2b8e90" name="Abrir1" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="8737c5ad-17d7-4bea-a629-966dd36a19e7" />
+                  <ownedParameters>
+                    <operationHasOwnedParameters>
+                      <parameter Id="1b489989-b20e-4509-bcdb-070581ff6e64" direction="Return" isUnique="false">
+                        <elementDefinition Id="fe4d81cc-1c5e-46dc-9ec2-30447af4752f" />
+                        <type_NamedElement>
+                          <referencedTypeMoniker Id="efd08045-5ce4-4608-9e65-5a78f9c490f6" LastKnownName="void" />
+                        </type_NamedElement>
+                      </parameter>
+                    </operationHasOwnedParameters>
+                  </ownedParameters>
+                </operation>
+              </ownedOperationsInternal>
+            </class>
+          </packageHasNamedElement>
+          <packageHasNamedElement>
+            <class Id="c19e87b5-6c55-4439-9192-ead950c877e9" name="frmListarChamado" isAbstract="false" isLeaf="false" isActiveClass="false">
+              <description>Model</description>
+              <elementDefinition Id="98d73d0d-0353-46b9-9b0d-5cab8e98fcb6" />
+              <ownedAttributesInternal>
+                <property Id="d843db54-2787-4d43-893b-8279da4e9219" name="connection" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="06cafb8f-dd16-4d3a-8a82-8d276a8b3e33" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="1895f4a5-5f80-44be-88f8-49a47bba3c28" LastKnownName="OleDbConnection();" />
+                  </type_NamedElement>
+                </property>
+              </ownedAttributesInternal>
+              <ownedOperationsInternal>
+                <operation Id="a2bbf887-41a2-45d8-8855-ecaaba589b7a" name="Abrir" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="296a9306-4fee-4b70-91dd-1f8658c318fd" />
+                  <ownedParameters>
+                    <operationHasOwnedParameters>
+                      <parameter Id="450b231b-2ccb-4738-8110-23a0a41a52d3" direction="Return" isUnique="false">
+                        <elementDefinition Id="15aa1daf-4cee-41f5-9d0b-2268368afd62" />
+                        <type_NamedElement>
+                          <referencedTypeMoniker Id="2bc4dfe7-4cf2-45be-8803-18c379672991" LastKnownName="void" />
+                        </type_NamedElement>
+                      </parameter>
+                    </operationHasOwnedParameters>
+                  </ownedParameters>
+                </operation>
+                <operation Id="d39bbf3f-e8df-4996-aa0f-f7afc9295720" name="GetConexao" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="e0c7a6ec-059d-4a66-8bc7-94ba9deff5ba" />
+                  <ownedParameters>
+                    <operationHasOwnedParameters>
+                      <parameter Id="45543096-f88e-4048-8b70-22b4c33e6b4d" direction="Return" isUnique="false">
+                        <elementDefinition Id="15e19820-14ee-4198-aa11-1a54389caf2b" />
+                        <type_NamedElement>
+                          <referencedTypeMoniker Id="cd7f2bfe-610d-4163-b7d6-f1213bd14b54" LastKnownName="void" />
+                        </type_NamedElement>
+                      </parameter>
+                    </operationHasOwnedParameters>
+                  </ownedParameters>
+                </operation>
+                <operation Id="b5850c29-4df4-476c-8565-b0699070f887" name="Abrir1" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="b38a5e2e-0930-441b-b9f0-dcd8a13b238e" />
+                  <ownedParameters>
+                    <operationHasOwnedParameters>
+                      <parameter Id="65b2ddc7-202b-4363-a0a0-17466f0ccea0" direction="Return" isUnique="false">
+                        <elementDefinition Id="c9ddda9a-1cda-452c-a807-68a23888bdb2" />
+                        <type_NamedElement>
+                          <referencedTypeMoniker Id="fb0bc4e8-96ca-46c0-a09e-24211af9513d" LastKnownName="void" />
+                        </type_NamedElement>
+                      </parameter>
+                    </operationHasOwnedParameters>
+                  </ownedParameters>
+                </operation>
+              </ownedOperationsInternal>
+            </class>
+          </packageHasNamedElement>
+          <packageHasNamedElement>
+            <class Id="754173f6-8aa6-4673-906a-dfad41074974" name="frmAberturaChamados" isAbstract="false" isLeaf="false" isActiveClass="false">
+              <description>Model</description>
+              <elementDefinition Id="c5bef110-ef18-405d-8678-be614a756d64" />
+              <ownedAttributesInternal>
+                <property Id="fa6922f9-e852-41f5-95ca-9642cd214522" name="connection" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="af5d8dd7-6a04-4451-9355-f0f11f340aae" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="297d1052-2d7b-4420-874c-89d45483c88d" LastKnownName="OleDbConnection();" />
+                  </type_NamedElement>
+                </property>
+              </ownedAttributesInternal>
+              <ownedOperationsInternal>
+                <operation Id="473aca79-f15a-44a3-bcf6-07d4bc07312d" name="Abrir" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="d042b95f-3087-4bbf-bc68-4f1c321622bc" />
+                  <ownedParameters>
+                    <operationHasOwnedParameters>
+                      <parameter Id="200d8e4b-f185-479f-8492-4af2d7888faf" direction="Return" isUnique="false">
+                        <elementDefinition Id="05bd5561-7361-4250-acf9-5d02987e0d68" />
+                        <type_NamedElement>
+                          <referencedTypeMoniker Id="48158e7d-26cd-4031-8735-119fc0d15c1d" LastKnownName="void" />
+                        </type_NamedElement>
+                      </parameter>
+                    </operationHasOwnedParameters>
+                  </ownedParameters>
+                </operation>
+                <operation Id="f3d2ccc3-ab1f-40aa-8cbf-be5f7631672b" name="GetConexao" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="a36520b4-e354-4f67-a34d-51d92ab2c5e6" />
+                  <ownedParameters>
+                    <operationHasOwnedParameters>
+                      <parameter Id="d7d35729-1d89-4fd5-b2d0-2bb31836c13f" direction="Return" isUnique="false">
+                        <elementDefinition Id="9909ef9d-089a-435a-be9a-f0a854027628" />
+                        <type_NamedElement>
+                          <referencedTypeMoniker Id="2019ac31-4832-40dc-a3dc-a1486ed071bd" LastKnownName="void" />
+                        </type_NamedElement>
+                      </parameter>
+                    </operationHasOwnedParameters>
+                  </ownedParameters>
+                </operation>
+                <operation Id="889d3543-6668-4fe4-98ea-60f818cb607e" name="Abrir1" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="3fe3546a-f2af-4c6e-b2d3-c8554114e11c" />
+                  <ownedParameters>
+                    <operationHasOwnedParameters>
+                      <parameter Id="8ee891ef-faaa-4916-a0c1-662478c45059" direction="Return" isUnique="false">
+                        <elementDefinition Id="03868bd3-d222-41ab-8ca1-7af654580e88" />
+                        <type_NamedElement>
+                          <referencedTypeMoniker Id="dd76746e-4124-432f-9fa2-3385f0b320f5" LastKnownName="void" />
+                        </type_NamedElement>
+                      </parameter>
+                    </operationHasOwnedParameters>
+                  </ownedParameters>
+                </operation>
+              </ownedOperationsInternal>
+            </class>
+          </packageHasNamedElement>
+          <packageHasNamedElement>
+            <class Id="1dc83ce4-8852-4729-b668-39f5109a0830" name="frmAnexo" isAbstract="false" isLeaf="false" isActiveClass="false">
+              <elementDefinition Id="346f0686-e15d-4571-b544-98e2a1f428d7" />
+            </class>
+          </packageHasNamedElement>
+          <packageHasNamedElement>
+            <class Id="f1908c95-c668-486d-9c60-903db8a1b864" name="frmDetalharChamado" isAbstract="false" isLeaf="false" isActiveClass="false">
+              <elementDefinition Id="2b309d4c-f17d-4d75-bf5c-3b0b03129f59" />
+            </class>
+          </packageHasNamedElement>
+          <packageHasNamedElement>
+            <class Id="73648ad4-ed40-4298-8bb8-954727280b2d" name="frmManutencaoEmpresas" isAbstract="false" isLeaf="false" isActiveClass="false">
+              <elementDefinition Id="dbbeb3a3-a53c-4847-ab01-6c6f1baa9c66" />
+            </class>
+          </packageHasNamedElement>
+          <packageHasNamedElement>
+            <class Id="bfceffa6-1038-48e9-8710-48f9cb4d1221" name="frmManutencaoMotivo" isAbstract="false" isLeaf="false" isActiveClass="false">
+              <elementDefinition Id="0ab29299-5704-458a-b654-66d64017d78f" />
+            </class>
+          </packageHasNamedElement>
+          <packageHasNamedElement>
+            <class Id="95f94802-9d2d-40d1-a462-078e3381f924" name="frmManutencaoUsuario" isAbstract="false" isLeaf="false" isActiveClass="false">
+              <elementDefinition Id="401d0e27-4708-42c1-a4c8-b035f6d4a76a" />
+            </class>
+          </packageHasNamedElement>
+          <packageHasNamedElement>
+            <class Id="8529df12-8c41-4dd6-9de9-eac2e5a55cb1" name="frmMenu" isAbstract="false" isLeaf="false" isActiveClass="false">
+              <description>Model</description>
+              <elementDefinition Id="b601e19b-799f-46a5-8b43-da42fc18ba06" />
+              <ownedAttributesInternal>
+                <property Id="cbbb4e64-0724-45e5-8d5b-a2aeedf65dfc" name="connection" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="db778027-6f0d-4f7b-a383-b32072320d64" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="f1e6fda2-8792-4d6a-81fc-0c7203901a41" LastKnownName="OleDbConnection();" />
+                  </type_NamedElement>
+                </property>
+              </ownedAttributesInternal>
+              <ownedOperationsInternal>
+                <operation Id="adc24ffb-2655-41e5-b2e9-a020f5a78402" name="Abrir" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="ca0cfbe7-582e-49c5-9421-fd889ffb82d6" />
+                  <ownedParameters>
+                    <operationHasOwnedParameters>
+                      <parameter Id="59ee887f-7ac4-4166-ae90-bc751d394a6a" direction="Return" isUnique="false">
+                        <elementDefinition Id="529b8124-5c4a-4c11-8636-bcaa13306c4c" />
+                        <type_NamedElement>
+                          <referencedTypeMoniker Id="a52006dd-5bab-4d12-ba16-045f2c8956bb" LastKnownName="void" />
+                        </type_NamedElement>
+                      </parameter>
+                    </operationHasOwnedParameters>
+                  </ownedParameters>
+                </operation>
+                <operation Id="a1fe20bf-7559-41f5-b484-119755c52796" name="GetConexao" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="fcab9dc7-67c2-4c5f-9cb7-3ffa67cf2ee2" />
+                  <ownedParameters>
+                    <operationHasOwnedParameters>
+                      <parameter Id="1497c4d7-0134-418f-b92d-fdfb1a1dfb4d" direction="Return" isUnique="false">
+                        <elementDefinition Id="fc7f0484-3de4-4086-8610-484c5d86b479" />
+                        <type_NamedElement>
+                          <referencedTypeMoniker Id="829e72b6-a7f4-4c5f-b49a-6fa123deb2f3" LastKnownName="void" />
+                        </type_NamedElement>
+                      </parameter>
+                    </operationHasOwnedParameters>
+                  </ownedParameters>
+                </operation>
+                <operation Id="54a62688-6992-4005-a6e5-dbb4d0204a74" name="Abrir1" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="fc714e6f-03f4-42d2-9f17-89c3e7467c5e" />
+                  <ownedParameters>
+                    <operationHasOwnedParameters>
+                      <parameter Id="8f78aa2d-6346-4268-8e6e-e79524f440b2" direction="Return" isUnique="false">
+                        <elementDefinition Id="882e6fee-9230-4afa-8d35-6d61adb036af" />
+                        <type_NamedElement>
+                          <referencedTypeMoniker Id="4ba41caf-69c1-47db-aa4c-5a24fa92dce0" LastKnownName="void" />
+                        </type_NamedElement>
+                      </parameter>
+                    </operationHasOwnedParameters>
+                  </ownedParameters>
+                </operation>
+              </ownedOperationsInternal>
+            </class>
+          </packageHasNamedElement>
+          <packageHasNamedElement>
+            <class Id="702b3173-1212-46c2-b4a2-83bd19e2619f" name="FrmPrintChamados" isAbstract="false" isLeaf="false" isActiveClass="false">
+              <elementDefinition Id="a9f6f9e8-4942-4bcd-b594-9bdd3cfe0898" />
+            </class>
+          </packageHasNamedElement>
+          <packageHasNamedElement>
+            <class Id="bda7f44f-00c0-460d-b552-e05a481d567d" name="frmSobre" isAbstract="false" isLeaf="false" isActiveClass="false">
+              <elementDefinition Id="02319712-950f-4be8-b466-0e7f67c92c65" />
+            </class>
+          </packageHasNamedElement>
+        </packagedElements>
+      </package>
+    </logicalClassDesignerModelHasPackages>
+    <packageHasNamedElement>
+      <referencedType Id="f1e6fda2-8792-4d6a-81fc-0c7203901a41" name="OleDbConnection();" isAbstract="false" isLeaf="false" cachedFullName="OleDbConnection();">
+        <elementDefinition Id="650fb671-c8d6-43db-81e7-cca5ad92bbe0" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="a52006dd-5bab-4d12-ba16-045f2c8956bb" name="void" isAbstract="false" isLeaf="false" cachedFullName="void">
+        <elementDefinition Id="c79e8692-95fa-439d-a4e2-b660d601bf49" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="829e72b6-a7f4-4c5f-b49a-6fa123deb2f3" name="void" isAbstract="false" isLeaf="false" cachedFullName="void">
+        <elementDefinition Id="c79e8692-95fa-439d-a4e2-b660d601bf49" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="4ba41caf-69c1-47db-aa4c-5a24fa92dce0" name="void" isAbstract="false" isLeaf="false" cachedFullName="void">
+        <elementDefinition Id="c79e8692-95fa-439d-a4e2-b660d601bf49" />
+      </referencedType>
+    </packageHasNamedElement>
+  </packagedElements>
+  <package Id="859de623-80f6-4a24-9a93-d2489e37a9bf" name="ModelandoPIM4">
+    <elementDefinition Id="aaf70c15-7bfb-45e0-a33d-0037130a2ddb" />
+  </package>
+</logicalClassDesignerModel>
