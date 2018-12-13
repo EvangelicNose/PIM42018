@@ -37,10 +37,23 @@ namespace helpdesk2018.View
             // 
             this.reportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.reportViewer1.LocalReport.ReportEmbeddedResource = "helpdesk2018.View.rptChamados.rdlc";
+            this.reportViewer1.LocalReport.ShowDetailedSubreportMessages = false;
             this.reportViewer1.Location = new System.Drawing.Point(0, 0);
             this.reportViewer1.Name = "reportViewer1";
+            this.reportViewer1.PageCountMode = Microsoft.Reporting.WinForms.PageCountMode.Actual;
             this.reportViewer1.ServerReport.BearerToken = null;
+            this.reportViewer1.ShowBackButton = false;
+            this.reportViewer1.ShowContextMenu = false;
+            this.reportViewer1.ShowCredentialPrompts = false;
+            this.reportViewer1.ShowDocumentMapButton = false;
+            this.reportViewer1.ShowExportButton = false;
             this.reportViewer1.ShowFindControls = false;
+            this.reportViewer1.ShowPageNavigationControls = false;
+            this.reportViewer1.ShowParameterPrompts = false;
+            this.reportViewer1.ShowPromptAreaButton = false;
+            this.reportViewer1.ShowRefreshButton = false;
+            this.reportViewer1.ShowStopButton = false;
+            this.reportViewer1.ShowZoomControl = false;
             this.reportViewer1.Size = new System.Drawing.Size(800, 450);
             this.reportViewer1.TabIndex = 0;
             // 
